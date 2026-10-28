@@ -448,13 +448,12 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v5.0 — مشغل حر بدون حماية (إصلاح "protection mode")
+   Movie BekEs v5.1 — مشغل حر + حماية من الإعلانات في iframe
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
-console.log('%c🎬 Movie BekEs v5.0', 'color:#22d3ee;font-weight:900;font-size:16px');
-console.log('%c   © 2025 B6_7E | بيكاس', 'color:#8b5cf6;font-weight:700');
+console.log('%c🎬 Movie BekEs v5.1','color:#22d3ee;font-weight:900;font-size:16px');
+console.log('%c   © 2025 B6_7E | بيكاس','color:#8b5cf6;font-weight:700');
 
-/* ═════ البيانات الافتراضية ═════ */
 const STREAMS = {
   muxHLS:   "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
   appleHLS: "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
@@ -479,7 +478,6 @@ const CHANNELS = [
     stream:STREAMS.appleHLS, desc:"سينما برو — بث سينمائي." }
 ];
 
-/* ═════ القنوات ═════ */
 const channelsBar = document.getElementById('channelsBar');
 const channelsCountEl = document.getElementById('channelsCount');
 
@@ -537,7 +535,6 @@ function buildChannelsBar() {
   }
 })(channelsBar);
 
-/* ═════ الأفلام ═════ */
 const movieList  = document.getElementById('movieList');
 const sentinelEl = document.getElementById('movieSentinel');
 const countEl    = document.getElementById('moviesCount');
@@ -646,7 +643,6 @@ buildChannelsBar();
 renderNextBatch();
 updateCount();
 
-/* ═════ تحميل البيانات الخارجية ═════ */
 (async function loadExternalData(){
   let moviesLoaded=false, channelsLoaded=false, source='البيانات الافتراضية';
   if (window.__CINEMA_DATA__){
@@ -690,7 +686,6 @@ updateCount();
   console.log('   الأفلام: '+MOVIES.length+' | القنوات: '+CHANNELS.length);
 })();
 
-/* ═════ التنقل ═════ */
 document.querySelectorAll('.nav a').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
@@ -707,7 +702,7 @@ document.querySelectorAll('.nav a').forEach(a => {
   });
 });
 
-/* ═════ المشغل — بدون قيود ═════ */
+/* ═════ المشغل ═════ */
 const video    = document.getElementById('video');
 const wrap     = document.getElementById('playerWrap');
 const loader   = document.getElementById('loader');
@@ -854,22 +849,51 @@ function tryMPEGTS(url, timeoutMs){
     } catch(e){ finish(false); }
   });
 }
+
+/* ════════════════════════════════════════════════════════════════
+   ⭐ tryEmbed — الحماية من الإعلانات والنوافذ المنبثقة
+   sandbox يمنع: window.open · top.location · parent.location
+                 النماذج الموجّهة لصفحات أخرى · التنزيل التلقائي
+   ويسمح بـ: الفيديو · autoplay · fullscreen · DRM
+   ════════════════════════════════════════════════════════════════ */
 function tryEmbed(url){
   return new Promise(resolve => {
     const normalized = normalizeEmbedUrl(url);
     destroyPlayers(); hidePlayerError();
     video.style.display='none'; controls.style.display='none';
     bigPlay.classList.add('hide');
+
     const iframe = document.createElement('iframe');
     iframe.src = normalized;
-    iframe.setAttribute('allow','autoplay; fullscreen; picture-in-picture; encrypted-media');
-    iframe.setAttribute('allowfullscreen','true');
-    iframe.setAttribute('referrerpolicy','no-referrer');
+
+    /* ⭐ قيود sandbox — بدون allow-popups و allow-top-navigation */
+    iframe.setAttribute('sandbox',
+      'allow-scripts ' +
+      'allow-same-origin ' +
+      'allow-presentation ' +
+      'allow-encrypted-media ' +
+      'allow-forms'
+    );
+
+    /* منع تسريب المرجع (بعض شبكات الإعلان تستخدمه للتتبع) */
+    iframe.setAttribute('referrerpolicy', 'no-referrer');
+
+    /* الصلاحيات المسموحة فقط */
+    iframe.setAttribute('allow',
+      'autoplay; fullscreen; picture-in-picture; encrypted-media'
+    );
+    iframe.setAttribute('allowfullscreen', 'true');
+
+    /* منع مؤشر التنزيل والـpicture-in-picture الخارجي */
+    iframe.setAttribute('loading', 'eager');
+
     wrap.insertBefore(iframe, wrap.firstChild);
     currentEmbedFrame = iframe;
-    let resolved=false;
+
+    let resolved = false;
     const finish = () => { if (resolved) return; resolved=true; resolve(true); };
-    iframe.onload = finish; setTimeout(finish, 3500);
+    iframe.onload = finish;
+    setTimeout(finish, 3500);
   });
 }
 
