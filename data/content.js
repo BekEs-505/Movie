@@ -1,7 +1,7 @@
 /* © 2025 B6_7E | بيكاس — © 2025 B6_7E | بيكاس — جميع الحقوق محفوظة */
 window.__CINEMA_DATA__ = {
   "movies": [
-    {"title":"فيلم Spree","year":2014,"genre":"9.8","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BOWM5ZGU3ZjctY2U4NS00ZGE0LWI1OGYtYmZkYzk2NzAyNWJjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_FMjpg_UX1000_.jpg","story":"سائقًا مهووسًا بوسائل التواصل الاجتماعي، يلعب دوره جو كيري، والذي، في محاولة ليصبح فيروسيًا، يقوم بالبث المباشر لنفسه وهو يقتل الركاب. ","sources":[{"label":"مشاهدة","url":"https://streamwish.to/e//xo1uoz8nkyzq"}]}
+    {"title":"فيلم Spree","year":2020,"genre":"9.8","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BOWM5ZGU3ZjctY2U4NS00ZGE0LWI1OGYtYmZkYzk2NzAyNWJjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_FMjpg_UX1000_.jpg","story":"سائقًا مهووسًا بوسائل التواصل الاجتماعي، يلعب دوره جو كيري، والذي، في محاولة ليصبح فيروسيًا، يقوم بالبث المباشر لنفسه وهو يقتل الركاب. ","sources":[{"label":"مشاهدة","url":"https://rubyvidhub.com/embed-i2ea2arw773o.html"}]}
   ],
   "channels": [
   ]
