@@ -24,8 +24,6 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 img{display:block;max-width:100%}
-
-/* HEADER — شعار كبير */
 .topbar{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:1000;
   display:flex;align-items:center;gap:24px;padding:0 32px;background:#0a0a12;
   border-bottom:1px solid rgba(255,255,255,.06);box-shadow:0 4px 22px rgba(0,0,0,.55)}
@@ -47,8 +45,6 @@ img{display:block;max-width:100%}
 .search input:focus{border-color:rgba(139,92,246,.7);
   box-shadow:0 0 0 4px rgba(139,92,246,.15);width:280px;background:rgba(255,255,255,.08)}
 .search svg{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);opacity:.6;pointer-events:none}
-
-/* WELCOME */
 .welcome{position:relative;z-index:1;padding:70px 32px 50px;text-align:center;overflow:hidden}
 .welcome::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);
   width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 70%);
@@ -77,16 +73,12 @@ img{display:block;max-width:100%}
 .welcome-stats span{font-size:.85rem;color:var(--muted)}
 @keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-
-/* SECTIONS */
 .section{position:relative;z-index:1;padding:26px 0 42px}
 .section-head{display:flex;align-items:center;justify-content:space-between;padding:0 32px;margin-bottom:16px}
 .section-head h2{font-size:1.15rem;font-weight:800;color:#d8d8ec;display:flex;align-items:center;gap:8px}
 .section-head h2::before{content:"";width:3px;height:16px;border-radius:3px;
   background:linear-gradient(180deg,var(--violet),var(--cyan));opacity:.85}
 .section-head .hint{color:var(--muted);font-size:.8rem}
-
-/* CHANNELS */
 .channels-bar{display:flex;gap:16px;overflow-x:auto;padding:12px 32px 24px;
   scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;
   -webkit-user-select:none;touch-action:pan-y}
@@ -111,8 +103,6 @@ img{display:block;max-width:100%}
 @keyframes blink{50%{opacity:.3}}
 .channel-name{margin-top:10px;font-size:.85rem;font-weight:700;color:#d8d8ec;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-/* MOVIES — غلاف واحد بكل سطر */
 .movie-list{display:flex;flex-direction:column;gap:16px;padding:0 32px}
 .movie-item{display:flex;gap:22px;padding:18px;border-radius:18px;background:var(--panel);
   border:1px solid rgba(255,255,255,.06);cursor:pointer;transition:.3s cubic-bezier(.2,.9,.3,1);
@@ -148,8 +138,6 @@ img{display:block;max-width:100%}
 .end-message{display:inline-block;padding:8px 22px;border-radius:999px;
   background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);
   color:#c4b5fd;font-weight:700}
-
-/* FOOTER */
 .footer{position:relative;z-index:1;margin-top:60px;padding:50px 32px 30px;
   border-top:1px solid rgba(255,255,255,.06);
   background:linear-gradient(180deg,transparent,rgba(139,92,246,.05))}
@@ -177,8 +165,6 @@ img{display:block;max-width:100%}
   -webkit-background-clip:text;background-clip:text;color:transparent;
   letter-spacing:1px;padding:4px 12px;border-radius:6px;
   border:1px solid rgba(139,92,246,.25);margin-top:6px}
-
-/* MODAL + PLAYER */
 .modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;
   justify-content:center;padding:18px;background:rgba(0,0,0,.82);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
@@ -284,7 +270,6 @@ img{display:block;max-width:100%}
   border:1px solid rgba(255,255,255,.1);color:#d8d8ec;transition:.25s}
 .modal-social a:hover{background:var(--violet);color:#fff;border-color:var(--violet)}
 .modal-social svg{width:15px;height:15px;fill:currentColor}
-
 @media(max-width:820px){
   :root{--header-h:78px}
   .topbar{padding:0 14px;gap:10px}
@@ -448,10 +433,10 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v5.1 — مشغل حر + حماية من الإعلانات في iframe
+   Movie BekEs v5.2 — دعم vidspeed + كل السيرفرات المشابهة
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
-console.log('%c🎬 Movie BekEs v5.1','color:#22d3ee;font-weight:900;font-size:16px');
+console.log('%c🎬 Movie BekEs v5.2','color:#22d3ee;font-weight:900;font-size:16px');
 console.log('%c   © 2025 B6_7E | بيكاس','color:#8b5cf6;font-weight:700');
 
 const STREAMS = {
@@ -724,17 +709,42 @@ const playerError = document.getElementById('playerError');
 let hlsPlayer=null, mpegPlayer=null, isLiveMode=false;
 let currentEmbedFrame=null, allowEmbed=false, playerAttemptToken=0;
 
+/* ═══════════════════════════════════════════════════════════════
+   ⭐ اكتشاف سيرفرات iframe — أُضيف vidspeed + كل المشابهة
+   ═══════════════════════════════════════════════════════════════ */
 const EMBED_PATTERNS = [
-  /mixdrop\.(?:ps|co|to|ag|sx|bz|ch|vc|nl|pm)/,/streamtape\.(?:com|net|to|xyz)/,
-  /dood\.(?:to|ws|re|sh|so|la|pm|wf)/,/doodstream\.com/,/streamlare\.com/,/voe\.sx/,
-  /upstream\.to/,/streamsb\.com/,/streamhide\.(?:com|to)/,/vidcloud\.(?:co|9|pro|com)/,
-  /vidnode\./,/vidsrc\.(?:me|to|xyz|cc|in|net)/,/filemoon\.(?:sx|to)/,/ok\.ru\/video/,
-  /vk\.com\/video/,/vk\.com\/clip/,/drive\.google\.com/,
-  /youtube\.com\/(?:watch|embed|shorts|live)/,/youtu\.be\//,/vimeo\.com\//,
-  /dailymotion\.com\//,/dai\.ly\//,/facebook\.com\/watch/,/fb\.watch\//,
-  /twitter\.com\/i\//,/x\.com\/i\//,/rumble\.com\/embed/,/odysee\.com/,/\/embed\//,/\/embed\?/
+  // vidspeed + عائلتها
+  /vidspeed/i,/vidfast/i,/vidlink/i,/vidsmart/i,/vidplay/i,
+  /vidsrc\.(?:me|to|xyz|cc|in|net|pro|io)/i,
+  // مضيفات مشهورة
+  /mixdrop\.(?:ps|co|to|ag|sx|bz|ch|vc|nl|pm)/i,
+  /streamtape\.(?:com|net|to|xyz)/i,
+  /dood\.(?:to|ws|re|sh|so|la|pm|wf)/i,/doodstream\.com/i,
+  /streamlare\.com/i,/voe\.sx/i,/upstream\.to/i,/streamsb\.com/i,
+  /streamhide\.(?:com|to)/i,/vidcloud\.(?:co|9|pro|com)/i,/vidnode\./i,
+  /filemoon\.(?:sx|to)/i,/ok\.ru\/video/i,/vk\.com\/video/i,/vk\.com\/clip/i,
+  // خدمات مشهورة
+  /drive\.google\.com/i,/youtube\.com\/(?:watch|embed|shorts|live)/i,
+  /youtu\.be\//i,/vimeo\.com\//i,/dailymotion\.com\//i,/dai\.ly\//i,
+  /facebook\.com\/watch/i,/fb\.watch\//i,/twitter\.com\/i\//i,/x\.com\/i\//i,
+  /rumble\.com\/embed/i,/odysee\.com/i,
+  /2embed\.(?:cc|to|ru|in|org)/i,/multiembed\./i,/embed\./i,
+  // أنماط عامة
+  /\/embed\//i,/\/embed\?/i,
+  /\/(?:e|v|player)\/[a-zA-Z0-9]{6,}/i
 ];
 function isEmbedUrl(url){ const u = url.toLowerCase(); return EMBED_PATTERNS.some(re=>re.test(u)); }
+
+/* هل يبدو الرابط صفحة HTML (لا ملف وسائط مباشر)؟ */
+function looksLikeHtmlPage(url){
+  if (!/^https?:\/\//i.test(url)) return false;
+  // له امتداد وسائط → ليس صفحة
+  if (/\.(m3u8|mp4|ts|webm|mkv|mov|m4v|ogv|ogg|flv|3gp|avi|wmv|mpd)(\?|#|$)/i.test(url)) return false;
+  // /playlist أو /manifest أو /stream صريحة لـHLS
+  if (/\/(?:playlist|manifest|stream)\.(?:m3u8|mpd)(\?|#|$)/i.test(url)) return false;
+  return true;
+}
+
 function normalizeEmbedUrl(url){
   const u = url.toLowerCase();
   try {
@@ -748,6 +758,7 @@ function normalizeEmbedUrl(url){
   } catch(e){}
   return url;
 }
+
 function detectStreamType(url){
   if (!url) return 'auto';
   const u = url.toLowerCase();
@@ -760,8 +771,11 @@ function detectStreamType(url){
   if (/[?&](?:format|type|ext|output|mime)=(?:m3u8|hls|application\/x-mpegurl)/i.test(u)) return 'hls';
   if (/[?&](?:format|type|ext|output|mime)=(?:ts|mpegts|video\/mp2t)/i.test(u)) return 'mpegts';
   if (/[?&](?:format|type|ext|output|mime)=(?:mp4|webm|video\/mp4)/i.test(u)) return 'native';
+  // ⭐ إذا كان صفحة HTML → embed
+  if (looksLikeHtmlPage(url)) return 'embed';
   return 'auto';
 }
+
 function destroyEmbed(){
   if (currentEmbedFrame){ try{currentEmbedFrame.remove();}catch(e){} currentEmbedFrame=null; }
   try{video.style.display='';}catch(e){}
@@ -850,12 +864,32 @@ function tryMPEGTS(url, timeoutMs){
   });
 }
 
-/* ════════════════════════════════════════════════════════════════
-   ⭐ tryEmbed — الحماية من الإعلانات والنوافذ المنبثقة
-   sandbox يمنع: window.open · top.location · parent.location
-                 النماذج الموجّهة لصفحات أخرى · التنزيل التلقائي
-   ويسمح بـ: الفيديو · autoplay · fullscreen · DRM
-   ════════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   ⭐ tryEmbed v5.2 — إصلاح vidspeed
+   التغييرات الأساسية:
+   1. referrerpolicy: origin (بدل no-referrer) — vidspeed وغيرة يرفضون no-referrer
+   2. sandbox مُخصص حسب المضيف:
+      - YouTube/Vimeo/Drive → صارم (بلا popups ولا top-nav)
+      - vidspeed وكل الباقي → متوسط (يسمح top-nav عند نقر المستخدم فقط)
+   3. بدون allow-popups → لا نوافذ منبثقة إعلانية
+   4. بدون allow-popups-to-escape-sandbox → أي popup يبقى محبوساً
+   ═══════════════════════════════════════════════════════════════ */
+const STRICT_HOSTS_RE = /youtube\.com|youtu\.be|vimeo\.com|drive\.google\.com|dailymotion\.com/i;
+
+function getSandboxFor(url){
+  const u = String(url).toLowerCase();
+  if (STRICT_HOSTS_RE.test(u)) {
+    // مشغلات آمنة معروفة — صارم تماماً
+    return 'allow-scripts allow-same-origin allow-presentation allow-encrypted-media allow-forms';
+  }
+  // كل السيرفرات الأخرى — متوسط
+  // allow-top-navigation-by-user-activation:
+  //   ✅ يسمح للمستخدم بالنقر (تشغيل) → الانتقال من صفحة إعلان إلى مشغل
+  //   ❌ يمنع إعادة التوجيه التلقائي (auto-redirect ads)
+  //   ❌ يمنع popups
+  return 'allow-scripts allow-same-origin allow-presentation allow-encrypted-media allow-forms allow-top-navigation-by-user-activation';
+}
+
 function tryEmbed(url){
   return new Promise(resolve => {
     const normalized = normalizeEmbedUrl(url);
@@ -866,25 +900,15 @@ function tryEmbed(url){
     const iframe = document.createElement('iframe');
     iframe.src = normalized;
 
-    /* ⭐ قيود sandbox — بدون allow-popups و allow-top-navigation */
-    iframe.setAttribute('sandbox',
-      'allow-scripts ' +
-      'allow-same-origin ' +
-      'allow-presentation ' +
-      'allow-encrypted-media ' +
-      'allow-forms'
-    );
+    /* ⭐ sandbox حسب المضيف */
+    iframe.setAttribute('sandbox', getSandboxFor(normalized));
 
-    /* منع تسريب المرجع (بعض شبكات الإعلان تستخدمه للتتبع) */
-    iframe.setAttribute('referrerpolicy', 'no-referrer');
+    /* ⭐ origin بدل no-referrer — يقبله vidspeed وكل المضيفين */
+    iframe.setAttribute('referrerpolicy', 'origin');
 
     /* الصلاحيات المسموحة فقط */
-    iframe.setAttribute('allow',
-      'autoplay; fullscreen; picture-in-picture; encrypted-media'
-    );
+    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
     iframe.setAttribute('allowfullscreen', 'true');
-
-    /* منع مؤشر التنزيل والـpicture-in-picture الخارجي */
     iframe.setAttribute('loading', 'eager');
 
     wrap.insertBefore(iframe, wrap.firstChild);
@@ -892,8 +916,10 @@ function tryEmbed(url){
 
     let resolved = false;
     const finish = () => { if (resolved) return; resolved=true; resolve(true); };
-    iframe.onload = finish;
-    setTimeout(finish, 3500);
+
+    // انتظار أطول قليلاً — vidspeed يحتاج وقت لتحميل المشغل
+    iframe.onload = () => setTimeout(finish, 400);
+    setTimeout(finish, 6000);
   });
 }
 
@@ -906,17 +932,26 @@ async function playSource(url, forcedType = null){
   loader.classList.add('on'); bigPlay.classList.add('hide');
   let type = forcedType || detectStreamType(url);
   if (type === 'embed' && !allowEmbed) type = 'auto';
+
   let ok = false;
   try {
-    if (type === 'embed') ok = await tryEmbed(url);
+    if (type === 'embed') {
+      // ⭐ embed مباشرة — بدون سلسلة HLS (يوفّر 18+ ثانية)
+      ok = await tryEmbed(url);
+    }
     else if (type === 'hls') ok = await tryHLS(url, 12000);
     else if (type === 'mpegts') ok = await tryMPEGTS(url, 12000);
     else if (type === 'native') ok = await tryNative(url, 10000);
     else {
-      ok = await tryHLS(url, 8000);
-      if (!ok && token === playerAttemptToken) ok = await tryNative(url, 5000);
-      if (!ok && token === playerAttemptToken) ok = await tryMPEGTS(url, 5000);
-      if (!ok && allowEmbed && token === playerAttemptToken) ok = await tryEmbed(url);
+      // auto: اكتشف إن كان صفحة HTML → embed أولاً
+      if (looksLikeHtmlPage(url) && allowEmbed) {
+        ok = await tryEmbed(url);
+      } else {
+        ok = await tryHLS(url, 8000);
+        if (!ok && token === playerAttemptToken) ok = await tryNative(url, 5000);
+        if (!ok && token === playerAttemptToken) ok = await tryMPEGTS(url, 5000);
+        if (!ok && allowEmbed && token === playerAttemptToken) ok = await tryEmbed(url);
+      }
     }
   } catch(e){ ok = false; }
   if (token !== playerAttemptToken) return;
