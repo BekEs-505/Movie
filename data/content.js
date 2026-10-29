@@ -14,6 +14,7 @@ window.__CINEMA_DATA__ = {
     {"name":"Bein Sport 2","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 2 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
     {"name":"Bein Sport 3","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 3 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
     {"name":"Bein Sport 4","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 4 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"Bein Sport 5","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 5 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]}
+    {"name":"Bein Sport 5","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 5 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
+    {"name":"Bein Sport 6","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 6 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]}
   ]
 };
