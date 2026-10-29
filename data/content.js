@@ -10,5 +10,6 @@ window.__CINEMA_DATA__ = {
     {"title":"فيلم Buddy","year":2026,"genre":"8.0","rating":8,"poster":"https://m.media-amazon.com/images/M/MV5BMWRkNWJhNjYtY2FkZC00YjFlLWFjMjUtZGFhMjc5MGYyODE4XkEyXkFqcGc@._V1_.jpg","story":"وحيد القرن البرتقالي الساحر والمغني يحتجز طاقمه كرهينة في بُعد سريالي لبرنامج تلفزيوني، بينما يصبح مجنونًا أكثر فأكثر.","sources":[{"label":"مشاهدة","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]}
   ],
   "channels": [
+    {"name":"Bein Sport 1","poster":"https://images.seeklogo.com/logo-png/48/2/bein-sports-1-logo-png_seeklogo-481583.png","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 1 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]}
   ]
 };

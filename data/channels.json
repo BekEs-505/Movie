@@ -1,4 +1,16 @@
 {
   "channels": [
+    {
+      "name": "Bein Sport 1",
+      "poster": "https://images.seeklogo.com/logo-png/48/2/bein-sports-1-logo-png_seeklogo-481583.png",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 1 — بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    }
   ]
 }
