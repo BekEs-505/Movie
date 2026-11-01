@@ -1,7 +1,7 @@
 #!/bin/sh
 # ═══════════════════════════════════════════════════════════════════════
 #  Movie BekEs — لوحة التحكم الاحترافية العالمية (Neon Edition)
-#  الإصدار: 6.2 (دعم سيرفرات متعددة + إصلاح تأخير الرفع)
+#  الإصدار: 6.2 (دعم سيرفرات متعددة)
 #  © 2025 B6_7E | بيكاس — جميع الحقوق محفوظة
 #  متوافق مع: NewTerm iOS, Termux, Linux, macOS (POSIX sh)
 # ═══════════════════════════════════════════════════════════════════════
@@ -204,9 +204,8 @@ GIT_PASS="${GIT_PASS:-}"
 
 _do_git_push(){
     tmp=$(mktemp 2>/dev/null || echo "/tmp/gitpush.$$")
-    # إضافة GIT_TERMINAL_PROMPT=0 يجعل Git يفشل فوراً إذا لم يجد بيانات، بدلاً من الانتظار
-    if GIT_TERMINAL_PROMPT=0 git push >"$tmp" 2>&1; then rm -f "$tmp"; return 0; fi
-    if grep -qiE 'authentication|permission denied|403|could not read username|terminal prompts disabled|fatal: could not read' "$tmp"; then
+    if git push >"$tmp" 2>&1; then rm -f "$tmp"; return 0; fi
+    if grep -qiE 'authentication|permission denied|403|could not read username|terminal prompts disabled' "$tmp"; then
         rm -f "$tmp"; return 1
     fi
     cp "$tmp" /tmp/cp_last_err 2>/dev/null
@@ -254,8 +253,7 @@ git_push(){
             AUTH_URL=$(printf '%s' "$REPO_URL" | sed -E "s#^https://#https://${GIT_USER}:${GIT_PASS}@#")
             
             printf "\n"
-            # إضافة GIT_TERMINAL_PROMPT=0 هنا أيضاً لضمان عدم التعليق إذا كان التوكن خاطئاً
-            ( GIT_TERMINAL_PROMPT=0 git push "$AUTH_URL" >/tmp/cp_git.$$ 2>&1; exit $? ) &
+            ( git push "$AUTH_URL" >/tmp/cp_git.$$ 2>&1; exit $? ) &
             spinner $!
             wait $!
             
