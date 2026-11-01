@@ -1,7 +1,7 @@
 #!/bin/sh
 # ═══════════════════════════════════════════════════════════════════════
 #  Movie BekEs — لوحة التحكم الاحترافية العالمية (Neon Edition)
-#  الإصدار: 6.1
+#  الإصدار: 6.2 (دعم سيرفرات متعددة)
 #  © 2025 B6_7E | بيكاس — جميع الحقوق محفوظة
 #  متوافق مع: NewTerm iOS, Termux, Linux, macOS (POSIX sh)
 # ═══════════════════════════════════════════════════════════════════════
@@ -11,7 +11,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 set -u
-VERSION="6.1 Neon"
+VERSION="6.2 Neon"
 COPYRIGHT="© 2025 B6_7E | بيكاس"
 GIT_MSG="Init"
 
@@ -107,15 +107,30 @@ save_movies_json(){
                 [ -z "${t:-}" ] && continue
                 [ "$first" -eq 0 ] && printf '    },\n'
                 first=0
-                printf '    {\n      "title": "%s",\n      "year": %s,\n      "genre": "%s",\n      "rating": %s,\n      "poster": "%s",\n      "story": "%s",\n      "sources": [\n        {\n          "label": "%s",\n          "url": "%s"\n        }\n      ]' \
+                
+                esc_u=$(jesc "${u:-}")
+                esc_l=$(jesc "${l:-}")
+                
+                printf '    {\n      "title": "%s",\n      "year": %s,\n      "genre": "%s",\n      "rating": %s,\n      "poster": "%s",\n      "story": "%s",\n      "sources": [\n' \
                     "$(jesc "$t")" "${y:-0}" "$(jesc "${g:-عام}")" "${r:-0}" \
-                    "$(jesc "${p:-}")" "$(jesc "${s:-}")" "$(jesc "${l:-سيرفر رئيسي}")" "$(jesc "${u:-}")"
+                    "$(jesc "${p:-}")" "$(jesc "${s:-}")"
+                
+                awk -v urls="$esc_u" -v labels="$esc_l" 'BEGIN {
+                    n=split(urls, u_arr, ";;;")
+                    m=split(labels, l_arr, ";;;")
+                    for(i=1; i<=n; i++) {
+                        if(i>1) printf "        },\n"
+                        printf "        {\n          \"label\": \"%s\",\n          \"url\": \"%s\"\n", (i<=m && l_arr[i]!="" ? l_arr[i] : "سيرفر"), u_arr[i]
+                    }
+                }'
+                printf '        }\n      ]'
             done < "$DB_MOVIES"
         fi
         [ "$first" -eq 0 ] && printf '\n    }\n'
         printf '  ]\n}\n'
     } > "$JSON_MOVIES"
 }
+
 save_channels_json(){
     first=1
     {
@@ -134,6 +149,7 @@ save_channels_json(){
         printf '  ]\n}\n'
     } > "$JSON_CHANNELS"
 }
+
 save_content_js(){
     {
         printf '/* Movie BekEs — %s */\n' "$COPYRIGHT"
@@ -144,10 +160,25 @@ save_content_js(){
                 [ -z "${t:-}" ] && continue
                 [ "$f" -eq 0 ] && printf ','
                 f=0
-                printf '\n    {"title":"%s","year":%s,"genre":"%s","rating":%s,"poster":"%s","story":"%s","sources":[{"label":"%s","url":"%s"}]}' \
+                
+                esc_u=$(jesc "${u:-}")
+                esc_l=$(jesc "${l:-}")
+                
+                printf '\n    {"title":"%s","year":%s,"genre":"%s","rating":%s,"poster":"%s","story":"%s",' \
                     "$(jesc "$t")" "${y:-0}" "$(jesc "${g:-عام}")" "${r:-0}" \
-                    "$(jesc "${p:-}")" "$(jesc "${s:-}")" \
-                    "$(jesc "${l:-سيرفر رئيسي}")" "$(jesc "${u:-}")"
+                    "$(jesc "${p:-}")" "$(jesc "${s:-}")"
+                
+                awk -v urls="$esc_u" -v labels="$esc_l" 'BEGIN {
+                    n=split(urls, u_arr, ";;;")
+                    m=split(labels, l_arr, ";;;")
+                    printf "\"sources\":["
+                    for(i=1; i<=n; i++) {
+                        if(i>1) printf ","
+                        printf "{\"label\":\"%s\",\"url\":\"%s\"}", (i<=m && l_arr[i]!="" ? l_arr[i] : "سيرفر"), u_arr[i]
+                    }
+                    printf "]"
+                }'
+                printf '}'
             done < "$DB_MOVIES"
         fi
         printf '\n  ],\n  "channels": ['
@@ -270,7 +301,12 @@ list_movies(){
         [ -z "${t:-}" ] && continue
         i=$((i+1)); w=""
         [ -z "${p:-}" ] && w="$w \033[38;5;226m[ناقص غلاف]\033[0m"
-        [ -z "${u:-}" ] && w="$w \033[38;5;226m[ناقص رابط]\033[0m"
+        if [ -z "${u:-}" ]; then
+            w="$w \033[38;5;226m[ناقص رابط]\033[0m"
+        else
+            srv_cnt=$(printf '%s' "$u" | awk -F';;;' '{print NF}')
+            w="$w \033[38;5;39m(${srv_cnt} سيرفر)\033[0m"
+        fi
         printf '  \033[38;5;201m[%02d]\033[0m %s \033[2m(%s)\033[0m - %s - نجمة %s%b\n' \
             "$i" "$t" "${y:-?}" "${g:-?}" "${r:-?}" "$w"
     done < "$DB_MOVIES"
@@ -298,9 +334,31 @@ add_movie(){
     ask "التصنيف" "عام"; am_g="$ASK_RESULT"
     ask "التقييم (0-10)" "0"; am_r="$ASK_RESULT"
     ask "رابط الغلاف" ""; am_p="$ASK_RESULT"
-    am_u=""
-    while [ -z "$am_u" ]; do ask "رابط المشاهدة" ""; am_u="$ASK_RESULT"; [ -z "$am_u" ] && printf '  \033[38;5;196mمطلوب!\033[0m\n'; done
-    ask "تسمية السيرفر" "سيرفر رئيسي"; am_l="$ASK_RESULT"
+    
+    am_u=""; am_l=""
+    while true; do
+        ask "رابط المشاهدة" ""; curr_url="$ASK_RESULT"
+        while [ -z "$curr_url" ]; do 
+            printf '  \033[38;5;196mمطلوب!\033[0m\n'
+            ask "رابط المشاهدة" ""; curr_url="$ASK_RESULT"
+        done
+        ask "تسمية السيرفر" "سيرفر رئيسي"; curr_label="$ASK_RESULT"
+        
+        if [ -z "$am_u" ]; then
+            am_u="$curr_url"
+            am_l="$curr_label"
+        else
+            am_u="${am_u};;;${curr_url}"
+            am_l="${am_l};;;${curr_label}"
+        fi
+        
+        ask "هل تريد إضافة سيرفر آخر؟ (y/N)" "n"; more="$ASK_RESULT"
+        case "$more" in
+            y|Y|yes|YES) continue ;;
+            *) break ;;
+        esac
+    done
+    
     ask "القصة (اختياري)" ""; am_s="$ASK_RESULT"
 
     printf '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s\n' \
@@ -330,8 +388,41 @@ edit_movie(){
     ask "التصنيف" "$eg"; ng="$ASK_RESULT"
     ask "التقييم" "$er"; nr="$ASK_RESULT"
     ask "رابط الغلاف" "$ep"; np="$ASK_RESULT"
-    ask "رابط المشاهدة" "$eu"; nu="$ASK_RESULT"
-    ask "تسمية السيرفر" "$el"; nl="$ASK_RESULT"
+    
+    printf '\n\033[38;5;226m▸ هل تريد تعديل السيرفرات الحالية؟ (y/N)\033[0m: '
+    IFS= read -r edit_srv || edit_srv=""
+    case "$edit_srv" in
+        y|Y|yes|YES)
+            nu=""; nl=""
+            while true; do
+                ask "رابط المشاهدة" ""; curr_url="$ASK_RESULT"
+                while [ -z "$curr_url" ]; do 
+                    printf '  \033[38;5;196mمطلوب!\033[0m\n'
+                    ask "رابط المشاهدة" ""; curr_url="$ASK_RESULT"
+                done
+                ask "تسمية السيرفر" "سيرفر"; curr_label="$ASK_RESULT"
+                
+                if [ -z "$nu" ]; then
+                    nu="$curr_url"
+                    nl="$curr_label"
+                else
+                    nu="${nu};;;${curr_url}"
+                    nl="${nl};;;${curr_label}"
+                fi
+                
+                ask "هل تريد إضافة سيرفر آخر؟ (y/N)" "n"; more="$ASK_RESULT"
+                case "$more" in
+                    y|Y|yes|YES) continue ;;
+                    *) break ;;
+                esac
+            done
+            ;;
+        *)
+            nu="$eu"
+            nl="$el"
+            ;;
+    esac
+    
     ask "القصة" "$es"; ns="$ASK_RESULT"
 
     awk -v target="$idx" -v t="$nt" -v y="$ny" -v g="$ng" -v r="$nr" -v p="$np" -v s="$ns" -v u="$nu" -v l="$nl" '
