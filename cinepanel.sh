@@ -1,7 +1,7 @@
 #!/bin/sh
 # ═══════════════════════════════════════════════════════════════════════
 #  Movie BekEs — لوحة التحكم الاحترافية العالمية (Neon Edition)
-#  الإصدار: 6.2 (دعم سيرفرات متعددة)
+#  الإصدار: 6.4 (إصلاح الرموز + تعديل السيرفرات بذكاء)
 #  © 2025 B6_7E | بيكاس — جميع الحقوق محفوظة
 #  متوافق مع: NewTerm iOS, Termux, Linux, macOS (POSIX sh)
 # ═══════════════════════════════════════════════════════════════════════
@@ -11,7 +11,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 set -u
-VERSION="6.2 Neon"
+VERSION="6.4 Neon"
 COPYRIGHT="© 2025 B6_7E | بيكاس"
 GIT_MSG="Init"
 
@@ -35,15 +35,14 @@ R='\033[0m'; BOLD='\033[1m'; DIM='\033[2m'
 RED='\033[38;5;196m'; GRN='\033[38;5;46m'; YEL='\033[38;5;226m'
 BLU='\033[38;5;39m'; MAG='\033[38;5;201m'; CYN='\033[38;5;51m'; WHT='\033[38;5;231m'
 
-# ─── الشعار الجديد (Cyberpunk Neon) ───
+# ─── الشعار (رموز ASCII خالصة 100% لضمان عدم ظهور ??) ───
 show_logo() {
-    printf "\033[38;5;99m  ╭───────────────────────────────────────────╮\n"
-    printf "\033[38;5;105m  │                                           │\n"
-    printf "\033[38;5;111m  │  \033[38;5;213m█▀▄▀█ █▀█ █░█ █ █▀▀\033[38;5;51m   \033[38;5;226m█▀▄ █▀▀ █▄▀ █▀▀ █▀▀\033[38;5;111m  │\n"
-    printf "\033[38;5;117m  │  \033[38;5;219m█░▀░█ █▄█ ▀▄▀ █ ██▄\033[38;5;123m   \033[38;5;228m█▀▄ ██▄ █░█ ██▄ ▄██\033[38;5;117m  │\n"
-    printf "\033[38;5;123m  │                                           │\n"
-    printf "\033[38;5;129m  │             \033[38;5;208m✦ PRO EDITION v$VERSION ✦\033[38;5;129m            │\n"
-    printf "\033[38;5;135m  ╰───────────────────────────────────────────╯\n"
+    printf "\033[38;5;99m  +-------------------------------------------+\n"
+    printf "\033[38;5;105m  |                                           |\n"
+    printf "\033[38;5;111m  |  \033[38;5;213mM O V I E   B E K E S\033[38;5;111m                      |\n"
+    printf "\033[38;5;117m  |                                           |\n"
+    printf "\033[38;5;123m  |             \033[38;5;208m* PRO EDITION v$VERSION *\033[38;5;123m             |\n"
+    printf "\033[38;5;135m  +-------------------------------------------+\n"
     printf "\033[38;5;141m              $COPYRIGHT\033[0m\n\n"
 }
 
@@ -73,20 +72,20 @@ notify(){
     local msg="$3"
     
     if [ "$type" = "ok" ]; then
-        printf "\n\033[38;5;46m ╭──────────────────────────────────────────╮ \033[0m\n"
-        printf "\033[38;5;46m │ \033[38;5;231m✓ %s\033[0m\n" "$title"
-        printf "\033[38;5;46m │ \033[38;5;244m%s\033[0m\n" "$msg"
-        printf "\033[38;5;46m ╰──────────────────────────────────────────╯ \033[0m\n"
+        printf "\n\033[38;5;46m +------------------------------------------+ \033[0m\n"
+        printf "\033[38;5;46m | \033[38;5;231m[+] %s\033[0m\n" "$title"
+        printf "\033[38;5;46m | \033[38;5;244m%s\033[0m\n" "$msg"
+        printf "\033[38;5;46m +------------------------------------------+ \033[0m\n"
     elif [ "$type" = "err" ]; then
-        printf "\n\033[38;5;196m ╭──────────────────────────────────────────╮ \033[0m\n"
-        printf "\033[38;5;196m │ \033[38;5;231m✗ %s\033[0m\n" "$title"
-        printf "\033[38;5;196m │ \033[38;5;244m%s\033[0m\n" "$msg"
-        printf "\033[38;5;196m ╰──────────────────────────────────────────╯ \033[0m\n"
+        printf "\n\033[38;5;196m +------------------------------------------+ \033[0m\n"
+        printf "\033[38;5;196m | \033[38;5;231m[!] %s\033[0m\n" "$title"
+        printf "\033[38;5;196m | \033[38;5;244m%s\033[0m\n" "$msg"
+        printf "\033[38;5;196m +------------------------------------------+ \033[0m\n"
     else
-        printf "\n\033[38;5;39m ╭──────────────────────────────────────────╮ \033[0m\n"
-        printf "\033[38;5;39m │ \033[38;5;231mℹ %s\033[0m\n" "$title"
-        printf "\033[38;5;39m │ \033[38;5;244m%s\033[0m\n" "$msg"
-        printf "\033[38;5;39m ╰──────────────────────────────────────────╯ \033[0m\n"
+        printf "\n\033[38;5;39m +------------------------------------------+ \033[0m\n"
+        printf "\033[38;5;39m | \033[38;5;231m[i] %s\033[0m\n" "$title"
+        printf "\033[38;5;39m | \033[38;5;244m%s\033[0m\n" "$msg"
+        printf "\033[38;5;39m +------------------------------------------+ \033[0m\n"
     fi
     printf "\a"
     printf '\033]0;%s\007' "$title"
@@ -122,8 +121,9 @@ save_movies_json(){
                         if(i>1) printf "        },\n"
                         printf "        {\n          \"label\": \"%s\",\n          \"url\": \"%s\"\n", (i<=m && l_arr[i]!="" ? l_arr[i] : "سيرفر"), u_arr[i]
                     }
+                    if (n>0) printf "        }\n"
                 }'
-                printf '        }\n      ]'
+                printf '      ]'
             done < "$DB_MOVIES"
         fi
         [ "$first" -eq 0 ] && printf '\n    }\n'
@@ -198,14 +198,15 @@ save_content_js(){
 }
 save_all(){ save_movies_json; save_channels_json; save_content_js; }
 
-# ─── Git Push مع مصادقة ───
+# ─── Git Push مع مصادقة (حل مشكلة البطء) ───
 GIT_USER="${GIT_USER:-}"
 GIT_PASS="${GIT_PASS:-}"
 
 _do_git_push(){
     tmp=$(mktemp 2>/dev/null || echo "/tmp/gitpush.$$")
-    if git push >"$tmp" 2>&1; then rm -f "$tmp"; return 0; fi
-    if grep -qiE 'authentication|permission denied|403|could not read username|terminal prompts disabled' "$tmp"; then
+    # GIT_TERMINAL_PROMPT=0 يمنع Git من الانتظار ويجعله يفشل فوراً لطلب المصادقة
+    if GIT_TERMINAL_PROMPT=0 git push >"$tmp" 2>&1; then rm -f "$tmp"; return 0; fi
+    if grep -qiE 'authentication|permission denied|403|could not read username|terminal prompts disabled|fatal: could not read' "$tmp"; then
         rm -f "$tmp"; return 1
     fi
     cp "$tmp" /tmp/cp_last_err 2>/dev/null
@@ -213,9 +214,9 @@ _do_git_push(){
 }
 
 _prompt_credentials(){
-    printf '\n\033[38;5;226m ╭── 🔑 مصادقة GitHub ──────────────────────╮\033[0m\n'
-    printf '\033[38;5;226m │\033[0m (استخدم Personal Access Token بدل كلمة المرور)\n'
-    printf '\033[38;5;226m ╰──────────────────────────────────────────╯\033[0m\n'
+    printf '\n\033[38;5;226m +-- [ مصادقة GitHub ] --------------------+ \033[0m\n'
+    printf '\033[38;5;226m |\033[0m (استخدم Personal Access Token بدل كلمة المرور)\n'
+    printf '\033[38;5;226m +------------------------------------------+ \033[0m\n'
     printf ' اسم المستخدم: '; IFS= read -r GIT_USER || GIT_USER=""
     printf ' كلمة المرور / التوكن: '; IFS= read -r GIT_PASS || GIT_PASS=""
     [ -z "$GIT_USER" ] || [ -z "$GIT_PASS" ] && return 1
@@ -253,7 +254,7 @@ git_push(){
             AUTH_URL=$(printf '%s' "$REPO_URL" | sed -E "s#^https://#https://${GIT_USER}:${GIT_PASS}@#")
             
             printf "\n"
-            ( git push "$AUTH_URL" >/tmp/cp_git.$$ 2>&1; exit $? ) &
+            ( GIT_TERMINAL_PROMPT=0 git push "$AUTH_URL" >/tmp/cp_git.$$ 2>&1; exit $? ) &
             spinner $!
             wait $!
             
@@ -281,9 +282,9 @@ git_push(){
 # ─── إدخال البيانات ───
 ask(){
     if [ -n "$2" ]; then
-        printf ' \033[38;5;51m▸ %s\033[0m \033[2m[%s]\033[0m: ' "$1" "$2"
+        printf ' \033[38;5;51m> %s\033[0m \033[2m[%s]\033[0m: ' "$1" "$2"
     else
-        printf ' \033[38;5;51m▸ %s\033[0m: ' "$1"
+        printf ' \033[38;5;51m> %s\033[0m: ' "$1"
     fi
     IFS= read -r ans || ans=""
     if [ "$ans" = "--" ]; then ans=""
@@ -327,7 +328,7 @@ list_channels(){
 #  وظائف الإدارة
 # ═══════════════════════════════════════════════════════════════════════
 add_movie(){
-    clr; show_logo; printf '\033[38;5;201m═══ [+] إضافة فيلم جديد ═══\033[0m\n\n'
+    clr; show_logo; printf '\033[38;5;201m=== [+] إضافة فيلم جديد ===\033[0m\n\n'
     am_t=""
     while [ -z "$am_t" ]; do ask "عنوان الفيلم" ""; am_t="$ASK_RESULT"; [ -z "$am_t" ] && printf '  \033[38;5;196mمطلوب!\033[0m\n'; done
     ask "السنة" "$(date +%Y 2>/dev/null || echo 2025)"; am_y="$ASK_RESULT"
@@ -369,8 +370,8 @@ add_movie(){
 }
 
 edit_movie(){
-    clr; show_logo; printf '\033[38;5;201m═══ [*] تعديل فيلم ═══\033[0m\n'; list_movies; printf '\n'
-    printf ' \033[38;5;51m▸ رقم الفيلم (0=إلغاء)\033[0m: '
+    clr; show_logo; printf '\033[38;5;201m=== [*] تعديل فيلم ===\033[0m\n'; list_movies; printf '\n'
+    printf ' \033[38;5;51m> رقم الفيلم (0=إلغاء)\033[0m: '
     IFS= read -r idx || idx=""
     { [ -z "$idx" ] || [ "$idx" = "0" ]; } && return 0
     case "$idx" in *[!0-9]*) notify "err" "خطأ" "رقم غير صالح"; return 1;; esac
@@ -389,32 +390,64 @@ edit_movie(){
     ask "التقييم" "$er"; nr="$ASK_RESULT"
     ask "رابط الغلاف" "$ep"; np="$ASK_RESULT"
     
-    printf '\n\033[38;5;226m▸ هل تريد تعديل السيرفرات الحالية؟ (y/N)\033[0m: '
+    printf '\n\033[38;5;226m> هل تريد تعديل السيرفرات الحالية؟ (y/N)\033[0m: '
     IFS= read -r edit_srv || edit_srv=""
     case "$edit_srv" in
         y|Y|yes|YES)
-            nu=""; nl=""
+            nu="$eu"
+            nl="$el"
             while true; do
-                ask "رابط المشاهدة" ""; curr_url="$ASK_RESULT"
-                while [ -z "$curr_url" ]; do 
-                    printf '  \033[38;5;196mمطلوب!\033[0m\n'
-                    ask "رابط المشاهدة" ""; curr_url="$ASK_RESULT"
-                done
-                ask "تسمية السيرفر" "سيرفر"; curr_label="$ASK_RESULT"
+                printf "\n\033[38;5;51mالسيرفرات الحالية:\033[0m\n"
+                echo "$nu" | awk -F';;;' '{for(i=1;i<=NF;i++) print "  [" i "] " $i}'
                 
-                if [ -z "$nu" ]; then
-                    nu="$curr_url"
-                    nl="$curr_label"
+                printf ' \033[38;5;51m> اختر رقم السيرفر للتعديل (0=إضافة، d=حذف، Enter=إنهاء)\033[0m: '
+                IFS= read -r srv_idx || srv_idx=""
+                
+                [ -z "$srv_idx" ] && break
+                
+                if [ "$srv_idx" = "0" ]; then
+                    ask "رابط المشاهدة الجديد" ""; curr_url="$ASK_RESULT"
+                    while [ -z "$curr_url" ]; do 
+                        printf '  \033[38;5;196mمطلوب!\033[0m\n'
+                        ask "رابط المشاهدة الجديد" ""; curr_url="$ASK_RESULT"
+                    done
+                    ask "تسمية السيرفر الجديد" "سيرفر"; curr_label="$ASK_RESULT"
+                    
+                    if [ -z "$nu" ]; then
+                        nu="$curr_url"; nl="$curr_label"
+                    else
+                        nu="${nu};;;${curr_url}"; nl="${nl};;;${curr_label}"
+                    fi
+                    printf '  \033[38;5;46mتمت إضافة السيرفر.\033[0m\n'
+                elif [ "$srv_idx" = "d" ] || [ "$srv_idx" = "D" ]; then
+                    printf ' \033[38;5;51m> اختر رقم السيرفر للحذف (Enter=إلغاء)\033[0m: '
+                    IFS= read -r del_idx || del_idx=""
+                    if [ -n "$del_idx" ]; then
+                        case "$del_idx" in *[!0-9]*) printf '  \033[38;5;196mرقم غير صالح!\033[0m\n'; continue ;; esac
+                        nu=$(echo "$nu" | awk -F';;;' -v i="$del_idx" '{
+                            c=0; for(j=1;j<=NF;j++){ if(j!=i){ c++; if(c>1) printf ";;;"; printf "%s", $j } }
+                        }')
+                        nl=$(echo "$nl" | awk -F';;;' -v i="$del_idx" '{
+                            c=0; for(j=1;j<=NF;j++){ if(j!=i){ c++; if(c>1) printf ";;;"; printf "%s", $j } }
+                        }')
+                        printf '  \033[38;5;46mتم حذف السيرفر.\033[0m\n'
+                    fi
                 else
-                    nu="${nu};;;${curr_url}"
-                    nl="${nl};;;${curr_label}"
+                    case "$srv_idx" in *[!0-9]*) printf '  \033[38;5;196mرقم غير صالح!\033[0m\n'; continue ;; esac
+                    old_url=$(echo "$nu" | awk -F';;;' -v i="$srv_idx" '{print $i}')
+                    old_label=$(echo "$nl" | awk -F';;;' -v i="$srv_idx" '{print $i}')
+                    
+                    ask "رابط المشاهدة" "$old_url"; new_url="$ASK_RESULT"
+                    ask "تسمية السيرفر" "$old_label"; new_label="$ASK_RESULT"
+                    
+                    nu=$(echo "$nu" | awk -F';;;' -v i="$srv_idx" -v nv="$new_url" '{
+                        for(j=1;j<=NF;j++){ if(j==i) printf "%s", nv; else printf "%s", $j; if(j<NF) printf ";;;" }
+                    }')
+                    nl=$(echo "$nl" | awk -F';;;' -v i="$srv_idx" -v nv="$new_label" '{
+                        for(j=1;j<=NF;j++){ if(j==i) printf "%s", nv; else printf "%s", $j; if(j<NF) printf ";;;" }
+                    }')
+                    printf '  \033[38;5;46mتم تحديث السيرفر.\033[0m\n'
                 fi
-                
-                ask "هل تريد إضافة سيرفر آخر؟ (y/N)" "n"; more="$ASK_RESULT"
-                case "$more" in
-                    y|Y|yes|YES) continue ;;
-                    *) break ;;
-                esac
             done
             ;;
         *)
@@ -434,12 +467,12 @@ edit_movie(){
 }
 
 delete_movie(){
-    clr; show_logo; printf '\033[38;5;196m═══ [-] حذف فيلم ═══\033[0m\n'; list_movies; printf '\n'
-    printf ' \033[38;5;51m▸ رقم الفيلم (0=إلغاء)\033[0m: '
+    clr; show_logo; printf '\033[38;5;196m=== [-] حذف فيلم ===\033[0m\n'; list_movies; printf '\n'
+    printf ' \033[38;5;51m> رقم الفيلم (0=إلغاء)\033[0m: '
     IFS= read -r idx || idx=""
     { [ -z "$idx" ] || [ "$idx" = "0" ]; } && return 0
     case "$idx" in *[!0-9]*) notify "err" "خطأ" "رقم غير صالح"; return 1;; esac
-    printf ' \033[38;5;226m▸ متأكد من الحذف؟ (y/N)\033[0m: '
+    printf ' \033[38;5;226m> متأكد من الحذف؟ (y/N)\033[0m: '
     IFS= read -r c || c=""
     case "$c" in y|Y|yes|YES) :;; *) printf ' \033[2mأُلغي.\033[0m\n'; return 0;; esac
     name=$(awk -v n="$idx" -v US="$US" 'BEGIN{FS=US} NR==n{print $1; exit}' "$DB_MOVIES")
@@ -448,7 +481,7 @@ delete_movie(){
 }
 
 add_channel(){
-    clr; show_logo; printf '\033[38;5;201m═══ [+] إضافة قناة جديدة ═══\033[0m\n\n'
+    clr; show_logo; printf '\033[38;5;201m=== [+] إضافة قناة جديدة ===\033[0m\n\n'
     ac_n=""
     while [ -z "$ac_n" ]; do ask "اسم القناة" ""; ac_n="$ASK_RESULT"; [ -z "$ac_n" ] && printf '  \033[38;5;196mمطلوب!\033[0m\n'; done
     ask "رابط غلاف القناة" ""; ac_p="$ASK_RESULT"
@@ -461,8 +494,8 @@ add_channel(){
 }
 
 edit_channel(){
-    clr; show_logo; printf '\033[38;5;201m═══ [*] تعديل قناة ═══\033[0m\n'; list_channels; printf '\n'
-    printf ' \033[38;5;51m▸ رقم القناة (0=إلغاء)\033[0m: '
+    clr; show_logo; printf '\033[38;5;201m=== [*] تعديل قناة ===\033[0m\n'; list_channels; printf '\n'
+    printf ' \033[38;5;51m> رقم القناة (0=إلغاء)\033[0m: '
     IFS= read -r idx || idx=""
     { [ -z "$idx" ] || [ "$idx" = "0" ]; } && return 0
     case "$idx" in *[!0-9]*) notify "err" "خطأ" "رقم غير صالح"; return 1;; esac
@@ -489,12 +522,12 @@ edit_channel(){
 }
 
 delete_channel(){
-    clr; show_logo; printf '\033[38;5;196m═══ [-] حذف قناة ═══\033[0m\n'; list_channels; printf '\n'
-    printf ' \033[38;5;51m▸ رقم القناة (0=إلغاء)\033[0m: '
+    clr; show_logo; printf '\033[38;5;196m=== [-] حذف قناة ===\033[0m\n'; list_channels; printf '\n'
+    printf ' \033[38;5;51m> رقم القناة (0=إلغاء)\033[0m: '
     IFS= read -r idx || idx=""
     { [ -z "$idx" ] || [ "$idx" = "0" ]; } && return 0
     case "$idx" in *[!0-9]*) notify "err" "خطأ" "رقم غير صالح"; return 1;; esac
-    printf ' \033[38;5;226m▸ متأكد من الحذف؟ (y/N)\033[0m: '
+    printf ' \033[38;5;226m> متأكد من الحذف؟ (y/N)\033[0m: '
     IFS= read -r c || c=""
     case "$c" in y|Y|yes|YES) :;; *) printf ' \033[2mأُلغي.\033[0m\n'; return 0;; esac
     name=$(awk -v n="$idx" -v US="$US" 'BEGIN{FS=US} NR==n{print $1; exit}' "$DB_CHANNELS")
@@ -564,19 +597,19 @@ show_menu(){
     [ -s "$DB_MOVIES" ]   && mc=$(wc -l < "$DB_MOVIES"   | tr -d ' ')
     [ -s "$DB_CHANNELS" ] && cc=$(wc -l < "$DB_CHANNELS" | tr -d ' ')
     
-    printf "\033[38;5;51m ╭──────────────────────────────────────────╮ \033[0m\n"
-    printf "\033[38;5;51m │ \033[0mالأفلام: \033[38;5;231m%-4s\033[0m \033[38;5;51m│ \033[0mالقنوات: \033[38;5;231m%-4s\033[0m \033[38;5;51m│ \033[0mالحالة: \033[38;5;46mمتصل\033[0m \033[38;5;51m│ \033[0m\n" "$mc" "$cc"
-    printf "\033[38;5;51m ╰──────────────────────────────────────────╯ \033[0m\n\n"
+    printf "\033[38;5;51m +------------------------------------------+ \033[0m\n"
+    printf "\033[38;5;51m | \033[0mالأفلام: \033[38;5;231m%-4s\033[0m \033[38;5;51m| \033[0mالقنوات: \033[38;5;231m%-4s\033[0m \033[38;5;51m| \033[0mالحالة: \033[38;5;46mمتصل\033[0m \033[38;5;51m| \033[0m\n" "$mc" "$cc"
+    printf "\033[38;5;51m +------------------------------------------+ \033[0m\n\n"
     
     printf "  \033[38;5;201m[1]\033[0m عرض الأفلام           \033[38;5;201m[5]\033[0m عرض القنوات\n"
     printf "  \033[38;5;201m[2]\033[0m إضافة فيلم            \033[38;5;201m[6]\033[0m إضافة قناة\n"
     printf "  \033[38;5;201m[3]\033[0m تعديل فيلم            \033[38;5;201m[7]\033[0m تعديل قناة\n"
     printf "  \033[38;5;201m[4]\033[0m حذف فيلم              \033[38;5;201m[8]\033[0m حذف قناة\n"
     
-    printf "\n \033[2m──────────────────────────────────────────────\033[0m\n"
+    printf "\n \033[2m----------------------------------------------\033[0m\n"
     printf "  \033[38;5;39m[9]\033[0m رفع إلى GitHub الآن     \033[38;5;196m[0]\033[0m خروج\n"
-    printf " \033[2m──────────────────────────────────────────────\033[0m\n"
-    printf "\n \033[38;5;46m▸ اختيارك:\033[0m "
+    printf " \033[2m----------------------------------------------\033[0m\n"
+    printf "\n \033[38;5;46m> اختيارك:\033[0m "
 }
 
 trap 'printf "\n\033[38;5;51mوداعاً - نراك قريباً\033[0m\n"; exit 0' INT TERM
