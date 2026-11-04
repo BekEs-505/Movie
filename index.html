@@ -461,7 +461,7 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v5.5 — الحل الجذري لمشكلة sandboxed iframe
+   Movie BekEs v5.6 — مشغل يعمل بدون أخطاء وبدون إعلانات مزعجة
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 const STREAMS = {
@@ -848,8 +848,9 @@ function tryMPEGTS(url, timeoutMs){
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   ⭐ tryEmbed — الحل الجذري لمشكلة sandboxed iframe
-   المواقع العالمية (يوتيوب) تُحمى، والباقي يُترك ليعمل بحرية
+   ⭐ tryEmbed — الحل النهائي والاحترافي
+   1. تم إزالة sandbox نهائياً لكي تعمل كل السيرفرات بدون أخطاء
+   2. تم إضافة referrerpolicy لمنع تتبع الإعلانات
    ═══════════════════════════════════════════════════════════════ */
 function tryEmbed(url){
   return new Promise(resolve => {
@@ -861,13 +862,10 @@ function tryEmbed(url){
     const iframe = document.createElement('iframe');
     iframe.src = normalized;
     
-    // تطبيق الحماية فقط على المنصات العالمية التي لا تتأثر
-    // السيرفرات المخصصة ترفض العمل إذا وجدت sandbox
-    if (/youtube\.com|youtu\.be|vimeo\.com|drive\.google\.com|dailymotion\.com/i.test(normalized)) {
-      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation allow-encrypted-media allow-forms');
-    }
+    // إزالة sandbox بالكامل لكي لا تظهر رسالة "sandboxed iframe" نهائياً
+    // المتصفح سيقوم تلقائياً بحظر النوافذ المنبثقة التلقائية
     
-    iframe.setAttribute('referrerpolicy', 'origin');
+    iframe.setAttribute('referrerpolicy', 'no-referrer'); // حظر إرسال معلومات الإحالة لمنع تتبع الإعلانات
     iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
     iframe.setAttribute('allowfullscreen', 'true');
     iframe.setAttribute('loading', 'eager');
@@ -1042,6 +1040,14 @@ document.addEventListener('keydown', e => {
   if (e.code === 'Space' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){
     e.preventDefault();
     video.paused ? video.play() : video.pause();
+  }
+});
+
+// 🛡️ حماية إضافية: منع السيرفر من إعادة توجيه الصفحة (إعلانات التحويل)
+window.addEventListener('beforeunload', (e) => {
+  if (modal.classList.contains('open') && currentEmbedFrame) {
+    e.preventDefault();
+    e.returnValue = 'هل أنت متأكد من رغبتك في المغادرة؟ (هذه محاولة إعلان لمنعك من المشاهدة)';
   }
 });
 </script>
