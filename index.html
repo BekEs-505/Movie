@@ -461,7 +461,7 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v5.4 — مشغل محسّن وسلايدر محلي
+   Movie BekEs v5.5 — الحل الجذري لمشكلة sandboxed iframe
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 const STREAMS = {
@@ -846,29 +846,35 @@ function tryMPEGTS(url, timeoutMs){
     } catch(e){ finish(false); }
   });
 }
-const STRICT_HOSTS_RE = /youtube\.com|youtu\.be|vimeo\.com|drive\.google\.com|dailymotion\.com/i;
-function getSandboxFor(url){
-  const u = String(url).toLowerCase();
-  if (STRICT_HOSTS_RE.test(u)) {
-    return 'allow-scripts allow-same-origin allow-presentation allow-encrypted-media allow-forms';
-  }
-  return 'allow-scripts allow-same-origin allow-presentation allow-encrypted-media allow-forms allow-top-navigation-by-user-activation';
-}
+
+/* ═══════════════════════════════════════════════════════════════
+   ⭐ tryEmbed — الحل الجذري لمشكلة sandboxed iframe
+   المواقع العالمية (يوتيوب) تُحمى، والباقي يُترك ليعمل بحرية
+   ═══════════════════════════════════════════════════════════════ */
 function tryEmbed(url){
   return new Promise(resolve => {
     const normalized = normalizeEmbedUrl(url);
     destroyPlayers(); hidePlayerError();
     video.style.display='none'; controls.style.display='none';
     bigPlay.classList.add('hide');
+    
     const iframe = document.createElement('iframe');
     iframe.src = normalized;
-    iframe.setAttribute('sandbox', getSandboxFor(normalized));
+    
+    // تطبيق الحماية فقط على المنصات العالمية التي لا تتأثر
+    // السيرفرات المخصصة ترفض العمل إذا وجدت sandbox
+    if (/youtube\.com|youtu\.be|vimeo\.com|drive\.google\.com|dailymotion\.com/i.test(normalized)) {
+      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation allow-encrypted-media allow-forms');
+    }
+    
     iframe.setAttribute('referrerpolicy', 'origin');
     iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
     iframe.setAttribute('allowfullscreen', 'true');
     iframe.setAttribute('loading', 'eager');
+    
     wrap.insertBefore(iframe, wrap.firstChild);
     currentEmbedFrame = iframe;
+    
     let resolved = false;
     const finish = () => { if (resolved) return; resolved=true; resolve(true); };
     iframe.onload = () => setTimeout(finish, 400);
