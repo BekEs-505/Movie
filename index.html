@@ -461,7 +461,8 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v5.6 — مشغل يعمل بدون أخطاء وبدون إعلانات مزعجة
+   Movie BekEs v5.7 — مشغل احترافي بـ sandbox متوازن
+   يشغّل جميع الروابط + يحظر الإعلانات نهائياً
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 const STREAMS = {
@@ -848,9 +849,11 @@ function tryMPEGTS(url, timeoutMs){
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   ⭐ tryEmbed — الحل النهائي والاحترافي
-   1. تم إزالة sandbox نهائياً لكي تعمل كل السيرفرات بدون أخطاء
-   2. تم إضافة referrerpolicy لمنع تتبع الإعلانات
+   ⭐ tryEmbed — الحل الاحترافي النهائي مع sandbox
+   ─────────────────────────────────────────────────────────────
+   sandbox متوازن:
+   ✅ يشغّل جميع المشغلات (YouTube, vidsrc, filemoon, ok.ru…)
+   ❌ يحظر الإعلانات (التحويل التلقائي، البوب أب الهارب، تلاعب بالصفحة الأم)
    ═══════════════════════════════════════════════════════════════ */
 function tryEmbed(url){
   return new Promise(resolve => {
@@ -860,13 +863,53 @@ function tryEmbed(url){
     bigPlay.classList.add('hide');
     
     const iframe = document.createElement('iframe');
+    
+    /* ┌─────────────────────────────────────────────────────────────┐
+       │ 🔒 sandbox احترافي متوازن                                   │
+       ├─────────────────────────────────────────────────────────────┤
+       │  ✅ مسموح (ضروري لعمل المشغلات):                            │
+       │     • allow-scripts          → تشغيل جافاسكربت              │
+       │     • allow-same-origin      → الكوكيز/localStorage/المصادقة│
+       │     • allow-forms            → نماذج تسجيل الدخول/البحث     │
+       │     • allow-popups           → فتح بوب أب (سيبقى sandboxed) │
+       │     • allow-modals           → alert/confirm (بعض المشغلات) │
+       │     • allow-pointer-lock     → قفل المؤشر للألعاب           │
+       │     • allow-presentation     → Fullscreen / Presentation API│
+       │     • allow-orientation-lock → قفل اتجاه الشاشة للجوال      │
+       │     • allow-downloads        → تحميل الملفات (مشغلات عربية) │
+       │     • allow-top-navigation-by-user-activation               │
+       │        → التنقل للأعلى بنقرة المستخدم فقط (آمن)             │
+       │     • allow-storage-access-by-user-activation               │
+       │        → كوكيز طرف ثالث (ضرورية لـ OAuth embeds)            │
+       ├─────────────────────────────────────────────────────────────┤
+       │  ❌ غير مسموح (لمنع الإعلانات للأبد):                       │
+       │     • allow-top-navigation (بدون user-activation)            │
+       │        → يمنع التحويل التلقائي للصفحة الأم (أخطر إعلان)     │
+       │     • allow-popups-to-escape-sandbox                        │
+       │        → يمنع البوب أب من الهروب إلى سياق عادي (بوب أب دعائي)│
+       └─────────────────────────────────────────────────────────────┘ */
+    iframe.sandbox = [
+      'allow-scripts',
+      'allow-same-origin',
+      'allow-forms',
+      'allow-popups',
+      'allow-modals',
+      'allow-pointer-lock',
+      'allow-presentation',
+      'allow-orientation-lock',
+      'allow-downloads',
+      'allow-top-navigation-by-user-activation',
+      'allow-storage-access-by-user-activation'
+    ].join(' ');
+    
+    /* 🔹 src بعد sandbox دائماً (مهم جداً حتى يطبَّق الـsandbox من البداية) */
     iframe.src = normalized;
     
-    // إزالة sandbox بالكامل لكي لا تظهر رسالة "sandboxed iframe" نهائياً
-    // المتصفح سيقوم تلقائياً بحظر النوافذ المنبثقة التلقائية
+    /* 🔹 no-referrer: يمنع تسريب معلومات الإحالة → يقضي على تتبع الإعلانات */
+    iframe.setAttribute('referrerpolicy', 'no-referrer');
     
-    iframe.setAttribute('referrerpolicy', 'no-referrer'); // حظر إرسال معلومات الإحالة لمنع تتبع الإعلانات
-    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
+    /* 🔹 allow للـPermissions Policy: نحتاج fullscreen/autoplay فقط */
+    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write');
     iframe.setAttribute('allowfullscreen', 'true');
     iframe.setAttribute('loading', 'eager');
     
