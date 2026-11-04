@@ -291,6 +291,12 @@ img{display:block;max-width:100%}
 .modal-social a:hover{background:var(--violet);color:#fff;border-color:var(--violet)}
 .modal-social svg{width:15px;height:15px;fill:currentColor}
 
+/* زر فك الحماية داخل شاشة الخطأ */
+.pe-fallback{margin-top:16px;padding:10px 20px;border-radius:10px;
+  background:rgba(139,92,246,.25);border:1px solid rgba(139,92,246,.6);
+  color:#fff;font-weight:700;font-size:.85rem;transition:.25s}
+.pe-fallback:hover{background:rgba(139,92,246,.45);transform:translateY(-1px)}
+
 @media(max-width:820px){
   :root{--header-h:78px}
   .topbar{padding:0 14px;gap:10px}
@@ -461,8 +467,7 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v5.7 — مشغل احترافي بـ sandbox متوازن
-   يشغّل جميع الروابط + يحظر الإعلانات نهائياً
+   Movie BekEs v5.8 — مشغل ذكي: حماية إعلانات + دعم كامل لكل المصادر
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 const STREAMS = {
@@ -705,6 +710,9 @@ const playerError = document.getElementById('playerError');
 
 let hlsPlayer=null, mpegPlayer=null, isLiveMode=false;
 let currentEmbedFrame=null, allowEmbed=false, playerAttemptToken=0;
+let currentActiveUrl=null, currentActiveType=null;
+let protectAds=true;         // حماية الإعلانات (sandbox ذكي)
+let lastAttemptUsedSandbox=false;
 
 const EMBED_PATTERNS = [
   /vidspeed/i,/vidfast/i,/vidlink/i,/vidsmart/i,/vidplay/i,
@@ -777,6 +785,26 @@ function showPlayerError(msg){
   if (p) p.textContent = msg || 'جرب سيرفراً آخر من القائمة';
   playerError.classList.add('on');
   bigPlay.classList.add('hide');
+  
+  // إزالة أي زر fallback قديم
+  const old = playerError.querySelector('.pe-fallback');
+  if (old) old.remove();
+  
+  // إذا فشل بسبب الحماية → نعطي زر "فك الحماية"
+  if (lastAttemptUsedSandbox) {
+    const btn = document.createElement('button');
+    btn.className = 'pe-fallback';
+    btn.textContent = '⚠ فك الحماية والمحاولة (قد تظهر إعلانات)';
+    btn.addEventListener('click', () => {
+      if (!currentActiveUrl) return;
+      protectAds = false;
+      hidePlayerError();
+      playSource(currentActiveUrl, currentActiveType);
+      // إعادة الحماية تلقائياً بعد 30 ثانية للطلبات القادمة
+      setTimeout(() => { protectAds = true; }, 30000);
+    });
+    playerError.appendChild(btn);
+  }
 }
 function hidePlayerError(){ if (playerError) playerError.classList.remove('on'); }
 
@@ -849,11 +877,46 @@ function tryMPEGTS(url, timeoutMs){
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   ⭐ tryEmbed — الحل الاحترافي النهائي مع sandbox
+   ⭐ sandboxForUrl — استراتيجية Sandbox ذكية لكل مزوّد
    ─────────────────────────────────────────────────────────────
-   sandbox متوازن:
-   ✅ يشغّل جميع المشغلات (YouTube, vidsrc, filemoon, ok.ru…)
-   ❌ يحظر الإعلانات (التحويل التلقائي، البوب أب الهارب، تلاعب بالصفحة الأم)
+   • يوتيوب / فيميو / ديليموشن / Google Drive / منصات آمنة:
+     → بدون sandbox (لأنها ترفض sandbox نهائياً + لا تحتوي إعلانات تحويل)
+   • كل الباقي (vidsrc, filemoon, ok.ru, doodstream…):
+     → sandbox صارم = صفر إعلانات
+       ✅ allow-scripts          → لتشغيل المشغل
+       ✅ allow-same-origin      → للكوكيز والمصادقة (عبر iframe الخاص به فقط)
+       ✅ allow-presentation     → لملء الشاشة
+       ✅ allow-forms            → للنماذج
+       ❌ allow-popups           → يحظر إعلانات البوب أب  ← المفتاح!
+       ❌ allow-modals           → يحظر alert()/confirm() المزعجة
+       ❌ allow-top-navigation   → يحظر تحويل الصفحة الأم (إعلانات redirect)
+       ❌ allow-downloads        → يحظر التحميل التلقائي
+       ❌ allow-popups-to-escape-sandbox → لا يوجد منفذ للهروب
+   ═══════════════════════════════════════════════════════════════ */
+function sandboxForUrl(url){
+  let host = '';
+  try { host = new URL(url).hostname.toLowerCase(); } catch(e) { return null; }
+  
+  // قائمة المواقع الآمنة التي ترفض sandbox (نتعامل معها بدون sandbox)
+  const SAFE_NO_SANDBOX = [
+    'youtube.com','www.youtube.com','m.youtube.com','music.youtube.com','youtu.be','www.youtu.be',
+    'vimeo.com','www.vimeo.com','player.vimeo.com',
+    'dailymotion.com','www.dailymotion.com','dai.ly',
+    'drive.google.com','docs.google.com',
+    'twitch.tv','www.twitch.tv','player.twitch.tv',
+    'facebook.com','www.facebook.com','fb.watch',
+    'instagram.com','www.instagram.com'
+  ];
+  if (SAFE_NO_SANDBOX.some(h => host === h || host.endsWith('.' + h))) {
+    return null;  // بدون sandbox
+  }
+  
+  // كل ما عدا ذلك → sandbox صارم يمنع كل الإعلانات
+  return 'allow-scripts allow-same-origin allow-presentation allow-forms';
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ⭐ tryEmbed — إنشاء iframe مع sandbox ذكي
    ═══════════════════════════════════════════════════════════════ */
 function tryEmbed(url){
   return new Promise(resolve => {
@@ -864,51 +927,19 @@ function tryEmbed(url){
     
     const iframe = document.createElement('iframe');
     
-    /* ┌─────────────────────────────────────────────────────────────┐
-       │ 🔒 sandbox احترافي متوازن                                   │
-       ├─────────────────────────────────────────────────────────────┤
-       │  ✅ مسموح (ضروري لعمل المشغلات):                            │
-       │     • allow-scripts          → تشغيل جافاسكربت              │
-       │     • allow-same-origin      → الكوكيز/localStorage/المصادقة│
-       │     • allow-forms            → نماذج تسجيل الدخول/البحث     │
-       │     • allow-popups           → فتح بوب أب (سيبقى sandboxed) │
-       │     • allow-modals           → alert/confirm (بعض المشغلات) │
-       │     • allow-pointer-lock     → قفل المؤشر للألعاب           │
-       │     • allow-presentation     → Fullscreen / Presentation API│
-       │     • allow-orientation-lock → قفل اتجاه الشاشة للجوال      │
-       │     • allow-downloads        → تحميل الملفات (مشغلات عربية) │
-       │     • allow-top-navigation-by-user-activation               │
-       │        → التنقل للأعلى بنقرة المستخدم فقط (آمن)             │
-       │     • allow-storage-access-by-user-activation               │
-       │        → كوكيز طرف ثالث (ضرورية لـ OAuth embeds)            │
-       ├─────────────────────────────────────────────────────────────┤
-       │  ❌ غير مسموح (لمنع الإعلانات للأبد):                       │
-       │     • allow-top-navigation (بدون user-activation)            │
-       │        → يمنع التحويل التلقائي للصفحة الأم (أخطر إعلان)     │
-       │     • allow-popups-to-escape-sandbox                        │
-       │        → يمنع البوب أب من الهروب إلى سياق عادي (بوب أب دعائي)│
-       └─────────────────────────────────────────────────────────────┘ */
-    iframe.sandbox = [
-      'allow-scripts',
-      'allow-same-origin',
-      'allow-forms',
-      'allow-popups',
-      'allow-modals',
-      'allow-pointer-lock',
-      'allow-presentation',
-      'allow-orientation-lock',
-      'allow-downloads',
-      'allow-top-navigation-by-user-activation',
-      'allow-storage-access-by-user-activation'
-    ].join(' ');
+    // تحديد قيمة sandbox حسب المزوّد
+    const sandboxValue = protectAds ? sandboxForUrl(normalized) : null;
+    lastAttemptUsedSandbox = (sandboxValue !== null);
     
-    /* 🔹 src بعد sandbox دائماً (مهم جداً حتى يطبَّق الـsandbox من البداية) */
+    // ⚠️ يجب تعيين sandbox قبل src حتى يُطبَّق من البداية
+    if (sandboxValue !== null) {
+      iframe.sandbox = sandboxValue;
+    }
+    
     iframe.src = normalized;
     
-    /* 🔹 no-referrer: يمنع تسريب معلومات الإحالة → يقضي على تتبع الإعلانات */
+    // no-referrer يمنع تتبع الإعلانات ويخفي مصدرنا
     iframe.setAttribute('referrerpolicy', 'no-referrer');
-    
-    /* 🔹 allow للـPermissions Policy: نحتاج fullscreen/autoplay فقط */
     iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write');
     iframe.setAttribute('allowfullscreen', 'true');
     iframe.setAttribute('loading', 'eager');
@@ -927,6 +958,10 @@ let currentSources = [], currentSourceIndex = 0;
 
 async function playSource(url, forcedType = null){
   if (!url) return;
+  currentActiveUrl = url;
+  currentActiveType = forcedType;
+  lastAttemptUsedSandbox = false;
+  
   const token = ++playerAttemptToken;
   destroyPlayers(); hidePlayerError();
   loader.classList.add('on'); bigPlay.classList.add('hide');
@@ -1043,6 +1078,7 @@ function openPlayer(data){
   liveBadge.classList.toggle('on', isLiveMode);
   currentSources = data.sources || [];
   currentSourceIndex = 0;
+  protectAds = true;   // إعادة تفعيل الحماية في كل جلسة جديدة
   hidePlayerError();
   sourcesBox.innerHTML = '';
   currentSources.forEach((src, i) => {
@@ -1053,6 +1089,7 @@ function openPlayer(data){
       [...sourcesBox.children].forEach(c=>c.classList.remove('active'));
       b.classList.add('active');
       currentSourceIndex = i;
+      protectAds = true;  // كل تغيير سيرفر يفعّل الحماية
       playSource(src.url, src.type || null);
     });
     sourcesBox.appendChild(b);
@@ -1073,6 +1110,10 @@ function closeModal(){
   loader.classList.remove('on');
   setPlayIcon(false);
   hidePlayerError();
+  protectAds = true;
+  currentActiveUrl = null;
+  currentActiveType = null;
+  lastAttemptUsedSandbox = false;
 }
 document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalBack').addEventListener('click', closeModal);
