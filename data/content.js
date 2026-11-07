@@ -1,7 +1,247 @@
-/* Movie BekEs — © 2025 B6_7E | بيكاس */
+/* Movie BekEs — © 2025 B6_7E | بيكاس
+   ⚠️ احفظ بترميز UTF-8 (بدون BOM)
+*/
 window.__CINEMA_DATA__ = {
   "movies": [
+    {
+      "title": "فيلم Spree",
+      "year": 2020,
+      "genre": "إثارة",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOWM5ZGU3ZjctY2U4NS00ZGE0LWI1OGYtYmZkYzk2NzAyNWJjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_FMjpg_UX1000_.jpg",
+      "story": "سائقًا مهووسًا بوسائل التواصل الاجتماعي، يلعب دوره جو كيري، والذي في محاولة ليصبح فيروسيًا يقوم بالبث المباشر لنفسه وهو يقتل الركاب.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://rubyvidhub.com/embed-i2ea2arw773o.html" }
+      ]
+    },
+    {
+      "title": "فيلم Fight Club",
+      "year": 1999,
+      "genre": "دراما",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+      "story": "إدوارد يتعرض لضغوطٍ حتى يصل به الحال إلى أنه لا يستطيع النوم لفتراتٍ طويلة، لكنه يجد بعض السلام في جلسات العلاج النفسي الجماعي. يتعرف إدوارد على أحد الأشخاص وهو تايلر ديردن الذي يحرره من تعلقه بالأشياء التي تستعبده، ثم يحرره من خوفه من الناس. يقومان معًا بإنشاء نادي القتال الذي يجذب الكثير من الأفراد المحبطين الذين يقومون بإخراج طاقة غضبهم وكرههم للعالم في القتال.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://1vid.xyz/embed-shsz4n4od8zc.html" }
+      ]
+    },
+    {
+      "title": "فيلم Hardcore Henry",
+      "year": 2015,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjIzNTcwMDc3Nl5BMl5BanBnXkFtZTgwNzU5NTY5NzE@._V1_.jpg",
+      "story": "تدور أحداث الفيلم حول تعرض الزوج هنري لإطلاق النار عليه واختطاف زوجته من أحد الأشخاص الأقوياء. يمتلك المختطف جيشًا كبيرًا من المرتزقة الداعمين له، ورغم هذا يحاول هنري إنقاذ زوجته والانتقام من المختطفين.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://uqload.net/embed-u76go1qgdld0.html" }
+      ]
+    },
+    {
+      "title": "فيلم John Henry",
+      "year": 2020,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWJhNDA4NTMtMmE3ZS00NjU2LWFjMjYtYjYzNWYwZTIxOTQzXkEyXkFqcGc@._V1_.jpg",
+      "story": "يحاول جون تيري الابتعاد عن ماضيه الإجرامي السابق وبداية حياة جديدة، ولكن حينما يتقابل طريقه مع مراهقين يحاولان الهرب من زعيم عصابات، يعود جون لماضيه من أجل منحهما المستقبل.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://vk.com/video_ext.php?oid=745497736&id=456247945&hash=e6a16c8a6c2647ff" }
+      ]
+    },
+    {
+      "title": "فيلم Takers",
+      "year": 2010,
+      "genre": "أكشن",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzFhM2ZkMzMtMjZkNy00MmM4LTg0ZTItNWFhMjIwMTg3YjBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تتناول أحداث الفيلم محاولة مجموعة من اللصوص السطو على بنك، وعند توصلهم إلى خطة محكمة للقيام بسرقة 20 مليون دولار يعترضهم شرطي صارم وتتوالى الأحداث.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://m.myseed.tv/vids.php?t=b63309fa4eed781859133c99838b670802ba4d7fc07a05782e357178469db7bf" }
+      ]
+    },
+    {
+      "title": "فيلم Brick Mansions",
+      "year": 2014,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://play-lh.googleusercontent.com/YY_hrw51gOKIcaiU4ZrwTygrkxOtXhWuQXjJjVKpW2SxFuCluD-HNmpgmyf7mjF9HsM",
+      "story": "شرطي سري في ديترويت يتنقل في حي خطير محاط بجدار احتواء بمساعدة محتال سابق من أجل إسقاط زعيم الجريمة ومخططه لتدمير المدينة بأكملها.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://uqload.co/embed-5dttwcgzxwgb.html" }
+      ]
+    },
+    {
+      "title": "فيلم Buddy",
+      "year": 2026,
+      "genre": "كوميديا",
+      "rating": 8,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWRkNWJhNjYtY2FkZC00YjFlLWFjMjUtZGFhMjc5MGYyODE4XkEyXkFqcGc@._V1_.jpg",
+      "story": "وحيد القرن البرتقالي الساحر والمغني يحتجز طاقمه كرهينة في بُعد سريالي لبرنامج تلفزيوني، بينما يصبح مجنونًا أكثر فأكثر.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }
+      ]
+    },
+    {
+      "title": "جريمة في زمالك",
+      "year": 2026,
+      "genre": "دراما",
+      "rating": 9,
+      "poster": "https://shahid.mbc.net/mediaObject/15d9e2cd-6992-4c0a-91a5-ab2d7184b821?width=273&version=1&type=webp",
+      "story": "تدور حول جريمة غامضة وتتابع رحلة البحث عن الحقيقة، حيث تقدم شخصية «نادية» التي تجد أموالًا وتستولي عليها، وتتطور الأحداث في إطار درامي تشويقي مكثف.",
+      "sources": [
+        { "label": "الحلقة الاولى", "url": "https://1vid.xyz/embed-j5sz37eohb9p.html" },
+        { "label": "الحلقة الثانية", "url": "https://1vid.xyz/embed-9lmih9jem0pq.html" },
+        { "label": "الحلقة الثالثة", "url": "https://1vid.xyz/embed-oh1p3guxqxte.html" }
+      ]
+    },
+    {
+      "title": "حبتين",
+      "year": 2026,
+      "genre": "دراما",
+      "rating": 9,
+      "poster": "https://etbilarabi.com/sites/default/files/inline-images/2026/hbtyn-nayf.jpeg",
+      "story": "بعد خروجه من السجن إثر حادث تفجير مميت، يحاول أحمد أن يبدأ من جديد ويواجه ماضياً لم يُغلق، وفي مقدمته حبيبته السابقة. لكن ظهور ضابط في الداخلية وعرض غامض يعيدانه خلف الطارة، هذه المرة وس",
+      "sources": [
+        { "label": "الحلقة الاولى", "url": "https://1vid.xyz/embed-cn00u7okcn8o.html" },
+        { "label": "الحلقة الثانية", "url": "https://1vid.xyz/embed-xhtdb6lvmswk.html" },
+        { "label": "الحلقة الثالثة", "url": "https://1vid.xyz/embed-gzw5xlky1b34.html" },
+        { "label": "الحلقة الرابعة", "url": "https://1vid.xyz/embed-gzw5xlky1b34.html" },
+        { "label": "الحلقة الخامسة", "url": "https://1vid.xyz/embed-8edyhk1chjnu.html" },
+        { "label": "الحلقة السادسة", "url": "https://1vid.xyz/embed-ynnsugyamni9.html" },
+        { "label": "الحلقة السابعة", "url": "https://1vid.xyz/embed-ynnsugyamni9.html" },
+        { "label": "الحلقة الثامنة والاخيرة", "url": "https://1vid.xyz/embed-41rvf8pmqxdi.html" }
+      ]
+    },
+    {
+      "title": "فيلم The Pacifier",
+      "year": 2005,
+      "genre": "كوميديا",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTE5MTcxOTQxNl5BMl5BanBnXkFtZTYwMzk3Nzg2._V1_FMjpg_UX1000_.jpg",
+      "story": "بعد اختطافه، يموت العالم هوارد ويصاب الشرطي شين، وتكتشف السلطات وجود صندوق أمانات يخص العالم هوارد في زيوريخ، فيصطحب النقيب بيل فوسيت أرملة العالم هوارد السيدة جولي إلى هناك، بينما يكلف شين برعاية وحماية أطفال العالم الخمسة الذين تتراوح أعمارهم من سن المراهقة إلى طفل رضيع.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://uqload.co/embed-5no3ucdyqufo.html" }
+      ]
+    },
+    {
+      "title": "فيلم Crank",
+      "year": 2006,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjg0NjAxNDY4MV5BMl5BanBnXkFtZTcwODA5MjMzMw@@._V1_.jpg",
+      "story": "يعمل تشيف تشيلويس قاتلًا محترفًا لحساب منظمةٍ إجرامية، ولكنه يسأم من عمله ويقرر أن يعتزل ليعيش في هدوءٍ مع صديقته إيف التي لا تعلم شيئًا عن طبيعة عمله. ولكن ما لا يعلمه تشيف أن عدوه اللدود فيرونا قد حقنه بسمٍ خاص يُسمى كوكيتل بكين، سوف يؤدي هذا السم لموته إذا انخفض عدد ضربات قلبه عن رقمٍ محدد. يصبح على تشيف أن يجاهد من أجل الحفاظ على حياته، ويبدأ مع صديقيه كارليتو ودوك مهمة صعبة لحماية إيف، والانتقام من فيرونا، وإيجاد المصل اللازم لإيقاف مفعول السم.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://morencius.com/embed/8czcnmcclyq7" }
+      ]
+    },
+    {
+      "title": "فيلم You Got Served",
+      "year": 2004,
+      "genre": "دراما",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjkzZWZjZmMtMjliYi00Zjg5LTkzZGYtYzZkOGNhNzc5MzQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+      "story": "من أجل تحقيق حلمهم في افتتاح استوديو تسجيل، يجب على الصديقين أوماريون وهيوستن أن يفوزا أولاً في مسابقة الرقص بمدينتهم، والمنافسة شرسة ضد مجموعة من راقصي الشارع.",
+      "sources": [
+        { "label": "مشاهدة", "url": "https://uqload.co/embed-yn0sdqqrff75.html" }
+      ]
+    },
+    {
+      "title": "فيلم Terrifier 2026",
+      "year": 2026,
+      "genre": "رعب",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/I/812G1eT1W8L.jpg",
+      "story": "شخص مجنون يرتدي زي مهرج، يرهب ثلاث شابات في ليلة عيد الهالوين وكل شخص آخر يقف في طريقه، حتى في النهاية يقتل نفسه قبل أن يُقبض عليه، ومن ثم يُكتشف أمرًا مدهشًا.",
+      "sources": [
+        { "label": "الجزء الاول", "url": "https://www.vidspeed.org/embed-xezpn5cajs17.html" },
+        { "label": "الجزء الثاني", "url": "https://www.vidspeed.org/embed-nawwzy8wj9dd.html" },
+        { "label": "الجزء الثالث", "url": "https://www.vidspeed.org/embed-5nrn2g07ctag.html" }
+      ]
+    }
   ],
   "channels": [
+    {
+      "name": "Bein Sport 1",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 1 — بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "Bein Sport 2",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 2 — بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "Bein Sport 3",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 3 — بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "Bein Sport 4",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 4 — بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "Bein Sport 5",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 5 — بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "Bein Sport 6",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 6 — بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "ثمانية 1 4K",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 1 4K - بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "ثمانية 1 HD",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 1 HD - بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "ثمانية 2 4K",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 2 4K - بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "ثمانية 2 HD",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 2 HD - بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "ثمانية 3 4K",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 3 4K - بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    },
+    {
+      "name": "ثمانية 3 HD",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 3 HD - بث مباشر",
+      "sources": [{ "label": "سيرفر مباشر", "url": "https://mixdrop.ps/e/owwdln3whlpmro" }]
+    }
   ]
 };
