@@ -4,159 +4,98 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Movie BekEs </title>
-<script src="data/content.js" onerror="void 0"></script>
+<script src="data/content-b64.js" onerror="window.__b64Failed=true"></script>
+<script src="data/content.js" onerror="window.__contentJsFailed1=true"></script>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mpegts.js@1.7.3/dist/mpegts.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#06060a;--panel:#101018;--panel2:#171722;
-  --text:#f2f2f7;--muted:#8f8fa8;
-  --violet:#8b5cf6;--cyan:#22d3ee;--pink:#ec4899;--gold:#fbbf24;
-  --header-h:88px;
-}
+:root{--bg:#06060a;--panel:#101018;--panel2:#171722;--text:#f2f2f7;--muted:#8f8fa8;--violet:#8b5cf6;--cyan:#22d3ee;--pink:#ec4899;--gold:#fbbf24;--header-h:88px}
 html{scroll-behavior:smooth}
 body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-top:var(--header-h);overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
-  radial-gradient(55% 45% at 12% 0%,rgba(139,92,246,.18),transparent 62%),
-  radial-gradient(45% 45% at 88% 15%,rgba(34,211,238,.12),transparent 62%),
-  radial-gradient(60% 55% at 50% 100%,rgba(236,72,153,.08),transparent 65%)}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(55% 45% at 12% 0%,rgba(139,92,246,.18),transparent 62%),radial-gradient(45% 45% at 88% 15%,rgba(34,211,238,.12),transparent 62%),radial-gradient(60% 55% at 50% 100%,rgba(236,72,153,.08),transparent 65%)}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 img{display:block;max-width:100%}
-.topbar{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:1000;
-  display:flex;align-items:center;gap:24px;padding:0 32px;background:#0a0a12;
-  border-bottom:1px solid rgba(255,255,255,.06);box-shadow:0 4px 22px rgba(0,0,0,.55)}
+.topbar{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:1000;display:flex;align-items:center;gap:24px;padding:0 32px;background:#0a0a12;border-bottom:1px solid rgba(255,255,255,.06);box-shadow:0 4px 22px rgba(0,0,0,.55)}
 .logo-wrap{display:flex;flex-direction:column;line-height:1;gap:4px}
-.logo{font-size:1.85rem;font-weight:900;letter-spacing:-.8px;
-  background:linear-gradient(135deg,var(--violet),var(--cyan) 55%,var(--pink));
-  -webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
-.logo-by{font-size:.68rem;font-weight:700;color:var(--muted);opacity:.85;
-  letter-spacing:.5px;font-family:'Courier New',monospace}
+.logo{font-size:1.85rem;font-weight:900;letter-spacing:-.8px;background:linear-gradient(135deg,var(--violet),var(--cyan) 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.logo-by{font-size:.68rem;font-weight:700;color:var(--muted);opacity:.85;letter-spacing:.5px;font-family:'Courier New',monospace}
 .nav{display:flex;gap:22px;font-size:.95rem;color:var(--muted);font-weight:600}
 .nav a{transition:.2s;position:relative;padding:6px 0}
 .nav a:hover,.nav a.active{color:#fff}
-.nav a.active::after{content:"";position:absolute;bottom:0;right:0;left:0;height:2px;
-  background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:2px}
+.nav a.active::after{content:"";position:absolute;bottom:0;right:0;left:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:2px}
 .search{margin-inline-start:auto;position:relative}
-.search input{width:240px;padding:10px 42px 10px 16px;border-radius:12px;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
-  color:#fff;font-size:.9rem;outline:none;transition:.3s}
-.search input:focus{border-color:rgba(139,92,246,.7);
-  box-shadow:0 0 0 4px rgba(139,92,246,.15);width:280px;background:rgba(255,255,255,.08)}
+.search input{width:240px;padding:10px 42px 10px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#fff;font-size:.9rem;outline:none;transition:.3s}
+.search input:focus{border-color:rgba(139,92,246,.7);box-shadow:0 0 0 4px rgba(139,92,246,.15);width:280px;background:rgba(255,255,255,.08)}
 .search svg{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);opacity:.6;pointer-events:none}
 .welcome{position:relative;z-index:1;padding:70px 32px 50px;text-align:center;overflow:hidden}
-.welcome::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);
-  width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 70%);
-  filter:blur(40px);z-index:-1;animation:pulse 6s ease-in-out infinite}
+.welcome::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 70%);filter:blur(40px);z-index:-1;animation:pulse 6s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:translateX(-50%) scale(1);opacity:.8}50%{transform:translateX(-50%) scale(1.15);opacity:1}}
 .welcome-inner{max-width:820px;margin:0 auto}
-.welcome-badge{display:inline-block;padding:8px 18px;border-radius:999px;
-  font-size:.82rem;font-weight:800;letter-spacing:.5px;
-  background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(34,211,238,.25));
-  border:1px solid rgba(139,92,246,.4);color:#c4b5fd;margin-bottom:22px;
-  animation:fadeUp .7s ease .1s both}
-.welcome-title{font-size:clamp(2.5rem,7vw,4.8rem);font-weight:900;line-height:1.05;
-  letter-spacing:-1.5px;margin-bottom:18px;
-  background:linear-gradient(120deg,#ffffff,#a78bfa,#22d3ee,#ec4899,#ffffff);
-  background-size:300% 300%;-webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:shimmer 8s ease infinite,fadeUp .8s ease .2s both}
-.welcome-sub{font-size:1rem;color:#c4b5fd;font-weight:700;margin-bottom:20px;
-  font-family:'Courier New',monospace;letter-spacing:2px;animation:fadeUp .8s ease .3s both}
-.welcome-desc{font-size:1.05rem;line-height:1.9;color:#bdbdd0;max-width:640px;
-  margin:0 auto 32px;animation:fadeUp .8s ease .35s both}
+.welcome-badge{display:inline-block;padding:8px 18px;border-radius:999px;font-size:.82rem;font-weight:800;letter-spacing:.5px;background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(34,211,238,.25));border:1px solid rgba(139,92,246,.4);color:#c4b5fd;margin-bottom:22px;animation:fadeUp .7s ease .1s both}
+.welcome-title{font-size:clamp(2.5rem,7vw,4.8rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;background:linear-gradient(120deg,#ffffff,#a78bfa,#22d3ee,#ec4899,#ffffff);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 8s ease infinite,fadeUp .8s ease .2s both}
+.welcome-sub{font-size:1rem;color:#c4b5fd;font-weight:700;margin-bottom:20px;font-family:'Courier New',monospace;letter-spacing:2px;animation:fadeUp .8s ease .3s both}
+.welcome-desc{font-size:1.05rem;line-height:1.9;color:#bdbdd0;max-width:640px;margin:0 auto 32px;animation:fadeUp .8s ease .35s both}
 .welcome-stats{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;animation:fadeUp .8s ease .5s both}
 .welcome-stats > div{display:flex;flex-direction:column;align-items:center;gap:4px}
-.welcome-stats strong{font-size:1.7rem;font-weight:900;
-  background:linear-gradient(135deg,var(--violet),var(--cyan));
-  -webkit-background-clip:text;background-clip:text;color:transparent}
+.welcome-stats strong{font-size:1.7rem;font-weight:900;background:linear-gradient(135deg,var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
 .welcome-stats span{font-size:.85rem;color:var(--muted)}
 @keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .section{position:relative;z-index:1;padding:26px 0 42px}
 .section-head{display:flex;align-items:center;justify-content:space-between;padding:0 32px;margin-bottom:16px}
 .section-head h2{font-size:1.15rem;font-weight:800;color:#d8d8ec;display:flex;align-items:center;gap:8px}
-.section-head h2::before{content:"";width:3px;height:16px;border-radius:3px;
-  background:linear-gradient(180deg,var(--violet),var(--cyan));opacity:.85}
+.section-head h2::before{content:"";width:3px;height:16px;border-radius:3px;background:linear-gradient(180deg,var(--violet),var(--cyan));opacity:.85}
 .section-head .hint{color:var(--muted);font-size:.8rem}
-
-/* ═══════════════════════════════════════════════
-   إصلاح سلايدر القنوات (Native Smooth Scroll)
-   ═══════════════════════════════════════════════ */
-.channels-bar{display:flex;gap:16px;overflow-x:auto;padding:12px 32px 24px;
-  scrollbar-width:none;-ms-overflow-style:none;
-  -webkit-overflow-scrolling:touch; /* سحب ناعم جداً على iOS */
-  scroll-snap-type:x proximity; /* التصاق ذكي */
-  scroll-padding:0 32px;
-  user-select:none;-webkit-user-select:none}
+.data-status{position:fixed;bottom:16px;inset-inline-start:16px;z-index:9999;padding:12px 18px;border-radius:12px;font-size:.85rem;font-weight:700;background:linear-gradient(135deg,rgba(139,92,246,.95),rgba(34,211,238,.9));color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.55);max-width:360px;display:none;line-height:1.6;border:1px solid rgba(255,255,255,.2)}
+.data-status.show{display:block;animation:fadeUp .4s ease}
+.data-status.err{background:linear-gradient(135deg,rgba(239,68,68,.95),rgba(220,38,38,.9))}
+.data-status.ok{background:linear-gradient(135deg,rgba(34,197,94,.95),rgba(22,163,74,.9))}
+.data-status .ds-title{font-size:.92rem;font-weight:900;margin-bottom:4px}
+.data-status .ds-body{font-size:.78rem;opacity:.95;font-weight:600}
+.data-status .ds-close{position:absolute;top:6px;inset-inline-end:8px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.3);font-size:.9rem;line-height:22px;text-align:center}
+.channels-bar{display:flex;gap:16px;overflow-x:auto;padding:12px 32px 24px;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scroll-padding:0 32px;user-select:none;-webkit-user-select:none}
 .channels-bar::-webkit-scrollbar{display:none}
-.channel-card{flex-shrink:0;width:120px;text-align:center;transition:.25s;cursor:pointer;
-  scroll-snap-align:start}
-.channel-icon{position:relative;width:120px;height:120px;border-radius:18px;
-  display:flex;align-items:center;justify-content:center;font-size:2.6rem;overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 25px rgba(0,0,0,.5);
-  transition:.3s cubic-bezier(.2,.9,.3,1.4);background:#1a1a24}
+.channel-card{flex-shrink:0;width:120px;text-align:center;transition:.25s;cursor:pointer;scroll-snap-align:start}
+.channel-icon{position:relative;width:120px;height:120px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 25px rgba(0,0,0,.5);transition:.3s cubic-bezier(.2,.9,.3,1.4);background:#1a1a24}
 .channel-icon img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
-.channel-icon::after{content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.2),transparent 60%);
-  pointer-events:none;z-index:1}
-.channel-card:hover .channel-icon{transform:translateY(-6px) scale(1.05);
-  box-shadow:0 20px 40px rgba(139,92,246,.45);border-color:rgba(139,92,246,.7)}
-.channel-live{position:absolute;top:8px;right:8px;z-index:2;padding:3px 8px;border-radius:6px;
-  font-size:.65rem;font-weight:900;background:#ef4444;color:#fff;letter-spacing:.5px;
-  display:flex;align-items:center;gap:4px}
+.channel-icon::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.2),transparent 60%);pointer-events:none;z-index:1}
+.channel-card:hover .channel-icon{transform:translateY(-6px) scale(1.05);box-shadow:0 20px 40px rgba(139,92,246,.45);border-color:rgba(139,92,246,.7)}
+.channel-live{position:absolute;top:8px;right:8px;z-index:2;padding:3px 8px;border-radius:6px;font-size:.65rem;font-weight:900;background:#ef4444;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:4px}
 .channel-live::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1s infinite}
 @keyframes blink{50%{opacity:.3}}
-.channel-name{margin-top:10px;font-size:.85rem;font-weight:700;color:#d8d8ec;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
+.channel-name{margin-top:10px;font-size:.85rem;font-weight:700;color:#d8d8ec;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .movie-list{display:flex;flex-direction:column;gap:16px;padding:0 32px}
-.movie-item{display:flex;gap:22px;padding:18px;border-radius:18px;background:var(--panel);
-  border:1px solid rgba(255,255,255,.06);cursor:pointer;transition:.3s cubic-bezier(.2,.9,.3,1);
-  position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:auto 291px}
-.movie-item::before{content:"";position:absolute;inset:0;opacity:0;
-  background:linear-gradient(90deg,transparent,rgba(139,92,246,.08));transition:.3s;pointer-events:none}
-.movie-item:hover{background:var(--panel2);border-color:rgba(139,92,246,.5);
-  transform:translateX(-4px);box-shadow:0 15px 40px rgba(139,92,246,.2)}
+.movie-item{display:flex;gap:22px;padding:18px;border-radius:18px;background:var(--panel);border:1px solid rgba(255,255,255,.06);cursor:pointer;transition:.3s cubic-bezier(.2,.9,.3,1);position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:auto 291px}
+.movie-item::before{content:"";position:absolute;inset:0;opacity:0;background:linear-gradient(90deg,transparent,rgba(139,92,246,.08));transition:.3s;pointer-events:none}
+.movie-item:hover{background:var(--panel2);border-color:rgba(139,92,246,.5);transform:translateX(-4px);box-shadow:0 15px 40px rgba(139,92,246,.2)}
 .movie-item:hover::before{opacity:1}
-.movie-poster{width:170px;height:255px;border-radius:14px;object-fit:cover;flex-shrink:0;
-  box-shadow:0 8px 20px rgba(0,0,0,.5);transition:.3s;background:#1a1a24}
+.movie-poster{width:170px;height:255px;border-radius:14px;object-fit:cover;flex-shrink:0;box-shadow:0 8px 20px rgba(0,0,0,.5);transition:.3s;background:#1a1a24}
 .movie-item:hover .movie-poster{transform:scale(1.04);box-shadow:0 12px 30px rgba(139,92,246,.35)}
 .movie-content{flex:1;display:flex;flex-direction:column;justify-content:center;gap:11px;min-width:0}
 .movie-title{font-size:1.3rem;font-weight:900;color:#fff}
 .movie-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:.85rem;color:var(--muted)}
 .movie-meta .rating{color:var(--gold);font-weight:800}
-.movie-meta .pill{padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700;
-  background:rgba(139,92,246,.18);color:#c4b5fd;border:1px solid rgba(139,92,246,.35)}
-.movie-story{color:#a4a4bd;font-size:.92rem;line-height:1.7;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.movie-meta .pill{padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700;background:rgba(139,92,246,.18);color:#c4b5fd;border:1px solid rgba(139,92,246,.35)}
+.movie-story{color:#a4a4bd;font-size:.92rem;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .movie-actions{display:flex;gap:10px;margin-top:6px}
-.movie-play-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;
-  font-weight:800;font-size:.88rem;background:linear-gradient(135deg,var(--violet),var(--cyan));
-  color:#0b0b14;transition:.25s}
+.movie-play-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:800;font-size:.88rem;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#0b0b14;transition:.25s}
 .movie-item:hover .movie-play-btn{box-shadow:0 8px 20px rgba(34,211,238,.4);transform:translateY(-1px)}
 .movie-play-btn svg{width:14px;height:14px;fill:#0b0b14}
 .no-results{text-align:center;padding:60px 20px;color:var(--muted);font-size:1rem}
 .movie-sentinel{padding:34px 20px;text-align:center;color:var(--muted);font-size:.88rem;min-height:60px}
 .loading-more{display:inline-flex;align-items:center;gap:10px}
-.loading-more::before{content:"";width:18px;height:18px;border-radius:50%;
-  border:2px solid rgba(255,255,255,.18);border-top-color:var(--cyan);animation:spin 1s linear infinite}
+.loading-more::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.18);border-top-color:var(--cyan);animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.end-message{display:inline-block;padding:8px 22px;border-radius:999px;
-  background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);
-  color:#c4b5fd;font-weight:700}
-.footer{position:relative;z-index:1;margin-top:60px;padding:50px 32px 30px;
-  border-top:1px solid rgba(255,255,255,.06);
-  background:linear-gradient(180deg,transparent,rgba(139,92,246,.05))}
-.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;
-  align-items:center;justify-content:space-between;gap:24px}
+.end-message{display:inline-block;padding:8px 22px;border-radius:999px;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);color:#c4b5fd;font-weight:700}
+.footer{position:relative;z-index:1;margin-top:60px;padding:50px 32px 30px;border-top:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg,transparent,rgba(139,92,246,.05))}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
 .footer-brand{display:flex;flex-direction:column;gap:8px}
 .footer-brand .logo{font-size:1.6rem}
 .footer-brand p{color:var(--muted);font-size:.85rem;line-height:1.7;max-width:340px}
 .socials{display:flex;gap:12px;flex-wrap:wrap}
-.socials a{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;
-  justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  color:#d8d8ec;transition:.3s}
+.socials a{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#d8d8ec;transition:.3s}
 .socials a:hover{transform:translateY(-4px);color:#fff;box-shadow:0 10px 25px rgba(0,0,0,.4)}
 .socials svg{width:20px;height:20px;fill:currentColor}
 .socials a.snap:hover{background:#fffc00;color:#000;border-color:#fffc00}
@@ -164,139 +103,75 @@ img{display:block;max-width:100%}
 .socials a.tiktok:hover{background:#000;color:#fff;border-color:#25f4ee}
 .socials a.tg:hover{background:#229ED9;border-color:#229ED9}
 .socials a.tw:hover{background:#fff;color:#000;border-color:#fff}
-.footer-bottom{max-width:1200px;margin:30px auto 0;padding-top:24px;
-  border-top:1px solid rgba(255,255,255,.06);text-align:center;
-  color:var(--muted);font-size:.82rem;line-height:2}
-.footer-credit{display:inline-block;font-family:'Courier New',monospace;font-weight:800;
-  font-size:.85rem;background:linear-gradient(135deg,var(--violet),var(--cyan));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  letter-spacing:1px;padding:4px 12px;border-radius:6px;
-  border:1px solid rgba(139,92,246,.25);margin-top:6px}
-
-/* ═══════════════════════════════════════════════
-   Modal Top Bar (إصلاح زر الإغلاق)
-   ═══════════════════════════════════════════════ */
-.modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;
-  justify-content:center;padding:18px;background:rgba(0,0,0,.82);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.footer-bottom{max-width:1200px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:var(--muted);font-size:.82rem;line-height:2}
+.footer-credit{display:inline-block;font-family:'Courier New',monospace;font-weight:800;font-size:.85rem;background:linear-gradient(135deg,var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px;padding:4px 12px;border-radius:6px;border:1px solid rgba(139,92,246,.25);margin-top:6px}
+.modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .modal.open{display:flex;animation:fade .28s ease}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-
-.modal-inner{width:min(1020px,100%);max-height:94vh;display:flex;flex-direction:column;
-  background:linear-gradient(180deg,#14141f,#0a0a11);border:1px solid rgba(255,255,255,.09);
-  border-radius:22px;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.85);
-  animation:pop .35s cubic-bezier(.2,.9,.3,1.2); overflow:hidden;}
+.modal-inner{width:min(1020px,100%);max-height:94vh;display:flex;flex-direction:column;background:linear-gradient(180deg,#14141f,#0a0a11);border:1px solid rgba(255,255,255,.09);border-radius:22px;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.85);animation:pop .35s cubic-bezier(.2,.9,.3,1.2);overflow:hidden}
 @keyframes pop{from{transform:scale(.94) translateY(14px);opacity:0}to{transform:none;opacity:1}}
-
-/* الشريط العلوي الجديد */
-.modal-top-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;
-  background:#14141f;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;}
-.btn-top{display:flex;align-items:center;justify-content:center;gap:6px;
-  padding:8px 16px;border-radius:10px;font-size:.9rem;font-weight:700;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  color:#fff;transition:.2s;}
-.btn-top:hover{background:rgba(255,255,255,.14);}
-#modalClose:hover{background:#e11d48;border-color:#e11d48;}
-.modal-title-sm{margin-inline-start:auto;font-size:.9rem;font-weight:800;color:var(--muted);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:50%;}
-
-.player-wrap{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;
-  flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.05);}
+.modal-top-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#14141f;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0}
+.btn-top{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 16px;border-radius:10px;font-size:.9rem;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;transition:.2s}
+.btn-top:hover{background:rgba(255,255,255,.14)}
+#modalClose:hover{background:#e11d48;border-color:#e11d48}
+.modal-title-sm{margin-inline-start:auto;font-size:.9rem;font-weight:800;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:50%}
+.player-wrap{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.05)}
 .player-wrap video{width:100%;height:100%;display:block;background:#000}
-.player-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;
-  display:block;background:#000;z-index:2;border-radius:0}
-.player-wrap .loader{position:absolute;inset:0;display:none;align-items:center;
-  justify-content:center;background:rgba(0,0,0,.65);z-index:5;backdrop-filter:blur(4px)}
+.player-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#000;z-index:2;border-radius:0}
+.player-wrap .loader{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.65);z-index:5;backdrop-filter:blur(4px)}
 .player-wrap .loader.on{display:flex}
-.spinner{width:52px;height:52px;border-radius:50%;border:3px solid rgba(255,255,255,.15);
-  border-top-color:var(--cyan);border-right-color:var(--violet);animation:spin 1s linear infinite}
-.player-error{position:absolute;inset:0;display:none;flex-direction:column;
-  align-items:center;justify-content:center;
-  background:linear-gradient(180deg,rgba(10,10,18,.95),rgba(6,6,10,.98));
-  backdrop-filter:blur(8px);z-index:8;text-align:center;padding:24px;animation:fade .3s ease}
+.spinner{width:52px;height:52px;border-radius:50%;border:3px solid rgba(255,255,255,.15);border-top-color:var(--cyan);border-right-color:var(--violet);animation:spin 1s linear infinite}
+.player-error{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(10,10,18,.95),rgba(6,6,10,.98));backdrop-filter:blur(8px);z-index:8;text-align:center;padding:24px;animation:fade .3s ease}
 .player-error.on{display:flex}
-.player-error .pe-icon{width:66px;height:66px;border-radius:50%;
-  background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);
-  display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:18px}
+.player-error .pe-icon{width:66px;height:66px;border-radius:50%;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:18px}
 .player-error h3{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:8px}
 .player-error p{font-size:.9rem;color:var(--muted);line-height:1.6;max-width:360px}
-.big-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1);
-  width:82px;height:82px;border-radius:50%;z-index:4;
-  background:linear-gradient(135deg,var(--violet),var(--cyan));
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 20px 50px rgba(34,211,238,.55);transition:.3s}
+.big-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1);width:82px;height:82px;border-radius:50%;z-index:4;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(34,211,238,.55);transition:.3s}
 .big-play:hover{transform:translate(-50%,-50%) scale(1.1)}
 .big-play svg{width:34px;height:34px;fill:#0b0b14;margin-inline-start:4px}
 .big-play.hide{opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.5)}
-.live-badge{position:absolute;top:14px;right:14px;z-index:7;padding:6px 12px;border-radius:8px;
-  font-size:.75rem;font-weight:900;background:#ef4444;color:#fff;
-  display:none;align-items:center;gap:6px;box-shadow:0 4px 15px rgba(239,68,68,.5)}
+.live-badge{position:absolute;top:14px;right:14px;z-index:7;padding:6px 12px;border-radius:8px;font-size:.75rem;font-weight:900;background:#ef4444;color:#fff;display:none;align-items:center;gap:6px;box-shadow:0 4px 15px rgba(239,68,68,.5)}
 .live-badge.on{display:flex}
 .live-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1s infinite}
-.controls{position:absolute;bottom:0;right:0;left:0;z-index:6;padding:26px 18px 14px;
-  background:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.5) 55%,transparent);
-  opacity:0;transition:.3s}
+.controls{position:absolute;bottom:0;right:0;left:0;z-index:6;padding:26px 18px 14px;background:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.5) 55%,transparent);opacity:0;transition:.3s}
 .player-wrap:hover .controls,.player-wrap.show-controls .controls{opacity:1}
-.progress{position:relative;height:6px;border-radius:99px;cursor:pointer;
-  background:rgba(255,255,255,.18);margin-bottom:12px}
-.progress .buffer{position:absolute;inset:0;border-radius:99px;
-  background:rgba(255,255,255,.14);width:0}
-.progress .filled{position:absolute;inset:0;border-radius:99px;width:0;
-  background:linear-gradient(90deg,var(--violet),var(--cyan));
-  box-shadow:0 0 12px rgba(34,211,238,.7)}
-.progress .thumb{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;
-  background:#fff;transform:translate(-50%,-50%);left:0;
-  box-shadow:0 0 10px rgba(34,211,238,.9);opacity:0;transition:.2s;pointer-events:none}
+.progress{position:relative;height:6px;border-radius:99px;cursor:pointer;background:rgba(255,255,255,.18);margin-bottom:12px}
+.progress .buffer{position:absolute;inset:0;border-radius:99px;background:rgba(255,255,255,.14);width:0}
+.progress .filled{position:absolute;inset:0;border-radius:99px;width:0;background:linear-gradient(90deg,var(--violet),var(--cyan));box-shadow:0 0 12px rgba(34,211,238,.7)}
+.progress .thumb{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);left:0;box-shadow:0 0 10px rgba(34,211,238,.9);opacity:0;transition:.2s;pointer-events:none}
 .progress:hover .thumb{opacity:1}
 .ctrl-row{display:flex;align-items:center;gap:14px;color:#fff}
-.ctrl-row button{width:38px;height:38px;border-radius:10px;display:flex;
-  align-items:center;justify-content:center;transition:.2s}
+.ctrl-row button{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;transition:.2s}
 .ctrl-row button:hover{background:rgba(255,255,255,.14)}
 .ctrl-row svg{width:20px;height:20px;fill:#fff}
 .ctrl-row .time{font-size:.85rem;color:#d5d5e6;font-variant-numeric:tabular-nums}
 .spacer{flex:1}
 .vol-range{width:0;opacity:0;transition:.3s;accent-color:var(--cyan);cursor:pointer}
 .vol-range.show{width:90px;opacity:1}
-
-.modal-body{padding:26px 30px 30px; overflow-y:auto; flex-grow:1;}
+.modal-body{padding:26px 30px 30px;overflow-y:auto;flex-grow:1}
 .modal-body::-webkit-scrollbar{width:8px}
 .modal-body::-webkit-scrollbar-thumb{background:rgba(139,92,246,.55);border-radius:8px}
-.modal-body h2{font-size:1.7rem;font-weight:900;margin-bottom:10px;
-  background:linear-gradient(120deg,#fff,#bdbdf0);
-  -webkit-background-clip:text;background-clip:text;color:transparent}
-.m-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
-  margin-bottom:18px;color:var(--muted);font-size:.9rem}
+.modal-body h2{font-size:1.7rem;font-weight:900;margin-bottom:10px;background:linear-gradient(120deg,#fff,#bdbdf0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.m-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px;color:var(--muted);font-size:.9rem}
 .m-meta .rating{color:var(--gold);font-weight:800}
-.m-meta .pill{padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;
-  background:rgba(139,92,246,.18);color:#c4b5fd;border:1px solid rgba(139,92,246,.35)}
-.m-meta .live-tag{padding:4px 12px;border-radius:999px;font-size:.78rem;
-  font-weight:900;background:#ef4444;color:#fff}
+.m-meta .pill{padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;background:rgba(139,92,246,.18);color:#c4b5fd;border:1px solid rgba(139,92,246,.35)}
+.m-meta .live-tag{padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:900;background:#ef4444;color:#fff}
 .modal-body p.story{line-height:1.9;color:#cfcfe3;font-size:1rem;margin-bottom:22px}
 .sources-title{font-size:.85rem;color:var(--muted);margin-bottom:10px;font-weight:700}
 .sources{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
-.src-btn{padding:10px 18px;border-radius:12px;font-size:.85rem;font-weight:700;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-  color:#d8d8ec;transition:.25s}
+.src-btn{padding:10px 18px;border-radius:12px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#d8d8ec;transition:.25s}
 .src-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(139,92,246,.6)}
-.src-btn.active{background:linear-gradient(135deg,var(--violet),var(--cyan));
-  color:#0b0b14;border-color:transparent;box-shadow:0 8px 20px rgba(139,92,246,.45)}
-.modal-social{display:flex;align-items:center;justify-content:space-between;
-  gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(255,255,255,.07)}
+.src-btn.active{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#0b0b14;border-color:transparent;box-shadow:0 8px 20px rgba(139,92,246,.45)}
+.modal-social{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(255,255,255,.07)}
 .modal-social .rights{color:var(--muted);font-size:.8rem;font-family:'Courier New',monospace}
 .modal-social .row{display:flex;align-items:center;gap:8px}
 .modal-social .lbl{font-size:.8rem;color:var(--muted);margin-inline-end:4px}
-.modal-social a{width:34px;height:34px;border-radius:9px;display:flex;
-  align-items:center;justify-content:center;background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);color:#d8d8ec;transition:.25s}
+.modal-social a{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#d8d8ec;transition:.25s}
 .modal-social a:hover{background:var(--violet);color:#fff;border-color:var(--violet)}
 .modal-social svg{width:15px;height:15px;fill:currentColor}
-
-/* زر فك الحماية داخل شاشة الخطأ */
-.pe-fallback{margin-top:16px;padding:10px 20px;border-radius:10px;
-  background:rgba(139,92,246,.25);border:1px solid rgba(139,92,246,.6);
-  color:#fff;font-weight:700;font-size:.85rem;transition:.25s}
+.pe-fallback{margin-top:16px;padding:10px 20px;border-radius:10px;background:rgba(139,92,246,.25);border:1px solid rgba(139,92,246,.6);color:#fff;font-weight:700;font-size:.85rem;transition:.25s}
 .pe-fallback:hover{background:rgba(139,92,246,.45);transform:translateY(-1px)}
-
+.player-error .pe-hint{font-size:.78rem;color:#fbbf24;margin-top:10px;max-width:340px;line-height:1.5;opacity:.85}
 @media(max-width:820px){
   :root{--header-h:78px}
   .topbar{padding:0 14px;gap:10px}
@@ -325,12 +200,12 @@ img{display:block;max-width:100%}
   .footer{padding:36px 20px 24px;margin-top:40px}
   .footer-inner{justify-content:center;text-align:center}
   .footer-brand{align-items:center}
-  
   .modal{padding:0}
-  .modal-inner{border-radius:0;max-height:100vh;height:100vh;}
-  .player-wrap{border-radius:0;}
+  .modal-inner{border-radius:0;max-height:100vh;height:100vh}
+  .player-wrap{border-radius:0}
   .modal-body{padding:20px 18px 24px}
   .modal-body h2{font-size:1.3rem}
+  .data-status{inset-inline-start:10px;inset-inline-end:10px;max-width:none;bottom:10px}
 }
 </style>
 </head>
@@ -353,6 +228,12 @@ img{display:block;max-width:100%}
     <input type="text" id="searchInput" placeholder="ابحث عن فيلم..." />
   </div>
 </header>
+
+<div id="dataStatus" class="data-status">
+  <button class="ds-close" onclick="this.parentElement.classList.remove('show')">✕</button>
+  <div class="ds-title" id="dsTitle">…</div>
+  <div class="ds-body" id="dsBody">…</div>
+</div>
 
 <section class="welcome">
   <div class="welcome-inner">
@@ -410,7 +291,6 @@ img{display:block;max-width:100%}
 
 <div class="modal" id="modal">
   <div class="modal-inner">
-    <!-- الشريط العلوي الجديد -->
     <div class="modal-top-bar">
       <button class="btn-top" id="modalClose">✕ إغلاق</button>
       <button class="btn-top" id="modalBack">↩ رجوع</button>
@@ -467,9 +347,38 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v5.8 — مشغل ذكي: حماية إعلانات + دعم كامل لكل المصادر
+   Movie BekEs v6.6 — مشغل مع استثناء VIP
+   استثناءات مطلوبة (بدون sandbox - تعمل بحرية):
+   ✅ Vipserver, Vidroba, Vidspeeds, 1vid, d0o0d, hgcloud
+   بقية المواقع: sandbox صارم (حظر إعلانات)
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
+
+/* 🎯 قائمة المواقع المستثناة (VIP) — لن يُطبق عليها sandbox أبداً */
+const VIP_NO_SANDBOX_DOMAINS = [
+  // Vipserver
+  'vipserver.co','vipserver.tv','vipserver.com','vipserver.me',
+  'vipserver.net','vipserver.xyz','vipserver.org','www.vipserver.co',
+  'www.vipserver.tv','www.vipserver.com',
+  // Vidroba
+  'vidroba.com','vidroba.xyz','vidroba.to','vidroba.cc',
+  'vidroba.net','vidroba.co','vidroba.me','www.vidroba.com',
+  // Vidspeeds
+  'vidspeeds.com','vidspeeds.xyz','vidspeeds.to','vidspeeds.net',
+  'vidspeeds.co','www.vidspeeds.com',
+  // 1vid
+  '1vid.xyz','1vid.com','1vid.to','1vid.net','1vid.cc',
+  '1vid.co','1vid.me','www.1vid.xyz','www.1vid.com',
+  // d0o0d (doodstream)
+  'd0o0d.com','d0o0d.to','d0o0d.xyz','d0o0d.net',
+  'dood.to','dood.ws','dood.re','dood.sh','dood.so','dood.la',
+  'dood.pm','dood.wf','doodstream.com',
+  'www.dood.to','www.dood.ws','www.doodstream.com',
+  // hgcloud
+  'hgcloud.to','hgcloud.com','hgcloud.xyz','hgcloud.net',
+  'hgcloud.co','hgcloud.me','www.hgcloud.to','www.hgcloud.com'
+];
+
 const STREAMS = {
   muxHLS:   "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
   appleHLS: "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
@@ -494,12 +403,129 @@ const CHANNELS = [
     stream:STREAMS.appleHLS, desc:"سينما برو — بث سينمائي." }
 ];
 
+function normalizeSource(s) {
+  if (!s) return null;
+  if (typeof s === 'string') {
+    const url = s.trim();
+    if (!/^(https?:)?\/\//.test(url)) return null;
+    return { label: 'سيرفر', url };
+  }
+  if (typeof s === 'object') {
+    const url = (s.url || s.file || s.src || s.stream || s.link || s.href || s.video || '').toString().trim();
+    if (!url) return null;
+    return {
+      label: s.label || s.name || s.quality || s.title || 'سيرفر',
+      url,
+      type: s.type || null
+    };
+  }
+  return null;
+}
+function normalizeSourceList(raw) {
+  if (!raw) return [];
+  if (Array.isArray(raw)) return raw.map(normalizeSource).filter(Boolean);
+  const one = normalizeSource(raw);
+  return one ? [one] : [];
+}
+
+function looksLikeMojibake(str) {
+  if (!str || typeof str !== 'string') return false;
+  return /[\u00C2-\u00C3][\u0080-\u00BF]/.test(str) || /(?:Ã|Â|Ø£|Ø¥|Ø§|Ù„)/.test(str);
+}
+
+function normalizeMovie(m, index) {
+  if (!m || typeof m !== 'object') return null;
+  let title = (m.title || m.name || m.original_title || m.arabic_title || m.name_ar || '').toString().trim();
+  let sources = normalizeSourceList(m.sources || m.servers || m.links || m.streams || m.urls || m.url || m.stream || m.link);
+  if (!title && sources.length === 0) return null;
+  if (!title) title = 'بدون عنوان';
+  if (looksLikeMojibake(title)) {
+    console.warn('[Data] ⚠️ النص يبدو مشوهاً (Mojibake):', title);
+  }
+  return {
+    title,
+    year:    m.year    || m.release_year || m.releaseDate || m.date || '',
+    genre:   m.genre   || m.category     || m.type       || 'عام',
+    rating:  m.rating  || m.vote_average || m.score      || '—',
+    poster:  m.poster  || m.image        || m.thumbnail  || m.cover || m.posterUrl || '',
+    story:   m.story   || m.overview     || m.description|| m.plot  || m.desc || '',
+    sources,
+    _index: index
+  };
+}
+
+function normalizeChannel(c, index) {
+  if (!c || typeof c !== 'object') return null;
+  let name = (c.name || c.title || c.channel || '').toString().trim();
+  let sources = normalizeSourceList(c.sources || c.servers || c.links || c.streams || c.stream || c.url);
+  if (!name && sources.length === 0) return null;
+  if (!name) name = 'قناة ' + (index + 1);
+  return {
+    name,
+    poster: c.poster || c.image || c.logo || c.icon || c.thumbnail || '',
+    c1: c.c1 || c.color1 || c.color || '#8b5cf6',
+    c2: c.c2 || c.color2 || c.color || '#6366f1',
+    desc: c.desc || c.description || c.info || (name + ' — بث مباشر'),
+    sources,
+    stream: sources[0]?.url || ''
+  };
+}
+
+const dataStatusEl = document.getElementById('dataStatus');
+const dsTitleEl    = document.getElementById('dsTitle');
+const dsBodyEl     = document.getElementById('dsBody');
+let statusTimer = null;
+function setDataStatus(kind, title, body, autoHideMs) {
+  if (!dataStatusEl) return;
+  dataStatusEl.className = 'data-status show' + (kind === 'error' ? ' err' : kind === 'ok' ? ' ok' : '');
+  dsTitleEl.textContent = title;
+  dsBodyEl.textContent = body || '';
+  clearTimeout(statusTimer);
+  if (autoHideMs) {
+    statusTimer = setTimeout(() => dataStatusEl.classList.remove('show'), autoHideMs);
+  }
+}
+
+function extractExternalData() {
+  if (window.__CINEMA_DATA__ && typeof window.__CINEMA_DATA__ === 'object') {
+    return { data: window.__CINEMA_DATA__, from: 'window.__CINEMA_DATA__' };
+  }
+  if (window.CINEMA_DATA && typeof window.CINEMA_DATA === 'object') {
+    return { data: window.CINEMA_DATA, from: 'window.CINEMA_DATA' };
+  }
+  if ((window.MOVIES || window.movies) || (window.CHANNELS || window.channels)) {
+    return {
+      data: {
+        movies:   window.MOVIES   || window.movies   || [],
+        channels: window.CHANNELS || window.channels || []
+      },
+      from: 'window.MOVIES/CHANNELS'
+    };
+  }
+  try {
+    if (typeof movies !== 'undefined' || typeof channels !== 'undefined') {
+      return {
+        data: {
+          movies:   (typeof movies   !== 'undefined') ? movies   : [],
+          channels: (typeof channels !== 'undefined') ? channels : []
+        },
+        from: 'global movies/channels'
+      };
+    }
+  } catch (e) { }
+  return null;
+}
+
 const channelsBar = document.getElementById('channelsBar');
 const channelsCountEl = document.getElementById('channelsCount');
 
 function buildChannelsBar() {
   channelsBar.innerHTML = '';
   channelsCountEl.textContent = `${CHANNELS.length} قناة`;
+  if (CHANNELS.length === 0) {
+    channelsBar.innerHTML = '<div style="color:#8f8fa8;padding:20px;text-align:center;width:100%">لا توجد قنوات بعد</div>';
+    return;
+  }
   CHANNELS.forEach(ch => {
     const card = document.createElement('div');
     card.className = 'channel-card';
@@ -515,8 +541,11 @@ function buildChannelsBar() {
       <div class="channel-name">${ch.name}</div>`;
     card.addEventListener('click', () => {
       const srcs = (ch.sources && ch.sources.length) ? ch.sources
-        : (ch.stream ? [{label:'سيرفر مباشر', url:ch.stream}] : []);
-      if (!srcs.length) return;
+        : (ch.stream ? normalizeSourceList(ch.stream) : []);
+      if (!srcs.length) {
+        setDataStatus('error', '⚠ لا يوجد سيرفر', 'هذه القناة لا تحتوي على أي رابط بث.', 4000);
+        return;
+      }
       openPlayer({ title: ch.name, meta:`<span class="live-tag">● مباشر</span>`,
         story: ch.desc || `قناة ${ch.name} — بث مباشر`, sources: srcs, isLive: true });
     });
@@ -541,15 +570,19 @@ function batchSize(){
 function createMovieCard(m){
   const item = document.createElement('div');
   item.className = 'movie-item';
+  const posterFallback = `https://picsum.photos/seed/${encodeURIComponent(m.title||'movie')}/500/750`;
+  const poster = m.poster || posterFallback;
+  const sourcesCount = (m.sources || []).length;
   item.innerHTML = `
-    <img class="movie-poster" src="${m.poster||''}" alt="${m.title||''}" loading="lazy"
-         onerror="this.src='https://picsum.photos/seed/${encodeURIComponent(m.title||'movie')}/500/750'">
+    <img class="movie-poster" src="${poster}" alt="${m.title||''}" loading="lazy"
+         onerror="this.onerror=null;this.src='${posterFallback}'">
     <div class="movie-content">
-      <div class="movie-title">${m.title||''}</div>
+      <div class="movie-title">${m.title||'بدون عنوان'}</div>
       <div class="movie-meta">
         <span class="pill">${m.genre||'عام'}</span>
         <span>${m.year||''}</span>
         <span class="rating">★ ${m.rating||'—'}</span>
+        <span style="color:#22d3ee">${sourcesCount} سيرفر</span>
       </div>
       <div class="movie-story">${m.story||''}</div>
       <div class="movie-actions">
@@ -560,17 +593,25 @@ function createMovieCard(m){
       </div>
     </div>`;
   item.addEventListener('click', () => {
+    const srcs = (m.sources && m.sources.length) ? m.sources : [];
+    if (!srcs.length) {
+      setDataStatus('error', '⚠ لا يوجد سيرفر', `الفيلم "${m.title}" لا يحتوي على أي رابط.`, 5000);
+      return;
+    }
     openPlayer({
       title: m.title,
       meta: `<span class="pill">${m.genre||'عام'}</span> <span>${m.year||''}</span> <span class="rating">★ ${m.rating||'—'}</span>`,
-      story: m.story||'', sources: m.sources||[], isLive: false
+      story: m.story||'', sources: srcs, isLive: false
     });
   });
   return item;
 }
 function updateSentinel(){
   const src = currentSource();
-  if (src.length === 0){ sentinelEl.innerHTML=''; return; }
+  if (src.length === 0){
+    sentinelEl.innerHTML = '<div style="color:#8f8fa8">لا توجد أفلام لعرضها</div>';
+    return;
+  }
   if (displayedCount >= src.length){
     sentinelEl.innerHTML = '<div class="end-message">✨ وصلت إلى نهاية القائمة</div>';
   } else {
@@ -632,46 +673,86 @@ buildChannelsBar();
 renderNextBatch();
 updateCount();
 
-(async function loadExternalData(){
-  let moviesLoaded=false, channelsLoaded=false, source='البيانات الافتراضية';
-  if (window.__CINEMA_DATA__){
-    const data = window.__CINEMA_DATA__;
-    if (Array.isArray(data.movies) && data.movies.length){
-      MOVIES.length=0; data.movies.forEach(m=>MOVIES.push(m)); moviesLoaded=true;
+async function loadExternalData() {
+  const report = { movies: 0, channels: 0, sources: [], errors: [] };
+  let externalMovies = null, externalChannels = null;
+
+  const ext = extractExternalData();
+  if (ext) {
+    report.sources.push(ext.from);
+    if (Array.isArray(ext.data.movies)) {
+      const norm = ext.data.movies.map(normalizeMovie).filter(Boolean);
+      if (norm.length) { externalMovies = norm; report.movies = norm.length; }
     }
-    if (Array.isArray(data.channels) && data.channels.length){
-      CHANNELS.length=0; data.channels.forEach(c=>CHANNELS.push(c)); channelsLoaded=true;
+    if (Array.isArray(ext.data.channels)) {
+      const norm = ext.data.channels.map(normalizeChannel).filter(Boolean);
+      if (norm.length) { externalChannels = norm; report.channels = norm.length; }
     }
-    if (moviesLoaded||channelsLoaded) source='data/content.js ✅';
   }
-  if (!moviesLoaded){
+
+  if (!externalMovies) {
     try {
-      const r = await fetch('data/movies.json?t='+Date.now(),{cache:'no-store'});
-      if (r.ok){ const d = await r.json();
-        if (d && Array.isArray(d.movies) && d.movies.length){
-          MOVIES.length=0; d.movies.forEach(m=>MOVIES.push(m));
-          moviesLoaded=true; source='data/movies.json';
-        }
+      const r = await fetch('data/movies.json?t=' + Date.now(), { cache: 'no-store' });
+      if (r.ok) {
+        const txt = await r.text();
+        const clean = txt.replace(/^\uFEFF/, '');
+        const d = JSON.parse(clean);
+        const list = Array.isArray(d) ? d : (d.movies || d.items || d.data || []);
+        const norm = list.map(normalizeMovie).filter(Boolean);
+        if (norm.length) { externalMovies = norm; report.movies = norm.length; report.sources.push('movies.json'); }
       }
-    } catch(e){}
+    } catch (e) { report.errors.push('movies.json: ' + e.message.slice(0, 60)); }
   }
-  if (!channelsLoaded){
+
+  if (!externalChannels) {
     try {
-      const r = await fetch('data/channels.json?t='+Date.now(),{cache:'no-store'});
-      if (r.ok){ const d = await r.json();
-        if (d && Array.isArray(d.channels) && d.channels.length){
-          CHANNELS.length=0; d.channels.forEach(c=>CHANNELS.push(c)); channelsLoaded=true;
-        }
+      const r = await fetch('data/channels.json?t=' + Date.now(), { cache: 'no-store' });
+      if (r.ok) {
+        const txt = await r.text();
+        const clean = txt.replace(/^\uFEFF/, '');
+        const d = JSON.parse(clean);
+        const list = Array.isArray(d) ? d : (d.channels || d.items || d.data || []);
+        const norm = list.map(normalizeChannel).filter(Boolean);
+        if (norm.length) { externalChannels = norm; report.channels = norm.length; report.sources.push('channels.json'); }
       }
-    } catch(e){}
+    } catch (e) { report.errors.push('channels.json: ' + e.message.slice(0, 60)); }
   }
-  if (moviesLoaded){
+
+  const moviesApplied   = externalMovies   && externalMovies.length   > 0;
+  const channelsApplied = externalChannels && externalChannels.length > 0;
+
+  if (moviesApplied) {
+    MOVIES.length = 0;
+    externalMovies.forEach(m => MOVIES.push(m));
     searchInput.value=''; searchQuery=''; filteredMovies=null;
     movieList.innerHTML=''; displayedCount=0;
     renderNextBatch(); updateCount();
   }
-  if (channelsLoaded) buildChannelsBar();
-})();
+  if (channelsApplied) {
+    CHANNELS.length = 0;
+    externalChannels.forEach(c => CHANNELS.push(c));
+    buildChannelsBar();
+  }
+
+  const totalReport = `📥 الأفلام: ${report.movies} | 📺 القنوات: ${report.channels}`;
+  const sourceList  = report.sources.length ? `من: ${report.sources.join(', ')}` : 'لم يُعثر على ملفات خارجية';
+
+  if (moviesApplied || channelsApplied) {
+    setDataStatus('ok', '✅ تم تحميل البيانات', totalReport + ' — ' + sourceList, 5000);
+    console.log('[Data] ✅ Loaded:', report);
+  } else {
+    if (window.__contentJsFailed1 || window.__b64Failed) {
+      setDataStatus('error', '⚠ لم يتم العثور على content.js',
+        'تأكد من رفع الملف إلى مجلد data/ أو الجذر. الحالي: البيانات الافتراضية فقط.', 12000);
+    } else if (report.errors.length) {
+      setDataStatus('error', '⚠ تعذر تحميل البيانات الخارجية',
+        report.errors.slice(0,2).join(' • ') + ' — تُعرض الآن البيانات الافتراضية.', 12000);
+    }
+    console.warn('[Data] ❌ No external data. Report:', report);
+  }
+}
+
+loadExternalData();
 
 document.querySelectorAll('.nav a').forEach(a => {
   a.addEventListener('click', e => {
@@ -689,7 +770,6 @@ document.querySelectorAll('.nav a').forEach(a => {
   });
 });
 
-/* ═════ المشغل ═════ */
 const video    = document.getElementById('video');
 const wrap     = document.getElementById('playerWrap');
 const loader   = document.getElementById('loader');
@@ -711,10 +791,11 @@ const playerError = document.getElementById('playerError');
 let hlsPlayer=null, mpegPlayer=null, isLiveMode=false;
 let currentEmbedFrame=null, allowEmbed=false, playerAttemptToken=0;
 let currentActiveUrl=null, currentActiveType=null;
-let protectAds=true;         // حماية الإعلانات (sandbox ذكي)
+let protectAds=true;
 let lastAttemptUsedSandbox=false;
 
 const EMBED_PATTERNS = [
+  /vipserver/i,/vidroba/i,/vidspeeds/i,/1vid/i,/d0o0d/i,/hgcloud/i,
   /vidspeed/i,/vidfast/i,/vidlink/i,/vidsmart/i,/vidplay/i,
   /vidsrc\.(?:me|to|xyz|cc|in|net|pro|io)/i,
   /mixdrop\.(?:ps|co|to|ag|sx|bz|ch|vc|nl|pm)/i,
@@ -753,6 +834,7 @@ function normalizeEmbedUrl(url){
   } catch(e){}
   return url;
 }
+
 function detectStreamType(url){
   if (!url) return 'auto';
   const u = url.toLowerCase();
@@ -768,6 +850,16 @@ function detectStreamType(url){
   if (looksLikeHtmlPage(url)) return 'embed';
   return 'auto';
 }
+
+function checkMixedContent(url) {
+  if (typeof location === 'undefined') return false;
+  if (location.protocol === 'https:' && /^http:\/\//i.test(url)) {
+    console.warn('[Player] ⚠ Mixed content blocked:', url);
+    return true;
+  }
+  return false;
+}
+
 function destroyEmbed(){
   if (currentEmbedFrame){ try{currentEmbedFrame.remove();}catch(e){} currentEmbedFrame=null; }
   try{video.style.display='';}catch(e){}
@@ -779,18 +871,21 @@ function destroyPlayers(){
   try{video.pause(); video.removeAttribute('src'); video.load();}catch(e){}
   destroyEmbed();
 }
-function showPlayerError(msg){
+
+function showPlayerError(msg, hint){
   if (!playerError) return;
   const p = playerError.querySelector('p');
   if (p) p.textContent = msg || 'جرب سيرفراً آخر من القائمة';
+  playerError.querySelectorAll('.pe-hint, .pe-fallback').forEach(el=>el.remove());
+  if (hint) {
+    const hintEl = document.createElement('div');
+    hintEl.className = 'pe-hint';
+    hintEl.textContent = hint;
+    playerError.appendChild(hintEl);
+  }
   playerError.classList.add('on');
   bigPlay.classList.add('hide');
   
-  // إزالة أي زر fallback قديم
-  const old = playerError.querySelector('.pe-fallback');
-  if (old) old.remove();
-  
-  // إذا فشل بسبب الحماية → نعطي زر "فك الحماية"
   if (lastAttemptUsedSandbox) {
     const btn = document.createElement('button');
     btn.className = 'pe-fallback';
@@ -800,7 +895,6 @@ function showPlayerError(msg){
       protectAds = false;
       hidePlayerError();
       playSource(currentActiveUrl, currentActiveType);
-      // إعادة الحماية تلقائياً بعد 30 ثانية للطلبات القادمة
       setTimeout(() => { protectAds = true; }, 30000);
     });
     playerError.appendChild(btn);
@@ -877,27 +971,21 @@ function tryMPEGTS(url, timeoutMs){
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   ⭐ sandboxForUrl — استراتيجية Sandbox ذكية لكل مزوّد
-   ─────────────────────────────────────────────────────────────
-   • يوتيوب / فيميو / ديليموشن / Google Drive / منصات آمنة:
-     → بدون sandbox (لأنها ترفض sandbox نهائياً + لا تحتوي إعلانات تحويل)
-   • كل الباقي (vidsrc, filemoon, ok.ru, doodstream…):
-     → sandbox صارم = صفر إعلانات
-       ✅ allow-scripts          → لتشغيل المشغل
-       ✅ allow-same-origin      → للكوكيز والمصادقة (عبر iframe الخاص به فقط)
-       ✅ allow-presentation     → لملء الشاشة
-       ✅ allow-forms            → للنماذج
-       ❌ allow-popups           → يحظر إعلانات البوب أب  ← المفتاح!
-       ❌ allow-modals           → يحظر alert()/confirm() المزعجة
-       ❌ allow-top-navigation   → يحظر تحويل الصفحة الأم (إعلانات redirect)
-       ❌ allow-downloads        → يحظر التحميل التلقائي
-       ❌ allow-popups-to-escape-sandbox → لا يوجد منفذ للهروب
+   🎯 sandboxForUrl — استثناء VIP
    ═══════════════════════════════════════════════════════════════ */
 function sandboxForUrl(url){
   let host = '';
   try { host = new URL(url).hostname.toLowerCase(); } catch(e) { return null; }
-  
-  // قائمة المواقع الآمنة التي ترفض sandbox (نتعامل معها بدون sandbox)
+
+  // ✅ 1) المواقع المستثناة (VIP) — بدون sandbox نهائياً
+  for (const vip of VIP_NO_SANDBOX_DOMAINS) {
+    if (host === vip || host.endsWith('.' + vip)) {
+      console.log('[Sandbox] ✅ VIP exception (no sandbox):', host);
+      return null;
+    }
+  }
+
+  // ✅ 2) المواقع الآمنة المعروفة — بدون sandbox
   const SAFE_NO_SANDBOX = [
     'youtube.com','www.youtube.com','m.youtube.com','music.youtube.com','youtu.be','www.youtu.be',
     'vimeo.com','www.vimeo.com','player.vimeo.com',
@@ -908,16 +996,13 @@ function sandboxForUrl(url){
     'instagram.com','www.instagram.com'
   ];
   if (SAFE_NO_SANDBOX.some(h => host === h || host.endsWith('.' + h))) {
-    return null;  // بدون sandbox
+    return null;
   }
-  
-  // كل ما عدا ذلك → sandbox صارم يمنع كل الإعلانات
+
+  // ❌ 3) كل الباقي — sandbox صارم (حظر إعلانات)
   return 'allow-scripts allow-same-origin allow-presentation allow-forms';
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   ⭐ tryEmbed — إنشاء iframe مع sandbox ذكي
-   ═══════════════════════════════════════════════════════════════ */
 function tryEmbed(url){
   return new Promise(resolve => {
     const normalized = normalizeEmbedUrl(url);
@@ -925,20 +1010,16 @@ function tryEmbed(url){
     video.style.display='none'; controls.style.display='none';
     bigPlay.classList.add('hide');
     
-    const iframe = document.createElement('iframe');
-    
-    // تحديد قيمة sandbox حسب المزوّد
-    const sandboxValue = protectAds ? sandboxForUrl(normalized) : null;
-    lastAttemptUsedSandbox = (sandboxValue !== null);
-    
-    // ⚠️ يجب تعيين sandbox قبل src حتى يُطبَّق من البداية
-    if (sandboxValue !== null) {
-      iframe.sandbox = sandboxValue;
+    if (checkMixedContent(normalized)) {
+      showPlayerError('لا يمكن تشغيل رابط HTTP على موقع HTTPS.', 'جرّب سيرفراً برابط https://');
+      return resolve(false);
     }
     
+    const iframe = document.createElement('iframe');
+    const sandboxValue = protectAds ? sandboxForUrl(normalized) : null;
+    lastAttemptUsedSandbox = (sandboxValue !== null);
+    if (sandboxValue !== null) iframe.sandbox = sandboxValue;
     iframe.src = normalized;
-    
-    // no-referrer يمنع تتبع الإعلانات ويخفي مصدرنا
     iframe.setAttribute('referrerpolicy', 'no-referrer');
     iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write');
     iframe.setAttribute('allowfullscreen', 'true');
@@ -957,16 +1038,26 @@ function tryEmbed(url){
 let currentSources = [], currentSourceIndex = 0;
 
 async function playSource(url, forcedType = null){
-  if (!url) return;
+  if (!url) {
+    showPlayerError('لا يوجد رابط في هذا السيرفر.');
+    return;
+  }
   currentActiveUrl = url;
   currentActiveType = forcedType;
   lastAttemptUsedSandbox = false;
+  
+  if (checkMixedContent(url)) {
+    loader.classList.remove('on');
+    showPlayerError('رابط HTTP محظور على موقع HTTPS.', 'استخدم رابط https:// من السيرفر.');
+    return;
+  }
   
   const token = ++playerAttemptToken;
   destroyPlayers(); hidePlayerError();
   loader.classList.add('on'); bigPlay.classList.add('hide');
   let type = forcedType || detectStreamType(url);
   if (type === 'embed' && !allowEmbed) type = 'auto';
+  console.log('[Player] Trying', type, '→', url);
   let ok = false;
   try {
     if (type === 'embed') {
@@ -988,8 +1079,12 @@ async function playSource(url, forcedType = null){
   } catch(e){ ok = false; }
   if (token !== playerAttemptToken) return;
   loader.classList.remove('on');
-  if (ok){ bigPlay.classList.add('hide'); hidePlayerError(); }
-  else { showPlayerError('جرب سيرفراً آخر من القائمة'); }
+  if (ok){ bigPlay.classList.add('hide'); hidePlayerError(); console.log('[Player] ✅ Success'); }
+  else {
+    console.warn('[Player] ❌ Failed:', url);
+    showPlayerError('جرب سيرفراً آخر من القائمة',
+      'الأسباب الشائعة: الرابط معطّل • نوع الملف غير مدعوم • CORS • HTTP على HTTPS');
+  }
 }
 
 video.addEventListener('loadedmetadata',()=>{loader.classList.remove('on'); updateTime();});
@@ -1076,11 +1171,14 @@ function openPlayer(data){
   isLiveMode         = !!data.isLive;
   allowEmbed         = !isLiveMode;
   liveBadge.classList.toggle('on', isLiveMode);
-  currentSources = data.sources || [];
+  currentSources = (data.sources || []).map(normalizeSource).filter(Boolean);
   currentSourceIndex = 0;
-  protectAds = true;   // إعادة تفعيل الحماية في كل جلسة جديدة
+  protectAds = true;
   hidePlayerError();
   sourcesBox.innerHTML = '';
+  if (currentSources.length === 0) {
+    sourcesBox.innerHTML = '<div style="color:#ef4444;padding:10px">⚠ لا توجد سيرفرات لهذا العنصر</div>';
+  }
   currentSources.forEach((src, i) => {
     const b = document.createElement('button');
     b.className = 'src-btn' + (i === 0 ? ' active' : '');
@@ -1089,7 +1187,7 @@ function openPlayer(data){
       [...sourcesBox.children].forEach(c=>c.classList.remove('active'));
       b.classList.add('active');
       currentSourceIndex = i;
-      protectAds = true;  // كل تغيير سيرفر يفعّل الحماية
+      protectAds = true;
       playSource(src.url, src.type || null);
     });
     sourcesBox.appendChild(b);
@@ -1127,7 +1225,6 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// 🛡️ حماية إضافية: منع السيرفر من إعادة توجيه الصفحة (إعلانات التحويل)
 window.addEventListener('beforeunload', (e) => {
   if (modal.classList.contains('open') && currentEmbedFrame) {
     e.preventDefault();
