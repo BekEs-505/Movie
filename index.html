@@ -159,7 +159,7 @@ img{display:block;max-width:100%}
 .modal-body p.story{line-height:1.9;color:#cfcfe3;font-size:1rem;margin-bottom:22px}
 .sources-title{font-size:.85rem;color:var(--muted);margin-bottom:10px;font-weight:700}
 .sources{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
-.src-btn{padding:10px 18px;border-radius:12px;font-size:.85rem;font-weight:700;min-width:44px;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#d8d8ec;transition:.25s}
+.src-btn{padding:10px 18px;border-radius:12px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#d8d8ec;transition:.25s}
 .src-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(139,92,246,.6)}
 .src-btn.active{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#0b0b14;border-color:transparent;box-shadow:0 8px 20px rgba(139,92,246,.45)}
 .modal-social{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(255,255,255,.07)}
@@ -328,7 +328,7 @@ img{display:block;max-width:100%}
       <h2 id="mTitle">—</h2>
       <div class="m-meta" id="mMeta"></div>
       <p class="story" id="mStory">—</p>
-      <div class="sources-title">اختر السيرفر / الجودة :</div>
+      <div class="sources-title">استمتع :</div>
       <div class="sources" id="sources"></div>
       <div class="modal-social">
         <div class="rights">© 2025 Movie BekEs · B6_7E | بيكاس</div>
@@ -347,41 +347,31 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v6.7 — استثناء موسّع + إخفاء الإشعار الأخضر
+   Movie BekEs v7.0
+   ✅ استثناء Sandbox فقط للمواقع التي طلبتها
+   ✅ حظر صارم (allow-scripts allow-same-origin) للباقي
+   ✅ عرض أسماء السيرفرات كما كتبتها في content.js
+   ✅ لا إشعار أخضر عند التحميل
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 
-/* 🎯 قائمة المواقع المستثناة (VIP) — لن يُطبق عليها sandbox */
+/* 🎯 قائمة المواقع المستثناة — فقط ما طلبته */
 const VIP_NO_SANDBOX_DOMAINS = [
-  // Vipserver
+  // ===== 6 مواقع من طلبك السابق =====
   'vipserver.co','vipserver.tv','vipserver.com','vipserver.me',
   'vipserver.net','vipserver.xyz','vipserver.org',
-  // Vidroba
   'vidroba.com','vidroba.xyz','vidroba.to','vidroba.cc',
   'vidroba.net','vidroba.co','vidroba.me',
-  // Vidspeeds
-  'vidspeeds.com','vidspeeds.xyz','vidspeeds.to','vidspeeds.net',
-  'vidspeeds.co',
-  // 1vid
-  '1vid.xyz','1vid.com','1vid.to','1vid.net','1vid.cc',
-  '1vid.co','1vid.me',
-  // d0o0d + doodstream
+  'vidspeeds.com','vidspeeds.xyz','vidspeeds.to','vidspeeds.net','vidspeeds.co',
+  '1vid.xyz','1vid.com','1vid.to','1vid.net','1vid.cc','1vid.co','1vid.me',
   'd0o0d.com','d0o0d.to','d0o0d.xyz','d0o0d.net',
-  'dood.to','dood.ws','dood.re','dood.sh','dood.so','dood.la',
-  'dood.pm','dood.wf','doodstream.com',
-  // hgcloud
-  'hgcloud.to','hgcloud.com','hgcloud.xyz','hgcloud.net',
-  'hgcloud.co','hgcloud.me',
-  // 🆕 Mixdrop
-  'mixdrop.ps','mixdrop.co','mixdrop.to','mixdrop.ag',
-  'mixdrop.sx','mixdrop.bz','mixdrop.ch','mixdrop.vc',
-  'mixdrop.nl','mixdrop.pm','mixdrop.io','mixdrop.me',
-  // 🆕 Vidspeed
-  'vidspeed.org','vidspeed.cc','vidspeed.com','vidspeed.net',
-  // 🆕 Rubyvidhub
-  'rubyvidhub.com','rubyvidhub.net','rubyvidhub.xyz',
-  // 🆕 Morencius
-  'morencius.com','morencius.net','morencius.org'
+  'dood.to','dood.ws','dood.re','dood.sh','dood.so','dood.la','dood.pm','dood.wf','doodstream.com',
+  'hgcloud.to','hgcloud.com','hgcloud.xyz','hgcloud.net','hgcloud.co','hgcloud.me',
+  // ===== 4 روابط من طلبك الأخير =====
+  'mixdrop.ps',
+  'vidspeed.org','www.vidspeed.org',
+  'rubyvidhub.com',
+  'morencius.com'
 ];
 
 const STREAMS = {
@@ -413,13 +403,13 @@ function normalizeSource(s) {
   if (typeof s === 'string') {
     const url = s.trim();
     if (!/^(https?:)?\/\//.test(url)) return null;
-    return { label: 'سيرفر', url };
+    return { label: '', url };
   }
   if (typeof s === 'object') {
     const url = (s.url || s.file || s.src || s.stream || s.link || s.href || s.video || '').toString().trim();
     if (!url) return null;
     return {
-      label: s.label || s.name || s.quality || s.title || 'سيرفر',
+      label: s.label || s.name || s.quality || s.title || '',
       url,
       type: s.type || null
     };
@@ -973,17 +963,16 @@ function tryMPEGTS(url, timeoutMs){
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   🎯 sandboxForUrl — استثناءات موسّعة
-   ✅ VIP (بدون sandbox): vipserver, vidroba, vidspeeds, 1vid, d0o0d,
-      hgcloud, mixdrop, vidspeed, rubyvidhub, morencius
-   ✅ آمنة (بدون sandbox): youtube, vimeo, dailymotion, drive, twitch...
-   ❌ الباقي: sandbox صارم
+   🎯 sandboxForUrl — الحل النهائي
+   ✅ المواقع التي طلبتها فقط: بدون sandbox
+   ✅ كل المواقع الأخرى: sandbox صارم = allow-scripts allow-same-origin
+      (يحظر: popups, redirects, forms, modals, downloads)
    ═══════════════════════════════════════════════════════════════ */
 function sandboxForUrl(url){
   let host = '';
   try { host = new URL(url).hostname.toLowerCase(); } catch(e) { return null; }
 
-  // ✅ 1) المواقع المستثناة (VIP)
+  // المواقع المستثناة — بدون sandbox نهائياً
   for (const vip of VIP_NO_SANDBOX_DOMAINS) {
     if (host === vip || host.endsWith('.' + vip)) {
       console.log('[Sandbox] ✅ VIP (no sandbox):', host);
@@ -991,22 +980,9 @@ function sandboxForUrl(url){
     }
   }
 
-  // ✅ 2) المواقع الآمنة المعروفة
-  const SAFE_NO_SANDBOX = [
-    'youtube.com','www.youtube.com','m.youtube.com','music.youtube.com','youtu.be','www.youtu.be',
-    'vimeo.com','www.vimeo.com','player.vimeo.com',
-    'dailymotion.com','www.dailymotion.com','dai.ly',
-    'drive.google.com','docs.google.com',
-    'twitch.tv','www.twitch.tv','player.twitch.tv',
-    'facebook.com','www.facebook.com','fb.watch',
-    'instagram.com','www.instagram.com'
-  ];
-  if (SAFE_NO_SANDBOX.some(h => host === h || host.endsWith('.' + h))) {
-    return null;
-  }
-
-  // ❌ 3) كل الباقي — sandbox صارم
-  return 'allow-scripts allow-same-origin allow-presentation allow-forms';
+  // كل الباقي — sandbox صارم
+  console.log('[Sandbox] 🔒 Strict sandbox:', host);
+  return 'allow-scripts allow-same-origin';
 }
 
 function tryEmbed(url){
@@ -1188,9 +1164,8 @@ function openPlayer(data){
   currentSources.forEach((src, i) => {
     const b = document.createElement('button');
     b.className = 'src-btn' + (i === 0 ? ' active' : '');
-    // 🎯 عرض رقم فقط بدون اسم السيرفر أو الجودة
-    b.textContent = String(i + 1);
-    b.title = src.label || `سيرفر ${i+1}`;
+    // 🎯 عرض اسم السيرفر كما كتبته في content.js (بدون أرقام)
+    b.textContent = src.label || `سيرفر ${i+1}`;
     b.addEventListener('click', ()=>{
       [...sourcesBox.children].forEach(c=>c.classList.remove('active'));
       b.classList.add('active');
