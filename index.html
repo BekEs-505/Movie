@@ -159,7 +159,7 @@ img{display:block;max-width:100%}
 .modal-body p.story{line-height:1.9;color:#cfcfe3;font-size:1rem;margin-bottom:22px}
 .sources-title{font-size:.85rem;color:var(--muted);margin-bottom:10px;font-weight:700}
 .sources{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
-.src-btn{padding:10px 18px;border-radius:12px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#d8d8ec;transition:.25s}
+.src-btn{padding:10px 18px;border-radius:12px;font-size:.85rem;font-weight:700;min-width:44px;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#d8d8ec;transition:.25s}
 .src-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(139,92,246,.6)}
 .src-btn.active{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#0b0b14;border-color:transparent;box-shadow:0 8px 20px rgba(139,92,246,.45)}
 .modal-social{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(255,255,255,.07)}
@@ -347,36 +347,41 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v6.6 — مشغل مع استثناء VIP
-   استثناءات مطلوبة (بدون sandbox - تعمل بحرية):
-   ✅ Vipserver, Vidroba, Vidspeeds, 1vid, d0o0d, hgcloud
-   بقية المواقع: sandbox صارم (حظر إعلانات)
+   Movie BekEs v6.7 — استثناء موسّع + إخفاء الإشعار الأخضر
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 
-/* 🎯 قائمة المواقع المستثناة (VIP) — لن يُطبق عليها sandbox أبداً */
+/* 🎯 قائمة المواقع المستثناة (VIP) — لن يُطبق عليها sandbox */
 const VIP_NO_SANDBOX_DOMAINS = [
   // Vipserver
   'vipserver.co','vipserver.tv','vipserver.com','vipserver.me',
-  'vipserver.net','vipserver.xyz','vipserver.org','www.vipserver.co',
-  'www.vipserver.tv','www.vipserver.com',
+  'vipserver.net','vipserver.xyz','vipserver.org',
   // Vidroba
   'vidroba.com','vidroba.xyz','vidroba.to','vidroba.cc',
-  'vidroba.net','vidroba.co','vidroba.me','www.vidroba.com',
+  'vidroba.net','vidroba.co','vidroba.me',
   // Vidspeeds
   'vidspeeds.com','vidspeeds.xyz','vidspeeds.to','vidspeeds.net',
-  'vidspeeds.co','www.vidspeeds.com',
+  'vidspeeds.co',
   // 1vid
   '1vid.xyz','1vid.com','1vid.to','1vid.net','1vid.cc',
-  '1vid.co','1vid.me','www.1vid.xyz','www.1vid.com',
-  // d0o0d (doodstream)
+  '1vid.co','1vid.me',
+  // d0o0d + doodstream
   'd0o0d.com','d0o0d.to','d0o0d.xyz','d0o0d.net',
   'dood.to','dood.ws','dood.re','dood.sh','dood.so','dood.la',
   'dood.pm','dood.wf','doodstream.com',
-  'www.dood.to','www.dood.ws','www.doodstream.com',
   // hgcloud
   'hgcloud.to','hgcloud.com','hgcloud.xyz','hgcloud.net',
-  'hgcloud.co','hgcloud.me','www.hgcloud.to','www.hgcloud.com'
+  'hgcloud.co','hgcloud.me',
+  // 🆕 Mixdrop
+  'mixdrop.ps','mixdrop.co','mixdrop.to','mixdrop.ag',
+  'mixdrop.sx','mixdrop.bz','mixdrop.ch','mixdrop.vc',
+  'mixdrop.nl','mixdrop.pm','mixdrop.io','mixdrop.me',
+  // 🆕 Vidspeed
+  'vidspeed.org','vidspeed.cc','vidspeed.com','vidspeed.net',
+  // 🆕 Rubyvidhub
+  'rubyvidhub.com','rubyvidhub.net','rubyvidhub.xyz',
+  // 🆕 Morencius
+  'morencius.com','morencius.net','morencius.org'
 ];
 
 const STREAMS = {
@@ -476,8 +481,10 @@ const dsTitleEl    = document.getElementById('dsTitle');
 const dsBodyEl     = document.getElementById('dsBody');
 let statusTimer = null;
 function setDataStatus(kind, title, body, autoHideMs) {
+  // ⛔ لا نعرض إشعارات النجاح (الخضراء) — فقط الأخطاء
+  if (kind === 'ok') return;
   if (!dataStatusEl) return;
-  dataStatusEl.className = 'data-status show' + (kind === 'error' ? ' err' : kind === 'ok' ? ' ok' : '');
+  dataStatusEl.className = 'data-status show' + (kind === 'error' ? ' err' : '');
   dsTitleEl.textContent = title;
   dsBodyEl.textContent = body || '';
   clearTimeout(statusTimer);
@@ -572,7 +579,6 @@ function createMovieCard(m){
   item.className = 'movie-item';
   const posterFallback = `https://picsum.photos/seed/${encodeURIComponent(m.title||'movie')}/500/750`;
   const poster = m.poster || posterFallback;
-  const sourcesCount = (m.sources || []).length;
   item.innerHTML = `
     <img class="movie-poster" src="${poster}" alt="${m.title||''}" loading="lazy"
          onerror="this.onerror=null;this.src='${posterFallback}'">
@@ -582,7 +588,6 @@ function createMovieCard(m){
         <span class="pill">${m.genre||'عام'}</span>
         <span>${m.year||''}</span>
         <span class="rating">★ ${m.rating||'—'}</span>
-        <span style="color:#22d3ee">${sourcesCount} سيرفر</span>
       </div>
       <div class="movie-story">${m.story||''}</div>
       <div class="movie-actions">
@@ -734,12 +739,8 @@ async function loadExternalData() {
     buildChannelsBar();
   }
 
-  const totalReport = `📥 الأفلام: ${report.movies} | 📺 القنوات: ${report.channels}`;
-  const sourceList  = report.sources.length ? `من: ${report.sources.join(', ')}` : 'لم يُعثر على ملفات خارجية';
-
   if (moviesApplied || channelsApplied) {
-    setDataStatus('ok', '✅ تم تحميل البيانات', totalReport + ' — ' + sourceList, 5000);
-    console.log('[Data] ✅ Loaded:', report);
+    console.log('[Data] ✅ Loaded silently:', report);
   } else {
     if (window.__contentJsFailed1 || window.__b64Failed) {
       setDataStatus('error', '⚠ لم يتم العثور على content.js',
@@ -797,6 +798,7 @@ let lastAttemptUsedSandbox=false;
 const EMBED_PATTERNS = [
   /vipserver/i,/vidroba/i,/vidspeeds/i,/1vid/i,/d0o0d/i,/hgcloud/i,
   /vidspeed/i,/vidfast/i,/vidlink/i,/vidsmart/i,/vidplay/i,
+  /rubyvidhub/i,/morencius/i,
   /vidsrc\.(?:me|to|xyz|cc|in|net|pro|io)/i,
   /mixdrop\.(?:ps|co|to|ag|sx|bz|ch|vc|nl|pm)/i,
   /streamtape\.(?:com|net|to|xyz)/i,
@@ -971,21 +973,25 @@ function tryMPEGTS(url, timeoutMs){
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   🎯 sandboxForUrl — استثناء VIP
+   🎯 sandboxForUrl — استثناءات موسّعة
+   ✅ VIP (بدون sandbox): vipserver, vidroba, vidspeeds, 1vid, d0o0d,
+      hgcloud, mixdrop, vidspeed, rubyvidhub, morencius
+   ✅ آمنة (بدون sandbox): youtube, vimeo, dailymotion, drive, twitch...
+   ❌ الباقي: sandbox صارم
    ═══════════════════════════════════════════════════════════════ */
 function sandboxForUrl(url){
   let host = '';
   try { host = new URL(url).hostname.toLowerCase(); } catch(e) { return null; }
 
-  // ✅ 1) المواقع المستثناة (VIP) — بدون sandbox نهائياً
+  // ✅ 1) المواقع المستثناة (VIP)
   for (const vip of VIP_NO_SANDBOX_DOMAINS) {
     if (host === vip || host.endsWith('.' + vip)) {
-      console.log('[Sandbox] ✅ VIP exception (no sandbox):', host);
+      console.log('[Sandbox] ✅ VIP (no sandbox):', host);
       return null;
     }
   }
 
-  // ✅ 2) المواقع الآمنة المعروفة — بدون sandbox
+  // ✅ 2) المواقع الآمنة المعروفة
   const SAFE_NO_SANDBOX = [
     'youtube.com','www.youtube.com','m.youtube.com','music.youtube.com','youtu.be','www.youtu.be',
     'vimeo.com','www.vimeo.com','player.vimeo.com',
@@ -999,7 +1005,7 @@ function sandboxForUrl(url){
     return null;
   }
 
-  // ❌ 3) كل الباقي — sandbox صارم (حظر إعلانات)
+  // ❌ 3) كل الباقي — sandbox صارم
   return 'allow-scripts allow-same-origin allow-presentation allow-forms';
 }
 
@@ -1182,7 +1188,9 @@ function openPlayer(data){
   currentSources.forEach((src, i) => {
     const b = document.createElement('button');
     b.className = 'src-btn' + (i === 0 ? ' active' : '');
-    b.textContent = src.label || `سيرفر ${i+1}`;
+    // 🎯 عرض رقم فقط بدون اسم السيرفر أو الجودة
+    b.textContent = String(i + 1);
+    b.title = src.label || `سيرفر ${i+1}`;
     b.addEventListener('click', ()=>{
       [...sourcesBox.children].forEach(c=>c.classList.remove('active'));
       b.classList.add('active');
