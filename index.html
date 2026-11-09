@@ -113,7 +113,6 @@ img{display:block;max-width:100%}
 .modal-top-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#14141f;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0}
 .btn-top{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 16px;border-radius:10px;font-size:.9rem;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;transition:.2s}
 .btn-top:hover{background:rgba(255,255,255,.14)}
-#modalClose:hover{background:#e11d48;border-color:#e11d48}
 .modal-title-sm{margin-inline-start:auto;font-size:.9rem;font-weight:800;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:50%}
 .player-wrap{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.05)}
 .player-wrap video{width:100%;height:100%;display:block;background:#000}
@@ -148,6 +147,55 @@ img{display:block;max-width:100%}
 .spacer{flex:1}
 .vol-range{width:0;opacity:0;transition:.3s;accent-color:var(--cyan);cursor:pointer}
 .vol-range.show{width:90px;opacity:1}
+
+/* ═══════════════════════════════════════════════════════════════
+   🆕 شريط الإغلاق الثابت أسفل المشغل
+   - خارج modal-body (لا يختفي عند التمرير)
+   - بين المشغل والمحتوى (بدون تداخل)
+   - بعرض كامل مع زر أحمر بارز
+   ═══════════════════════════════════════════════════════════════ */
+.close-bar-below{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:12px 16px;
+  background:#14141f;
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  flex-shrink:0;
+  position:relative;
+  z-index:3;
+  box-shadow:0 -4px 12px rgba(0,0,0,.2);
+}
+.btn-close-main{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 36px;
+  border-radius:12px;
+  font-size:.95rem;
+  font-weight:800;
+  letter-spacing:.3px;
+  background:linear-gradient(135deg,#ef4444,#dc2626);
+  color:#fff;
+  border:1px solid rgba(239,68,68,.5);
+  box-shadow:0 8px 20px rgba(239,68,68,.35);
+  transition:.2s;
+  width:100%;
+  max-width:340px;
+}
+.btn-close-main:hover{
+  background:linear-gradient(135deg,#dc2626,#b91c1c);
+  transform:translateY(-1px);
+  box-shadow:0 12px 28px rgba(239,68,68,.55);
+}
+.btn-close-main:active{
+  transform:translateY(0);
+  box-shadow:0 4px 12px rgba(239,68,68,.4);
+}
+.btn-close-main svg{width:16px;height:16px;fill:currentColor}
+
 .modal-body{padding:26px 30px 30px;overflow-y:auto;flex-grow:1}
 .modal-body::-webkit-scrollbar{width:8px}
 .modal-body::-webkit-scrollbar-thumb{background:rgba(139,92,246,.55);border-radius:8px}
@@ -203,6 +251,8 @@ img{display:block;max-width:100%}
   .modal{padding:0}
   .modal-inner{border-radius:0;max-height:100vh;height:100vh}
   .player-wrap{border-radius:0}
+  .close-bar-below{padding:10px 12px}
+  .btn-close-main{padding:10px 24px;font-size:.9rem;max-width:100%}
   .modal-body{padding:20px 18px 24px}
   .modal-body h2{font-size:1.3rem}
   .data-status{inset-inline-start:10px;inset-inline-end:10px;max-width:none;bottom:10px}
@@ -292,7 +342,6 @@ img{display:block;max-width:100%}
 <div class="modal" id="modal">
   <div class="modal-inner">
     <div class="modal-top-bar">
-      <button class="btn-top" id="modalClose">✕ إغلاق</button>
       <button class="btn-top" id="modalBack">↩ رجوع</button>
       <div class="modal-title-sm" id="mTitleSm">—</div>
     </div>
@@ -323,6 +372,14 @@ img{display:block;max-width:100%}
         </div>
       </div>
     </div>
+
+    <!-- 🆕 شريط الإغلاق الثابت أسفل المشغل -->
+    <div class="close-bar-below">
+      <button class="btn-close-main" id="modalClose">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        إغلاق المشغل
+      </button>
+    </div>
     
     <div class="modal-body">
       <h2 id="mTitle">—</h2>
@@ -347,17 +404,12 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v7.0
-   ✅ استثناء Sandbox فقط للمواقع التي طلبتها
-   ✅ حظر صارم (allow-scripts allow-same-origin) للباقي
-   ✅ عرض أسماء السيرفرات كما كتبتها في content.js
-   ✅ لا إشعار أخضر عند التحميل
+   Movie BekEs v7.1
+   ✅ زر إغلاق ثابت أسفل المشغل
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 
-/* 🎯 قائمة المواقع المستثناة — فقط ما طلبته */
 const VIP_NO_SANDBOX_DOMAINS = [
-  // ===== 6 مواقع من طلبك السابق =====
   'vipserver.co','vipserver.tv','vipserver.com','vipserver.me',
   'vipserver.net','vipserver.xyz','vipserver.org',
   'vidroba.com','vidroba.xyz','vidroba.to','vidroba.cc',
@@ -367,7 +419,6 @@ const VIP_NO_SANDBOX_DOMAINS = [
   'd0o0d.com','d0o0d.to','d0o0d.xyz','d0o0d.net',
   'dood.to','dood.ws','dood.re','dood.sh','dood.so','dood.la','dood.pm','dood.wf','doodstream.com',
   'hgcloud.to','hgcloud.com','hgcloud.xyz','hgcloud.net','hgcloud.co','hgcloud.me',
-  // ===== 4 روابط من طلبك الأخير =====
   'mixdrop.ps',
   'vidspeed.org','www.vidspeed.org',
   'rubyvidhub.com',
@@ -471,7 +522,6 @@ const dsTitleEl    = document.getElementById('dsTitle');
 const dsBodyEl     = document.getElementById('dsBody');
 let statusTimer = null;
 function setDataStatus(kind, title, body, autoHideMs) {
-  // ⛔ لا نعرض إشعارات النجاح (الخضراء) — فقط الأخطاء
   if (kind === 'ok') return;
   if (!dataStatusEl) return;
   dataStatusEl.className = 'data-status show' + (kind === 'error' ? ' err' : '');
@@ -962,25 +1012,15 @@ function tryMPEGTS(url, timeoutMs){
   });
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   🎯 sandboxForUrl — الحل النهائي
-   ✅ المواقع التي طلبتها فقط: بدون sandbox
-   ✅ كل المواقع الأخرى: sandbox صارم = allow-scripts allow-same-origin
-      (يحظر: popups, redirects, forms, modals, downloads)
-   ═══════════════════════════════════════════════════════════════ */
 function sandboxForUrl(url){
   let host = '';
   try { host = new URL(url).hostname.toLowerCase(); } catch(e) { return null; }
-
-  // المواقع المستثناة — بدون sandbox نهائياً
   for (const vip of VIP_NO_SANDBOX_DOMAINS) {
     if (host === vip || host.endsWith('.' + vip)) {
       console.log('[Sandbox] ✅ VIP (no sandbox):', host);
       return null;
     }
   }
-
-  // كل الباقي — sandbox صارم
   console.log('[Sandbox] 🔒 Strict sandbox:', host);
   return 'allow-scripts allow-same-origin';
 }
@@ -1164,7 +1204,6 @@ function openPlayer(data){
   currentSources.forEach((src, i) => {
     const b = document.createElement('button');
     b.className = 'src-btn' + (i === 0 ? ' active' : '');
-    // 🎯 عرض اسم السيرفر كما كتبته في content.js (بدون أرقام)
     b.textContent = src.label || `سيرفر ${i+1}`;
     b.addEventListener('click', ()=>{
       [...sourcesBox.children].forEach(c=>c.classList.remove('active'));

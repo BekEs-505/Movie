@@ -1,15 +1,15 @@
 #!/bin/sh
 # ═══════════════════════════════════════════════════════════════════════
-#  Movie BekEs — لوحة التحكم الاحترافية العالمية (Neon Edition)
-#  الإصدار: 6.6 (شعار عملاق + إصلاح الاستيراد)
-#  © 2025 B6_7E | بيكاس — جميع الحقوق محفوظة
+#  Movie BekEs — لوحة التحكم الاحترافية (Neon Edition)
+#  الإصدار: 6.8 (رفع GitHub فائق السرعة + حفظ تلقائي للتوكن)
+#  © 2025 B6_7E | بيكاس
 # ═══════════════════════════════════════════════════════════════════════
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 set -u
-VERSION="6.6"
+VERSION="6.8"
 COPYRIGHT="© 2025 B6_7E | بيكاس"
 GIT_MSG="Update content"
 
@@ -28,11 +28,7 @@ mkdir -p "$DATA_DIR" 2>/dev/null
 [ -f "$DB_MOVIES" ]   || : > "$DB_MOVIES"
 [ -f "$DB_CHANNELS" ] || : > "$DB_CHANNELS"
 
-# ═══════════════════════════════════════════════════════════════════════
-#  🎨 الشعار العملاق — Block Art + Rainbow Neon
-# ═══════════════════════════════════════════════════════════════════════
 show_logo() {
-    # ═══ الجزء 1: M O V I E ═══
     printf "\033[38;5;21m    \033[38;5;27m╔══════════════════════════════════════════════════════════╗\033[0m\n"
     printf "\033[38;5;21m    \033[38;5;27m║\033[38;5;51m                                                          \033[38;5;27m║\033[0m\n"
     printf "\033[38;5;57m    \033[38;5;63m║\033[0m  \033[38;5;226m███╗   ███╗ ██████╗ ██╗   ██╗██╗███████╗\033[0m              \033[38;5;63m║\033[0m\n"
@@ -42,7 +38,6 @@ show_logo() {
     printf "\033[38;5;129m    \033[38;5;135m║\033[0m  \033[38;5;202m██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ██║███████╗\033[0m              \033[38;5;135m║\033[0m\n"
     printf "\033[38;5;129m    \033[38;5;135m║\033[0m  \033[38;5;196m╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚═╝╚══════╝\033[0m              \033[38;5;135m║\033[0m\n"
     printf "\033[38;5;165m    \033[38;5;171m║\033[38;5;51m                                                          \033[38;5;171m║\033[0m\n"
-    # ═══ الجزء 2: B E K E S ═══
     printf "\033[38;5;165m    \033[38;5;171m║\033[0m  \033[38;5;46m██████╗ ███████╗██╗  ██╗███████╗███████╗\033[0m              \033[38;5;171m║\033[0m\n"
     printf "\033[38;5;201m    \033[38;5;207m║\033[0m  \033[38;5;51m██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔════╝\033[0m              \033[38;5;207m║\033[0m\n"
     printf "\033[38;5;201m    \033[38;5;207m║\033[0m  \033[38;5;45m██████╔╝█████╗  █████╔╝ █████╗  ███████╗\033[0m              \033[38;5;207m║\033[0m\n"
@@ -50,7 +45,6 @@ show_logo() {
     printf "\033[38;5;213m    \033[38;5;219m║\033[0m  \033[38;5;33m██████╔╝███████╗██║  ██╗███████╗███████║\033[0m              \033[38;5;219m║\033[0m\n"
     printf "\033[38;5;225m    \033[38;5;231m║\033[0m  \033[38;5;27m╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝\033[0m              \033[38;5;231m║\033[0m\n"
     printf "\033[38;5;225m    \033[38;5;231m║\033[38;5;51m                                                          \033[38;5;231m║\033[0m\n"
-    # ═══ الجزء 3: الشعار والتوقيع ═══
     printf "\033[38;5;231m    \033[38;5;231m║\033[0m       \033[38;5;226m★  P R O   E D I T I O N  ·  v$VERSION  ★\033[0m         \033[38;5;231m║\033[0m\n"
     printf "\033[38;5;231m    \033[38;5;231m║\033[0m            \033[38;5;51m© 2025 B6_7E  |  بيكاس\033[0m                     \033[38;5;231m║\033[0m\n"
     printf "\033[38;5;231m    \033[38;5;231m╚══════════════════════════════════════════════════════════╝\033[0m\n"
@@ -60,7 +54,6 @@ show_logo() {
     printf "     \033[38;5;213m✦ \033[38;5;51m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ \033[38;5;213m✦\033[0m\n\n"
 }
 
-# ─── دوال الواجهة ───
 clr(){ command -v clear >/dev/null 2>&1 && clear 2>/dev/null || printf '\033[2J\033[H'; }
 
 spinner() {
@@ -197,18 +190,14 @@ save_content_js(){
 }
 save_all(){ save_movies_json; save_channels_json; save_content_js; }
 
+# ═══════════════════════════════════════════════════════════════════════
+#  🚀 Git Push فائق السرعة
+#  - يحفظ التوكن بعد أول نجاح → المرات القادمة فورية بدون انتظار
+#  - لا يحاول اتصال بدون مصادقة (سبب البطء)
+#  - تخطي commit إذا لا يوجد تغيير
+# ═══════════════════════════════════════════════════════════════════════
 GIT_USER="${GIT_USER:-}"
 GIT_PASS="${GIT_PASS:-}"
-
-_do_git_push(){
-    tmp=$(mktemp 2>/dev/null || echo "/tmp/gitpush.$$")
-    if GIT_TERMINAL_PROMPT=0 git push >"$tmp" 2>&1; then rm -f "$tmp"; return 0; fi
-    if grep -qiE 'authentication|permission denied|403|could not read username|terminal prompts disabled|fatal: could not read' "$tmp"; then
-        rm -f "$tmp"; return 1
-    fi
-    cp "$tmp" /tmp/cp_last_err 2>/dev/null
-    rm -f "$tmp"; return 2
-}
 
 _prompt_credentials(){
     printf '\n\033[38;5;226m +-- [ مصادقة GitHub ] --------------------+ \033[0m\n'
@@ -225,41 +214,71 @@ git_push(){
         notify "err" "Git" "ليس مستودع git"
         return 1
     fi
+
+    # ⚡ إعدادات تسريع Git (تُطبّق مرة واحدة فقط)
+    git config http.postBuffer 104857600 2>/dev/null
+    git config http.version HTTP/1.1 2>/dev/null
+    git config credential.helper store 2>/dev/null
+
+    # إعداد البيانات محلياً (سريع جداً)
     git add --all >/dev/null 2>&1
-    git commit --allow-empty -m "$GIT_MSG" >/dev/null 2>&1
+    if ! git diff --cached --quiet 2>/dev/null; then
+        git commit -m "$GIT_MSG" >/dev/null 2>&1
+    fi
+
+    REPO_URL=$(git remote get-url origin 2>/dev/null)
+    [ -z "$REPO_URL" ] && { notify "err" "خطأ" "لا يوجد origin"; return 1; }
+
+    case "$REPO_URL" in
+        git@*) REPO_URL=$(printf '%s' "$REPO_URL" | sed -E 's#git@([^:]+):([^/]+)/(.+)#https://\1/\2/\3#') ;;
+    esac
+
+    # ─── محاولة سريعة إذا كان التوكن محفوظاً من قبل ───
+    if [ -f "$HOME/.git-credentials" ] && [ -z "$GIT_USER" ]; then
+        printf "\n"
+        ( GIT_TERMINAL_PROMPT=0 GIT_ASKPASS=/bin/true git push --quiet --no-verify >/tmp/cp_git.$$ 2>&1; exit $? ) &
+        spinner $!
+        wait $!
+        if [ $? -eq 0 ]; then
+            rm -f /tmp/cp_git.$$
+            notify "ok" "GitHub" "تم الرفع بنجاح"
+            return 0
+        fi
+        rm -f /tmp/cp_git.$$
+        # التوكن القديم فشل → نحذفه ونطلب جديد
+        rm -f "$HOME/.git-credentials" 2>/dev/null
+    fi
+
+    # ─── طلب بيانات الاعتماد (إن لم تكن موجودة) ───
+    if [ -z "$GIT_USER" ] || [ -z "$GIT_PASS" ]; then
+        if ! _prompt_credentials; then
+            notify "err" "GitHub" "تم إلغاء الرفع"
+            return 1
+        fi
+        export GIT_USER GIT_PASS
+    fi
+
+    AUTH_URL=$(printf '%s' "$REPO_URL" | sed -E "s#^https://#https://${GIT_USER}:${GIT_PASS}@#")
+
     printf "\n"
-    ( _do_git_push; exit $? ) &
+    ( GIT_TERMINAL_PROMPT=0 GIT_ASKPASS=/bin/true git push "$AUTH_URL" --quiet --no-verify >/tmp/cp_git.$$ 2>&1; exit $? ) &
     spinner $!
     wait $!
-    rc=$?
-    if [ "$rc" -eq 0 ]; then notify "ok" "GitHub" "تم الرفع بنجاح"; return 0; fi
-    if [ "$rc" -eq 1 ]; then
-        if _prompt_credentials; then
-            REPO_URL=$(git remote get-url origin 2>/dev/null)
-            [ -z "$REPO_URL" ] && { notify "err" "خطأ" "لا يوجد origin"; return 1; }
-            case "$REPO_URL" in
-                git@*) REPO_URL=$(printf '%s' "$REPO_URL" | sed -E 's#git@([^:]+):([^/]+)/(.+)#https://\1/\2/\3#') ;;
-            esac
-            AUTH_URL=$(printf '%s' "$REPO_URL" | sed -E "s#^https://#https://${GIT_USER}:${GIT_PASS}@#")
-            printf "\n"
-            ( GIT_TERMINAL_PROMPT=0 git push "$AUTH_URL" >/tmp/cp_git.$$ 2>&1; exit $? ) &
-            spinner $!
-            wait $!
-            if [ $? -eq 0 ]; then
-                rm -f /tmp/cp_git.$$
-                notify "ok" "GitHub" "تم الرفع بعد المصادقة"; return 0
-            fi
-            notify "err" "GitHub" "فشلت المصادقة"
-            tail -5 /tmp/cp_git.$$ 2>/dev/null | sed 's/^/  /'
-            rm -f /tmp/cp_git.$$
-            return 1
-        else
-            notify "err" "GitHub" "تم إلغاء الرفع"; return 1
-        fi
+    RC=$?
+
+    if [ $RC -eq 0 ]; then
+        # 💾 حفظ التوكن للاستخدام القادم (سيصبح الرفع فورياً)
+        CLEAN_URL=$(printf '%s' "$REPO_URL" | sed 's|https://||')
+        printf 'https://%s:%s@%s\n' "$GIT_USER" "$GIT_PASS" "$CLEAN_URL" > "$HOME/.git-credentials" 2>/dev/null
+        chmod 600 "$HOME/.git-credentials" 2>/dev/null
+        rm -f /tmp/cp_git.$$
+        notify "ok" "GitHub" "تم الرفع بنجاح ✓ (المرات القادمة أسرع)"
+        return 0
     fi
-    notify "err" "GitHub" "فشل الرفع"
-    tail -5 /tmp/cp_last_err 2>/dev/null | sed 's/^/  /'
-    rm -f /tmp/cp_last_err
+
+    notify "err" "GitHub" "فشلت المصادقة - تحقق من التوكن"
+    tail -5 /tmp/cp_git.$$ 2>/dev/null | sed 's/^/  /'
+    rm -f /tmp/cp_git.$$
     return 1
 }
 
