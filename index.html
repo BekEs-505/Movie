@@ -404,8 +404,9 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v7.1
+   Movie BekEs v7.2
    ✅ زر إغلاق ثابت أسفل المشغل
+   ✅ دعم wwa.liiivideo.com في المشغل
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 
@@ -422,7 +423,9 @@ const VIP_NO_SANDBOX_DOMAINS = [
   'mixdrop.ps',
   'vidspeed.org','www.vidspeed.org',
   'rubyvidhub.com',
-  'morencius.com'
+  'morencius.com',
+  /* 🆕 دعم liiivideo */
+  'liiivideo.com','www.liiivideo.com','wwa.liiivideo.com'
 ];
 
 const STREAMS = {
@@ -839,6 +842,8 @@ const EMBED_PATTERNS = [
   /vipserver/i,/vidroba/i,/vidspeeds/i,/1vid/i,/d0o0d/i,/hgcloud/i,
   /vidspeed/i,/vidfast/i,/vidlink/i,/vidsmart/i,/vidplay/i,
   /rubyvidhub/i,/morencius/i,
+  /* 🆕 دعم liiivideo (wwa.liiivideo.com وغيرها) */
+  /liiivideo/i,
   /vidsrc\.(?:me|to|xyz|cc|in|net|pro|io)/i,
   /mixdrop\.(?:ps|co|to|ag|sx|bz|ch|vc|nl|pm)/i,
   /streamtape\.(?:com|net|to|xyz)/i,
