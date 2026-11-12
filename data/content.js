@@ -1806,6 +1806,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-vvhdss71dv6o.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Car Road To Revenge",
+      "year": 2019,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTIzODg1YjgtNTIyOC00YTAyLWJkZGQtMDk0NjAyNjY0MTZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "يُقتل المدعي العام عديم الضمير بوحشية ويُلقى من مبنى على سيارته الجديدة تمامًا. في ظروف غامضة ، يعود المدعي العام وسيارته إلى الحياة ككائن واحد متعطش للانتقام .",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-eei1wlxv3edf.html"
+        }
+      ]
     }
   ],
   "channels": [
