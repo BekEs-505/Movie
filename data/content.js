@@ -1728,6 +1728,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-sevasbhjieo8.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Mean One",
+      "year": 2022,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2RlYzUyNjktMTM0OS00NjY5LThhODItNDBlODAyMDliMDlkXkEyXkFqcGc@._V1_.jpg",
+      "story": "في بلدة جبلية هادئة، يُقتل والدي سيندي على يد شخص شرير يرتدي ملابس سانتا كلوز، وحينما ينطلق الأخير ويبدأ في تدمير وترويع أهالي المدينة، يصبح على سيندي التدخل والانتقام منه.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-k3ckhpsnqwsv.html"
+        }
+      ]
     }
   ],
   "channels": [
