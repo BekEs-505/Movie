@@ -1696,6 +1696,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-kqge8aw2nvi4.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Exit Speed",
+      "year": 2008,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTg2NTgzNzY2Nl5BMl5BanBnXkFtZTcwMDAyMjY4MQ@@._V1_FMjpg_UX1000_.jpg",
+      "story": "عشية عيد الميلاد ، يستقل عشرة غرباء حافلة مسافرة عبر تكساس. بعيدًا في البراري ، يصطدمون براكب الدراجة النارية المدمن على الميثامفيتامين. تم إجباره على الخروج من الطريق من قبل أعضاء آخرين في العصابة.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-o38d8bf1hqsd.html"
+        }
+      ]
     }
   ],
   "channels": [
