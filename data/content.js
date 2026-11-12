@@ -1820,6 +1820,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-eei1wlxv3edf.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Road Train Road Kill",
+      "year": 2010,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZWE2NDRlNmMtMDZmMi00YjAwLWJkMzYtM2MyNzJhMjljNDU0XkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور الأحداث حول أربعة أصدقاء في رحلة تخييم في الصحراء الأسترالية تطاردهم وتجبرهم على الخروج عن الطريق شاحنة ضخمة ومخيفة ذات مقطورتين، ليكتشفوا لاحقاً أسراراً مرعبة وكياناً غامضاً يسيطر على الشاحنة ويستهدف كل من يقترب منها.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-s8dgxw6kevbf.html"
+        }
+      ]
     }
   ],
   "channels": [
