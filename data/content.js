@@ -1710,6 +1710,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-o38d8bf1hqsd.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Speed",
+      "year": 1997,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2IzZGUwOWItNTYyMC00ZWYzLWE3NDMtNTRiMjAwNDY5ZGNiXkEyXkFqcGc@._V1_.jpg",
+      "story": "تُزرع قنبلة في إحدى الحافلات بحيث تنفجر إذا نقصت سرعة الحافلة عن خمسين ميل في الساعة، فيتولى الشرطي (جاك ترافن) بإنقاذ من كانوا بالحافلة وتساعده في ذلك (آني) بحيث يقود الحافلة بنفسه والحفاظ على أعلى سرعة ممكنة.",
+      "sources": [
+        {
+          "label": "Speed 1",
+          "url": "https://1vid.xyz/embed-jj9xvll8ujgo.html"
+        },
+        {
+          "label": "Speed 2",
+          "url": "https://1vid.xyz/embed-sevasbhjieo8.html"
+        }
+      ]
     }
   ],
   "channels": [
