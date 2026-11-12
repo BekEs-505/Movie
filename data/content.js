@@ -1756,6 +1756,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-30gfap221yxz.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Screamboat",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDg3NjJkOTktZWM0NC00MWI3LWEwNTYtYTQ2YWIwNWI3ZmM2XkEyXkFqcGc@._V1_.jpg",
+      "story": "تتحول رحلة بأحد القوارب في وقت متأخر من الليل إلى صراع يائس من أجل البقاء في مدينة نيويورك، حينما يظهر فأر مرعب يبدأ في قتل الركاب بشكل مروع.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-ql8frxnjb3h1.html"
+        }
+      ]
     }
   ],
   "channels": [
