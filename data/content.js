@@ -1785,7 +1785,7 @@ window.__CINEMA_DATA__ = {
         },
         {
           "label": "Popeye 2",
-          "url": "https://www.vidspeed.org/embed-2flafe4hdhjw.html"
+          "url": "https://vidspeed.org/embed-jbtthi5i3ob6.html"
         },
         {
           "label": "Popeye 3",
