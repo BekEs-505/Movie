@@ -3,140 +3,492 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Movie BekEs — v7.1 · Auto-Detect</title>
+<meta name="theme-color" content="#050510">
+<title>Movie BekEs — Pro v8.0 · Persistent</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
 <style>
-:root{--bg:#050510;--bg-card:#0a0a20;--bg-input:#0f0f2a;--cyan:#00ffff;--magenta:#ff00ff;--yellow:#ffff00;--green:#00ff88;--red:#ff2255;--blue:#00afff;--purple:#af5fff;--text:#e0e0ff;--dim:#8888aa;--border:#1a1a3a}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Tahoma',system-ui,sans-serif;min-height:100vh;padding:20px;background-image:radial-gradient(circle at 10% 20%,rgba(0,255,255,.06) 0%,transparent 40%),radial-gradient(circle at 90% 80%,rgba(255,0,255,.06) 0%,transparent 40%);background-attachment:fixed}
-.container{max-width:1100px;margin:0 auto}
-.logo-header{text-align:center;margin-bottom:18px;padding:20px;border:2px solid transparent;border-radius:16px;background:linear-gradient(var(--bg-card),var(--bg-card)) padding-box,linear-gradient(135deg,var(--cyan),var(--magenta),var(--purple)) border-box;box-shadow:0 0 40px rgba(0,255,255,.15),0 0 80px rgba(255,0,255,.08)}
-.logo-title{font-family:'Courier New',monospace;font-size:2.2rem;font-weight:900;background:linear-gradient(90deg,#ff2200,#ff8800,#ffcc00,#00ff88,#00ccff,#aa00ff,#ff00aa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:5px}
-.logo-sub{color:var(--cyan);font-size:.9rem;letter-spacing:3px;margin-top:6px;text-shadow:0 0 10px rgba(0,255,255,.6)}
-.logo-line{color:var(--magenta);margin-top:8px;font-size:.8rem;letter-spacing:2px}
-.status-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:.85rem}
-.status-bar .src{display:inline-flex;align-items:center;gap:6px;background:rgba(0,255,136,.1);color:var(--green);padding:4px 12px;border-radius:20px;font-weight:600}
-.status-bar .src.warn{background:rgba(255,34,85,.1);color:var(--red)}
-.status-bar .src.cache{background:rgba(255,255,0,.1);color:var(--yellow)}
-.status-bar .src.scanning{background:rgba(0,175,255,.15);color:var(--blue)}
-.status-bar .dot{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;animation:pulse 1.4s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.status-bar .file-tag{background:var(--bg-input);padding:3px 9px;border-radius:6px;font-family:'Courier New',monospace;font-size:.75rem;color:var(--cyan);max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* ═══════════════════════════════════════════════════════════════════
+   VARIABLES & RESET
+   ═══════════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#030310; --bg-card:rgba(15,15,35,.72); --bg-input:#0d0d24;
+  --cyan:#00f0ff; --magenta:#ff00ff; --yellow:#ffdd00; --green:#00ff88;
+  --red:#ff2255; --blue:#00aaff; --purple:#b366ff; --orange:#ff8800;
+  --text:#e8e8ff; --dim:#7a7aa0; --border:rgba(80,80,160,.25);
+  --glow-cyan:0 0 25px rgba(0,240,255,.45);
+  --glow-magenta:0 0 25px rgba(255,0,255,.45);
+  --glow-green:0 0 25px rgba(0,255,136,.45);
+  --font:'Segoe UI','Tahoma',system-ui,sans-serif;
+  --mono:'SF Mono','Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--font);
+  min-height:100vh;padding:20px;overflow-x:hidden;
+  background-image:
+    radial-gradient(ellipse 800px 500px at 5% 0%,rgba(0,240,255,.10) 0%,transparent 60%),
+    radial-gradient(ellipse 700px 500px at 95% 100%,rgba(255,0,255,.10) 0%,transparent 60%),
+    radial-gradient(ellipse 500px 400px at 50% 50%,rgba(100,50,255,.05) 0%,transparent 70%);
+  background-attachment:fixed;
+}
+/* ═══════════════════════════════════════════════════════════════════
+   ANIMATED STARS BACKGROUND
+   ═══════════════════════════════════════════════════════════════════ */
+.stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.stars-bg::before,.stars-bg::after{
+  content:'';position:absolute;inset:-50%;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%,#fff,transparent),
+    radial-gradient(1px 1px at 40% 70%,#fff,transparent),
+    radial-gradient(1px 1px at 60% 40%,#fff,transparent),
+    radial-gradient(1px 1px at 80% 60%,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 15% 85%,#0ff,transparent),
+    radial-gradient(1.5px 1.5px at 85% 15%,#f0f,transparent),
+    radial-gradient(1px 1px at 50% 50%,#fff,transparent),
+    radial-gradient(2px 2px at 90% 90%,#ff0,transparent),
+    radial-gradient(1px 1px at 30% 10%,#fff,transparent),
+    radial-gradient(1px 1px at 70% 90%,#fff,transparent);
+  background-size:300px 300px;
+  opacity:.35;
+  animation:starsDrift 240s linear infinite;
+}
+.stars-bg::after{
+  background-size:500px 500px;
+  animation-duration:360s;
+  animation-direction:reverse;
+  opacity:.2;
+}
+@keyframes starsDrift{
+  0%{transform:translate(0,0) rotate(0deg)}
+  100%{transform:translate(-300px,-300px) rotate(5deg)}
+}
+/* ═══════════════════════════════════════════════════════════════════
+   TOP PROGRESS BAR
+   ═══════════════════════════════════════════════════════════════════ */
+.top-progress{
+  position:fixed;top:0;left:0;right:0;height:3px;z-index:5000;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),transparent);
+  background-size:200% 100%;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .2s;
+  box-shadow:0 0 15px rgba(0,240,255,.6);
+}
+.top-progress.active{animation:progressShimmer 1.2s linear infinite}
+@keyframes progressShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+/* ═══════════════════════════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════════════════════════ */
+.container{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER / LOGO
+   ═══════════════════════════════════════════════════════════════════ */
+.header{
+  text-align:center;margin-bottom:16px;padding:24px 20px;
+  border:2px solid transparent;border-radius:20px;
+  background:linear-gradient(rgba(10,10,25,.85),rgba(10,10,25,.85)) padding-box,
+             linear-gradient(135deg,var(--cyan),var(--magenta),var(--purple),var(--cyan)) border-box;
+  background-size:100% 100%,300% 300%;
+  animation:borderShift 8s ease infinite;
+  box-shadow:0 0 50px rgba(0,240,255,.12),0 0 100px rgba(255,0,255,.06);
+  position:relative;overflow:hidden;
+}
+.header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% -20%,rgba(0,240,255,.15) 0%,transparent 60%);
+  pointer-events:none;
+}
+@keyframes borderShift{0%,100%{background-position:0 0,0 50%}50%{background-position:0 0,100% 50%}}
+.logo-title{
+  font-family:var(--mono);font-size:2.4rem;font-weight:900;
+  background:linear-gradient(90deg,#ff2200,#ff8800,#ffdd00,#00ff88,#00ccff,#aa00ff,#ff00aa,#ff2200);
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:6px;animation:logoFlow 6s linear infinite;
+  filter:drop-shadow(0 0 12px rgba(0,240,255,.4));
+}
+@keyframes logoFlow{0%{background-position:0 0}100%{background-position:300% 0}}
+.logo-sub{color:var(--cyan);font-size:.85rem;letter-spacing:4px;margin-top:8px;text-shadow:0 0 10px rgba(0,240,255,.8)}
+.logo-line{color:var(--magenta);margin-top:6px;font-size:.75rem;letter-spacing:2px;opacity:.9}
+/* ═══════════════════════════════════════════════════════════════════
+   SAVE INDICATOR / STATUS BAR
+   ═══════════════════════════════════════════════════════════════════ */
+.status-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:var(--bg-card);backdrop-filter:blur(12px);
+  border:1px solid var(--border);border-radius:14px;
+  padding:10px 16px;margin-bottom:14px;font-size:.82rem;
+}
+.save-indicator{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;border-radius:20px;font-weight:600;
+  transition:all .3s;
+}
+.save-indicator.saved{background:rgba(0,255,136,.12);color:var(--green)}
+.save-indicator.saving{background:rgba(255,221,0,.12);color:var(--yellow)}
+.save-indicator.error{background:rgba(255,34,85,.12);color:var(--red)}
+.save-indicator .dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 6px currentColor;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.src-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:3px 10px;border-radius:20px;font-weight:600;
+}
+.src-badge.local{background:rgba(0,240,255,.12);color:var(--cyan)}
+.src-badge.data{background:rgba(0,255,136,.12);color:var(--green)}
+.src-badge.empty{background:rgba(255,34,85,.12);color:var(--red)}
+.src-badge .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
 .status-bar .spacer{flex:1}
-.status-bar button{background:transparent;border:1px solid var(--border);color:var(--dim);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .2s}
-.status-bar button:hover{border-color:var(--cyan);color:var(--cyan)}
+.status-bar button{
+  background:transparent;border:1px solid var(--border);color:var(--dim);
+  padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.78rem;font-family:inherit;
+  transition:all .2s;
+}
+.status-bar button:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 10px rgba(0,240,255,.2)}
 .status-bar button:disabled{opacity:.4;cursor:wait}
-.stats-bar{display:flex;gap:15px;margin-bottom:18px}
-.stat-card{flex:1;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 20px;text-align:center;position:relative;overflow:hidden}
-.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
-.stat-card.channels::before{background:linear-gradient(90deg,transparent,var(--magenta),transparent)}
-.stat-label{color:var(--dim);font-size:.85rem;margin-bottom:4px}
-.stat-value{font-size:1.8rem;font-weight:900;color:var(--cyan);text-shadow:0 0 15px rgba(0,255,255,.5)}
-.stat-card.channels .stat-value{color:var(--magenta);text-shadow:0 0 15px rgba(255,0,255,.5)}
-.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
-.tab{padding:11px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;color:var(--dim);cursor:pointer;font-size:.9rem;font-weight:600;transition:all .2s;font-family:inherit}
-.tab:hover{border-color:var(--cyan);color:var(--cyan)}
-.tab.active{background:linear-gradient(135deg,rgba(0,255,255,.15),rgba(255,0,255,.15));border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 20px rgba(0,255,255,.2)}
-.panel{display:none}.panel.active{display:block;animation:fadeIn .2s}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.btn{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.9rem;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
-.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;box-shadow:0 0 20px rgba(0,255,255,.3)}
-.btn-primary:hover{box-shadow:0 0 30px rgba(0,255,255,.6);transform:translateY(-1px)}
-.btn-magenta{background:linear-gradient(135deg,var(--magenta),var(--purple));color:#fff;box-shadow:0 0 20px rgba(255,0,255,.3)}
-.btn-magenta:hover{box-shadow:0 0 30px rgba(255,0,255,.6);transform:translateY(-1px)}
-.btn-green{background:linear-gradient(135deg,var(--green),#00bb66);color:#000;box-shadow:0 0 20px rgba(0,255,136,.3)}
-.btn-green:hover{box-shadow:0 0 30px rgba(0,255,136,.6)}
-.btn-red{background:linear-gradient(135deg,var(--red),#aa0033);color:#fff;box-shadow:0 0 20px rgba(255,34,85,.3)}
-.btn-red:hover{box-shadow:0 0 30px rgba(255,34,85,.6)}
-.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--dim)}
-.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
-.btn-sm{padding:6px 12px;font-size:.82rem}
-.btn:disabled{opacity:.6;cursor:wait}
-.actions-row{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:12px;transition:all .2s}
-.card:hover{border-color:rgba(0,255,255,.4);box-shadow:0 0 20px rgba(0,255,255,.08)}
-.card-header{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:8px}
-.card-title{font-size:1.1rem;font-weight:700;color:var(--cyan);margin-bottom:4px}
-.card-meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.8rem;color:var(--dim);margin-bottom:8px;align-items:center}
-.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.73rem;font-weight:600}
-.badge-servers{background:rgba(0,175,255,.2);color:var(--blue)}
-.badge-year{background:rgba(175,95,255,.2);color:var(--purple)}
-.badge-rating{background:rgba(255,255,0,.15);color:var(--yellow)}
-.badge-warn{background:rgba(255,34,85,.2);color:var(--red)}
-.card-story{color:var(--dim);font-size:.88rem;line-height:1.6;margin-bottom:10px}
-.card-actions{display:flex;gap:8px}
-.empty-state{text-align:center;padding:50px 20px;color:var(--dim)}
-.empty-state .btn{margin-top:18px}
-.skeleton{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:12px;animation:pulse 1.4s infinite}
-.skeleton-line{height:14px;background:linear-gradient(90deg,#12122a 0%,#1a1a3a 50%,#12122a 100%);background-size:200% 100%;border-radius:4px;margin-bottom:10px;animation:shimmer 1.4s infinite}
-.skeleton-line.short{width:40%}.skeleton-line.med{width:70%}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.form-group{margin-bottom:16px}
-.form-label{display:block;margin-bottom:6px;color:var(--cyan);font-size:.9rem;font-weight:600}
-.form-label .hint{color:var(--dim);font-weight:400;font-size:.8rem;margin-right:6px}
-.form-input,.form-textarea{width:100%;padding:11px 13px;background:var(--bg-input);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:.94rem;transition:all .2s}
-.form-input:focus,.form-textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,255,255,.1)}
-.form-input::placeholder,.form-textarea::placeholder{color:var(--dim)}
-.form-textarea{resize:vertical;min-height:80px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(5px);display:none;align-items:start;justify-content:center;padding:40px 20px;z-index:1000;overflow-y:auto}
+.storage-info{color:var(--dim);font-size:.72rem;font-family:var(--mono)}
+/* ═══════════════════════════════════════════════════════════════════
+   STATS
+   ═══════════════════════════════════════════════════════════════════ */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.stat{
+  background:var(--bg-card);backdrop-filter:blur(12px);
+  border:1px solid var(--border);border-radius:14px;
+  padding:14px 18px;position:relative;overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+}
+.stat:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.stat.s-channels::before{background:linear-gradient(90deg,transparent,var(--magenta),transparent)}
+.stat.s-storage::before{background:linear-gradient(90deg,transparent,var(--yellow),transparent)}
+.stat.s-sync::before{background:linear-gradient(90deg,transparent,var(--green),transparent)}
+.stat-label{color:var(--dim);font-size:.72rem;margin-bottom:4px;letter-spacing:1px}
+.stat-value{font-size:1.5rem;font-weight:900;color:var(--cyan);text-shadow:0 0 15px rgba(0,240,255,.5)}
+.stat.s-channels .stat-value{color:var(--magenta);text-shadow:var(--glow-magenta)}
+.stat.s-storage .stat-value{color:var(--yellow);font-size:1rem;font-family:var(--mono);text-shadow:none}
+.stat.s-sync .stat-value{color:var(--green);font-size:.9rem;text-shadow:none}
+/* ═══════════════════════════════════════════════════════════════════
+   TABS
+   ═══════════════════════════════════════════════════════════════════ */
+.tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;background:var(--bg-card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:6px}
+.tab{
+  padding:10px 18px;background:transparent;border:none;
+  border-radius:10px;color:var(--dim);cursor:pointer;
+  font-size:.88rem;font-weight:600;transition:all .2s;font-family:inherit;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.tab:hover{color:var(--text);background:rgba(255,255,255,.03)}
+.tab.active{
+  background:linear-gradient(135deg,rgba(0,240,255,.18),rgba(255,0,255,.18));
+  color:var(--cyan);box-shadow:0 0 20px rgba(0,240,255,.2);
+  text-shadow:0 0 8px rgba(0,240,255,.6);
+}
+/* ═══════════════════════════════════════════════════════════════════
+   PANELS
+   ═══════════════════════════════════════════════════════════════════ */
+.panel{display:none}.panel.active{display:block;animation:fadeSlide .28s}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+/* ═══════════════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════════════ */
+.btn{
+  padding:10px 18px;border:none;border-radius:10px;cursor:pointer;
+  font-family:inherit;font-size:.88rem;font-weight:600;transition:all .2s;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  position:relative;overflow:hidden;
+}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);opacity:0;transition:opacity .2s}
+.btn:hover::after{opacity:1}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;box-shadow:0 4px 20px rgba(0,240,255,.25)}
+.btn-primary:hover{box-shadow:0 6px 30px rgba(0,240,255,.5);transform:translateY(-1px)}
+.btn-magenta{background:linear-gradient(135deg,var(--magenta),var(--purple));color:#fff;box-shadow:0 4px 20px rgba(255,0,255,.25)}
+.btn-magenta:hover{box-shadow:0 6px 30px rgba(255,0,255,.5);transform:translateY(-1px)}
+.btn-green{background:linear-gradient(135deg,var(--green),#00bb66);color:#000;box-shadow:0 4px 20px rgba(0,255,136,.25)}
+.btn-green:hover{box-shadow:0 6px 30px rgba(0,255,136,.5);transform:translateY(-1px)}
+.btn-red{background:linear-gradient(135deg,var(--red),#aa0033);color:#fff;box-shadow:0 4px 20px rgba(255,34,85,.25)}
+.btn-red:hover{box-shadow:0 6px 30px rgba(255,34,85,.5)}
+.btn-ghost{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--dim)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,240,255,.05)}
+.btn-sm{padding:6px 12px;font-size:.8rem}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important}
+.actions-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
+/* ═══════════════════════════════════════════════════════════════════
+   SEARCH BAR
+   ═══════════════════════════════════════════════════════════════════ */
+.search-bar{position:relative;flex:1;min-width:200px}
+.search-bar input{
+  width:100%;padding:10px 14px 10px 38px;
+  background:var(--bg-input);border:1px solid var(--border);
+  border-radius:10px;color:var(--text);font-family:inherit;font-size:.88rem;
+  transition:all .2s;
+}
+.search-bar input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,240,255,.1)}
+.search-bar::before{content:'🔍';position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:.9rem;opacity:.6;pointer-events:none}
+.search-bar input{padding-right:38px;padding-left:14px}
+/* ═══════════════════════════════════════════════════════════════════
+   CARDS
+   ═══════════════════════════════════════════════════════════════════ */
+.card{
+  background:var(--bg-card);backdrop-filter:blur(12px);
+  border:1px solid var(--border);border-radius:14px;
+  padding:16px 18px;margin-bottom:10px;transition:all .2s;
+  content-visibility:auto;contain-intrinsic-size:auto 120px;
+  position:relative;overflow:hidden;
+}
+.card:hover{border-color:rgba(0,240,255,.4);box-shadow:0 8px 30px rgba(0,240,255,.08);transform:translateY(-1px)}
+.card-title{font-size:1.05rem;font-weight:700;color:var(--cyan);margin-bottom:4px}
+.card-meta{display:flex;gap:6px;flex-wrap:wrap;font-size:.75rem;color:var(--dim);margin-bottom:8px;align-items:center}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.7rem;font-weight:600}
+.badge-year{background:rgba(179,102,255,.18);color:var(--purple)}
+.badge-rating{background:rgba(255,221,0,.15);color:var(--yellow)}
+.badge-servers{background:rgba(0,170,255,.18);color:var(--blue)}
+.badge-warn{background:rgba(255,34,85,.18);color:var(--red)}
+.badge-ok{background:rgba(0,255,136,.18);color:var(--green)}
+.card-story{color:var(--dim);font-size:.85rem;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;gap:6px;flex-wrap:wrap}
+.empty-state{text-align:center;padding:60px 20px;color:var(--dim);font-size:.92rem}
+.empty-state .icon{font-size:3rem;margin-bottom:12px;opacity:.7}
+/* ═══════════════════════════════════════════════════════════════════
+   FORMS
+   ═══════════════════════════════════════════════════════════════════ */
+.form-group{margin-bottom:14px}
+.form-label{display:block;margin-bottom:5px;color:var(--cyan);font-size:.85rem;font-weight:600}
+.form-label .req{color:var(--red);margin-right:2px}
+.form-label .hint{color:var(--dim);font-weight:400;font-size:.75rem;margin-right:4px}
+.form-input,.form-textarea{
+  width:100%;padding:10px 13px;background:var(--bg-input);
+  border:1px solid var(--border);border-radius:9px;color:var(--text);
+  font-family:inherit;font-size:.9rem;transition:all .2s;
+}
+.form-input:focus,.form-textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,240,255,.1);background:#0a0a1e}
+.form-input::placeholder,.form-textarea::placeholder{color:#4a4a6a}
+.form-textarea{resize:vertical;min-height:70px;font-family:inherit}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.char-count{font-size:.7rem;color:var(--dim);text-align:left;margin-top:3px;font-family:var(--mono)}
+/* ═══════════════════════════════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════════════════════════════ */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(0,0,10,.85);backdrop-filter:blur(8px);
+  display:none;align-items:flex-start;justify-content:center;
+  padding:30px 20px;z-index:1000;overflow-y:auto;
+}
 .modal-overlay.active{display:flex}
-.modal{background:var(--bg-card);border:1px solid var(--cyan);border-radius:16px;width:100%;max-width:650px;padding:28px;box-shadow:0 0 60px rgba(0,255,255,.2);animation:modalIn .2s}
-@keyframes modalIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
-.modal-title{font-size:1.3rem;color:var(--cyan);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.modal-close{background:none;border:none;color:var(--dim);font-size:1.5rem;cursor:pointer;padding:0 8px}
-.modal-close:hover{color:var(--red)}
-.modal-footer{display:flex;gap:10px;justify-content:flex-end;margin-top:22px;padding-top:18px;border-top:1px solid var(--border)}
-.sources-list{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
-.source-item{display:flex;gap:8px;align-items:center;background:var(--bg-input);padding:9px;border-radius:8px;border:1px solid var(--border)}
-.source-item .form-input{flex:1;padding:7px 9px}
-.source-item .form-input.label-input{flex:0 0 170px}
-.btn-icon{background:transparent;border:1px solid var(--border);color:var(--red);width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex:0 0 auto}
-.btn-icon:hover{background:rgba(255,34,85,.1);border-color:var(--red)}
-.toast-container{position:fixed;top:20px;left:20px;z-index:2000;display:flex;flex-direction:column;gap:10px;max-width:90vw}
-.toast{background:var(--bg-card);border:1px solid var(--cyan);border-radius:10px;padding:14px 18px;min-width:260px;box-shadow:0 0 30px rgba(0,255,255,.3);animation:toastIn .25s;font-size:.88rem}
-.toast.success{border-color:var(--green);box-shadow:0 0 30px rgba(0,255,136,.3)}
-.toast.error{border-color:var(--red);box-shadow:0 0 30px rgba(255,34,85,.3)}
-.toast.info{border-color:var(--blue);box-shadow:0 0 30px rgba(0,175,255,.3)}
-@keyframes toastIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
-.settings-section{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px;margin-bottom:18px}
-.settings-title{color:var(--magenta);font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.info-box{background:rgba(0,175,255,.08);border:1px solid rgba(0,175,255,.3);border-radius:8px;padding:11px 14px;margin-bottom:14px;color:var(--dim);font-size:.86rem;line-height:1.7}
+.modal{
+  background:linear-gradient(rgba(15,15,35,.98),rgba(10,10,25,.98));
+  border:1px solid var(--cyan);border-radius:18px;width:100%;max-width:640px;
+  padding:26px;box-shadow:0 0 60px rgba(0,240,255,.3),0 0 120px rgba(255,0,255,.15);
+  animation:modalIn .25s;position:relative;
+}
+@keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-title{
+  font-size:1.25rem;color:var(--cyan);margin-bottom:18px;padding-bottom:14px;
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  text-shadow:0 0 10px rgba(0,240,255,.5);
+}
+.modal-close{
+  background:rgba(255,34,85,.1);border:1px solid rgba(255,34,85,.3);color:var(--red);
+  width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1;
+}
+.modal-close:hover{background:rgba(255,34,85,.25);transform:rotate(90deg)}
+.modal-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.draft-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:.7rem;color:var(--yellow);background:rgba(255,221,0,.1);
+  padding:3px 9px;border-radius:20px;margin-right:auto;
+}
+/* ═══════════════════════════════════════════════════════════════════
+   SOURCES LIST
+   ═══════════════════════════════════════════════════════════════════ */
+.sources-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
+.source-item{display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.02);padding:7px;border-radius:8px;border:1px solid var(--border)}
+.source-item .form-input{flex:1;padding:7px 9px;font-size:.82rem}
+.source-item .form-input.label-input{flex:0 0 150px}
+.btn-icon{
+  background:rgba(255,34,85,.08);border:1px solid rgba(255,34,85,.25);color:var(--red);
+  width:30px;height:30px;border-radius:7px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;flex:0 0 auto;font-size:1rem;
+}
+.btn-icon:hover{background:rgba(255,34,85,.2)}
+/* ═══════════════════════════════════════════════════════════════════
+   TOASTS
+   ═══════════════════════════════════════════════════════════════════ */
+.toast-container{position:fixed;top:20px;left:20px;z-index:9999;display:flex;flex-direction:column;gap:8px;max-width:380px;max-width:90vw}
+.toast{
+  background:rgba(15,15,35,.96);backdrop-filter:blur(12px);
+  border:1px solid var(--cyan);border-radius:12px;padding:12px 16px;
+  box-shadow:0 0 30px rgba(0,240,255,.35);animation:toastIn .3s;
+  font-size:.85rem;display:flex;align-items:start;gap:8px;
+  position:relative;overflow:hidden;
+}
+.toast.success{border-color:var(--green);box-shadow:0 0 30px rgba(0,255,136,.35)}
+.toast.error{border-color:var(--red);box-shadow:0 0 30px rgba(255,34,85,.35)}
+.toast.info{border-color:var(--blue);box-shadow:0 0 30px rgba(0,170,255,.35)}
+.toast.warn{border-color:var(--yellow);box-shadow:0 0 30px rgba(255,221,0,.35)}
+.toast-icon{font-size:1.1rem;flex:0 0 auto}
+.toast-msg{flex:1;line-height:1.4}
+.toast-progress{
+  position:absolute;bottom:0;left:0;height:2px;background:currentColor;
+  animation:toastProgress linear forwards;
+}
+@keyframes toastIn{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes toastProgress{from{width:100%}to{width:0}}
+/* ═══════════════════════════════════════════════════════════════════
+   COMMAND PALETTE
+   ═══════════════════════════════════════════════════════════════════ */
+.cmd-overlay{
+  position:fixed;inset:0;background:rgba(0,0,10,.7);backdrop-filter:blur(8px);
+  display:none;align-items:flex-start;justify-content:center;
+  padding:80px 20px;z-index:2000;
+}
+.cmd-overlay.active{display:flex}
+.cmd-palette{
+  background:rgba(15,15,35,.98);border:1px solid var(--cyan);
+  border-radius:16px;width:100%;max-width:520px;
+  box-shadow:0 0 60px rgba(0,240,255,.3);
+  animation:modalIn .2s;overflow:hidden;
+}
+.cmd-input{
+  width:100%;padding:16px 20px;background:transparent;
+  border:none;border-bottom:1px solid var(--border);
+  color:var(--text);font-family:inherit;font-size:1rem;
+}
+.cmd-input:focus{outline:none}
+.cmd-input::placeholder{color:var(--dim)}
+.cmd-list{max-height:400px;overflow-y:auto;padding:8px}
+.cmd-item{
+  padding:10px 14px;border-radius:8px;cursor:pointer;
+  display:flex;align-items:center;gap:10px;transition:background .15s;
+  font-size:.9rem;
+}
+.cmd-item:hover,.cmd-item.selected{background:rgba(0,240,255,.1);color:var(--cyan)}
+.cmd-item .icon{font-size:1.1rem;width:24px;text-align:center}
+.cmd-item .shortcut{margin-right:auto;font-size:.7rem;color:var(--dim);font-family:var(--mono)}
+/* ═══════════════════════════════════════════════════════════════════
+   GITHUB PROGRESS
+   ═══════════════════════════════════════════════════════════════════ */
+.github-progress{
+  display:none;margin-top:14px;padding:12px 16px;
+  background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.3);
+  border-radius:10px;
+}
+.github-progress.active{display:block}
+.github-progress-bar{
+  height:6px;background:rgba(0,0,0,.4);border-radius:3px;overflow:hidden;
+  margin-bottom:8px;
+}
+.github-progress-fill{
+  height:100%;width:0%;border-radius:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  transition:width .3s;box-shadow:0 0 10px var(--cyan);
+}
+.github-progress-text{font-size:.78rem;color:var(--dim);font-family:var(--mono);display:flex;justify-content:space-between}
+/* ═══════════════════════════════════════════════════════════════════
+   SETTINGS SECTIONS
+   ═══════════════════════════════════════════════════════════════════ */
+.settings-section{
+  background:var(--bg-card);backdrop-filter:blur(12px);
+  border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:14px;
+}
+.settings-title{color:var(--magenta);font-size:1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px;font-weight:700}
+.info-box{
+  background:rgba(0,170,255,.06);border:1px solid rgba(0,170,255,.25);
+  border-radius:9px;padding:11px 14px;margin-bottom:12px;
+  color:var(--dim);font-size:.82rem;line-height:1.7;
+}
 .info-box strong{color:var(--blue)}
-.info-box a{color:var(--cyan)}
-.info-box code{background:rgba(0,255,255,.1);padding:1px 6px;border-radius:4px;color:var(--cyan);font-family:'Courier New',monospace}
-.export-code{background:#050510;border:1px solid var(--border);border-radius:8px;padding:14px;font-family:'Courier New',monospace;font-size:.8rem;color:var(--green);overflow:auto;max-height:280px;white-space:pre;margin-bottom:10px;line-height:1.5}
-.spinner{display:inline-block;width:14px;height:14px;border:2px solid transparent;border-top-color:currentColor;border-radius:50%;animation:spin .8s linear infinite}
+.info-box a{color:var(--cyan);text-decoration:none}
+.info-box a:hover{text-decoration:underline}
+.info-box code{background:rgba(0,240,255,.1);padding:1px 6px;border-radius:4px;color:var(--cyan);font-family:var(--mono);font-size:.78rem}
+.export-code{
+  background:#020210;border:1px solid var(--border);border-radius:9px;
+  padding:12px;font-family:var(--mono);font-size:.78rem;color:var(--green);
+  overflow:auto;max-height:260px;white-space:pre;margin-bottom:10px;line-height:1.5;
+}
+/* ═══════════════════════════════════════════════════════════════════
+   SPINNER
+   ═══════════════════════════════════════════════════════════════════ */
+.spinner{display:inline-block;width:13px;height:13px;border:2px solid transparent;border-top-color:currentColor;border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-footer{text-align:center;color:var(--dim);margin-top:36px;padding:20px;font-size:.8rem}
-@media(max-width:700px){.logo-title{font-size:1.5rem;letter-spacing:2px}.stats-bar{flex-direction:column}.form-row{grid-template-columns:1fr}.source-item{flex-wrap:wrap}.source-item .form-input.label-input{flex:1 1 100%}.tabs{overflow-x:auto}.tab{white-space:nowrap}body{padding:12px}.modal{padding:18px}.status-bar{font-size:.78rem;padding:10px 12px}}
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════════ */
+footer{text-align:center;color:var(--dim);margin-top:32px;padding:16px;font-size:.75rem;font-family:var(--mono);letter-spacing:1px}
+footer a{color:var(--cyan);text-decoration:none}
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════ */
+@media(max-width:750px){
+  .logo-title{font-size:1.6rem;letter-spacing:3px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .source-item{flex-wrap:wrap}
+  .source-item .form-input.label-input{flex:1 1 100%}
+  .tabs{overflow-x:auto;flex-wrap:nowrap}
+  .tab{white-space:nowrap;flex:0 0 auto}
+  body{padding:12px}
+  .modal{padding:18px}
+  .status-bar{font-size:.75rem;padding:8px 12px}
+  .stat-value{font-size:1.3rem}
+}
+@media(max-width:400px){
+  .stats{grid-template-columns:1fr}
+}
+/* ═══════════════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════════════ */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg-input)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--magenta));border-radius:5px;border:2px solid var(--bg-input)}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(var(--magenta),var(--cyan))}
+/* Selection */
+::selection{background:rgba(0,240,255,.35);color:#fff}
 </style>
 </head>
 <body>
 
+<div class="stars-bg"></div>
+<div class="top-progress" id="topProgress"></div>
 <div class="toast-container" id="toasts"></div>
 
 <div class="container">
-  <header class="logo-header">
+  <header class="header">
     <div class="logo-title">MOVIE BEKES</div>
-    <div class="logo-sub">★ PRO EDITION · v7.1 · AUTO-DETECT ★</div>
-    <div class="logo-line">✦ CINEMA MANAGEMENT SYSTEM · NEON EDITION ✦</div>
+    <div class="logo-sub">★ PRO EDITION · v8.0 · PERSISTENT ★</div>
+    <div class="logo-line">✦ CINEMA MANAGEMENT · NEON EDITION ✦</div>
   </header>
 
-  <div class="status-bar" id="statusBar">
-    <span class="src scanning" id="sourceBadge">
-      <span class="dot"></span><span id="sourceText">جاري اكتشاف data/...</span>
+  <div class="status-bar">
+    <span class="save-indicator saved" id="saveIndicator">
+      <span class="dot"></span><span id="saveText">محفوظ</span>
     </span>
-    <span class="file-tag" id="sourceFiles">—</span>
-    <span style="color:var(--dim);font-size:.75rem" id="sourceTime"></span>
+    <span class="src-badge local" id="srcBadge">
+      <span class="dot"></span><span id="srcText">Local</span>
+    </span>
+    <span class="storage-info" id="storageInfo">—</span>
     <span class="spacer"></span>
-    <button onclick="refreshAll(false)" id="refreshBtn" title="إعادة التحميل من data/">🔄 تحديث</button>
-    <button onclick="refreshAll(true)" id="rescanBtn" title="إعادة اكتشاف المسار">🔍 إعادة فحص</button>
+    <button onclick="refreshFromDataFolder()" id="refreshBtn" title="استيراد من data/ (سيستبدل البيانات)">📂 استيراد من data/</button>
+    <button onclick="openCmdPalette()" title="Ctrl+K">⌘ أوامر</button>
   </div>
 
-  <div class="stats-bar">
-    <div class="stat-card"><div class="stat-label">الأفلام</div><div class="stat-value" id="moviesCount">—</div></div>
-    <div class="stat-card channels"><div class="stat-label">القنوات</div><div class="stat-value" id="channelsCount">—</div></div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-label">الأفلام</div>
+      <div class="stat-value" id="moviesCount">0</div>
+    </div>
+    <div class="stat s-channels">
+      <div class="stat-label">القنوات</div>
+      <div class="stat-value" id="channelsCount">0</div>
+    </div>
+    <div class="stat s-storage">
+      <div class="stat-label">التخزين</div>
+      <div class="stat-value" id="storageSize">0 KB</div>
+    </div>
+    <div class="stat s-sync">
+      <div class="stat-label">آخر حفظ</div>
+      <div class="stat-value" id="lastSave">—</div>
+    </div>
   </div>
 
   <nav class="tabs">
@@ -147,32 +499,45 @@ footer{text-align:center;color:var(--dim);margin-top:36px;padding:20px;font-size
   </nav>
 
   <div class="panel active" id="panel-movies">
-    <div class="actions-row"><button class="btn btn-primary" onclick="openMovieModal()">+ إضافة فيلم</button></div>
+    <div class="actions-row">
+      <button class="btn btn-primary" onclick="openMovieModal()">+ فيلم جديد</button>
+      <div class="search-bar"><input type="text" id="movieSearch" placeholder="ابحث في الأفلام..." oninput="renderMovies()"></div>
+    </div>
     <div id="moviesList"></div>
   </div>
 
   <div class="panel" id="panel-channels">
-    <div class="actions-row"><button class="btn btn-magenta" onclick="openChannelModal()">+ إضافة قناة</button></div>
+    <div class="actions-row">
+      <button class="btn btn-magenta" onclick="openChannelModal()">+ قناة جديدة</button>
+      <div class="search-bar"><input type="text" id="channelSearch" placeholder="ابحث في القنوات..." oninput="renderChannels()"></div>
+    </div>
     <div id="channelsList"></div>
   </div>
 
   <div class="panel" id="panel-export">
     <div class="settings-section">
       <div class="settings-title">📤 تصدير 5 ملفات</div>
-      <div class="info-box">نفس صيغة السكربت الأصلي — يمكنك رفعها يدوياً أو عبر تبويب GitHub.</div>
+      <div class="info-box">
+        يولّد نفس ملفات السكربت الأصلي. يمكنك رفعها يدوياً أو استخدام تبويب <strong>GitHub</strong>.
+      </div>
       <div class="actions-row">
         <button class="btn btn-primary btn-sm" onclick="exportFile('movies.json')">💾 movies.json</button>
         <button class="btn btn-primary btn-sm" onclick="exportFile('channels.json')">💾 channels.json</button>
         <button class="btn btn-green btn-sm" onclick="exportFile('content.js')">💾 content.js</button>
         <button class="btn btn-magenta btn-sm" onclick="exportFile('movies.db')">💾 movies.db</button>
         <button class="btn btn-magenta btn-sm" onclick="exportFile('channels.db')">💾 channels.db</button>
+        <button class="btn btn-ghost btn-sm" onclick="backupAll()">📦 نسخة كاملة</button>
       </div>
     </div>
     <div class="settings-section">
-      <div class="settings-title">📥 استيراد / نسخ احتياطي</div>
+      <div class="settings-title">📥 استيراد / استعادة</div>
+      <div class="info-box">
+        يقبل <code>.json</code> · <code>.js</code> · <code>.db</code> · النسخ الاحتياطية الكاملة.
+      </div>
       <div class="actions-row">
-        <button class="btn btn-ghost" onclick="importData()">📁 استيراد ملف</button>
-        <button class="btn btn-ghost" onclick="backupData()">💾 نسخة كاملة</button>
+        <button class="btn btn-ghost" onclick="importFile()">📁 استيراد ملف</button>
+        <button class="btn btn-ghost" onclick="restoreBackup()">♻️ استعادة نسخة سابقة</button>
+        <button class="btn btn-ghost" onclick="clearAllData()">🗑️ مسح كل البيانات</button>
       </div>
     </div>
     <div class="settings-section">
@@ -183,16 +548,20 @@ footer{text-align:center;color:var(--dim);margin-top:36px;padding:20px;font-size
 
   <div class="panel" id="panel-github">
     <div class="settings-section">
-      <div class="settings-title">🐙 إعدادات GitHub</div>
+      <div class="settings-title">🐙 رفع إلى GitHub</div>
       <div class="info-box">
-        <strong>مطلوب:</strong> Token بصلاحية <code>repo</code>. أنشئ من
-        <a href="https://github.com/settings/tokens/new?scopes=repo&description=Movie%20BekEs" target="_blank">github.com/settings/tokens</a>.
-        <br>سيتم رفع <strong>5 ملفات</strong> إلى <code>data/</code> في مستودعك.
+        <strong>خطوات سريعة:</strong><br>
+        1. أنشئ <a href="https://github.com/settings/tokens/new?scopes=repo&description=Movie%20BekEs" target="_blank">Personal Access Token</a> بصلاحية <code>repo</code><br>
+        2. أدخل بياناتك أدناه (تُحفظ تلقائياً أثناء الكتابة)<br>
+        3. اضغط <strong>🚀 رفع 5 ملفات</strong>
       </div>
-      <div class="form-group"><label class="form-label">Token</label><input type="password" class="form-input" id="ghToken" placeholder="ghp_xxxx" autocomplete="off"></div>
+      <div class="form-group">
+        <label class="form-label">Personal Access Token <span class="req">*</span></label>
+        <input type="password" class="form-input" id="ghToken" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off">
+      </div>
       <div class="form-row">
-        <div class="form-group"><label class="form-label">Owner</label><input type="text" class="form-input" id="ghOwner" placeholder="username"></div>
-        <div class="form-group"><label class="form-label">Repo</label><input type="text" class="form-input" id="ghRepo" placeholder="repo-name"></div>
+        <div class="form-group"><label class="form-label">Owner <span class="req">*</span></label><input type="text" class="form-input" id="ghOwner" placeholder="username"></div>
+        <div class="form-group"><label class="form-label">Repo <span class="req">*</span></label><input type="text" class="form-input" id="ghRepo" placeholder="repo-name"></div>
       </div>
       <div class="form-row">
         <div class="form-group"><label class="form-label">الفرع</label><input type="text" class="form-input" id="ghBranch" value="main"></div>
@@ -201,380 +570,448 @@ footer{text-align:center;color:var(--dim);margin-top:36px;padding:20px;font-size
       <div class="actions-row">
         <button class="btn btn-green" id="ghPushBtn" onclick="githubPush()">🚀 رفع 5 ملفات</button>
         <button class="btn btn-ghost" onclick="testGithub()">🔍 اختبار</button>
-        <button class="btn btn-ghost" onclick="saveGithubSettings()">💾 حفظ</button>
         <button class="btn btn-red" onclick="clearGithubSettings()">🗑️ مسح</button>
+      </div>
+      <div class="github-progress" id="ghProgress">
+        <div class="github-progress-bar"><div class="github-progress-fill" id="ghProgressFill"></div></div>
+        <div class="github-progress-text">
+          <span id="ghProgressStatus">جاري الرفع...</span>
+          <span id="ghProgressPercent">0%</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <footer>© 2025 B6_7E | بيكاس · Movie BekEs v7.1 · Auto-Detect Edition</footer>
+  <footer>
+    © 2025 B6_7E | بيكاس · Movie BekEs v8.0 · <a href="#" onclick="openCmdPalette();return false">⌘ لوحة الأوامر</a>
+  </footer>
 </div>
 
-<!-- Movie Modal -->
+<!-- ═══════════════════════════════════════════════════════════
+     MOVIE MODAL
+     ═══════════════════════════════════════════════════════════ -->
 <div class="modal-overlay" id="movieModal">
   <div class="modal">
-    <div class="modal-title"><span id="movieModalTitle">+ إضافة فيلم</span><button class="modal-close" onclick="closeModal('movieModal')">×</button></div>
-    <div class="form-group"><label class="form-label">العنوان *</label><input type="text" class="form-input" id="mTitle"></div>
-    <div class="form-row">
-      <div class="form-group"><label class="form-label">السنة</label><input type="number" class="form-input" id="mYear" value="2025"></div>
-      <div class="form-group"><label class="form-label">التصنيف</label><input type="text" class="form-input" id="mGenre" value="عام"></div>
+    <div class="modal-title">
+      <span id="movieModalTitle">+ إضافة فيلم</span>
+      <span class="draft-badge" id="movieDraftBadge" style="display:none">💾 مسودة محفوظة</span>
+      <button class="modal-close" onclick="closeMovieModal()">×</button>
     </div>
-    <div class="form-row">
-      <div class="form-group"><label class="form-label">التقييم</label><input type="number" class="form-input" id="mRating" value="0" min="0" max="10" step="0.1"></div>
-      <div class="form-group"><label class="form-label">الغلاف</label><input type="url" class="form-input" id="mPoster"></div>
-    </div>
-    <div class="form-group"><label class="form-label">القصة</label><textarea class="form-textarea" id="mStory"></textarea></div>
     <div class="form-group">
-      <label class="form-label">السيرفرات</label>
+      <label class="form-label">العنوان <span class="req">*</span></label>
+      <input type="text" class="form-input" id="mTitle" oninput="saveMovieDraft()">
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">السنة</label><input type="number" class="form-input" id="mYear" value="2025" oninput="saveMovieDraft()"></div>
+      <div class="form-group"><label class="form-label">التصنيف</label><input type="text" class="form-input" id="mGenre" value="عام" oninput="saveMovieDraft()"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">التقييم (0-10)</label><input type="number" class="form-input" id="mRating" value="0" min="0" max="10" step="0.1" oninput="saveMovieDraft()"></div>
+      <div class="form-group"><label class="form-label">الغلاف</label><input type="url" class="form-input" id="mPoster" placeholder="https://..." oninput="saveMovieDraft()"></div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">القصة <span class="hint">(اختياري)</span></label>
+      <textarea class="form-textarea" id="mStory" oninput="saveMovieDraft()"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">سيرفرات المشاهدة</label>
       <div class="sources-list" id="mSources"></div>
-      <button class="btn btn-ghost btn-sm" onclick="addSourceRow()">+ سيرفر</button>
+      <button class="btn btn-ghost btn-sm" onclick="addSourceRow();saveMovieDraft()">+ إضافة سيرفر</button>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('movieModal')">إلغاء</button>
+      <button class="btn btn-ghost" onclick="closeMovieModal()">إلغاء</button>
       <button class="btn btn-primary" onclick="saveMovie()">💾 حفظ</button>
     </div>
   </div>
 </div>
 
-<!-- Channel Modal -->
+<!-- ═══════════════════════════════════════════════════════════
+     CHANNEL MODAL
+     ═══════════════════════════════════════════════════════════ -->
 <div class="modal-overlay" id="channelModal">
   <div class="modal">
-    <div class="modal-title"><span id="channelModalTitle">+ إضافة قناة</span><button class="modal-close" onclick="closeModal('channelModal')">×</button></div>
-    <div class="form-group"><label class="form-label">الاسم *</label><input type="text" class="form-input" id="cName"></div>
-    <div class="form-group"><label class="form-label">الغلاف</label><input type="url" class="form-input" id="cPoster"></div>
-    <div class="form-group"><label class="form-label">رابط البث *</label><input type="url" class="form-input" id="cStream"></div>
+    <div class="modal-title">
+      <span id="channelModalTitle">+ إضافة قناة</span>
+      <button class="modal-close" onclick="closeChannelModal()">×</button>
+    </div>
+    <div class="form-group"><label class="form-label">اسم القناة <span class="req">*</span></label><input type="text" class="form-input" id="cName"></div>
+    <div class="form-group"><label class="form-label">الغلاف</label><input type="url" class="form-input" id="cPoster" placeholder="https://..."></div>
+    <div class="form-group"><label class="form-label">رابط البث <span class="req">*</span></label><input type="url" class="form-input" id="cStream" placeholder="https://..."></div>
     <div class="form-group"><label class="form-label">الوصف</label><textarea class="form-textarea" id="cDesc"></textarea></div>
     <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('channelModal')">إلغاء</button>
+      <button class="btn btn-ghost" onclick="closeChannelModal()">إلغاء</button>
       <button class="btn btn-magenta" onclick="saveChannel()">💾 حفظ</button>
     </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COMMAND PALETTE
+     ═══════════════════════════════════════════════════════════ -->
+<div class="cmd-overlay" id="cmdOverlay" onclick="if(event.target===this)closeCmdPalette()">
+  <div class="cmd-palette">
+    <input type="text" class="cmd-input" id="cmdInput" placeholder="اكتب أمراً... (مثال: إضافة فيلم، رفع، تصدير)" oninput="filterCmd()" onkeydown="cmdKeydown(event)">
+    <div class="cmd-list" id="cmdList"></div>
   </div>
 </div>
 
 <input type="file" id="importFileHidden" accept=".json,.js,.db" style="display:none">
 
 <script>
-// ═══════════════════════════════════════════════════════════════════
-//  Movie BekEs v7.1 — Auto-Detect data/ Folder
-//  يبحث عن مجلد data/ في مسارات متعددة، يجرّب كل الصيغ بالتوازي
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════════
+//  MOVIE BEKES v8.0 — PERSISTENT EDITION
+//  Architecture: Storage → State → Drafts → UI → GitHub
+//  Core principle: NEVER LOSE USER WORK. Period.
+// ═══════════════════════════════════════════════════════════════════════════
+'use strict';
+
 const US = '\x1f';
-const STORAGE_KEY = 'movieBekEs_data_v71';
-const GITHUB_KEY = 'movieBekEs_github';
-const BASE_PATH_KEY = 'movieBekEs_basePath';
-const BASE_META_KEY = 'movieBekEs_baseMeta';
+const KEYS = {
+  DATA: 'mb_data_v80',
+  GITHUB: 'mb_github_v80',
+  DRAFT_MOVIE: 'mb_draft_movie_v80',
+  DRAFT_CHANNEL: 'mb_draft_channel_v80',
+  SESSION: 'mb_session_v80',
+  FLAGS: 'mb_flags_v80',
+  BACKUP: 'mb_backup_v80',
+  BACKUP_TS: 'mb_backup_ts_v80'
+};
 
-// المسارات المحتملة — تُجرّب بالتوازي
-const BASE_CANDIDATES = [
-  'data/',       // index.html و data/ في نفس المستوى
-  './data/',     // صريح
-  'Data/',       // حرف كبير
-  'DATA/',       // كامل كبير
-  '../data/',    // index داخل مجلد فرعي
-  '../../data/', // أعمق
-  '/data/'       // مسار مطلق
-];
-
-// الصيغ بالترتيب المفضّل
-const FORMAT_PRIORITY = [
-  { type: 'content.js', files: ['content.js'] },
-  { type: 'json',       files: ['movies.json', 'channels.json'] },
-  { type: 'db',         files: ['movies.db', 'channels.db'] }
-];
-
-let state = { movies: [], channels: [] };
-let editingMovieIndex = -1;
-let editingChannelIndex = -1;
-let loadInfo = { base: null, type: null, files: [], time: null };
-
-// ─── Utilities ───
-const $ = id => document.getElementById(id);
-const escapeHtml = s => s == null ? '' : String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-function toast(msg, type='success') {
-  const el = document.createElement('div');
-  el.className = 'toast ' + type;
-  el.textContent = msg;
-  $('toasts').appendChild(el);
-  setTimeout(() => { el.style.transition='opacity .3s'; el.style.opacity='0'; setTimeout(()=>el.remove(),300); }, 3200);
-}
-
-function showSkeleton() {
-  const sk = Array(3).fill(0).map(() => `<div class="skeleton"><div class="skeleton-line short"></div><div class="skeleton-line med"></div><div class="skeleton-line"></div></div>`).join('');
-  $('moviesList').innerHTML = sk;
-  $('channelsList').innerHTML = '';
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  PROBE — اختبار وجود ملف بسرعة مع timeout
-// ═══════════════════════════════════════════════════════════════════
-async function probe(url, timeoutMs = 2000) {
-  try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
-    const r = await fetch(url, { cache: 'no-store', signal: ctrl.signal });
-    clearTimeout(timer);
-    if (!r.ok) return null;
-    return { url, response: r };
-  } catch {
-    return null;
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  DETECT — يبحث عن مجلد data/ في كل المسارات المحتملة
-//  Strategy: per-format → parallel probe all bases → first OK wins
-// ═══════════════════════════════════════════════════════════════════
-async function detectBase(forceRescan = false) {
-  const cacheKey = BASE_PATH_KEY;
-
-  // 1️⃣ لو مخزّن مسبقاً ولم نُجبر إعادة الفحص → تحقق سريع
-  if (!forceRescan) {
-    const cached = localStorage.getItem(cacheKey);
-    if (cached) {
-      const metaRaw = localStorage.getItem(BASE_META_KEY);
-      const meta = metaRaw ? JSON.parse(metaRaw) : null;
-      // تحقق سريع (ملف واحد فقط) — أسرع من إعادة الفحص الكامل
-      if (meta && meta.type && meta.files && meta.files.length) {
-        const checkUrl = cached + meta.files[0];
-        const ok = await probe(checkUrl, 1500);
-        if (ok) return { base: cached, type: meta.type, files: meta.files };
+// ═══════════════════════════════════════════════════════════════════════════
+//  LAYER 1: STORAGE (safe wrapper)
+// ═══════════════════════════════════════════════════════════════════════════
+const Storage = {
+  _tested: null,
+  available() {
+    if (this._tested !== null) return this._tested;
+    try {
+      const k = '__t__';
+      localStorage.setItem(k, k);
+      localStorage.removeItem(k);
+      this._tested = true;
+    } catch { this._tested = false; }
+    return this._tested;
+  },
+  get(key, fallback = null) {
+    if (!this.available()) return fallback;
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) { console.error('Storage.get:', key, e); return fallback; }
+  },
+  set(key, value) {
+    if (!this.available()) return false;
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (e) {
+      if (e.name === 'QuotaExceededError' || e.code === 22) {
+        Toast.show('⚠️ مساحة التخزين ممتلئة! صدّر نسخة احتياطية فوراً.', 'error', 8000);
       }
-      // فشل التحقق → احذف الكاش
-      localStorage.removeItem(cacheKey);
-      localStorage.removeItem(BASE_META_KEY);
+      console.error('Storage.set:', key, e);
+      return false;
     }
-  }
-
-  // 2️⃣ فحص كامل: لكل صيغة → فحص كل المسارات بالتوازي
-  for (const format of FORMAT_PRIORITY) {
-    const results = await Promise.all(
-      BASE_CANDIDATES.map(async (base) => {
-        // فحص الملفات المميزة للصيغة (أول ملف موجود = نجاح)
-        for (const file of format.files) {
-          const ok = await probe(base + file, 2000);
-          if (ok) {
-            // للتأكد، فحص باقي الملفات اختياري (لا يؤثر على النجاح)
-            return { base, type: format.type, files: format.files };
-          }
+  },
+  remove(key) {
+    if (!this.available()) return;
+    try { localStorage.removeItem(key); } catch {}
+  },
+  size() {
+    if (!this.available()) return 0;
+    let total = 0;
+    try {
+      for (const k in localStorage) {
+        if (Object.prototype.hasOwnProperty.call(localStorage, k)) {
+          total += (k.length + (localStorage[k] || '').length) * 2;
         }
-        return null;
-      })
-    );
-    const winner = results.find(r => r);
-    if (winner) {
-      // خزّن للاستخدام القادم
-      try {
-        localStorage.setItem(cacheKey, winner.base);
-        localStorage.setItem(BASE_META_KEY, JSON.stringify({ type: winner.type, files: winner.files }));
-      } catch {}
-      return winner;
+      }
+    } catch {}
+    return total;
+  }
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  LAYER 2: TOAST
+// ═══════════════════════════════════════════════════════════════════════════
+const Toast = {
+  icons: { success: '✓', error: '✕', info: 'ℹ', warn: '⚠' },
+  show(msg, type = 'success', duration = 3200) {
+    const container = document.getElementById('toasts');
+    if (!container) return;
+    const el = document.createElement('div');
+    el.className = 'toast ' + type;
+    el.innerHTML = `<span class="toast-icon">${this.icons[type] || '•'}</span><span class="toast-msg">${escapeHtml(msg)}</span><div class="toast-progress" style="animation-duration:${duration}ms"></div>`;
+    container.appendChild(el);
+    setTimeout(() => {
+      el.style.transition = 'opacity .3s, transform .3s';
+      el.style.opacity = '0';
+      el.style.transform = 'translateX(-40px)';
+      setTimeout(() => el.remove(), 320);
+    }, duration);
+  }
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════════════════════════════════
+const $ = id => document.getElementById(id);
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function fmtBytes(b) {
+  if (b < 1024) return b + ' B';
+  if (b < 1024 * 1024) return (b / 1024).toFixed(1) + ' KB';
+  return (b / 1024 / 1024).toFixed(2) + ' MB';
+}
+function fmtTime(d) {
+  if (!d) return '—';
+  const date = d instanceof Date ? d : new Date(d);
+  const now = new Date();
+  const diff = (now - date) / 1000;
+  if (diff < 5) return 'الآن';
+  if (diff < 60) return Math.floor(diff) + 'ث';
+  if (diff < 3600) return Math.floor(diff / 60) + 'د';
+  return date.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+}
+function debounce(fn, ms = 300) {
+  let t;
+  return function (...args) {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), ms);
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  LAYER 3: STATE MANAGER (the heart)
+// ═══════════════════════════════════════════════════════════════════════════
+const State = {
+  movies: [],
+  channels: [],
+  source: 'local',       // 'local' | 'data' | 'empty'
+  lastSaved: null,
+  isDirty: false,
+
+  load() {
+    const cached = Storage.get(KEYS.DATA, null);
+    if (cached && (Array.isArray(cached.movies) || Array.isArray(cached.channels))) {
+      this.movies = this._normMovies(cached.movies || []);
+      this.channels = this._normChannels(cached.channels || []);
+      this.source = 'local';
+      this.lastSaved = cached._ts ? new Date(cached._ts) : null;
+      return true;
     }
-  }
-
-  // 3️⃣ لا شيء موجود
-  return null;
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  LOAD — تحميل البيانات من المسار المكتشف
-// ═══════════════════════════════════════════════════════════════════
-async function loadDataFromBase(base, type) {
-  if (type === 'content.js') {
-    const r = await probe(base + 'content.js', 5000);
-    if (!r) return null;
-    const txt = await r.response.text();
-    const m = txt.match(/window\.__CINEMA_DATA__\s*=\s*(\{[\s\S]*\})\s*;?\s*$/);
-    if (!m) return null;
-    const data = JSON.parse(m[1]);
-    return {
-      movies: normalizeMovies(data.movies || []),
-      channels: normalizeChannels(data.channels || []),
-      files: ['content.js']
-    };
-  }
-  if (type === 'json') {
-    const [mR, cR] = await Promise.all([
-      probe(base + 'movies.json', 5000),
-      probe(base + 'channels.json', 5000)
-    ]);
-    if (!mR && !cR) return null;
-    const [mJ, cJ] = await Promise.all([
-      mR ? mR.response.json().catch(() => null) : null,
-      cR ? cR.response.json().catch(() => null) : null
-    ]);
-    return {
-      movies: normalizeMovies(mJ?.movies || []),
-      channels: normalizeChannels(cJ?.channels || []),
-      files: [mR && 'movies.json', cR && 'channels.json'].filter(Boolean)
-    };
-  }
-  if (type === 'db') {
-    const [mR, cR] = await Promise.all([
-      probe(base + 'movies.db', 5000),
-      probe(base + 'channels.db', 5000)
-    ]);
-    if (!mR && !cR) return null;
-    const [mT, cT] = await Promise.all([
-      mR ? mR.response.text() : '',
-      cR ? cR.response.text() : ''
-    ]);
-    return {
-      movies: parseMoviesDb(mT),
-      channels: parseChannelsDb(cT),
-      files: [mR && 'movies.db', cR && 'channels.db'].filter(Boolean)
-    };
-  }
-  return null;
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  PARSERS
-// ═══════════════════════════════════════════════════════════════════
-function parseMoviesDb(text) {
-  if (!text) return [];
-  return text.split('\n').filter(l => l.trim()).map(line => {
-    const p = line.split(US);
-    const urls = (p[6] || '').split(';;;').filter(Boolean);
-    const labels = (p[7] || '').split(';;;');
-    return {
-      title: p[0] || '',
-      year: parseInt(p[1]) || 0,
-      genre: p[2] || 'عام',
-      rating: parseFloat(p[3]) || 0,
-      poster: p[4] || '',
-      story: p[5] || '',
-      sources: urls.map((url, i) => ({ url, label: labels[i] || 'سيرفر' }))
-    };
-  });
-}
-function parseChannelsDb(text) {
-  if (!text) return [];
-  return text.split('\n').filter(l => l.trim()).map(line => {
-    const p = line.split(US);
-    return { name: p[0] || '', poster: p[1] || '', stream: p[2] || '', desc: p[3] || '' };
-  });
-}
-function normalizeMovies(arr) {
-  return (arr || []).filter(m => m && m.title).map(m => ({
-    title: String(m.title || ''),
-    year: parseInt(m.year) || 0,
-    genre: m.genre || 'عام',
-    rating: parseFloat(m.rating) || 0,
-    poster: m.poster || '',
-    story: m.story || '',
-    sources: Array.isArray(m.sources)
-      ? m.sources.filter(s => s && s.url).map(s => ({ url: s.url, label: s.label || 'سيرفر' }))
-      : []
-  }));
-}
-function normalizeChannels(arr) {
-  return (arr || []).filter(c => c && c.name).map(c => ({
-    name: String(c.name || ''),
-    poster: c.poster || '',
-    stream: c.stream || '',
-    desc: c.desc || ''
-  }));
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  REFRESH — التحميل الكامل
-// ═══════════════════════════════════════════════════════════════════
-async function refreshAll(forceRescan = false) {
-  const btn = $('refreshBtn');
-  const rescanBtn = $('rescanBtn');
-  btn.disabled = true; rescanBtn.disabled = true;
-  $('sourceBadge').className = 'src scanning';
-  $('sourceText').textContent = forceRescan ? 'جاري إعادة الفحص...' : 'جاري التحديث...';
-
-  try {
-    const detected = await detectBase(forceRescan);
-    if (!detected) {
-      // لم يُعثر على data/
-      loadInfo = { base: null, type: null, files: [], time: new Date() };
-      updateStatusBar();
-      return false;
-    }
-    const data = await loadDataFromBase(detected.base, detected.type);
-    if (!data) {
-      loadInfo = { base: null, type: null, files: [], time: new Date() };
-      updateStatusBar();
-      return false;
-    }
-    // نجاح
-    state.movies = data.movies;
-    state.channels = data.channels;
-    persistCache();
-    loadInfo = { base: detected.base, type: detected.type, files: data.files, time: new Date() };
-    renderAll(); updateStats(); renderContentJsPreview(); updateStatusBar();
-    if (forceRescan) toast(`تم الفحص ✓ — ${detected.base} (${detected.type})`, 'success');
-    return true;
-  } catch (e) {
-    console.error(e);
     return false;
-  } finally {
-    btn.disabled = false; rescanBtn.disabled = false;
+  },
+
+  save(markDirty = true) {
+    const payload = {
+      movies: this.movies,
+      channels: this.channels,
+      _ts: Date.now()
+    };
+    const ok = Storage.set(KEYS.DATA, payload);
+    if (ok) {
+      this.lastSaved = new Date();
+      this.isDirty = false;
+      UI.updateSaveIndicator('saved', 'محفوظ');
+      UI.updateStorageInfo();
+      UI.updateLastSave();
+      if (markDirty) this._autoBackup();
+    } else {
+      UI.updateSaveIndicator('error', 'فشل الحفظ');
+    }
+    return ok;
+  },
+
+  saveDebounced: null, // set after helpers
+
+  _autoBackup() {
+    // نسخة احتياطية كل 5 دقائق كحد أقصى
+    try {
+      const lastTs = Storage.get(KEYS.BACKUP_TS, 0);
+      if (Date.now() - lastTs < 5 * 60 * 1000) return;
+      Storage.set(KEYS.BACKUP, {
+        movies: this.movies,
+        channels: this.channels,
+        _ts: Date.now()
+      });
+      Storage.set(KEYS.BACKUP_TS, Date.now());
+    } catch {}
+  },
+
+  _normMovies(arr) {
+    return (arr || []).filter(m => m && m.title).map(m => ({
+      title: String(m.title || ''),
+      year: parseInt(m.year) || 0,
+      genre: m.genre || 'عام',
+      rating: parseFloat(m.rating) || 0,
+      poster: m.poster || '',
+      story: m.story || '',
+      sources: Array.isArray(m.sources)
+        ? m.sources.filter(s => s && s.url).map(s => ({ url: s.url, label: s.label || 'سيرفر' }))
+        : []
+    }));
+  },
+  _normChannels(arr) {
+    return (arr || []).filter(c => c && c.name).map(c => ({
+      name: String(c.name || ''),
+      poster: c.poster || '',
+      stream: c.stream || '',
+      desc: c.desc || ''
+    }));
   }
-}
+};
+State.saveDebounced = debounce(() => State.save(), 250);
 
-function updateStatusBar() {
-  const badge = $('sourceBadge');
-  const text = $('sourceText');
-  const files = $('sourceFiles');
-  const time = $('sourceTime');
-  if (loadInfo.base && loadInfo.type) {
-    badge.className = 'src';
-    text.textContent = `✓ ${loadInfo.type}`;
-    files.textContent = loadInfo.base + (loadInfo.files.length > 1 ? ` (${loadInfo.files.join(' + ')})` : loadInfo.files[0]);
-    time.textContent = loadInfo.time ? '· ' + loadInfo.time.toLocaleTimeString('ar-EG') : '';
-  } else if (state.movies.length || state.channels.length) {
-    badge.className = 'src cache';
-    text.textContent = 'الكاش المحلي';
-    files.textContent = 'localStorage';
-    time.textContent = '';
-  } else {
-    badge.className = 'src warn';
-    text.textContent = 'لم يُعثر على data/';
-    files.textContent = 'تحقق من وجود مجلد data بجانب index.html';
-    time.textContent = '';
+// ═══════════════════════════════════════════════════════════════════════════
+//  LAYER 4: DRAFT MANAGER (auto-save modal forms)
+// ═══════════════════════════════════════════════════════════════════════════
+const Draft = {
+  saveMovie() {
+    const draft = {
+      title: $('mTitle')?.value || '',
+      year: $('mYear')?.value || '',
+      genre: $('mGenre')?.value || '',
+      rating: $('mRating')?.value || '',
+      poster: $('mPoster')?.value || '',
+      story: $('mStory')?.value || '',
+      sources: [],
+      _ts: Date.now(),
+      _editing: window._editingMovieIndex ?? -1
+    };
+    document.querySelectorAll('#mSources .source-item').forEach(item => {
+      draft.sources.push({
+        label: item.querySelector('.label-input')?.value || '',
+        url: item.querySelector('.url-input')?.value || ''
+      });
+    });
+    // فقط احفظ لو هناك محتوى
+    if (draft.title || draft.story || draft.sources.some(s => s.url)) {
+      Storage.set(KEYS.DRAFT_MOVIE, draft);
+      const badge = $('movieDraftBadge');
+      if (badge) badge.style.display = 'inline-flex';
+    }
+  },
+  saveChannel() {
+    const draft = {
+      name: $('cName')?.value || '',
+      poster: $('cPoster')?.value || '',
+      stream: $('cStream')?.value || '',
+      desc: $('cDesc')?.value || '',
+      _ts: Date.now(),
+      _editing: window._editingChannelIndex ?? -1
+    };
+    if (draft.name || draft.stream) {
+      Storage.set(KEYS.DRAFT_CHANNEL, draft);
+    }
+  },
+  loadMovie() { return Storage.get(KEYS.DRAFT_MOVIE, null); },
+  loadChannel() { return Storage.get(KEYS.DRAFT_CHANNEL, null); },
+  clearMovie() { Storage.remove(KEYS.DRAFT_MOVIE); },
+  clearChannel() { Storage.remove(KEYS.DRAFT_CHANNEL); },
+  hasAny() { return !!(this.loadMovie() || this.loadChannel()); }
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  LAYER 5: SESSION (tab + scroll restore)
+// ═══════════════════════════════════════════════════════════════════════════
+const Session = {
+  save() {
+    Storage.set(KEYS.SESSION, {
+      activeTab: document.querySelector('.tab.active')?.dataset.tab || 'movies',
+      scroll: window.scrollY,
+      _ts: Date.now()
+    });
+  },
+  restore() {
+    const s = Storage.get(KEYS.SESSION, null);
+    if (!s) return;
+    if (s.activeTab) {
+      const tab = document.querySelector(`.tab[data-tab="${s.activeTab}"]`);
+      if (tab) switchTab(s.activeTab);
+    }
+    if (s.scroll && s.scroll < 3000) {
+      requestAnimationFrame(() => window.scrollTo(0, s.scroll));
+    }
   }
-}
+};
 
-// ─── Cache ───
-function persistCache() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {} }
-function loadCache() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) state = JSON.parse(raw);
-  } catch(e) {}
-  if (!Array.isArray(state.movies)) state.movies = [];
-  if (!Array.isArray(state.channels)) state.channels = [];
-}
+// ═══════════════════════════════════════════════════════════════════════════
+//  LAYER 6: UI
+// ═══════════════════════════════════════════════════════════════════════════
+const UI = {
+  updateSaveIndicator(state, text) {
+    const el = $('saveIndicator');
+    if (!el) return;
+    el.className = 'save-indicator ' + state;
+    $('saveText').textContent = text;
+  },
+  updateStorageInfo() {
+    const el = $('storageInfo');
+    if (!el) return;
+    el.textContent = '💾 ' + fmtBytes(Storage.size());
+  },
+  updateLastSave() {
+    const el = $('lastSave');
+    if (!el) return;
+    el.textContent = State.lastSaved ? fmtTime(State.lastSaved) : '—';
+    const sizeEl = $('storageSize');
+    if (sizeEl) sizeEl.textContent = fmtBytes(Storage.size());
+  },
+  updateSource(source) {
+    const badge = $('srcBadge');
+    const text = $('srcText');
+    if (!badge || !text) return;
+    if (source === 'local') { badge.className = 'src-badge local'; text.textContent = 'Local Storage'; }
+    else if (source === 'data') { badge.className = 'src-badge data'; text.textContent = 'data/'; }
+    else { badge.className = 'src-badge empty'; text.textContent = 'فارغ'; }
+  },
+  updateCounts() {
+    const mc = $('moviesCount'), cc = $('channelsCount');
+    if (mc) mc.textContent = State.movies.length;
+    if (cc) cc.textContent = State.channels.length;
+  },
+  setProgress(active, text) {
+    const p = $('topProgress');
+    if (!p) return;
+    if (active) { p.style.transform = 'scaleX(1)'; p.classList.add('active'); }
+    else { p.classList.remove('active'); setTimeout(() => { p.style.transform = 'scaleX(0)'; }, 250); }
+  }
+};
 
-// ─── Render ───
-function updateStats() { $('moviesCount').textContent = state.movies.length; $('channelsCount').textContent = state.channels.length; }
-
+// ═══════════════════════════════════════════════════════════════════════════
+//  RENDER
+// ═══════════════════════════════════════════════════════════════════════════
 function renderMovies() {
   const el = $('moviesList');
-  if (!state.movies.length) {
-    el.innerHTML = `<div class="empty-state">🎬 لا توجد أفلام<br><button class="btn btn-primary" onclick="openMovieModal()">+ إضافة فيلم</button></div>`;
+  if (!el) return;
+  const q = ($('movieSearch')?.value || '').toLowerCase().trim();
+  let list = State.movies;
+  if (q) list = list.map((m, i) => ({ m, i })).filter(({ m }) =>
+    (m.title || '').toLowerCase().includes(q) ||
+    (m.genre || '').toLowerCase().includes(q) ||
+    String(m.year || '').includes(q)
+  );
+  else list = list.map((m, i) => ({ m, i }));
+
+  if (!list.length) {
+    el.innerHTML = `<div class="empty-state"><div class="icon">🎬</div>${q ? 'لا نتائج للبحث' : 'لا توجد أفلام بعد'}<br><button class="btn btn-primary btn-sm" style="margin-top:14px" onclick="openMovieModal()">+ إضافة أول فيلم</button></div>`;
     return;
   }
+
   const parts = [];
-  for (let i = 0; i < state.movies.length; i++) {
-    const m = state.movies[i];
+  for (const { m, i } of list) {
     const srcCount = (m.sources || []).length;
     parts.push(`<div class="card">
-      <div class="card-header"><div>
-        <div class="card-title">${escapeHtml(m.title)}</div>
-        <div class="card-meta">
-          <span class="badge badge-year">📅 ${escapeHtml(m.year || '?')}</span>
-          <span class="badge badge-rating">⭐ ${escapeHtml(m.rating || 0)}</span>
-          <span>${escapeHtml(m.genre || 'عام')}</span>
-          ${srcCount ? `<span class="badge badge-servers">🌐 ${srcCount}</span>` : '<span class="badge badge-warn">⚠️ ناقص رابط</span>'}
-          ${m.poster ? '' : '<span class="badge badge-warn">⚠️ ناقص غلاف</span>'}
-        </div>
-      </div></div>
+      <div class="card-title">${escapeHtml(m.title)}</div>
+      <div class="card-meta">
+        <span class="badge badge-year">📅 ${escapeHtml(m.year || '?')}</span>
+        <span class="badge badge-rating">⭐ ${escapeHtml(m.rating || 0)}</span>
+        <span>${escapeHtml(m.genre || 'عام')}</span>
+        ${srcCount ? `<span class="badge badge-servers">🌐 ${srcCount} سيرفر</span>` : '<span class="badge badge-warn">⚠️ لا رابط</span>'}
+        ${m.poster ? '' : '<span class="badge badge-warn">⚠️ لا غلاف</span>'}
+      </div>
       ${m.story ? `<div class="card-story">${escapeHtml(m.story)}</div>` : ''}
       <div class="card-actions">
         <button class="btn btn-ghost btn-sm" onclick="editMovie(${i})">✏️ تعديل</button>
@@ -587,152 +1024,412 @@ function renderMovies() {
 
 function renderChannels() {
   const el = $('channelsList');
-  if (!state.channels.length) {
-    el.innerHTML = `<div class="empty-state">📺 لا توجد قنوات<br><button class="btn btn-magenta" onclick="openChannelModal()">+ إضافة قناة</button></div>`;
+  if (!el) return;
+  const q = ($('channelSearch')?.value || '').toLowerCase().trim();
+  let list = State.channels;
+  if (q) list = list.map((c, i) => ({ c, i })).filter(({ c }) =>
+    (c.name || '').toLowerCase().includes(q) ||
+    (c.desc || '').toLowerCase().includes(q)
+  );
+  else list = list.map((c, i) => ({ c, i }));
+
+  if (!list.length) {
+    el.innerHTML = `<div class="empty-state"><div class="icon">📺</div>${q ? 'لا نتائج' : 'لا توجد قنوات'}<br><button class="btn btn-magenta btn-sm" style="margin-top:14px" onclick="openChannelModal()">+ إضافة قناة</button></div>`;
     return;
   }
-  el.innerHTML = state.channels.map((c, i) => `
-    <div class="card">
-      <div class="card-header"><div>
-        <div class="card-title">${escapeHtml(c.name)}</div>
-        <div class="card-meta">
-          ${c.stream ? '<span class="badge badge-servers">📡 بث مباشر</span>' : '<span class="badge badge-warn">⚠️ ناقص بث</span>'}
-          ${c.poster ? '' : '<span class="badge badge-warn">⚠️ ناقص غلاف</span>'}
-        </div>
-      </div></div>
+  const parts = [];
+  for (const { c, i } of list) {
+    parts.push(`<div class="card">
+      <div class="card-title">${escapeHtml(c.name)}</div>
+      <div class="card-meta">
+        ${c.stream ? '<span class="badge badge-ok">📡 بث مباشر</span>' : '<span class="badge badge-warn">⚠️ لا بث</span>'}
+        ${c.poster ? '' : '<span class="badge badge-warn">⚠️ لا غلاف</span>'}
+      </div>
       ${c.desc ? `<div class="card-story">${escapeHtml(c.desc)}</div>` : ''}
       <div class="card-actions">
         <button class="btn btn-ghost btn-sm" onclick="editChannel(${i})">✏️ تعديل</button>
         <button class="btn btn-red btn-sm" onclick="deleteChannel(${i})">🗑️ حذف</button>
       </div>
-    </div>`).join('');
+    </div>`);
+  }
+  el.innerHTML = parts.join('');
 }
-function renderAll() { renderMovies(); renderChannels(); }
 
-// ─── Tabs ───
+function renderAll() { renderMovies(); renderChannels(); UI.updateCounts(); }
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  TAB SWITCHING
+// ═══════════════════════════════════════════════════════════════════════════
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + name));
+  if (name === 'export') renderContentJsPreview();
+}
 document.querySelectorAll('.tab').forEach(tab => {
-  tab.onclick = () => {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    $('panel-' + tab.dataset.tab).classList.add('active');
-    if (tab.dataset.tab === 'export') renderContentJsPreview();
-  };
+  tab.onclick = () => { switchTab(tab.dataset.tab); Session.save(); };
 });
 
-// ─── Modals ───
-function openModal(id) { $(id).classList.add('active'); document.body.style.overflow='hidden'; }
-function closeModal(id) { $(id).classList.remove('active'); document.body.style.overflow=''; }
-document.querySelectorAll('.modal-overlay').forEach(m => { m.onclick = e => { if (e.target === m) closeModal(m.id); }; });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id)); });
-
-// ─── Movies CRUD ───
-function openMovieModal() {
-  editingMovieIndex = -1;
+// ═══════════════════════════════════════════════════════════════════════════
+//  MOVIE CRUD
+// ═══════════════════════════════════════════════════════════════════════════
+function openMovieModal(restoreDraft = true) {
+  window._editingMovieIndex = -1;
   $('movieModalTitle').textContent = '+ إضافة فيلم';
-  $('mTitle').value=''; $('mYear').value=new Date().getFullYear(); $('mGenre').value='عام'; $('mRating').value='0';
-  $('mPoster').value=''; $('mStory').value=''; $('mSources').innerHTML=''; addSourceRow();
+  $('movieDraftBadge').style.display = 'none';
+  $('mTitle').value = ''; $('mYear').value = new Date().getFullYear();
+  $('mGenre').value = 'عام'; $('mRating').value = '0';
+  $('mPoster').value = ''; $('mStory').value = '';
+  $('mSources').innerHTML = ''; addSourceRow();
+
+  // استعادة مسودة إن وجدت
+  if (restoreDraft) {
+    const draft = Draft.loadMovie();
+    if (draft && (draft.title || draft.story || (draft.sources && draft.sources.length))) {
+      const age = Date.now() - (draft._ts || 0);
+      if (age < 7 * 24 * 60 * 60 * 1000) {
+        if (confirm('📝 وجدت مسودة غير محفوظة من ' + fmtTime(draft._ts) + '.\n\nهل تريد استعادتها؟')) {
+          $('mTitle').value = draft.title || '';
+          $('mYear').value = draft.year || '';
+          $('mGenre').value = draft.genre || '';
+          $('mRating').value = draft.rating || '0';
+          $('mPoster').value = draft.poster || '';
+          $('mStory').value = draft.story || '';
+          $('mSources').innerHTML = '';
+          if (draft.sources && draft.sources.length) draft.sources.forEach(s => addSourceRow(s.label, s.url));
+          else addSourceRow();
+          window._editingMovieIndex = draft._editing ?? -1;
+          if (window._editingMovieIndex >= 0) {
+            $('movieModalTitle').textContent = '* تعديل فيلم';
+          }
+          $('movieDraftBadge').style.display = 'inline-flex';
+        } else {
+          Draft.clearMovie();
+        }
+      } else {
+        Draft.clearMovie();
+      }
+    }
+  }
   openModal('movieModal');
 }
+
 function editMovie(i) {
-  const m = state.movies[i]; editingMovieIndex = i;
+  const m = State.movies[i];
+  if (!m) return;
+  window._editingMovieIndex = i;
   $('movieModalTitle').textContent = '* تعديل فيلم';
-  $('mTitle').value = m.title || ''; $('mYear').value = m.year || ''; $('mGenre').value = m.genre || '';
-  $('mRating').value = m.rating || 0; $('mPoster').value = m.poster || ''; $('mStory').value = m.story || '';
-  $('mSources').innerHTML='';
-  if (m.sources?.length) m.sources.forEach(s => addSourceRow(s.label, s.url)); else addSourceRow();
+  $('mTitle').value = m.title || '';
+  $('mYear').value = m.year || '';
+  $('mGenre').value = m.genre || '';
+  $('mRating').value = m.rating || 0;
+  $('mPoster').value = m.poster || '';
+  $('mStory').value = m.story || '';
+  $('mSources').innerHTML = '';
+  if (m.sources && m.sources.length) m.sources.forEach(s => addSourceRow(s.label, s.url));
+  else addSourceRow();
   openModal('movieModal');
 }
-function addSourceRow(label='', url='') {
+
+function addSourceRow(label = '', url = '') {
   const div = document.createElement('div');
   div.className = 'source-item';
-  div.innerHTML = `<input type="text" class="form-input label-input" placeholder="تسمية" value="${escapeHtml(label)}">
-    <input type="url" class="form-input url-input" placeholder="https://..." value="${escapeHtml(url)}">
-    <button class="btn-icon" onclick="this.parentElement.remove()">×</button>`;
+  div.innerHTML = `<input type="text" class="form-input label-input" placeholder="تسمية" value="${escapeHtml(label)}" oninput="saveMovieDraft()">
+    <input type="url" class="form-input url-input" placeholder="https://..." value="${escapeHtml(url)}" oninput="saveMovieDraft()">
+    <button class="btn-icon" onclick="this.parentElement.remove();saveMovieDraft()" title="حذف">×</button>`;
   $('mSources').appendChild(div);
 }
+
 function saveMovie() {
   const title = $('mTitle').value.trim();
-  if (!title) return toast('العنوان مطلوب', 'error');
+  if (!title) { Toast.show('العنوان مطلوب', 'error'); $('mTitle').focus(); return; }
   const sources = [];
-  $('mSources').querySelectorAll('.source-item').forEach(item => {
+  document.querySelectorAll('#mSources .source-item').forEach(item => {
     const url = item.querySelector('.url-input').value.trim();
     const label = item.querySelector('.label-input').value.trim();
     if (url) sources.push({ url, label: label || 'سيرفر' });
   });
-  const movie = { title, year: parseInt($('mYear').value) || 0, genre: $('mGenre').value.trim() || 'عام', rating: parseFloat($('mRating').value) || 0, poster: $('mPoster').value.trim(), story: $('mStory').value.trim(), sources };
-  if (editingMovieIndex >= 0) { state.movies[editingMovieIndex] = movie; toast('تم التعديل'); }
-  else { state.movies.push(movie); toast('تمت الإضافة'); }
-  persistCache(); renderMovies(); updateStats(); closeModal('movieModal');
-}
-function deleteMovie(i) {
-  if (!confirm('حذف "' + state.movies[i].title + '"؟')) return;
-  state.movies.splice(i, 1); persistCache(); renderMovies(); updateStats(); toast('تم الحذف');
+  const movie = {
+    title,
+    year: parseInt($('mYear').value) || 0,
+    genre: $('mGenre').value.trim() || 'عام',
+    rating: Math.max(0, Math.min(10, parseFloat($('mRating').value) || 0)),
+    poster: $('mPoster').value.trim(),
+    story: $('mStory').value.trim(),
+    sources
+  };
+  if (window._editingMovieIndex >= 0) {
+    State.movies[window._editingMovieIndex] = movie;
+    Toast.show('تم تعديل "' + title + '" ✓', 'success');
+  } else {
+    State.movies.push(movie);
+    Toast.show('تمت إضافة "' + title + '" ✓', 'success');
+  }
+  State.save();
+  Draft.clearMovie();
+  renderMovies(); UI.updateCounts();
+  closeModal('movieModal');
 }
 
-// ─── Channels CRUD ───
+function deleteMovie(i) {
+  const m = State.movies[i];
+  if (!m) return;
+  if (!confirm('حذف "' + m.title + '"؟')) return;
+  State.movies.splice(i, 1);
+  State.save();
+  renderMovies(); UI.updateCounts();
+  Toast.show('تم الحذف', 'success');
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  CHANNEL CRUD
+// ═══════════════════════════════════════════════════════════════════════════
 function openChannelModal() {
-  editingChannelIndex = -1;
+  window._editingChannelIndex = -1;
   $('channelModalTitle').textContent = '+ إضافة قناة';
-  ['cName','cPoster','cStream','cDesc'].forEach(id => $(id).value='');
+  ['cName', 'cPoster', 'cStream', 'cDesc'].forEach(id => $(id).value = '');
   openModal('channelModal');
 }
 function editChannel(i) {
-  const c = state.channels[i]; editingChannelIndex = i;
+  const c = State.channels[i];
+  if (!c) return;
+  window._editingChannelIndex = i;
   $('channelModalTitle').textContent = '* تعديل قناة';
-  $('cName').value = c.name || ''; $('cPoster').value = c.poster || '';
-  $('cStream').value = c.stream || ''; $('cDesc').value = c.desc || '';
+  $('cName').value = c.name || '';
+  $('cPoster').value = c.poster || '';
+  $('cStream').value = c.stream || '';
+  $('cDesc').value = c.desc || '';
   openModal('channelModal');
 }
 function saveChannel() {
   const name = $('cName').value.trim();
-  if (!name) return toast('الاسم مطلوب', 'error');
+  if (!name) { Toast.show('الاسم مطلوب', 'error'); $('cName').focus(); return; }
   const stream = $('cStream').value.trim();
-  if (!stream) return toast('رابط البث مطلوب', 'error');
-  const channel = { name, poster: $('cPoster').value.trim(), stream, desc: $('cDesc').value.trim() || 'قناة ' + name + ' - بث مباشر' };
-  if (editingChannelIndex >= 0) { state.channels[editingChannelIndex] = channel; toast('تم التعديل'); }
-  else { state.channels.push(channel); toast('تمت الإضافة'); }
-  persistCache(); renderChannels(); updateStats(); closeModal('channelModal');
+  if (!stream) { Toast.show('رابط البث مطلوب', 'error'); $('cStream').focus(); return; }
+  const channel = {
+    name,
+    poster: $('cPoster').value.trim(),
+    stream,
+    desc: $('cDesc').value.trim() || 'قناة ' + name + ' - بث مباشر'
+  };
+  if (window._editingChannelIndex >= 0) {
+    State.channels[window._editingChannelIndex] = channel;
+    Toast.show('تم تعديل "' + name + '" ✓', 'success');
+  } else {
+    State.channels.push(channel);
+    Toast.show('تمت إضافة "' + name + '" ✓', 'success');
+  }
+  State.save();
+  Draft.clearChannel();
+  renderChannels(); UI.updateCounts();
+  closeModal('channelModal');
 }
 function deleteChannel(i) {
-  if (!confirm('حذف "' + state.channels[i].name + '"؟')) return;
-  state.channels.splice(i, 1); persistCache(); renderChannels(); updateStats(); toast('تم الحذف');
+  const c = State.channels[i];
+  if (!c) return;
+  if (!confirm('حذف "' + c.name + '"؟')) return;
+  State.channels.splice(i, 1);
+  State.save();
+  renderChannels(); UI.updateCounts();
+  Toast.show('تم الحذف', 'success');
 }
 
-// ─── Builders ───
-function buildMoviesJson() { return '{\n  "movies": ' + JSON.stringify(state.movies, null, 2).replace(/\n/g, '\n  ').replace(/^  /, '') + '\n}\n'; }
+// ═══════════════════════════════════════════════════════════════════════════
+//  MODAL HELPERS
+// ═══════════════════════════════════════════════════════════════════════════
+function openModal(id) {
+  $(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  $(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+function closeMovieModal() {
+  // مسودة محفوظة مسبقاً → لا تحذير
+  closeModal('movieModal');
+}
+function closeChannelModal() {
+  closeModal('channelModal');
+}
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.onclick = e => { if (e.target === m) closeModal(m.id); };
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  DRAFT SAVERS (debounced)
+// ═══════════════════════════════════════════════════════════════════════════
+window.saveMovieDraft = debounce(() => Draft.saveMovie(), 400);
+window.saveChannelDraft = debounce(() => Draft.saveChannel(), 400);
+
+// إضافة listeners للقنوات
+['cName', 'cPoster', 'cStream', 'cDesc'].forEach(id => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const el = $(id);
+    if (el) el.addEventListener('input', () => window.saveChannelDraft());
+  });
+});
+// بعد DOM جاهز — نضيفها فوراً
+setTimeout(() => {
+  ['cName', 'cPoster', 'cStream', 'cDesc'].forEach(id => {
+    const el = $(id);
+    if (el) el.addEventListener('input', () => window.saveChannelDraft());
+  });
+}, 100);
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  DATA LOADERS
+// ═══════════════════════════════════════════════════════════════════════════
+async function fetchText(url, timeoutMs = 3000) {
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+    const r = await fetch(url, { cache: 'no-store', signal: ctrl.signal });
+    clearTimeout(timer);
+    if (!r.ok) return null;
+    return await r.text();
+  } catch { return null; }
+}
+async function fetchJson(url, timeoutMs = 3000) {
+  const t = await fetchText(url, timeoutMs);
+  if (!t) return null;
+  try { return JSON.parse(t); } catch { return null; }
+}
+
+function parseMoviesDb(text) {
+  if (!text) return [];
+  return text.split('\n').filter(l => l.trim()).map(line => {
+    const p = line.split(US);
+    const urls = (p[6] || '').split(';;;').filter(Boolean);
+    const labels = (p[7] || '').split(';;;');
+    return {
+      title: p[0] || '', year: parseInt(p[1]) || 0, genre: p[2] || 'عام',
+      rating: parseFloat(p[3]) || 0, poster: p[4] || '', story: p[5] || '',
+      sources: urls.map((url, i) => ({ url, label: labels[i] || 'سيرفر' }))
+    };
+  });
+}
+function parseChannelsDb(text) {
+  if (!text) return [];
+  return text.split('\n').filter(l => l.trim()).map(line => {
+    const p = line.split(US);
+    return { name: p[0] || '', poster: p[1] || '', stream: p[2] || '', desc: p[3] || '' };
+  });
+}
+
+async function tryLoadFromData() {
+  // 1) content.js
+  const js = await fetchText('data/content.js');
+  if (js) {
+    const m = js.match(/window\.__CINEMA_DATA__\s*=\s*(\{[\s\S]*\})\s*;?\s*$/);
+    if (m) {
+      try {
+        const data = JSON.parse(m[1]);
+        return {
+          movies: data.movies || [],
+          channels: data.channels || [],
+          source: 'content.js'
+        };
+      } catch {}
+    }
+  }
+  // 2) JSON files (parallel)
+  const [mj, cj] = await Promise.all([fetchJson('data/movies.json'), fetchJson('data/channels.json')]);
+  if (mj || cj) {
+    return {
+      movies: mj?.movies || [],
+      channels: cj?.channels || [],
+      source: 'json'
+    };
+  }
+  // 3) DB files (parallel)
+  const [md, cd] = await Promise.all([fetchText('data/movies.db'), fetchText('data/channels.db')]);
+  if (md != null || cd != null) {
+    return {
+      movies: parseMoviesDb(md || ''),
+      channels: parseChannelsDb(cd || ''),
+      source: 'db'
+    };
+  }
+  return null;
+}
+
+async function refreshFromDataFolder() {
+  if (State.movies.length || State.channels.length) {
+    if (!confirm('⚠️ هذا سيستبدل كل تعديلاتك المحلية ببيانات data/.\n\nهل أنت متأكد؟\n\n(نصيحة: صدّر نسخة احتياطية أولاً من تبويب التصدير)')) return;
+  }
+  UI.setProgress(true, 'جاري الاستيراد من data/...');
+  try {
+    const data = await tryLoadFromData();
+    if (!data) { Toast.show('لم يتم العثور على ملفات في data/', 'warn'); return; }
+    State.movies = State._normMovies(data.movies);
+    State.channels = State._normChannels(data.channels);
+    State.source = 'data';
+    State.save();
+    UI.updateSource('data');
+    renderAll();
+    Toast.show(`تم الاستيراد من data/ (${data.source}) ✓`, 'success');
+  } finally {
+    UI.setProgress(false);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  BUILDERS (same format as original shell script)
+// ═══════════════════════════════════════════════════════════════════════════
+function buildMoviesJson() {
+  const obj = { movies: State.movies.map(m => ({
+    title: m.title, year: m.year || 0, genre: m.genre || 'عام',
+    rating: m.rating || 0, poster: m.poster || '', story: m.story || '',
+    sources: (m.sources || []).map(s => ({ label: s.label || 'سيرفر', url: s.url }))
+  })) };
+  return JSON.stringify(obj, null, 2) + '\n';
+}
 function buildChannelsJson() {
-  const chs = state.channels.map(c => ({ name: c.name, poster: c.poster || '', stream: c.stream || '', desc: c.desc || '', sources: [{ label: 'سيرفر مباشر', url: c.stream || '' }] }));
-  return '{\n  "channels": ' + JSON.stringify(chs, null, 2).replace(/\n/g, '\n  ').replace(/^  /, '') + '\n}\n';
+  const obj = { channels: State.channels.map(c => ({
+    name: c.name, poster: c.poster || '', stream: c.stream || '', desc: c.desc || '',
+    sources: [{ label: 'سيرفر مباشر', url: c.stream || '' }]
+  })) };
+  return JSON.stringify(obj, null, 2) + '\n';
 }
 function buildContentJs() {
-  return '/* Movie BekEs — © 2025 B6_7E | بيكاس */\nwindow.__CINEMA_DATA__ = ' + JSON.stringify({
-    movies: state.movies,
-    channels: state.channels.map(c => ({ name: c.name, poster: c.poster || '', stream: c.stream || '', desc: c.desc || '', sources: [{ label: 'سيرفر مباشر', url: c.stream || '' }] }))
-  }, null, 2) + ';\n';
+  return '/* Movie BekEs — © 2025 B6_7E | بيكاس */\nwindow.__CINEMA_DATA__ = ' +
+    JSON.stringify({
+      movies: State.movies.map(m => ({
+        title: m.title, year: m.year || 0, genre: m.genre || 'عام',
+        rating: m.rating || 0, poster: m.poster || '', story: m.story || '',
+        sources: (m.sources || []).map(s => ({ label: s.label || 'سيرفر', url: s.url }))
+      })),
+      channels: State.channels.map(c => ({
+        name: c.name, poster: c.poster || '', stream: c.stream || '', desc: c.desc || '',
+        sources: [{ label: 'سيرفر مباشر', url: c.stream || '' }]
+      }))
+    }, null, 2) + ';\n';
 }
 function buildMoviesDb() {
-  if (!state.movies.length) return '';
-  return state.movies.map(m => {
+  if (!State.movies.length) return '';
+  return State.movies.map(m => {
     const urls = (m.sources || []).map(s => s.url).join(';;;');
     const labels = (m.sources || []).map(s => s.label || 'سيرفر').join(';;;');
     return [m.title, m.year || 0, m.genre || 'عام', m.rating || 0, m.poster || '', m.story || '', urls, labels].join(US);
   }).join('\n') + '\n';
 }
 function buildChannelsDb() {
-  if (!state.channels.length) return '';
-  return state.channels.map(c => [c.name, c.poster || '', c.stream || '', c.desc || ''].join(US)).join('\n') + '\n';
+  if (!State.channels.length) return '';
+  return State.channels.map(c => [c.name, c.poster || '', c.stream || '', c.desc || ''].join(US)).join('\n') + '\n';
 }
 function renderContentJsPreview() { $('contentJsPreview').textContent = buildContentJs(); }
 
-// ─── Export ───
-function downloadFile(name, content, mime='text/plain') {
+// ═══════════════════════════════════════════════════════════════════════════
+//  EXPORT / IMPORT
+// ═══════════════════════════════════════════════════════════════════════════
+function downloadFile(name, content, mime = 'text/plain') {
   const blob = new Blob([content], { type: mime + ';charset=utf-8' });
+  const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = name;
+  a.href = url; a.download = name;
   document.body.appendChild(a); a.click();
-  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 100);
-  toast('تم تحميل: ' + name);
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 100);
+  Toast.show('تم تحميل ' + name, 'success');
 }
 const BUILDERS = {
   'movies.json': () => [buildMoviesJson(), 'application/json'],
@@ -741,12 +1438,17 @@ const BUILDERS = {
   'movies.db': () => [buildMoviesDb(), 'text/plain'],
   'channels.db': () => [buildChannelsDb(), 'text/plain']
 };
-function exportFile(name) { const [c, m] = BUILDERS[name](); downloadFile(name, c, m); }
-function backupData() {
-  const stamp = new Date().toISOString().slice(0, 10);
-  downloadFile('movieBekEs_backup_' + stamp + '.json', JSON.stringify(state, null, 2), 'application/json');
+function exportFile(name) {
+  const [content, mime] = BUILDERS[name]();
+  downloadFile(name, content, mime);
 }
-function importData() {
+function backupAll() {
+  const stamp = new Date().toISOString().slice(0, 10);
+  downloadFile('movieBekEs_backup_' + stamp + '.json', JSON.stringify({
+    movies: State.movies, channels: State.channels, _ts: Date.now()
+  }, null, 2), 'application/json');
+}
+function importFile() {
   const input = $('importFileHidden');
   input.onchange = e => {
     const file = e.target.files[0];
@@ -764,66 +1466,159 @@ function importData() {
           if (!m) throw new Error('تنسيق content.js غير صالح');
           data = JSON.parse(m[1]);
         } else data = JSON.parse(txt);
-        if (data.movies) state.movies = normalizeMovies(data.movies);
-        if (data.channels) state.channels = normalizeChannels(data.channels);
-        persistCache(); renderAll(); updateStats(); toast('تم الاستيراد ✓');
-      } catch (err) { toast('خطأ: ' + err.message, 'error'); }
+
+        if (data.movies) State.movies = State._normMovies(data.movies);
+        if (data.channels) State.channels = State._normChannels(data.channels);
+        State.source = 'local';
+        State.save();
+        renderAll();
+        Toast.show('تم الاستيراد ✓', 'success');
+      } catch (err) {
+        Toast.show('خطأ: ' + err.message, 'error');
+      }
     };
-    reader.readAsText(file); input.value = '';
+    reader.readAsText(file);
+    input.value = '';
   };
   input.click();
 }
+function restoreBackup() {
+  const b = Storage.get(KEYS.BACKUP, null);
+  if (!b) { Toast.show('لا توجد نسخة احتياطية تلقائية', 'warn'); return; }
+  if (!confirm('استعادة النسخة الاحتياطية من ' + fmtTime(b._ts) + '؟\n\nسيتم استبدال البيانات الحالية.')) return;
+  State.movies = State._normMovies(b.movies || []);
+  State.channels = State._normChannels(b.channels || []);
+  State.save();
+  renderAll();
+  Toast.show('تمت الاستعادة ✓', 'success');
+}
+function clearAllData() {
+  if (!confirm('⚠️ هذا سيحذف كل الأفلام والقنوات نهائياً.\n\nهل أنت متأكد؟')) return;
+  if (!confirm('تأكيد أخير: حذف الكل؟')) return;
+  State.movies = []; State.channels = [];
+  State.source = 'empty';
+  State.save();
+  renderAll();
+  UI.updateSource('empty');
+  Toast.show('تم مسح كل البيانات', 'success');
+}
 
-// ─── GitHub ───
-function getGithubSettings() { try { return JSON.parse(localStorage.getItem(GITHUB_KEY) || '{}'); } catch { return {}; } }
-function loadGithubSettings() {
+// ═══════════════════════════════════════════════════════════════════════════
+//  GITHUB MANAGER
+// ═══════════════════════════════════════════════════════════════════════════
+function getGithubSettings() {
+  return Storage.get(KEYS.GITHUB, { token: '', owner: '', repo: '', branch: 'main', path: 'data' });
+}
+function loadGithubUI() {
   const s = getGithubSettings();
-  $('ghToken').value = s.token || ''; $('ghOwner').value = s.owner || '';
-  $('ghRepo').value = s.repo || ''; $('ghBranch').value = s.branch || 'main';
+  $('ghToken').value = s.token || '';
+  $('ghOwner').value = s.owner || '';
+  $('ghRepo').value = s.repo || '';
+  $('ghBranch').value = s.branch || 'main';
   $('ghPath').value = s.path || 'data';
 }
-function saveGithubSettings() {
-  localStorage.setItem(GITHUB_KEY, JSON.stringify({
-    token: $('ghToken').value.trim(), owner: $('ghOwner').value.trim(), repo: $('ghRepo').value.trim(),
-    branch: $('ghBranch').value.trim() || 'main', path: ($('ghPath').value.trim() || 'data').replace(/^\/+|\/+$/g, '')
-  }));
-  toast('تم الحفظ ✓');
+function saveGithubUI() {
+  Storage.set(KEYS.GITHUB, {
+    token: $('ghToken').value.trim(),
+    owner: $('ghOwner').value.trim(),
+    repo: $('ghRepo').value.trim(),
+    branch: $('ghBranch').value.trim() || 'main',
+    path: ($('ghPath').value.trim() || 'data').replace(/^\/+|\/+$/g, '')
+  });
 }
+// Auto-save on every input — no save button needed
+['ghToken', 'ghOwner', 'ghRepo', 'ghBranch', 'ghPath'].forEach(id => {
+  setTimeout(() => {
+    const el = $(id);
+    if (el) el.addEventListener('input', debounce(saveGithubUI, 400));
+  }, 100);
+});
 function clearGithubSettings() {
   if (!confirm('مسح إعدادات GitHub؟')) return;
-  localStorage.removeItem(GITHUB_KEY); loadGithubSettings(); toast('تم المسح');
+  Storage.remove(KEYS.GITHUB);
+  loadGithubUI();
+  Toast.show('تم المسح', 'success');
 }
+
 function b64EncodeUnicode(str) {
   const bytes = new TextEncoder().encode(str);
-  let bin = ''; for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  let bin = '';
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
   return btoa(bin);
 }
+
 async function testGithub() {
   const s = getGithubSettings();
-  if (!s.token || !s.owner || !s.repo) return toast('أدخل الإعدادات أولاً', 'error');
+  if (!s.token || !s.owner || !s.repo) {
+    Toast.show('أدخل Token + Owner + Repo أولاً', 'error');
+    return;
+  }
+  UI.setProgress(true);
   try {
-    const r = await fetch(`https://api.github.com/repos/${s.owner}/${s.repo}`, { headers: { 'Authorization': `token ${s.token}`, 'Accept': 'application/vnd.github+json' } });
-    if (r.ok) toast(`متصل بـ ${(await r.json()).full_name} ✓`);
-    else if (r.status === 401) toast('التوكن غير صالح', 'error');
-    else if (r.status === 404) toast('المستودع غير موجود', 'error');
-    else toast('HTTP ' + r.status, 'error');
-  } catch { toast('فشل الاتصال', 'error'); }
+    const r = await fetch(`https://api.github.com/repos/${s.owner}/${s.repo}`, {
+      headers: { 'Authorization': `token ${s.token}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (r.ok) {
+      const j = await r.json();
+      Toast.show(`✓ متصل بـ ${j.full_name}`, 'success');
+    } else if (r.status === 401) Toast.show('التوكن غير صالح', 'error');
+    else if (r.status === 404) Toast.show('المستودع غير موجود أو لا صلاحية', 'error');
+    else Toast.show('HTTP ' + r.status, 'error');
+  } catch { Toast.show('فشل الاتصال', 'error'); }
+  finally { UI.setProgress(false); }
 }
+
 async function githubPush() {
   const s = getGithubSettings();
-  if (!s.token || !s.owner || !s.repo) { toast('أدخل الإعدادات', 'error'); document.querySelector('[data-tab="github"]').click(); return; }
-  const btn = $('ghPushBtn'); btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> جاري الرفع...';
+  if (!s.token || !s.owner || !s.repo) {
+    Toast.show('أدخل Token + Owner + Repo أولاً', 'error');
+    switchTab('github');
+    return;
+  }
+  const btn = $('ghPushBtn');
+  const progressBox = $('ghProgress');
+  const fill = $('ghProgressFill');
+  const statusEl = $('ghProgressStatus');
+  const percentEl = $('ghProgressPercent');
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> جاري الرفع...';
+  progressBox.classList.add('active');
+  fill.style.width = '0%';
+  UI.setProgress(true);
+
   const files = Object.entries(BUILDERS).map(([name, fn]) => ({ name, content: fn()[0] }));
   const apiBase = `https://api.github.com/repos/${s.owner}/${s.repo}/contents/`;
-  const headers = { 'Authorization': `token ${s.token}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' };
+  const headers = {
+    'Authorization': `token ${s.token}`,
+    'Accept': 'application/vnd.github+json',
+    'Content-Type': 'application/json'
+  };
+
   let ok = 0;
   try {
-    for (const f of files) {
+    for (let idx = 0; idx < files.length; idx++) {
+      const f = files[idx];
+      const pct = Math.round((idx / files.length) * 100);
+      fill.style.width = pct + '%';
+      percentEl.textContent = pct + '%';
+      statusEl.textContent = `[${idx + 1}/${files.length}] ${f.name}`;
+
       const filePath = s.path + '/' + f.name;
+      // جلب SHA إن وُجد
       let sha = null;
-      try { const r = await fetch(apiBase + filePath + '?ref=' + encodeURIComponent(s.branch), { headers }); if (r.ok) sha = (await r.json()).sha; } catch {}
-      const body = { message: 'Update ' + f.name + ' via Movie BekEs v7.1', content: b64EncodeUnicode(f.content), branch: s.branch };
+      try {
+        const r = await fetch(apiBase + filePath + '?ref=' + encodeURIComponent(s.branch), { headers });
+        if (r.ok) sha = (await r.json()).sha;
+      } catch {}
+
+      const body = {
+        message: 'Update ' + f.name + ' via Movie BekEs v8.0',
+        content: b64EncodeUnicode(f.content),
+        branch: s.branch
+      };
       if (sha) body.sha = sha;
+
       const res = await fetch(apiBase + filePath, { method: 'PUT', headers, body: JSON.stringify(body) });
       if (!res.ok) {
         let msg = 'HTTP ' + res.status;
@@ -835,53 +1630,201 @@ async function githubPush() {
       }
       ok++;
     }
-    toast(`تم رفع ${ok}/5 ملفات ✓`);
-    // إعادة الفحص بعد الرفع للتأكد من التحديث
-    setTimeout(() => refreshAll(true), 600);
+    fill.style.width = '100%';
+    percentEl.textContent = '100%';
+    statusEl.textContent = `✓ تم رفع ${ok}/${files.length} ملفات بنجاح`;
+    Toast.show(`🚀 تم رفع ${ok} ملفات إلى GitHub ✓`, 'success', 5000);
   } catch (e) {
-    toast((ok ? `(${ok}/5) ` : '') + 'فشل: ' + e.message, 'error');
+    statusEl.textContent = '✕ فشل: ' + e.message;
+    Toast.show('فشل: ' + e.message, 'error', 6000);
   } finally {
-    btn.disabled = false; btn.innerHTML = '🚀 رفع 5 ملفات';
+    btn.disabled = false;
+    btn.innerHTML = '🚀 رفع 5 ملفات';
+    UI.setProgress(false);
+    setTimeout(() => { progressBox.classList.remove('active'); fill.style.width = '0%'; }, 4000);
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════════════════
-async function init() {
-  loadGithubSettings();
-  loadCache();
+// ═══════════════════════════════════════════════════════════════════════════
+//  COMMAND PALETTE
+// ═══════════════════════════════════════════════════════════════════════════
+const CMD_LIST = [
+  { label: 'إضافة فيلم', icon: '🎬', action: () => { closeCmdPalette(); openMovieModal(); } },
+  { label: 'إضافة قناة', icon: '📺', action: () => { closeCmdPalette(); openChannelModal(); } },
+  { label: 'التبويب: الأفلام', icon: '🎬', action: () => { closeCmdPalette(); switchTab('movies'); } },
+  { label: 'التبويب: القنوات', icon: '📺', action: () => { closeCmdPalette(); switchTab('channels'); } },
+  { label: 'التبويب: التصدير', icon: '📤', action: () => { closeCmdPalette(); switchTab('export'); } },
+  { label: 'التبويب: GitHub', icon: '🐙', action: () => { closeCmdPalette(); switchTab('github'); } },
+  { label: 'رفع إلى GitHub', icon: '🚀', action: () => { closeCmdPalette(); switchTab('github'); setTimeout(githubPush, 200); } },
+  { label: 'تصدير content.js', icon: '💾', action: () => { closeCmdPalette(); exportFile('content.js'); } },
+  { label: 'نسخة احتياطية كاملة', icon: '📦', action: () => { closeCmdPalette(); backupAll(); } },
+  { label: 'استيراد من data/', icon: '📂', action: () => { closeCmdPalette(); refreshFromDataFolder(); } },
+  { label: 'حفظ الآن', icon: '💾', action: () => { closeCmdPalette(); State.save(); Toast.show('تم الحفظ ✓'); } }
+];
+let cmdSelected = 0;
+let cmdFiltered = [...CMD_LIST];
 
-  // عرض فوري من الكاش
-  if (state.movies.length || state.channels.length) {
-    renderAll(); updateStats();
-    $('sourceBadge').className = 'src cache';
-    $('sourceText').textContent = 'الكاش المحلي';
-    $('sourceFiles').textContent = 'localStorage (جاري الفحص...)';
-  } else {
-    showSkeleton();
+function openCmdPalette() {
+  $('cmdOverlay').classList.add('active');
+  $('cmdInput').value = '';
+  $('cmdInput').focus();
+  cmdSelected = 0;
+  filterCmd();
+}
+function closeCmdPalette() {
+  $('cmdOverlay').classList.remove('active');
+}
+function filterCmd() {
+  const q = ($('cmdInput').value || '').toLowerCase().trim();
+  cmdFiltered = !q ? [...CMD_LIST] : CMD_LIST.filter(c => c.label.toLowerCase().includes(q));
+  cmdSelected = 0;
+  const list = $('cmdList');
+  if (!cmdFiltered.length) {
+    list.innerHTML = '<div style="padding:20px;text-align:center;color:var(--dim)">لا نتائج</div>';
+    return;
   }
+  list.innerHTML = cmdFiltered.map((c, i) => `
+    <div class="cmd-item${i === cmdSelected ? ' selected' : ''}" onclick="runCmd(${i})" onmouseover="cmdSelect(${i})">
+      <span class="icon">${c.icon}</span><span>${escapeHtml(c.label)}</span>
+    </div>`).join('');
+}
+function cmdSelect(i) {
+  cmdSelected = i;
+  document.querySelectorAll('.cmd-item').forEach((el, idx) => el.classList.toggle('selected', idx === i));
+}
+function runCmd(i) { if (cmdFiltered[i]) cmdFiltered[i].action(); }
+function cmdKeydown(e) {
+  if (e.key === 'ArrowDown') { e.preventDefault(); cmdSelected = Math.min(cmdSelected + 1, cmdFiltered.length - 1); cmdSelect(cmdSelected); document.querySelectorAll('.cmd-item')[cmdSelected]?.scrollIntoView({ block: 'nearest' }); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); cmdSelected = Math.max(cmdSelected - 1, 0); cmdSelect(cmdSelected); document.querySelectorAll('.cmd-item')[cmdSelected]?.scrollIntoView({ block: 'nearest' }); }
+  else if (e.key === 'Enter') { e.preventDefault(); runCmd(cmdSelected); }
+  else if (e.key === 'Escape') { closeCmdPalette(); }
+}
 
-  // اكتشاف + تحميل
-  const found = await refreshAll(false);
-  if (!found && !state.movies.length && !state.channels.length) {
+// ═══════════════════════════════════════════════════════════════════════════
+//  KEYBOARD SHORTCUTS
+// ═══════════════════════════════════════════════════════════════════════════
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+    closeCmdPalette();
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openCmdPalette(); }
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); State.save(); Toast.show('تم الحفظ ✓'); }
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  SAVE ON UNLOAD / VISIBILITY
+// ═══════════════════════════════════════════════════════════════════════════
+function flushAll() {
+  try {
+    State.save();
+    Session.save();
+    saveGithubUI();
+    if (window._editingMovieIndex !== undefined && (State.isDirty || document.querySelector('#movieModal.active'))) {
+      Draft.saveMovie();
+    }
+    if (window._editingChannelIndex !== undefined && document.querySelector('#channelModal.active')) {
+      Draft.saveChannel();
+    }
+  } catch (e) { console.error(e); }
+}
+
+window.addEventListener('pagehide', flushAll);
+window.addEventListener('beforeunload', e => {
+  flushAll();
+  if (Draft.hasAny()) {
+    e.preventDefault();
+    e.returnValue = '';
+    return '';
+  }
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') flushAll();
+  else Session.save();
+});
+
+// Scroll → save (debounced)
+window.addEventListener('scroll', debounce(() => Session.save(), 800), { passive: true });
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  BOOTSTRAP
+// ═══════════════════════════════════════════════════════════════════════════
+async function bootstrap() {
+  // 1) اقرأ من localStorage (المصدر الأساسي للبيانات المحفوظة)
+  const hasLocal = State.load();
+  const flags = Storage.get(KEYS.FLAGS, { firstRun: true });
+
+  if (hasLocal) {
+    // ✅ لدينا بيانات محفوظة → استخدمها فوراً (لا نلمس data/)
+    UI.updateSource('local');
     renderAll();
-    // عرض معلومات مفيدة للمستخدم
-    loadInfo = { base: null, type: null, files: [], time: new Date() };
-    updateStatusBar();
-    const hint = location.protocol === 'file:'
-      ? '⚠️ أنت تفتح الملف مباشرة (file://). بعض المتصفحات تحجب fetch. شغّل عبر سيرفر محلي أو GitHub Pages.'
-      : '💡 تأكد من وجود مجلد data/ بجانب index.html يحتوي على content.js أو movies.json + channels.json أو *.db';
-    toast(hint, 'info');
+    UI.updateSaveIndicator('saved', 'محفوظ');
+    UI.updateLastSave();
+    UI.updateStorageInfo();
+    Toast.show('✓ تم استعادة جلستك السابقة (' + (State.movies.length + State.channels.length) + ' عنصر)', 'success', 2500);
+  } else if (flags.firstRun) {
+    // 🆕 أول زيارة → جرّب data/
+    UI.updateSource('empty');
+    UI.setProgress(true);
+    try {
+      const data = await tryLoadFromData();
+      if (data && (data.movies.length || data.channels.length)) {
+        State.movies = State._normMovies(data.movies);
+        State.channels = State._normChannels(data.channels);
+        State.source = 'data';
+        State.save();
+        UI.updateSource('data');
+        Toast.show(`مرحباً! تم تحميل ${data.movies.length} فيلم و ${data.channels.length} قناة من data/`, 'success', 5000);
+      } else {
+        State.source = 'empty';
+        Toast.show('مرحباً! ابدأ بإضافة أول فيلم أو قناة.', 'info', 5000);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      UI.setProgress(false);
+    }
+    Storage.set(KEYS.FLAGS, { firstRun: false });
+    renderAll();
+    UI.updateLastSave();
+    UI.updateStorageInfo();
+  } else {
+    // بيانات فارغة تماماً (مستخدم مسح الكل)
+    UI.updateSource('empty');
+    renderAll();
   }
 
-  // إعادة التحديث عند رجوع المستخدم للتبويب (فحص سريع بدون force)
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') refreshAll(false);
+  // 2) استعد الجلسة (التبويب + السكرول)
+  Session.restore();
+
+  // 3) حمّل إعدادات GitHub
+  loadGithubUI();
+
+  // 4) أضف listener للقنوات (draft)
+  ['cName', 'cPoster', 'cStream', 'cDesc'].forEach(id => {
+    const el = $(id);
+    if (el) el.addEventListener('input', () => window.saveChannelDraft());
   });
+
+  // 5) تحقق من مساحة التخزين
+  const size = Storage.size();
+  if (size > 4 * 1024 * 1024) {
+    Toast.show('⚠️ التخزين قارب على الامتلاء (' + fmtBytes(size) + '). صدّر نسخة احتياطية.', 'warn', 8000);
+  }
+
+  // 6) رسالة ترحيب لوضع ملف://
+  if (location.protocol === 'file:') {
+    setTimeout(() => Toast.show('💡 تعمل من file:// — بعض المتصفحات تحجب data/. شغّل عبر سيرفر أو GitHub Pages.', 'info', 6000), 1500);
+  }
 }
 
-init();
+// بدء التشغيل
+document.addEventListener('DOMContentLoaded', bootstrap);
+// في حال DOM جاهز مسبقاً
+if (document.readyState === 'interactive' || document.readyState === 'complete') bootstrap();
+
+// كشف تغيير آخر — للتأكد
+setInterval(() => { UI.updateLastSave(); UI.updateStorageInfo(); }, 5000);
 </script>
 </body>
 </html>
