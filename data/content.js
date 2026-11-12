@@ -1668,6 +1668,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-yr2v6o5rdl5m.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Cradle 2 the Grave",
+      "year": 2003,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjkxZGRjYmEtMWI5ZC00M2IzLWJjZDQtOTVhNjU1NTY4NzhjXkEyXkFqcGc@._V1_.jpg",
+      "story": "يتم اختطاف ابنة لص الجواهر، بعد أن سرق مجموعة من الماس الأسود الثمين، والتي لا تبدو على الإطلاق كما هي.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-2shpcz6zfz29.html"
+        }
+      ]
     }
   ],
   "channels": [
