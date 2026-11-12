@@ -1,77 +1,1729 @@
 /* Movie BekEs — © 2025 B6_7E | بيكاس */
 window.__CINEMA_DATA__ = {
   "movies": [
-    {"title":"فيلم Spree","year":2020,"genre":"إثارة","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BOWM5ZGU3ZjctY2U4NS00ZGE0LWI1OGYtYmZkYzk2NzAyNWJjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_FMjpg_UX1000_.jpg","story":"سائقًا مهووسًا بوسائل التواصل الاجتماعي، يلعب دوره جو كيري، والذي في محاولة ليصبح فيروسيًا يقوم بالبث المباشر لنفسه وهو يقتل الركاب.","sources":[{"label":"مشاهدة","url":"https://rubyvidhub.com/embed-i2ea2arw773o.html"}]},
-    {"title":"فيلم Fight Club","year":1999,"genre":"دراما","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg","story":"إدوارد يتعرض لضغوطٍ حتى يصل به الحال إلى أنه لا يستطيع النوم لفتراتٍ طويلة، لكنه يجد بعض السلام في جلسات العلاج النفسي الجماعي. يتعرف إدوارد على أحد الأشخاص وهو تايلر ديردن الذي يحرره من تعلقه بالأشياء التي تستعبده، ثم يحرره من خوفه من الناس. يقومان معًا بإنشاء نادي القتال الذي يجذب الكثير من الأفراد المحبطين الذين يقومون بإخراج طاقة غضبهم وكرههم للعالم في القتال.","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-shsz4n4od8zc.html"}]},
-    {"title":"فيلم Hardcore Henry","year":2015,"genre":"أكشن","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BNjIzNTcwMDc3Nl5BMl5BanBnXkFtZTgwNzU5NTY5NzE@._V1_.jpg","story":"تدور أحداث الفيلم حول تعرض الزوج هنري لإطلاق النار عليه واختطاف زوجته من أحد الأشخاص الأقوياء. يمتلك المختطف جيشًا كبيرًا من المرتزقة الداعمين له، ورغم هذا يحاول هنري إنقاذ زوجته والانتقام من المختطفين.","sources":[{"label":"مشاهدة","url":"https://uqload.net/embed-u76go1qgdld0.html"}]},
-    {"title":"فيلم John Henry","year":2020,"genre":"أكشن","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BMWJhNDA4NTMtMmE3ZS00NjU2LWFjMjYtYjYzNWYwZTIxOTQzXkEyXkFqcGc@._V1_.jpg","story":"يحاول جون تيري الابتعاد عن ماضيه الإجرامي السابق وبداية حياة جديدة، ولكن حينما يتقابل طريقه مع مراهقين يحاولان الهرب من زعيم عصابات، يعود جون لماضيه من أجل منحهما المستقبل.","sources":[{"label":"مشاهدة","url":"https://vk.com/video_ext.php?oid=745497736&id=456247945&hash=e6a16c8a6c2647ff"}]},
-    {"title":"فيلم Takers","year":2010,"genre":"أكشن","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNzFhM2ZkMzMtMjZkNy00MmM4LTg0ZTItNWFhMjIwMTg3YjBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"تتناول أحداث الفيلم محاولة مجموعة من اللصوص السطو على بنك، وعند توصلهم إلى خطة محكمة للقيام بسرقة 20 مليون دولار يعترضهم شرطي صارم وتتوالى الأحداث.","sources":[{"label":"مشاهدة","url":"https://vipserver.liiivideo.com/embed-hz7no1unczz1.html"}]},
-    {"title":"فيلم District 13","year":2014,"genre":"أكشن","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BOTBiMTUyNmMtYWU1NS00MDdmLThhZmUtNGM1MWJiMGM4NDYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"شرطي سري في ديترويت يتنقل في حي خطير محاط بجدار احتواء بمساعدة محتال سابق من أجل إسقاط زعيم الجريمة ومخططه لتدمير المدينة بأكملها.","sources":[{"label":"District 13 1","url":"https://1vid.xyz/embed-h9t59o5beett.html"},{"label":"District 13 2","url":"https://1vid.xyz/embed-nx87d3tnqcor.html?_=1794242814566"},{"label":"District 13 3","url":"https://www.vidspeed.org/embed-ylhan3x11cv7.html"}]},
-    {"title":"فيلم Buddy","year":2026,"genre":"كوميديا","rating":8,"poster":"https://m.media-amazon.com/images/M/MV5BMWRkNWJhNjYtY2FkZC00YjFlLWFjMjUtZGFhMjc5MGYyODE4XkEyXkFqcGc@._V1_.jpg","story":"وحيد القرن البرتقالي الساحر والمغني يحتجز طاقمه كرهينة في بُعد سريالي لبرنامج تلفزيوني، بينما يصبح مجنونًا أكثر فأكثر.","sources":[{"label":"مشاهدة","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"title":"جريمة في زمالك","year":2026,"genre":"دراما","rating":9,"poster":"https://shahid.mbc.net/mediaObject/15d9e2cd-6992-4c0a-91a5-ab2d7184b821?width=273&version=1&type=webp","story":"تدور حول جريمة غامضة وتتابع رحلة البحث عن الحقيقة، حيث تقدم شخصية «نادية» التي تجد أموالًا وتستولي عليها، وتتطور الأحداث في إطار درامي تشويقي مكثف.","sources":[{"label":"الحلقة الاولى","url":"https://1vid.xyz/embed-j5sz37eohb9p.html"},{"label":"الحلقة الثانية","url":"https://1vid.xyz/embed-9lmih9jem0pq.html"},{"label":"الحلقة الثالثة","url":"https://1vid.xyz/embed-oh1p3guxqxte.html"}]},
-    {"title":"حبتين","year":2026,"genre":"دراما","rating":9,"poster":"https://etbilarabi.com/sites/default/files/inline-images/2026/hbtyn-nayf.jpeg","story":"بعد خروجه من السجن إثر حادث تفجير مميت، يحاول أحمد أن يبدأ من جديد ويواجه ماضياً لم يُغلق، وفي مقدمته حبيبته السابقة. لكن ظهور ضابط في الداخلية وعرض غامض يعيدانه خلف الطارة، هذه المرة وس.","sources":[{"label":"الحلقة الاولى","url":"https://1vid.xyz/embed-cn00u7okcn8o.html"},{"label":"الحلقة الثانية","url":"https://1vid.xyz/embed-xhtdb6lvmswk.html"},{"label":"الحلقة الثالثة","url":"https://1vid.xyz/embed-gzw5xlky1b34.html"},{"label":"الحلقة الرابعة","url":"https://1vid.xyz/embed-8edyhk1chjnu.html"},{"label":"الحلقة الخامسة","url":"https://1vid.xyz/embed-ynnsugyamni9.html"},{"label":"الحلقة السادسة","url":"https://1vid.xyz/embed-41rvf8pmqxdi.html"}]},
-    {"title":"فيلم The Pacifier","year":2005,"genre":"كوميديا","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMTE5MTcxOTQxNl5BMl5BanBnXkFtZTYwMzk3Nzg2._V1_FMjpg_UX1000_.jpg","story":"بعد اختطافه، يموت العالم هوارد ويصاب الشرطي شين، وتكتشف السلطات وجود صندوق أمانات يخص العالم هوارد في زيوريخ، فيصطحب النقيب بيل فوسيت أرملة العالم هوارد السيدة جولي إلى هناك، بينما يكلف شين برعاية وحماية أطفال العالم الخمسة الذين تتراوح أعمارهم من سن المراهقة إلى طفل رضيع.","sources":[{"label":"مشاهدة","url":"https://uqload.co/embed-5no3ucdyqufo.html"}]},
-    {"title":"فيلم Crank","year":2006,"genre":"أكشن","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BMjg0NjAxNDY4MV5BMl5BanBnXkFtZTcwODA5MjMzMw@@._V1_.jpg","story":"يعمل تشيف تشيلويس قاتلًا محترفًا لحساب منظمةٍ إجرامية، ولكنه يسأم من عمله ويقرر أن يعتزل ليعيش في هدوءٍ مع صديقته إيف التي لا تعلم شيئًا عن طبيعة عمله. ولكن ما لا يعلمه تشيف أن عدوه اللدود فيرونا قد حقنه بسمٍ خاص يُسمى كوكيتل بكين، سوف يؤدي هذا السم لموته إذا انخفض عدد ضربات قلبه عن رقمٍ محدد.","sources":[{"label":"Crank","url":"https://vipserver.liiivideo.com/embed-8g4bcjk1ekjg.html"},{"label":"Crank 2","url":"https://vipserver.liiivideo.com/embed-jwndvbwm9uqm.html"}]},
-    {"title":"فيلم You Got Served","year":2004,"genre":"دراما","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BZjkzZWZjZmMtMjliYi00Zjg5LTkzZGYtYzZkOGNhNzc5MzQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg","story":"من أجل تحقيق حلمهم في افتتاح استوديو تسجيل، يجب على الصديقين أوماريون وهيوستن أن يفوزا أولاً في مسابقة الرقص بمدينتهم، والمنافسة شرسة ضد مجموعة من راقصي الشارع.","sources":[{"label":"مشاهدة","url":"https://uqload.co/embed-yn0sdqqrff75.html"}]},
-    {"title":"فيلم Terrifier 2026","year":2026,"genre":"رعب","rating":10,"poster":"https://m.media-amazon.com/images/I/812G1eT1W8L.jpg","story":"شخص مجنون يرتدي زي مهرج، يرهب ثلاث شابات في ليلة عيد الهالوين وكل شخص آخر يقف في طريقه، حتى في النهاية يقتل نفسه قبل أن يُقبض عليه، ومن ثم يُكتشف أمرًا مدهشًا.","sources":[{"label":"Terrifier","url":"https://www.vidspeed.org/embed-xezpn5cajs17.html?_=1794064933017"},{"label":"Terrifier 2","url":"https://www.vidspeed.org/embed-nawwzy8wj9dd.html"},{"label":"Terrifier 3","url":"https://www.vidspeed.org/embed-5nrn2g07ctag.html?_=1794065061323"}]},
-    {"title":"فيلم Silent Hill","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMmRkYmMxZTAtZGE1NS00NjllLWI0YWYtMDViYzU4NGRlMTMxXkEyXkFqcGc@._V1_.jpg","story":"يتلقى الفنان جيمس سندرلاند رسالة غامضة من حبيبته المفقودة مايدفعه للعودة الى مدينة سايلنت هيل التي عرفها يوما فاذا بها مغطاة بضباب رمادي ورماد سقط من السماء وتغمرها خلوة ","sources":[{"label":"Silent Hill","url":"https://www.vidspeed.org/embed-t8q9hrelfv2h.html"},{"label":"Silent Hill 2","url":"https://vidspeed.org/embed-knypuaqn29nz.html?_=1794065481410"}]},
-    {"title":"فيلم Apocalypse Z","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BZjBiMDZjMzMtYzRjYS00ODc0LTlmNDEtYjQxYjJkYjdhODdkXkEyXkFqcGc@._V1_.jpg","story":"عندما تتعقد مهمة إمداد إلى إسبانيا التي دمرها الفيروس عندما ينضم إليها روبرتو، القادم من جزر الكناري الآمنة، بنوايا خفية. ويواجه الفريق حشودًا مصابة بالفيروس ومشاكل تتعلق بالثقة، بينما يوازن بين البقاء ","sources":[{"label":"Apocalypse Z 1","url":"https://vidspeed.org/embed-nmxtefsqf117.html?_=1794066226111"},{"label":"Apocalypse Z 2","url":"https://1vid.xyz/embed-qr51n7rcmmfl.html"}]},
-    {"title":"فيلم Big Daddy ","year":1999,"genre":"8.0","rating":8,"poster":"https://m.media-amazon.com/images/M/MV5BZGQwMzAyMjEtYjNiNi00NWQwLThiNjQtY2Q2ZWQ5ZGIzMDI4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"يعمل (سوني كوفاكس) في أعمال حرة بسيطة بنيويورك، ويعتمد في معيشته على تعويض مالي حصل عليه إثر حادث سيارة، وتيأس صديقته (فانيسا) من أسلوب حياته، فتهدد بالانفصال عنه إذا لم يتغير، وحين يسافر زميله في رحلة عمل، وتترك صديقته ابنها معه، فيجدها (سوني) فرصة لتغير وضعه مع صديقته من خلال عنايته بالطفل.","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-e7b3x4y45whk.html?_=1794066737211"}]},
-    {"title":"فيلم Rush Hour","year":2007,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/I/71KPidlG+SL._AC_UF1000,1000_QL80_.jpg","story":"بعد وقت قصير من وصول (هان) إلى أمريكا لتولي منصبه الدبلوماسي الجديد في لوس أنجلوس، تختطف ابنته (سو يونغ)، بينما كانت في طريقها إلى أول يوم لها في المدرسة. القنصل هان يدعو المفتش لي (جاكي شان) للمساعدة في هذه القضية. مكتب التحقيقات الفيدرالي يقرر إبعاد لي عن القضية وتوكل مهمة مراقبته لـ جيمس كارتر (كريس تاكر) الذي يقرر حل القضية بنفسه، عندما اكتشف بأنه قد أعطيت له مهمة وضيعة وبعد عدة مناوشات يتحد مع لي لإنقاذ الفتاة.","sources":[{"label":"Rush Hour","url":"https://1vid.xyz/embed-mywpz1l7v53h.html?_=1794067747642"},{"label":"Rush Hour 2","url":"https://1vid.xyz/embed-t2yn26ogfn69.html?_=1794067828320"},{"label":"Rush Hour 3","url":"https://1vid.xyz/embed-970lr0pipnav.html?_=1794067910905"}]},
-    {"title":"فيلم Mile 8","year":2002,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMzFhZDhjMDAtZWJlZS00ZWUyLWFlZGMtYTcwZjFlODcyMGE2XkEyXkFqcGc@._V1_.jpg","story":"يحاول جيمي تحسين حياته فيلتحق بمسابقة في غناء الراب، فيعاني «رابيت» في البداية من الخوف، ويرتعش عندما يأتي وقت التنافس وتسلط عليه الأضواء، ويدور صراع داخل الفتى الذي يعي قدراته الفنية تماماً، والتي تفرض عليه التغلب على خوفه ووضع بصمته الفنية الخاصة","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-qnh25u9uz048.html"}]},
-    {"title":"فيلم The Transporter","year":2008,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/I/71JdlbCOyAL._AC_UF894,1000_QL80_.jpg","story":"يعيش السائق المحترف فرانك مارتن في ميامي ، حيث يقوم مؤقتا بملء صديق كسائق لصانع سياسة حكومي لمكافحة المخدرات وعائلته. يتم استهداف الصبي الصغير في الأسرة للاختطاف ، ويشارك فرانك على الفور في حماية الطفل وفضح الخاطفين.","sources":[{"label":"The Transporter","url":"https://www.vidspeed.org/embed-x1j5g645jp2d.html?_=1794099507278"},{"label":"The Transporter 2","url":"https://1vid.xyz/embed-jn2dzbq6lp4z.html"},{"label":"The Transporter 3","url":"https://1vid.xyz/embed-qnyj4acltwpm.html?_=1794097006613"}]},
-    {"title":"فيلم Saw","year":2023,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/I/71+w-GJQzIL.jpg","story":"(جيف) رجل مكروب وحزين لفقدان ابنه الشاب بحادث سيارة؛ فيصبح مهووسًا بفكرة الانتقام من قائد السيارة المتهور الذي قتل ابنه، بينما تُختطَف د. (لين دنلون) بواسطة (أماندا) متدربة المنشار الجديدة، التي تأخذ الطبيبة إلى مستودع خَرِب طالبة منها الحفاظ على حياة (جون كرامر) رغم ورم المخ الحرج الذي يعانيه.","sources":[{"label":"Saw 1","url":"https://1vid.xyz/embed-ef9o730uy5gj.html"},{"label":"Saw 2","url":"https://1vid.xyz/embed-0o38dt11hj07.html"},{"label":"Saw 3","url":"https://www.vidspeed.org/embed-g335zvbfl9lt.html"},{"label":"Saw 4","url":"https://www.vidspeed.org/embed-4q37qmb4mpof.html"},{"label":"Saw 5","url":"https://www.vidspeed.org/embed-jk2333810qve.html"},{"label":"Saw 6","url":"https://www.vidspeed.org/embed-t9awr2w6xv8y.html?_=1794101396931"},{"label":"Saw 7","url":"https://www.vidspeed.org/embed-x3gim8yw06cy.html?_=1794101363217"},{"label":"Saw 8","url":"https://vipserver.liiivideo.com/embed-bmcz53d5te1t.html"},{"label":"Saw 9","url":"https://www.vidspeed.org/embed-1ccyh8llajt0.html?_=1794098796835"},{"label":"Saw 10","url":"https://www.vidspeed.org/embed-if62d78wosqt.html?_=1794098877701"}]},
-    {"title":"فيلم Fast and Furious","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BOTQzYzEwNWMtOTAwYy00YWYwLWE1NTEtZTkxOGQxZTM0M2VhXkEyXkFqcGc@._V1_.jpg","story":"تدور احداث الفيلم حول سباق السيارات في الشوارع من جديد، والتي تقود (توريتو) إلى لوس أنجلوس وهناك يتجدد العداء بينه وبين (بريان)، لكن شيء غير متوقع يحدث، حيث يظهر عدو مشترك، وهنا يتحتم على (توريتو) و(بريان) تنحية عدائهم جانبًا، لكي يستطيعوا مواجهة هذا العدو، ومن ثم تصفية العداء فيما بينهما.","sources":[{"label":"Fast Furious 1","url":"https://www.vidspeed.org/embed-p8i79l1gsis8.html"},{"label":"Fast Furious 2","url":"https://1vid.xyz/embed-6e2lwa1bnq2i.html"},{"label":"Fast Furious 3","url":"https://1vid.xyz/embed-v77eeobnw5sc.html"},{"label":"Fast Furious 4","url":"https://1vid.xyz/embed-lzgstn1sf69y.html"},{"label":"Fast Furious 5","url":"https://1vid.xyz/embed-ylyqn49xjo2y.html"},{"label":"Fast Furious 6","url":"https://1vid.xyz/embed-wu4seib7evw0.html"},{"label":"Fast Furious 7","url":"https://1vid.xyz/embed-cwn9xr1ssg4b.html"},{"label":"Fast Furious 8","url":"https://1vid.xyz/embed-awkqw3jpgs1r.html"},{"label":"Fast Furious 9","url":"https://www.vidspeed.org/embed-fd2mckhtajv5.html"},{"label":"Fast Furious 10","url":"https://www.vidspeed.org/embed-bx9q6vywj8gx.html"}]},
-    {"title":"فيلم Death Race","year":2013,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BZjdlNmJjM2ItYjkwOS00NDMxLWFjM2QtNzcyZjJkYzEzYzQ5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"يوافق رجل أُدين ظلمًا بتهمة قتل على المنافسة في سباق شاقّ مُرهق لمدة ثلاثة أيام ضد زملائه السجناء، وذلك مقابل نيل حريته.","sources":[{"label":"Death Race 1","url":"https://1vid.xyz/embed-2pwc2teq2hhe.html"},{"label":"Death Race 2","url":"https://www.vidspeed.org/embed-81kedpprm04a.html"},{"label":"Death Race 3","url":"https://www.vidspeed.org/embed-xwq09fwgvijv.html"}]},
-    {"title":"فيلم The Texas Chainsaw","year":2022,"genre":"10.�0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNWI0NzY4NGMtNjNiMy00ZmQwLWE1YjAtZWZlYTQyYjFiNGY5XkEyXkFqcGc@._V1_.jpg","story":"مجموعة من الأصدقاء يتم مهاجمتهم من قبل آكلي لحوم البشر أثناء زيارتهم لمنزل جدهم في ولاية تكساس.","sources":[{"label":"Texas Chainsaw 1","url":"https://www.vidspeed.org/embed-vdvt7kf3o1vk.html"},{"label":"Texas Chainsaw 2","url":"https://vipserver.liiivideo.com/embed-bxnt60yvlaj6.html"},{"label":"Texas Chainsaw 3","url":"https://vipserver.liiivideo.com/embed-aenax54v0tgd.html"},{"label":"Texas Chainsaw 4","url":"https://wwa.liiivideo.com/embed-t6hhbj72o8d5.html"},{"label":"Texas Chainsaw 5","url":"https://1vid.xyz/embed-9i0eacarjuoy.html"},{"label":"Texas Chainsaw 6","url":"https://1vid.xyz/embed-o3ywivzkvcxj.html"},{"label":"Texas Chainsaw 7","url":"https://vipserver.liiivideo.com/embed-z8f1jm61dtgk.html"},{"label":"Texas Chainsaw 8","url":"https://vipserver.liiivideo.com/embed-9a9yorc8wszj.html"},{"label":"Texas Chainsaw 9","url":"https://www.vidspeed.org/embed-eguxb1qp88xr.html"}]},
-    {"title":"فيلم Scream","year":2026,"genre":"10.0","rating":10,"poster":"https://i.redd.it/scream-1996-v0-pbyknyg1uxhh1.jpg?width=1500&format=pjpg&auto=webp&s=a849814201c1f5d56a7351ddf0b5657433369e3e","story":"تعيش (سيدني) الفتاة الشابة التي تسكن مع والدها ، والتي لم تلتئم أحزانها الناتجة عن قتل والدتها ، والاعتداء عليها بعد ، كما تعاني أيضا من قتل صديقها، وسرعان ما يأتي دور (سيدني) لتبدأ في تلقي مكالمات من شخص غريب ، يبدأ في تهديدها بتصرفات مماثلة ، في نفس الوقت يسافر والد (سيدني) للخارج ويترك (سيدني) وحدها في المنزل ، فتلجأ لصديقها (بيللي) ليؤنس وحشتها خاصة بعد تلك المكالمات الغريبة ،وتبدأ في الشك في كل من حولها","sources":[{"label":"Scream 1","url":"https://1vid.xyz/embed-8yx3gtwr5h66.html"},{"label":"Scream 2","url":"https://1vid.xyz/embed-2i01ko2qdefv.html"},{"label":"Scream 3","url":"https://1vid.xyz/embed-62nadl4045tf.html"},{"label":"Scream 4","url":"https://1vid.xyz/embed-zvhsswt678u8.html"},{"label":"Scream 5","url":"https://1vid.xyz/embed-ec8yp0ir99m6.html"},{"label":"Scream 6","url":"https://1vid.xyz/embed-4nvibs659r1p.html"},{"label":"Scream 7","url":"https://1vid.xyz/embed-f35v5fp0r1x0.html"}]},
-    {"title":"فيلم Chucky","year":2019,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BOGJhZjkxZDMtMzZjYS00ODE5LTk0ZmItNWY4YzU0OTk3MGJjXkEyXkFqcGc@._V1_.jpg","story":"كان قاتلاً متسلسلاً بشرياً، وأثناء مطاردته من قبل الشرطة وإصابته بطلق ناري مميت في متجر ألعاب، لجأ إلى استخدام طقوس سحر \"الفودو\" لنقل روحه إلى دمية شهيرة للأطفال من نوع \"الرجل الطيب\"","sources":[{"label":"Chucky 1","url":"https://1vid.xyz/embed-7qx17os436pq.html"},{"label":"Chucky 2","url":"https://1vid.xyz/embed-mywm8f2mhfu5.html"},{"label":"Chucky 3","url":"https://1vid.xyz/embed-bpjmdl1qupig.html"},{"label":"Chucky 4","url":"https://www.vidspeed.org/embed-nnoagb82yxxm.html"},{"label":"Chucky 5","url":"https://www.vidspeed.org/embed-5nbige0zrx7t.html"},{"label":"Chucky 6","url":"https://www.vidspeed.org/embed-uv1l00dr2ya3.html"},{"label":"Chucky 7","url":"https://www.vidspeed.org/embed-o3obp1729efb.html"},{"label":"Chucky 8","url":"https://www.vidspeed.org/embed-3als2wbjqht9.html"}]},
-    {"title":"فيلم Taxi","year":2018,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BZTlkM2EzOTAtMTgzZi00NDEyLWJjOGItYWJiYTE2NmRlODMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"دانيال (سامي ناصري)، سائق تاكسي مهووس بالسرعة في مرسيليا، يُجبر على مساعدة محقق الشرطة الفاشل إميليان (فريديريك ديفينثال) للقبض على عصابة بنوك ألمانية تقود سيارات مرسيدس، وذلك لتجنب سحب رخصته.","sources":[{"label":"Taxi 1","url":"https://1vid.xyz/embed-1h4kby6kst1w.html"},{"label":"Taxi 2","url":"https://1vid.xyz/embed-otuzomuok8f8.html"},{"label":"Taxi 3","url":"https://www.vidspeed.org/embed-mku8yevtmudo.html"},{"label":"Taxi 4","url":"https://www.vidspeed.org/embed-yej9vggi01ic.html"},{"label":"Taxi 5","url":"https://vidspeed.org/embed-m61tit2vzrt6.html"}]},
-    {"title":"فيلم Taxi","year":2004,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMjcyYWQzMmUtNThiYi00MDQ5LWIxMGEtMTVmMjM0MjhkMGU2XkEyXkFqcGc@._V1_.jpg","story":"محقق شرطة فاشل وغير كفؤ يتسبب دائمًا في حوادث سيارات، مما يؤدي إلى سحب رخصة قيادته وتخفيض رتبته. أثناء محاولته اللحاق بعصابة برازيلية من النساء المحترفات في سرقة البنوك (تقودهم جيزيل بوندشين)، يستعين واشبورن بسائقة تاكسي ماهرة تُدعى بيل ويليامز (تقوم بدورها كوين لطيفة) والتي تقود سيارة تاكسي معدلة ومحسنة بشكل خارق. يتحد الاثنان في مطاردة كوميدية ومثيرة للقبض على العصابة واستعادة الأموال المسروقة.","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-xo2y6emrugse.html"}]},
-    {"title":"فيلم Taxi Driver","year":1976,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMjIwOGE1NjQtZWVlNi00MTA1LWFlMzUtMWFmZGZhMDM1MGUyXkEyXkFqcGc@._V1_.jpg","story":"تدور أحداث الفيلم في مدينة نيويورك خلال فترة السبعينيات التي اتسمت بالاضطراب الاجتماعي والفساد. البطل هو ترافيس بيكل (يجسده روبرت دي نيرو)، وهو جندي سابق في مشاة البحرية الأمريكية (مارينز) شارك في حرب فيتنام ويعاني من أرق مزمن وعزلة اجتماعية حادة","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-wutjxyi7l2bp.html"}]},
-    {"title":"فيلم In Time","year":2011,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMjA3NzI1ODc1MV5BMl5BanBnXkFtZTcwMzI5NjQwNg@@._V1_FMjpg_UX1000_.jpg","story":"تم تعديل البشر جينياً ليتوقف نموهم العضلي والجسدي تماماً عند سن الـ 25 عاماً. بعد هذا السن، تظهر ساعة رقمية مضيئة على سواعدهم تبدأ بالعد التنازلي، ويكون لديهم عام واحد فقط للعيش، ما لم يشتروا أو يربحوا وقتاً إضافياً.","sources":[{"label":"مشاهدة","url":"https://www.vidspeed.org/embed-85jkb56h6tje.html"}]},
-    {"title":"فيلم Panic Room","year":2002,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BODU0ZGM0MjctM2YxYy00OWY1LTk2N2YtNWE4ZWQ2ODQwMTI5XkEyXkFqcGc@._V1_.jpg","story":"يحتوي هذا المنزل على غرفة حصينة وسرية تُعرف بـ \"غرفة الذعر\" (Panic Room)، وهي مصممة لحماية أصحاب المنزل في حال حدوث اقتحام، ومجهزة بـجدران خرسانية سميكة، أبواب فولاذية، وشاشات مراقبة لكل زاوية في البيت. في ليلتهما الأولى، يقتحم ثلاثة لصوص المنزل بحثاً عن ثروة وملايين مخبأة من قِبل المالك السابق. تهرع الأم وابنتها للاختباء داخل الغرفة الحصينة، لكن المفاجأة الصادمة هي أن الأموال التي يبحث عنها اللصوص موجودة داخل الغرفة نفسها التي تختبئ فيها الأم، لتبدأ معركة ذكاء وحبس أنفاس مميتة بين الداخل والخارج.","sources":[{"label":"مشاهدة","url":"https://hgcloud.to/e/2bhiukrhbm6r?_=1794163638119"}]},
-    {"title":"فيلم Monster Trucks","year":2016,"genre":"9.0","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BMTEyMjAzMDk4ODZeQTJeQWpwZ15BbWU4MDUxNzMzMDEy._V1_.jpg","story":"طالب في المدرسة الثانوية يُدعى تريب (لوك تيل). يقوم تريب ببناء شاحنة عملاقة من بقايا السيارات الخردة. وفي نفس الوقت، تتسبب عمليات تنقيب عن النفط في بلدتهم في إطلاق كائن غريب وضخم يعيش تحت الأرض ويتغذى على النفط. يكتشف تريب أن هذا الكائن اللطيف (الذي أطلق عليه اسم \"كريتش\") يمتلك قدرة خارقة على الاختباء داخل شاحنته والعمل كمحرك بيولوجي ذكي وسريع للغاية. يتحد تريب مع زميلته ميريديث (جين ليفي) لحماية الكائن من شركة النفط الجشعة وإعادته إلى عائلته","sources":[{"label":"مشاهدة","url":"https://vipserver.liiivideo.com/embed-36hfv1zsuc5w.html"}]},
-    {"title":"فيلم Old Man","year":2026,"genre":"2022","rating":9.0,"poster":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQkyZfNEO_8aeez-BYrrv5ykPeK5boJ4Ld1qbJebt1E33XitVQX5dN6w&s=10","story":"يعثر مسافر ضل طريقه على رجل عجوز غريب الأطوار يعيش في الغابة، وسرعان ما تتحول الليلة إلى كابوس لا يمكن تخيله.","sources":[{"label":"مشاهدة","url":"https://www.vidspeed.org/embed-ghlmvhz22wuz.html"}]},
-    {"title":"فيلم Insidious","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMTYyOTAxMDA0OF5BMl5BanBnXkFtZTcwNzgwNTc1NA@@._V1_FMjpg_UX1000_.jpg","story":"• القدرة اللعنة: يمتلك الأب (جوش) وابنه (دالتون) قدرة جينية نادرة على \"الإسقاط النجمي\"، حيث تغادر أرواحهم أجسادهم أثناء النوم دون وعي منهم.","sources":[{"label":"Insidious 1","url":"https://www.vidspeed.org/embed-jjwmveyu3j3z.html"},{"label":"Insidious 2","url":"https://www.vidspeed.org/embed-2s3mhqbqmofq.html"},{"label":"Insidious 3","url":"https://www.vidspeed.org/embed-shd3s9gj2o1k.html"},{"label":"Insidious 4","url":"https://www.vidspeed.org/embed-m78edieswu4z.html"},{"label":"Insidious 5","url":"https://www.vidspeed.org/embed-hb4jauro7cr7.html"},{"label":"Insidious 6","url":"https://1vid.xyz/embed-4rpvv98qx1zz.html"}]},
-    {"title":"فيلم Siccin","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMzk4NTM2ZjYtNWYzMy00YzFmLTk5OTQtYjQ4YWQ3OWM3ZTg2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"أوزنور امرأة شابة وجميلة. لديها حب أفلاطوني منذ الطفولة إلى قدرت ، ابن عمها. لكن قدريت متزوج من امرأة اسمها نيس وهي سعيدة للغاية. غيور ، تستخدم أوزنور السحر الأسود الرهيب لتغيير هذا حتى تكون هي و Kudret معًا","sources":[{"label":"Siccin 1","url":"https://1vid.xyz/embed-yyjkxvvspf9w.html"},{"label":"Siccin 2","url":"https://1vid.xyz/embed-rniybxsnm49k.html"},{"label":"Siccin 3","url":"https://1vid.xyz/embed-7923qxym0sax.html"},{"label":"Siccin 4","url":"https://1vid.xyz/embed-oxfirl6xyeju.html"},{"label":"Siccin 5","url":"https://1vid.xyz/embed-ejy6jdb7n4t1.html"},{"label":"Siccin 6","url":"https://1vid.xyz/embed-xrkj068qw8nx.html"},{"label":"Siccin 7","url":"https://1vid.xyz/embed-wosr7hmimm0s.html"},{"label":"Siccin 8","url":"https://1vid.xyz/embed-z33802lorze2.html"},{"label":"Siccin 9","url":"https://1vid.xyz/embed-ae4buuru5hvl.html"}]},
-    {"title":"فيلم The Godfather","year":1990,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg","story":"وهو سرد تاريخي لعائلة جريمة كورليوني الإيطالية الأمريكية الخيالية. عندما ينجو مؤسس عائلة الجريمة المنظمة ، فيتو كورليوني ، بالكاد من محاولة اغتيال ، يتدخل ابنه الأصغر مايكل لرعاية القتلة المحتملين ، ويطلق حملة انتقامية دموية","sources":[{"label":"The Godfather 1","url":"https://1vid.xyz/embed-3ug794dhtg9m.html"},{"label":"The Godfather 2","url":"https://1vid.xyz/embed-1xlu6kxka2f7.html"},{"label":"The Godfather 3","url":"https://1vid.xyz/embed-8d4lhohdi51a.html"}]},
-    {"title":"فيلم Bad Boys","year":2024,"genre":"9","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BMTVkM2YxODItOGNlMy00NWExLWI2NTgtODEzMmM5NThiM2E2XkEyXkFqcGc@._V1_.jpg","story":"حول المحققين ماركوس بورنيت (مارتن لورانس) رب الأسرة الهادئ، ومايك لوري (ويل سميث) صاحب الحياة العابثة. واللذين يعملان معا في شرطة مكافحة المخدرات بولاية ميامي الأمريكية. يتم تكليف ماركوس ومايك بمهمة شديدة الصعوبة، هي الوصول لمكان شحنة من المخدرات تقدر بحوالي مئة مليون دولار أمريكي، وذلك قبل أن يتم توزيعها.","sources":[{"label":"Bad Boys 1","url":"https://1vid.xyz/embed-rrk1ky78gzvh.html"},{"label":"Bad Boys 2","url":"https://1vid.xyz/embed-dkzws7xf6sc0.html"},{"label":"Bad Boys 3","url":"https://www.vidspeed.org/embed-l2rbd7gnhecu.html"},{"label":"Bad Boys 4","url":"https://www.vidspeed.org/embed-ttijb4ujl9oy.html"}]},
-    {"title":"فيلم John Wick","year":2025,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg","story":"يخرج قاتل سابق من التقاعد لتعقب أفراد العصابات الذين قتلوا كلبه وأخذوا كل شيء منه.","sources":[{"label":"John Wick 1","url":"https://1vid.xyz/embed-xvgfchryivhp.html"},{"label":"John Wick 2","url":"https://1vid.xyz/embed-82cpgtiocqv1.html"},{"label":"John Wick 3","url":"https://1vid.xyz/embed-vsok188vhk51.html"},{"label":"John Wick 4","url":"https://1vid.xyz/embed-53vxv0o6mxp0.html"},{"label":"John Wick 5","url":"https://1vid.xyz/embed-1srw53gyp6tc.html"}]},
-    {"title":"فيلم The Matrix","year":2021,"genre":"10.0","rating":10,"poster":"https://miro.medium.com/0*VRPf2NQs6oEhtwH5.jpg","story":"يدرك أحد قراصنة الكمبيوتر أن ما يعتبره معظم الناس واقعًا هو في الحقيقة محاكاة يتم إنشاؤها بواسطة آلات، فينضم إلى المتمردين ليتحرر","sources":[{"label":"The Matrix 1","url":"https://1vid.xyz/embed-d0lmsazci500.html"},{"label":"The Matrix 2","url":"https://1vid.xyz/embed-nlda6gauc1ny.html"},{"label":"The Matrix 3","url":"https://1vid.xyz/embed-noh0xdr4so4r.html"},{"label":"The Matrix 4","url":"https://www.vidspeed.org/embed-vpeyrtxsb6cd.html"}]},
-    {"title":"فيلم Leprechaun","year":2018,"genre":"9.0","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BODg3NmFmOTgtY2I1ZC00NDBkLWEzZGQtYmY2OWIzZjlkZTcxXkEyXkFqcGc@._V1_.jpg","story":"بعد سنوات من حبسه داخل صندوق، يتوسل المخلوق المخيف ليبريكون لعائلة انتقلت حديثًا لمنزلة على أمل إطلاق سراحه، وسرعان ما تنفذ العائلة رغبته وتقع العديد من أعمال القتل والتخريب","sources":[{"label":"Leprechaun 1","url":"https://1vid.xyz/embed-nthcwxs2f9fs.html"},{"label":"Leprechaun 2","url":"https://vidspeed.org/embed-gnxy5iov6hfd.html"},{"label":"Leprechaun 3","url":"https://vidspeed.org/embed-o5jku4zyn6l4.html"},{"label":"Leprechaun 4","url":"https://www.vidspeed.org/embed-lbjhvv6wiivn.html"},{"label":"Leprechaun 5","url":"https://vidspeed.org/embed-e6pssolakq34.html"}]},
-    {"title":"فيلم Fall","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BYmZjYjAxMDEtOTE2My00MmM5LTkyYjctOWRjMjgyM2JhMDI0XkEyXkFqcGc@._V1_.jpg","story":"تجد صديقتان مقربتان نفسيهما عالقتين فوق قمة برج بث تلفزيوني شاهق يبلغ ارتفاعه 2000 قدم، بعد أن تسوء الأمور أثناء تسلقه، وتبدآن صراعًا يائسًا من أجل البقاء والعثور على سبيل للنجاة","sources":[{"label":"Fall 1","url":"https://www.vidspeed.org/embed-c4g11sa4c759.html"},{"label":"Fall 2","url":"https://mixdrop.top/e/k0noj4kxslg49r"}]},
-    {"title":"فيلم Fear Pharm","year":2022,"genre":"9.0","rating":9,"poster":"https://m.media-amazon.com/images/M/MV5BYjU2NmViYjAtMjE1MS00YTE0LThhNDAtZDlkZDc1ZjhmZGQwXkEyXkFqcGc@._V1_.jpg","story":"أربعة شباب يدخلون مزرعة ذرة احتفالًا بالهاولين، لكن العائلة المجنونة صاحبة المزرعة يصطادونهم واحدًا تلو الآخر من أجل مكيدة يدبرون لها.","sources":[{"label":"Fear Pharm 1","url":"https://www.vidspeed.org/embed-7rlbquu19xwh.html"},{"label":"Fear Pharm 2","url":"https://www.vidspeed.org/embed-05fd96u1n2mi.html"}]},
-    {"title":"فيلم Halloween","year":2022,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNDNhNjc0ZWMtOTQ3ZC00MjlkLWE4NDUtZmM1N2Y3MTU5YTZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"• بعد مرور 40 عاماً على ليلة الرعب التي نجت فيها لوري سترود (تؤدي دورها جيمي لي كرتيس) من القاتل المقنع مايكل مايرز.","sources":[{"label":"Halloween 1","url":"https://1vid.xyz/embed-ndn8kxk3dely.html"},{"label":"Halloween 2","url":"https://1vid.xyz/embed-d2dp1de1xo1h.html"},{"label":"Halloween 3","url":"https://1vid.xyz/embed-nbvva9b3izv3.html"},{"label":"Halloween 4","url":"https://1vid.xyz/embed-2ra0u4x4skjq.html"},{"label":"Halloween 5","url":"https://1vid.xyz/embed-1vkolendhtxr.html"},{"label":"Halloween 6","url":"https://1vid.xyz/embed-vlq0joajny17.html"},{"label":"Halloween 7","url":"https://1vid.xyz/embed-2dt70ih1b7oe.html"},{"label":"Halloween 8","url":"https://1vid.xyz/embed-7uoilff4yoic.html"},{"label":"Halloween 9","url":"https://www.vidspeed.org/embed-0iy2r1fsz7pp.html"},{"label":"Halloween 10","url":"https://www.vidspeed.org/embed-2uumi0ts2pqk.html"},{"label":"Halloween 11","url":"https://vidroba.com:2053/embed-vq29s2vgrv4o.html"},{"label":"Halloween 12","url":"https://www.vidspeed.org/embed-2s8s6t1qplyx.html"},{"label":"Halloween 13","url":"https://www.vidspeed.org/embed-27t18lycgze1.html"}]},
-    {"title":"فيلم Shaun of the Dead","year":2004,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNzNjZGE4YTUtOWU3OC00Mzg2LThjNWItMzUwYzEwMDgxYmVjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"يعيش (شون) حياة تعيسة ، ويعيش برفقة صديقه (إد) ، تتخلى حبيبته (ليز) عنه ، وهو ما يدفع شون إلى السعي لاستعادة حبها من جديد ، ولكن فى الوقت ذاته، تتعقد الأمور بغتة في مدينة لندن، ويتحول الكثير من سكانها إلى موتى أحياء","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-hp326ohoswi3.html"}]},
-    {"title":"فيلم World War Z","year":2013,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BODg3ZTM2YWQtZDE5Ny00NGNiLTkzYjgtYWVlYjNkOTg5NDI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"تذكر فيلي! تبدو حياة محقق الأمم المتحدة السابق جيري لين وعائلته راضية. فجأة ، ابتلي العالم بعدوى غامضة تحول مجموعات بشرية بأكملها إلى زومبي هائج طائش. بعد الهروب بالكاد من الفوضى ، يتم إقناع لين بالذهاب في مهمة للتحقيق في هذا المرض. ما يلي هو رحلة محفوفة بالمخاطر حول العالم حيث يجب على لين مواجهة المخاطر المروعة والاحتمالات الطويلة للعثور على إجابات قبل سقوط الحضارة الإنسانية","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-4fjcu0otvrwv.html"}]},
-    {"title":"فيلم The Odyssey ","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNTcyNmJlZmQtNDUwYy00NDBjLTg1NGQtYTY2Y2UxMWM3NmI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"بعد حرب طروادة، يواجه أوديسيوس رحلة خطيرة للعودة إلى إيثاكا، حيث يلتقي بمخلوقات مثل العملاق بوليفيموس، وسيرينز، وكاليبسو على طول الطريق","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-aw3o7qed1amz.html"}]},
-    {"title":"فيلم Obsession","year":2025,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"في إطار من الرعب، يتمنى شاب حالم أمنية بهدف الفوز بقلب الفتاة التي يحبها، ومع تحقق أمنيته بشكل لا يصدق، سرعان ما يكتشف أن بعض الأمنيات تأتي بثمنٍ مظلم وشرير","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-oosmuae8xnf7.html"}]},
-    {"title":"مسرحيات ","year":2026,"genre":"جميع المسرحيات","rating":10,"poster":"https://www.telemaroc.tv/storage/thumbnails/beldpHs0Po2CGMHfn7r9hrrGJ6mriEzRV97oghs8.jpeg","story":"مسرحيات مصريه وسعودية وكويتيه ","sources":[{"label":"كومبارس","url":"https://www.vidspeed.org/embed-9kryhxrwz6jz.html"},{"label":"عزوبي السالمية","url":"https://www.vidspeed.org/embed-tun9q3rrud9u.html"},{"label":"بخصوص بعض الناس","url":"https://www.vidspeed.org/embed-fmkoigamlm9l.html"},{"label":"آه يا درب الزلق","url":"https://www.vidspeed.org/embed-w8ztra5k7o17.html"},{"label":"بسنا فلوس","url":"https://www.vidspeed.org/embed-r3jotw9comw4.html"},{"label":"قناص خيطان","url":"https://www.vidspeed.org/embed-hqk1lusepyeh.html"},{"label":"عنتر المفلتر","url":"https://www.vidspeed.org/embed-1x9dk5vcwtv0.html"},{"label":"عش المجانين","url":"https://www.vidspeed.org/embed-8hvtuzwbmr82.html"},{"label":"باي باي عرب","url":"https://www.vidspeed.org/embed-j9ajv3h7o2gg.html"},{"label":"الدور السابع","url":"https://1vid.xyz/embed-t42kxk83s3w1.html"},{"label":"هلوسة","url":"https://www.vidspeed.org/embed-f832kf5u8ve2.html"},{"label":"باي باي لندن","url":"https://www.vidspeed.org/embed-h2y39e99rllh.html"},{"label":"مولانا","url":"https://1vid.xyz/embed-ozfyrcmfa1rc.html"},{"label":"تسجيل دخول","url":"https://www.vidspeed.org/embed-99kprm1h4ejq.html"},{"label":"كان يوم أسود","url":"https://1vid.xyz/embed-1m0fr6287d6g.html"},{"label":"شاهد ما شفش حاجه","url":"https://www.vidspeed.org/embed-sox4ed25hmw4.html?_=1794239042117"},{"label":"قابل للنشر","url":"https://www.vidspeed.org/embed-o4m2tscefx66.html"},{"label":"الأول من نوعه","url":"https://1vid.xyz/embed-sxoc5embzhhd.html"},{"label":"مراهق فى الخمسين","url":"https://www.vidspeed.org/embed-zamkvpvy05h2.html"},{"label":"المحترمين","url":"https://1vid.xyz/embed-8zd1p50ndngm.html"},{"label":"بيت بوسند","url":"https://www.vidspeed.org/embed-qatferpv7ayz.html"},{"label":"فرحان نسيب زعلان","url":"https://www.vidspeed.org/embed-bjrwoowugp8w.html"},{"label":"هلا بالخميس","url":"https://www.vidspeed.org/embed-0sslhxe2vhgi.html"},{"label":"عيال إبليس","url":"https://1vid.xyz/embed-5ybo3lccmknn.html"},{"label":"مدرسة المشاغبين","url":"https://www.vidspeed.org/embed-va2lsi73fsx0.html"},{"label":"قحفية وغترة وعقال","url":"https://www.vidspeed.org/embed-zshf08yx7eai.html"},{"label":"حلالهم دلالهم","url":"https://1vid.xyz/embed-47k1xbf08vkf.html"},{"label":"محظوظ ومبروك","url":"https://www.vidspeed.org/embed-s4xhoa7jnctn.html"},{"label":"استنزال موضي وقماشة","url":"https://www.vidspeed.org/embed-7io0pjxvfz16.html"},{"label":"طالبين القرب","url":"https://1vid.xyz/embed-1hjlv5hjq81p.html"},{"label":"ليلة زفته","url":"https://www.vidspeed.org/embed-mmf2ivg5zv80.html"},{"label":"العيال كبرت","url":"https://www.vidspeed.org/embed-lfvskyjib806.html"},{"label":"الواد سيد الشغال","url":"https://1vid.xyz/embed-btkm1wbniqrp.html"},{"label":"الزعيم","url":"https://1vid.xyz/embed-dbo2ro6bc2iu.html"},{"label":"الحكم لكم","url":"https://www.vidspeed.org/embed-4k8okacyj2lk.html"},{"label":"سيف العرب","url":"https://www.vidspeed.org/embed-mmf2ivg5zv80.html"},{"label":"الذيب في القليب","url":"https://www.vidspeed.org/embed-60w13hfb4ukc.html"},{"label":"سوبر صطار","url":"https://www.vidspeed.org/embed-whpuxhcen5bw.html"},{"label":"بودي جارد","url":"https://www.vidspeed.org/embed-q8xred6zp5gv.html"},{"label":"البيت المسكون","url":"https://www.vidspeed.org/embed-df7o1sx1g9qt.html"},{"label":"المطلوب","url":"https://www.vidspeed.org/embed-nrc4he9byta0.html"},{"label":"على هامان يا فرعون","url":"https://www.vidspeed.org/embed-lf4a8bohlibo.html"}]},
-    {"title":"فيلم A Nightmare on Elm Street ","year":2010,"genre":"10.0","rating":10,"poster":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSisO4CcrGzm9_braeeDkFNUCSNj-q-Zn-OcQ&s=10","story":"في شارع (إلم نانسي طومسون) ومجموعة من أصدقائها: (تينا رمادي، ورود لين، وجلين لانتس) يتم تعذيبهم من قبل القاتل ذي المخالب الذي يدعى (فريدي كروجر). يجب على نانسي أن تفكر بسرعة؛ حيث يحاول فريدي أن يقوم بسلخ ضحاياه واحدا تلو الآخر. عندما يكون موجودا في نومك وأحلامك، من هذا الذي يستطيع أن ينقذك من ذلك القاتل","sources":[{"label":"A Nightmare on Elm 1","url":"https://1vid.xyz/embed-k1lqzyrbg20o.html"},{"label":"A Nightmare on Elm 2","url":"https://1vid.xyz/embed-gy73jw567uto.html"},{"label":"A Nightmare on Elm 3","url":"https://1vid.xyz/embed-8f04i41vysct.html"},{"label":"A Nightmare on Elm 4","url":"https://1vid.xyz/embed-8ufscewgatal.html"},{"label":"A Nightmare on Elm 5","url":"https://1vid.xyz/embed-nvj44b279eva.html"},{"label":"A Nightmare on Elm 6","url":"https://wwa.liiivideo.com/embed-opy5orx3tmp6.html"},{"label":"A Nightmare on Elm 7","url":"https://1vid.xyz/embed-kpko5bt0lt0a.html"},{"label":"A Nightmare on Elm 8","url":"https://1vid.xyz/embed-7j9o40oo7v49.html"},{"label":"A Nightmare on Elm 9","url":"https://www.vidspeed.org/embed-bdi8eum2c904.html"}]},
-    {"title":"فيلم Friday the 13th","year":2009,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BODg3MThhYjUtYzFmOC00NmI4LTkzODgtMjgxN2M2NmE0ZjViXkEyXkFqcGc@._V1_.jpg","story":"تنتقم والدته (باميلا فورهيز) بقتل كل من يقترب من المعسكر حزنًا على ابنها، قبل أن تُقتل دفاعًا عن النفس. المفاجأة أن جيسون لم يمت غرقًا، بل عاش متخفيًا في الغابات وشهد مقتل والدته، ليخرج من مخبئه ويبدأ سلسلة انتقامية دموية مرعبة لكل من يدخل المعسكر مع مرور الوقت، يتحول جيسون (الذي يرتدي قناع الهوكي الشهير) من مجرد إنسان مهووس بالانتقام إلى كيان خارق للطبيعة لا يمكن قتله أو موته نهائيًا، ليصبح أسطورة رعب خالدة تلاحق الضحايا في كل مكان","sources":[{"label":"Friday the 13th 1","url":"https://vidspeed.org/embed-5g6cigs3os8k.html"},{"label":"Friday the 13th 2","url":"https://vidspeed.org/embed-dwouk3x35j66.html"},{"label":"Friday the 13th 3","url":"https://vidspeed.org/embed-9tzcyzkki8zw.html"},{"label":"Friday the 13th 4","url":"https://uqload.is/embed-74gc8zjeppcs.html"},{"label":"Friday the 13th 5","url":"https://vidspeed.org/embed-5yzxarevn2c0.html"},{"label":"Friday the 13th 6","url":"https://vidspeed.org/embed-okxcd47w3scv.html"},{"label":"Friday the 13th 7","url":"https://vidspeed.org/embed-tgeo4z6dyxoq.html"},{"label":"Friday the 13th 8","url":"https://vidspeed.org/embed-h8zysfkjh08t.html"},{"label":"Friday the 13th 9","url":"https://1vid.xyz/embed-64tbm9ce7n77.html"},{"label":"Friday the 13th 10","url":"https://1vid.xyz/embed-uxik37f3den6.html"},{"label":"Friday the 13th 11","url":"https://1vid.xyz/embed-7j9o40oo7v49.html"},{"label":"Friday the 13th 12","url":"https://www.vidspeed.org/embed-yzw5v1hh89a4.html"}]},
-    {"title":"فيلم Friday","year":2002,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BZWU1NWNiZTctNDFiNi00MWRlLTlkMWEtMWQ3YzY4M2ZiOTViXkEyXkFqcGc@._V1_.jpg","story":"تدور أحداث الفيلم الدرامي الكوميدي حول شابين مدمنين على تدخين المخدارت في أحداث لا تخلوآ من الإثارة والضحك ","sources":[{"label":"Friday 1","url":"https://1vid.xyz/embed-8xwvffp9zn03.html"},{"label":"Friday 2","url":"https://1vid.xyz/embed-cxzthqkn5iub.html"},{"label":"Friday 3","url":"https://1vid.xyz/embed-y79ybjcvumqs.html"}]},
-    {"title":"فيلم The Purge","year":2021,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMjI3MDI0MTA1N15BMl5BanBnXkFtZTgwOTk4NjU5ODE@._V1_.jpg","story":"تدور الأحداث في أميركا التي أصبحت خالية من البطالة والجريمة، وهذا بفضل يوم واحد سنويًا تسمح فيه الحكومة بجميع الأنشطة الإجرامية في ليلة لمدة 12 ساعة، بما في ذلك القتل، فلا يمكن في تلك الفترة أن تطلب الشرطة، والمستشفيات تعلق المساعدة، إنها ليلة واحدة عندما يجد المواطنون أنفسهم يقومون بما يريدون من دون التفكير في العقاب، في هذه الليلة التي تعاني من وباء العنف والجريمة، عائلة واحدة تصارع مع قرار ما الذي سوف يصبحون عليه عندما يأتي شخص غريب يطرق الباب","sources":[{"label":"The Purge 1","url":"https://1vid.xyz/embed-550b63c9udja.html"},{"label":"The Purge 2","url":"https://1vid.xyz/embed-k0r6qumk3ul9.html"},{"label":"The Purge 3","url":"https://1vid.xyz/embed-3h2cg0jbr4je.html"},{"label":"The Purge 4","url":"https://1vid.xyz/embed-am9iwxvx8zg0.html"},{"label":"The Purge 5","url":"https://1vid.xyz/embed-uxjbaaiesxri.html"}]},
-    {"title":"فيلم The Twilight","year":2012,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMTQ2NzUxMTAxN15BMl5BanBnXkFtZTcwMzEyMTIwMg@@._V1_FMjpg_UX1000_.jpg","story":"فتاة في سن المراهقة تعرض كل شيء للمخاطر عندما تقع في حب مصاص دماء","sources":[{"label":"The Twilight Saga 1","url":"https://1vid.xyz/embed-325i255zeovf.html"},{"label":"The Twilight Saga 2","url":"https://1vid.xyz/embed-ifib6enai3gq.html"},{"label":"The Twilight Saga 3","url":"https://1vid.xyz/embed-58kyodcj90oc.html"},{"label":"The Twilight Saga 4","url":"https://1vid.xyz/embed-oaaynsgvqd9u.html"},{"label":"The Twilight Saga 5","url":"https://1vid.xyz/embed-0wf58gizwfs1.html"}]},
-    {"title":"فيلم Lottery Ticket","year":2010,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMTM0ODA2NjcxM15BMl5BanBnXkFtZTcwNTA3NTI0Mw@@._V1_FMjpg_UX1000_.jpg","story":"كيفن كارسون هو شاب يعيش في المشاريع وعليه البقاء على قيد الحياة لمدة ثلاثة أيام في عطلة نهاية الأسبوع بعد أن اكتشف جيرانه الانتهازيين أنه يحمل تذكرة يانصيب فائزة بقيمة 370 مليون دولار","sources":[{"label":"مشاهدة","url":"https://www.vidspeed.org/embed-13i6wajwnz5x.html"}]},
-    {"title":"فيلم Mortal Kombat","year":2026,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNjQyYjJjMzEtZTYzYy00ZjFmLTlkNTktNDI5ZjIwNTAxOWE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","story":"حول ثلاثة من ابرز معلمي الفنون القتالية الذين يُستدعون إلى جزيرة مجهولة من أجل المشاركة في منافسة ستحدد مصير هذا العالم","sources":[{"label":"Mortal Kombat 1","url":"https://1vid.xyz/embed-ey8uf8yci9sf.html"},{"label":"Mortal Kombat 2","url":"https://1vid.xyz/embed-kokmee9tl5qq.html"},{"label":"Mortal Kombat 3","url":"https://www.vidspeed.org/embed-qg3ne0164kdp.html"},{"label":"Mortal Kombat 4","url":"https://1vid.xyz/embed-1h0fw8lvrbvz.html"},{"label":"Mortal Kombat 5","url":"https://1vid.xyz/embed-7ard8l0swref.html"}]},
-    {"title":"فيلم Ace Ventura","year":1995,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMjk3ZDUwYTMtYmQyYy00NTg1LWExOTItNTcxODM3NDZiNjMyXkEyXkFqcGc@._V1_.jpg","story":"يسعى المحقق الأحمق المتخصص في الحيوانات (إيس فينتورا) في البحث عن الدولفين الذي يشكل التميمة المفقودة لفريق كرة القدم","sources":[{"label":"Ace Ventura 1","url":"https://1vid.xyz/embed-p2zil2928r0f.html"},{"label":"Ace Ventura 2","url":"https://1vid.xyz/embed-y3sdcprlxpeo.html"}]},
-    {"title":"فيلم The Zorro","year":2005,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMzA2MDgyYzMtNjc4OC00YjU0LWEzMWEtOTRhMTViODY0Mjk0XkEyXkFqcGc@._V1_.jpg","story":"كفاح دون دييجو دي لافيجا(زورو الاصلى) على مدار 20 عاما ضد الإسبان ووقوفه إلى جانب عمال وفلاحي المكسيك، حيث لعب دورا بارزا في استقلال المكسيك عن إسبانيا عن طريق أعماله البطولية،إلا إنه قد دفع الثمن غاليا عندما قتلت زوجته الحبيبة وخطفت ابنته الرضيعة (إلينا) على يد الحاكم الفاسد رافيل مونيرو . يفاجأ دييجو بعودة الحاكم الفاسد رافيل مونتيرو من إسبانيا إلى كاليفورنيا مع إلينا، فتلح عليه فكرة الرغبة في الانتقام منه، لكن سنه الكبير يجعل مهمته صعبة، فيلجأ إلى تدريب شاب يدعى إليخاندرو(زورو الجديد) على فنون القتال ليكون خليفته لمحاربة ","sources":[{"label":"The Zorro 1","url":"https://1vid.xyz/embed-s9fq1lehdor6.html"},{"label":"The Zorro 2","url":"https://1vid.xyz/embed-c927xbvco8xh.html"}]},
-    {"title":"فيلم Once Upon a Time in Mexico","year":2003,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BMTU5MDg5OTcwOV5BMl5BanBnXkFtZTcwMjI1MTIzMw@@._V1_FMjpg_UX1000_.jpg","story":"يتورط القاتل إيل مارياكي في التجسس الدولي الذي يشارك فيه وكيل وكالة المخابرات المركزية المضطرب عقليًا مع مكسيكي فاسد","sources":[{"label":"Time in Mexico 1","url":"https://vidspeed.org/embed-q32fhawf178v.html"},{"label":"Time in Mexico 2","url":"https://1vid.xyz/embed-6s1g0q9ol6mc.html"},{"label":"Time in Mexico 3","url":"https://1vid.xyz/embed-z3kzcj9qzikc.html"}]},
-    {"title":"فيلم The Mask","year":1994,"genre":"10.0","rating":10,"poster":"https://m.media-amazon.com/images/M/MV5BNGNmNjI0ZmMtMzI5MC00ZjUyLWFlZDEtYjUyMGZlN2E3N2E2XkEyXkFqcGc@._V1_.jpg","story":"رجل فاشل في حياته وفقير وغير واثق من نفسه لذلك لم يقم علاقة ثم يصادف قناعا يغير له حياته فيجعله شخص غريب أخضر له قدرات جسدية وعقلية خارقة","sources":[{"label":"مشاهدة","url":"https://1vid.xyz/embed-dz26d0r0kw5b.html"}]}
+    {
+      "title": "فيلم Spree",
+      "year": 2020,
+      "genre": "إثارة",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOWM5ZGU3ZjctY2U4NS00ZGE0LWI1OGYtYmZkYzk2NzAyNWJjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_FMjpg_UX1000_.jpg",
+      "story": "سائقًا مهووسًا بوسائل التواصل الاجتماعي، يلعب دوره جو كيري، والذي في محاولة ليصبح فيروسيًا يقوم بالبث المباشر لنفسه وهو يقتل الركاب.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://rubyvidhub.com/embed-i2ea2arw773o.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Fight Club",
+      "year": 1999,
+      "genre": "دراما",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+      "story": "إدوارد يتعرض لضغوطٍ حتى يصل به الحال إلى أنه لا يستطيع النوم لفتراتٍ طويلة، لكنه يجد بعض السلام في جلسات العلاج النفسي الجماعي. يتعرف إدوارد على أحد الأشخاص وهو تايلر ديردن الذي يحرره من تعلقه بالأشياء التي تستعبده، ثم يحرره من خوفه من الناس. يقومان معًا بإنشاء نادي القتال الذي يجذب الكثير من الأفراد المحبطين الذين يقومون بإخراج طاقة غضبهم وكرههم للعالم في القتال.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-shsz4n4od8zc.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Hardcore Henry",
+      "year": 2015,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjIzNTcwMDc3Nl5BMl5BanBnXkFtZTgwNzU5NTY5NzE@._V1_.jpg",
+      "story": "تدور أحداث الفيلم حول تعرض الزوج هنري لإطلاق النار عليه واختطاف زوجته من أحد الأشخاص الأقوياء. يمتلك المختطف جيشًا كبيرًا من المرتزقة الداعمين له، ورغم هذا يحاول هنري إنقاذ زوجته والانتقام من المختطفين.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://uqload.net/embed-u76go1qgdld0.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم John Henry",
+      "year": 2020,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWJhNDA4NTMtMmE3ZS00NjU2LWFjMjYtYjYzNWYwZTIxOTQzXkEyXkFqcGc@._V1_.jpg",
+      "story": "يحاول جون تيري الابتعاد عن ماضيه الإجرامي السابق وبداية حياة جديدة، ولكن حينما يتقابل طريقه مع مراهقين يحاولان الهرب من زعيم عصابات، يعود جون لماضيه من أجل منحهما المستقبل.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://vk.com/video_ext.php?oid=745497736&id=456247945&hash=e6a16c8a6c2647ff"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Takers",
+      "year": 2010,
+      "genre": "أكشن",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzFhM2ZkMzMtMjZkNy00MmM4LTg0ZTItNWFhMjIwMTg3YjBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تتناول أحداث الفيلم محاولة مجموعة من اللصوص السطو على بنك، وعند توصلهم إلى خطة محكمة للقيام بسرقة 20 مليون دولار يعترضهم شرطي صارم وتتوالى الأحداث.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://vipserver.liiivideo.com/embed-hz7no1unczz1.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم District 13",
+      "year": 2014,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTBiMTUyNmMtYWU1NS00MDdmLThhZmUtNGM1MWJiMGM4NDYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "شرطي سري في ديترويت يتنقل في حي خطير محاط بجدار احتواء بمساعدة محتال سابق من أجل إسقاط زعيم الجريمة ومخططه لتدمير المدينة بأكملها.",
+      "sources": [
+        {
+          "label": "District 13 1",
+          "url": "https://1vid.xyz/embed-h9t59o5beett.html"
+        },
+        {
+          "label": "District 13 2",
+          "url": "https://1vid.xyz/embed-nx87d3tnqcor.html?_=1794242814566"
+        },
+        {
+          "label": "District 13 3",
+          "url": "https://www.vidspeed.org/embed-ylhan3x11cv7.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Buddy",
+      "year": 2026,
+      "genre": "كوميديا",
+      "rating": 8,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWRkNWJhNjYtY2FkZC00YjFlLWFjMjUtZGFhMjc5MGYyODE4XkEyXkFqcGc@._V1_.jpg",
+      "story": "وحيد القرن البرتقالي الساحر والمغني يحتجز طاقمه كرهينة في بُعد سريالي لبرنامج تلفزيوني، بينما يصبح مجنونًا أكثر فأكثر.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "title": "جريمة في زمالك",
+      "year": 2026,
+      "genre": "دراما",
+      "rating": 9,
+      "poster": "https://shahid.mbc.net/mediaObject/15d9e2cd-6992-4c0a-91a5-ab2d7184b821?width=273&version=1&type=webp",
+      "story": "تدور حول جريمة غامضة وتتابع رحلة البحث عن الحقيقة، حيث تقدم شخصية «نادية» التي تجد أموالًا وتستولي عليها، وتتطور الأحداث في إطار درامي تشويقي مكثف.",
+      "sources": [
+        {
+          "label": "الحلقة الاولى",
+          "url": "https://1vid.xyz/embed-j5sz37eohb9p.html"
+        },
+        {
+          "label": "الحلقة الثانية",
+          "url": "https://1vid.xyz/embed-9lmih9jem0pq.html"
+        },
+        {
+          "label": "الحلقة الثالثة",
+          "url": "https://1vid.xyz/embed-oh1p3guxqxte.html"
+        }
+      ]
+    },
+    {
+      "title": "حبتين",
+      "year": 2026,
+      "genre": "دراما",
+      "rating": 9,
+      "poster": "https://etbilarabi.com/sites/default/files/inline-images/2026/hbtyn-nayf.jpeg",
+      "story": "بعد خروجه من السجن إثر حادث تفجير مميت، يحاول أحمد أن يبدأ من جديد ويواجه ماضياً لم يُغلق، وفي مقدمته حبيبته السابقة. لكن ظهور ضابط في الداخلية وعرض غامض يعيدانه خلف الطارة، هذه المرة وس.",
+      "sources": [
+        {
+          "label": "الحلقة الاولى",
+          "url": "https://1vid.xyz/embed-cn00u7okcn8o.html"
+        },
+        {
+          "label": "الحلقة الثانية",
+          "url": "https://1vid.xyz/embed-xhtdb6lvmswk.html"
+        },
+        {
+          "label": "الحلقة الثالثة",
+          "url": "https://1vid.xyz/embed-gzw5xlky1b34.html"
+        },
+        {
+          "label": "الحلقة الرابعة",
+          "url": "https://1vid.xyz/embed-8edyhk1chjnu.html"
+        },
+        {
+          "label": "الحلقة الخامسة",
+          "url": "https://1vid.xyz/embed-ynnsugyamni9.html"
+        },
+        {
+          "label": "الحلقة السادسة",
+          "url": "https://1vid.xyz/embed-41rvf8pmqxdi.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Pacifier",
+      "year": 2005,
+      "genre": "كوميديا",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTE5MTcxOTQxNl5BMl5BanBnXkFtZTYwMzk3Nzg2._V1_FMjpg_UX1000_.jpg",
+      "story": "بعد اختطافه، يموت العالم هوارد ويصاب الشرطي شين، وتكتشف السلطات وجود صندوق أمانات يخص العالم هوارد في زيوريخ، فيصطحب النقيب بيل فوسيت أرملة العالم هوارد السيدة جولي إلى هناك، بينما يكلف شين برعاية وحماية أطفال العالم الخمسة الذين تتراوح أعمارهم من سن المراهقة إلى طفل رضيع.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://uqload.co/embed-5no3ucdyqufo.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Crank",
+      "year": 2006,
+      "genre": "أكشن",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjg0NjAxNDY4MV5BMl5BanBnXkFtZTcwODA5MjMzMw@@._V1_.jpg",
+      "story": "يعمل تشيف تشيلويس قاتلًا محترفًا لحساب منظمةٍ إجرامية، ولكنه يسأم من عمله ويقرر أن يعتزل ليعيش في هدوءٍ مع صديقته إيف التي لا تعلم شيئًا عن طبيعة عمله. ولكن ما لا يعلمه تشيف أن عدوه اللدود فيرونا قد حقنه بسمٍ خاص يُسمى كوكيتل بكين، سوف يؤدي هذا السم لموته إذا انخفض عدد ضربات قلبه عن رقمٍ محدد.",
+      "sources": [
+        {
+          "label": "Crank",
+          "url": "https://vipserver.liiivideo.com/embed-8g4bcjk1ekjg.html"
+        },
+        {
+          "label": "Crank 2",
+          "url": "https://vipserver.liiivideo.com/embed-jwndvbwm9uqm.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم You Got Served",
+      "year": 2004,
+      "genre": "دراما",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjkzZWZjZmMtMjliYi00Zjg5LTkzZGYtYzZkOGNhNzc5MzQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+      "story": "من أجل تحقيق حلمهم في افتتاح استوديو تسجيل، يجب على الصديقين أوماريون وهيوستن أن يفوزا أولاً في مسابقة الرقص بمدينتهم، والمنافسة شرسة ضد مجموعة من راقصي الشارع.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://uqload.co/embed-yn0sdqqrff75.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Terrifier 2026",
+      "year": 2026,
+      "genre": "رعب",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/I/812G1eT1W8L.jpg",
+      "story": "شخص مجنون يرتدي زي مهرج، يرهب ثلاث شابات في ليلة عيد الهالوين وكل شخص آخر يقف في طريقه، حتى في النهاية يقتل نفسه قبل أن يُقبض عليه، ومن ثم يُكتشف أمرًا مدهشًا.",
+      "sources": [
+        {
+          "label": "Terrifier",
+          "url": "https://www.vidspeed.org/embed-xezpn5cajs17.html?_=1794064933017"
+        },
+        {
+          "label": "Terrifier 2",
+          "url": "https://www.vidspeed.org/embed-nawwzy8wj9dd.html"
+        },
+        {
+          "label": "Terrifier 3",
+          "url": "https://www.vidspeed.org/embed-5nrn2g07ctag.html?_=1794065061323"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Silent Hill",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMmRkYmMxZTAtZGE1NS00NjllLWI0YWYtMDViYzU4NGRlMTMxXkEyXkFqcGc@._V1_.jpg",
+      "story": "يتلقى الفنان جيمس سندرلاند رسالة غامضة من حبيبته المفقودة مايدفعه للعودة الى مدينة سايلنت هيل التي عرفها يوما فاذا بها مغطاة بضباب رمادي ورماد سقط من السماء وتغمرها خلوة ",
+      "sources": [
+        {
+          "label": "Silent Hill",
+          "url": "https://www.vidspeed.org/embed-t8q9hrelfv2h.html"
+        },
+        {
+          "label": "Silent Hill 2",
+          "url": "https://vidspeed.org/embed-knypuaqn29nz.html?_=1794065481410"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Apocalypse Z",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjBiMDZjMzMtYzRjYS00ODc0LTlmNDEtYjQxYjJkYjdhODdkXkEyXkFqcGc@._V1_.jpg",
+      "story": "عندما تتعقد مهمة إمداد إلى إسبانيا التي دمرها الفيروس عندما ينضم إليها روبرتو، القادم من جزر الكناري الآمنة، بنوايا خفية. ويواجه الفريق حشودًا مصابة بالفيروس ومشاكل تتعلق بالثقة، بينما يوازن بين البقاء ",
+      "sources": [
+        {
+          "label": "Apocalypse Z 1",
+          "url": "https://vidspeed.org/embed-nmxtefsqf117.html?_=1794066226111"
+        },
+        {
+          "label": "Apocalypse Z 2",
+          "url": "https://1vid.xyz/embed-qr51n7rcmmfl.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Big Daddy ",
+      "year": 1999,
+      "genre": "8.0",
+      "rating": 8,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZGQwMzAyMjEtYjNiNi00NWQwLThiNjQtY2Q2ZWQ5ZGIzMDI4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "يعمل (سوني كوفاكس) في أعمال حرة بسيطة بنيويورك، ويعتمد في معيشته على تعويض مالي حصل عليه إثر حادث سيارة، وتيأس صديقته (فانيسا) من أسلوب حياته، فتهدد بالانفصال عنه إذا لم يتغير، وحين يسافر زميله في رحلة عمل، وتترك صديقته ابنها معه، فيجدها (سوني) فرصة لتغير وضعه مع صديقته من خلال عنايته بالطفل.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-e7b3x4y45whk.html?_=1794066737211"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Rush Hour",
+      "year": 2007,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/I/71KPidlG+SL._AC_UF1000,1000_QL80_.jpg",
+      "story": "بعد وقت قصير من وصول (هان) إلى أمريكا لتولي منصبه الدبلوماسي الجديد في لوس أنجلوس، تختطف ابنته (سو يونغ)، بينما كانت في طريقها إلى أول يوم لها في المدرسة. القنصل هان يدعو المفتش لي (جاكي شان) للمساعدة في هذه القضية. مكتب التحقيقات الفيدرالي يقرر إبعاد لي عن القضية وتوكل مهمة مراقبته لـ جيمس كارتر (كريس تاكر) الذي يقرر حل القضية بنفسه، عندما اكتشف بأنه قد أعطيت له مهمة وضيعة وبعد عدة مناوشات يتحد مع لي لإنقاذ الفتاة.",
+      "sources": [
+        {
+          "label": "Rush Hour",
+          "url": "https://1vid.xyz/embed-mywpz1l7v53h.html?_=1794067747642"
+        },
+        {
+          "label": "Rush Hour 2",
+          "url": "https://1vid.xyz/embed-t2yn26ogfn69.html?_=1794067828320"
+        },
+        {
+          "label": "Rush Hour 3",
+          "url": "https://1vid.xyz/embed-970lr0pipnav.html?_=1794067910905"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Mile 8",
+      "year": 2002,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzFhZDhjMDAtZWJlZS00ZWUyLWFlZGMtYTcwZjFlODcyMGE2XkEyXkFqcGc@._V1_.jpg",
+      "story": "يحاول جيمي تحسين حياته فيلتحق بمسابقة في غناء الراب، فيعاني «رابيت» في البداية من الخوف، ويرتعش عندما يأتي وقت التنافس وتسلط عليه الأضواء، ويدور صراع داخل الفتى الذي يعي قدراته الفنية تماماً، والتي تفرض عليه التغلب على خوفه ووضع بصمته الفنية الخاصة",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-qnh25u9uz048.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Transporter",
+      "year": 2008,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/I/71JdlbCOyAL._AC_UF894,1000_QL80_.jpg",
+      "story": "يعيش السائق المحترف فرانك مارتن في ميامي ، حيث يقوم مؤقتا بملء صديق كسائق لصانع سياسة حكومي لمكافحة المخدرات وعائلته. يتم استهداف الصبي الصغير في الأسرة للاختطاف ، ويشارك فرانك على الفور في حماية الطفل وفضح الخاطفين.",
+      "sources": [
+        {
+          "label": "The Transporter",
+          "url": "https://www.vidspeed.org/embed-x1j5g645jp2d.html?_=1794099507278"
+        },
+        {
+          "label": "The Transporter 2",
+          "url": "https://1vid.xyz/embed-jn2dzbq6lp4z.html"
+        },
+        {
+          "label": "The Transporter 3",
+          "url": "https://1vid.xyz/embed-qnyj4acltwpm.html?_=1794097006613"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Saw",
+      "year": 2023,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/I/71+w-GJQzIL.jpg",
+      "story": "(جيف) رجل مكروب وحزين لفقدان ابنه الشاب بحادث سيارة؛ فيصبح مهووسًا بفكرة الانتقام من قائد السيارة المتهور الذي قتل ابنه، بينما تُختطَف د. (لين دنلون) بواسطة (أماندا) متدربة المنشار الجديدة، التي تأخذ الطبيبة إلى مستودع خَرِب طالبة منها الحفاظ على حياة (جون كرامر) رغم ورم المخ الحرج الذي يعانيه.",
+      "sources": [
+        {
+          "label": "Saw 1",
+          "url": "https://1vid.xyz/embed-ef9o730uy5gj.html"
+        },
+        {
+          "label": "Saw 2",
+          "url": "https://1vid.xyz/embed-0o38dt11hj07.html"
+        },
+        {
+          "label": "Saw 3",
+          "url": "https://www.vidspeed.org/embed-g335zvbfl9lt.html"
+        },
+        {
+          "label": "Saw 4",
+          "url": "https://www.vidspeed.org/embed-4q37qmb4mpof.html"
+        },
+        {
+          "label": "Saw 5",
+          "url": "https://www.vidspeed.org/embed-jk2333810qve.html"
+        },
+        {
+          "label": "Saw 6",
+          "url": "https://www.vidspeed.org/embed-t9awr2w6xv8y.html?_=1794101396931"
+        },
+        {
+          "label": "Saw 7",
+          "url": "https://www.vidspeed.org/embed-x3gim8yw06cy.html?_=1794101363217"
+        },
+        {
+          "label": "Saw 8",
+          "url": "https://vipserver.liiivideo.com/embed-bmcz53d5te1t.html"
+        },
+        {
+          "label": "Saw 9",
+          "url": "https://www.vidspeed.org/embed-1ccyh8llajt0.html?_=1794098796835"
+        },
+        {
+          "label": "Saw 10",
+          "url": "https://www.vidspeed.org/embed-if62d78wosqt.html?_=1794098877701"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Fast and Furious",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTQzYzEwNWMtOTAwYy00YWYwLWE1NTEtZTkxOGQxZTM0M2VhXkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور احداث الفيلم حول سباق السيارات في الشوارع من جديد، والتي تقود (توريتو) إلى لوس أنجلوس وهناك يتجدد العداء بينه وبين (بريان)، لكن شيء غير متوقع يحدث، حيث يظهر عدو مشترك، وهنا يتحتم على (توريتو) و(بريان) تنحية عدائهم جانبًا، لكي يستطيعوا مواجهة هذا العدو، ومن ثم تصفية العداء فيما بينهما.",
+      "sources": [
+        {
+          "label": "Fast Furious 1",
+          "url": "https://www.vidspeed.org/embed-p8i79l1gsis8.html"
+        },
+        {
+          "label": "Fast Furious 2",
+          "url": "https://1vid.xyz/embed-6e2lwa1bnq2i.html"
+        },
+        {
+          "label": "Fast Furious 3",
+          "url": "https://1vid.xyz/embed-v77eeobnw5sc.html"
+        },
+        {
+          "label": "Fast Furious 4",
+          "url": "https://1vid.xyz/embed-lzgstn1sf69y.html"
+        },
+        {
+          "label": "Fast Furious 5",
+          "url": "https://1vid.xyz/embed-ylyqn49xjo2y.html"
+        },
+        {
+          "label": "Fast Furious 6",
+          "url": "https://1vid.xyz/embed-wu4seib7evw0.html"
+        },
+        {
+          "label": "Fast Furious 7",
+          "url": "https://1vid.xyz/embed-cwn9xr1ssg4b.html"
+        },
+        {
+          "label": "Fast Furious 8",
+          "url": "https://1vid.xyz/embed-awkqw3jpgs1r.html"
+        },
+        {
+          "label": "Fast Furious 9",
+          "url": "https://www.vidspeed.org/embed-fd2mckhtajv5.html"
+        },
+        {
+          "label": "Fast Furious 10",
+          "url": "https://www.vidspeed.org/embed-bx9q6vywj8gx.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Death Race",
+      "year": 2013,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjdlNmJjM2ItYjkwOS00NDMxLWFjM2QtNzcyZjJkYzEzYzQ5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "يوافق رجل أُدين ظلمًا بتهمة قتل على المنافسة في سباق شاقّ مُرهق لمدة ثلاثة أيام ضد زملائه السجناء، وذلك مقابل نيل حريته.",
+      "sources": [
+        {
+          "label": "Death Race 1",
+          "url": "https://1vid.xyz/embed-2pwc2teq2hhe.html"
+        },
+        {
+          "label": "Death Race 2",
+          "url": "https://www.vidspeed.org/embed-81kedpprm04a.html"
+        },
+        {
+          "label": "Death Race 3",
+          "url": "https://www.vidspeed.org/embed-xwq09fwgvijv.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Texas Chainsaw",
+      "year": 2022,
+      "genre": "10.�0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNWI0NzY4NGMtNjNiMy00ZmQwLWE1YjAtZWZlYTQyYjFiNGY5XkEyXkFqcGc@._V1_.jpg",
+      "story": "مجموعة من الأصدقاء يتم مهاجمتهم من قبل آكلي لحوم البشر أثناء زيارتهم لمنزل جدهم في ولاية تكساس.",
+      "sources": [
+        {
+          "label": "Texas Chainsaw 1",
+          "url": "https://www.vidspeed.org/embed-vdvt7kf3o1vk.html"
+        },
+        {
+          "label": "Texas Chainsaw 2",
+          "url": "https://vipserver.liiivideo.com/embed-bxnt60yvlaj6.html"
+        },
+        {
+          "label": "Texas Chainsaw 3",
+          "url": "https://vipserver.liiivideo.com/embed-aenax54v0tgd.html"
+        },
+        {
+          "label": "Texas Chainsaw 4",
+          "url": "https://wwa.liiivideo.com/embed-t6hhbj72o8d5.html"
+        },
+        {
+          "label": "Texas Chainsaw 5",
+          "url": "https://1vid.xyz/embed-9i0eacarjuoy.html"
+        },
+        {
+          "label": "Texas Chainsaw 6",
+          "url": "https://1vid.xyz/embed-o3ywivzkvcxj.html"
+        },
+        {
+          "label": "Texas Chainsaw 7",
+          "url": "https://vipserver.liiivideo.com/embed-z8f1jm61dtgk.html"
+        },
+        {
+          "label": "Texas Chainsaw 8",
+          "url": "https://vipserver.liiivideo.com/embed-9a9yorc8wszj.html"
+        },
+        {
+          "label": "Texas Chainsaw 9",
+          "url": "https://www.vidspeed.org/embed-eguxb1qp88xr.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Scream",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://i.redd.it/scream-1996-v0-pbyknyg1uxhh1.jpg?width=1500&format=pjpg&auto=webp&s=a849814201c1f5d56a7351ddf0b5657433369e3e",
+      "story": "تعيش (سيدني) الفتاة الشابة التي تسكن مع والدها ، والتي لم تلتئم أحزانها الناتجة عن قتل والدتها ، والاعتداء عليها بعد ، كما تعاني أيضا من قتل صديقها، وسرعان ما يأتي دور (سيدني) لتبدأ في تلقي مكالمات من شخص غريب ، يبدأ في تهديدها بتصرفات مماثلة ، في نفس الوقت يسافر والد (سيدني) للخارج ويترك (سيدني) وحدها في المنزل ، فتلجأ لصديقها (بيللي) ليؤنس وحشتها خاصة بعد تلك المكالمات الغريبة ،وتبدأ في الشك في كل من حولها",
+      "sources": [
+        {
+          "label": "Scream 1",
+          "url": "https://1vid.xyz/embed-8yx3gtwr5h66.html"
+        },
+        {
+          "label": "Scream 2",
+          "url": "https://1vid.xyz/embed-2i01ko2qdefv.html"
+        },
+        {
+          "label": "Scream 3",
+          "url": "https://1vid.xyz/embed-62nadl4045tf.html"
+        },
+        {
+          "label": "Scream 4",
+          "url": "https://1vid.xyz/embed-zvhsswt678u8.html"
+        },
+        {
+          "label": "Scream 5",
+          "url": "https://1vid.xyz/embed-ec8yp0ir99m6.html"
+        },
+        {
+          "label": "Scream 6",
+          "url": "https://1vid.xyz/embed-4nvibs659r1p.html"
+        },
+        {
+          "label": "Scream 7",
+          "url": "https://1vid.xyz/embed-f35v5fp0r1x0.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Chucky",
+      "year": 2019,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOGJhZjkxZDMtMzZjYS00ODE5LTk0ZmItNWY4YzU0OTk3MGJjXkEyXkFqcGc@._V1_.jpg",
+      "story": "كان قاتلاً متسلسلاً بشرياً، وأثناء مطاردته من قبل الشرطة وإصابته بطلق ناري مميت في متجر ألعاب، لجأ إلى استخدام طقوس سحر \"الفودو\" لنقل روحه إلى دمية شهيرة للأطفال من نوع \"الرجل الطيب\"",
+      "sources": [
+        {
+          "label": "Chucky 1",
+          "url": "https://1vid.xyz/embed-7qx17os436pq.html"
+        },
+        {
+          "label": "Chucky 2",
+          "url": "https://1vid.xyz/embed-mywm8f2mhfu5.html"
+        },
+        {
+          "label": "Chucky 3",
+          "url": "https://1vid.xyz/embed-bpjmdl1qupig.html"
+        },
+        {
+          "label": "Chucky 4",
+          "url": "https://www.vidspeed.org/embed-nnoagb82yxxm.html"
+        },
+        {
+          "label": "Chucky 5",
+          "url": "https://www.vidspeed.org/embed-5nbige0zrx7t.html"
+        },
+        {
+          "label": "Chucky 6",
+          "url": "https://www.vidspeed.org/embed-uv1l00dr2ya3.html"
+        },
+        {
+          "label": "Chucky 7",
+          "url": "https://www.vidspeed.org/embed-o3obp1729efb.html"
+        },
+        {
+          "label": "Chucky 8",
+          "url": "https://www.vidspeed.org/embed-3als2wbjqht9.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Taxi",
+      "year": 2018,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZTlkM2EzOTAtMTgzZi00NDEyLWJjOGItYWJiYTE2NmRlODMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "دانيال (سامي ناصري)، سائق تاكسي مهووس بالسرعة في مرسيليا، يُجبر على مساعدة محقق الشرطة الفاشل إميليان (فريديريك ديفينثال) للقبض على عصابة بنوك ألمانية تقود سيارات مرسيدس، وذلك لتجنب سحب رخصته.",
+      "sources": [
+        {
+          "label": "Taxi 1",
+          "url": "https://1vid.xyz/embed-1h4kby6kst1w.html"
+        },
+        {
+          "label": "Taxi 2",
+          "url": "https://1vid.xyz/embed-otuzomuok8f8.html"
+        },
+        {
+          "label": "Taxi 3",
+          "url": "https://www.vidspeed.org/embed-mku8yevtmudo.html"
+        },
+        {
+          "label": "Taxi 4",
+          "url": "https://www.vidspeed.org/embed-yej9vggi01ic.html"
+        },
+        {
+          "label": "Taxi 5",
+          "url": "https://vidspeed.org/embed-m61tit2vzrt6.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Taxi",
+      "year": 2004,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjcyYWQzMmUtNThiYi00MDQ5LWIxMGEtMTVmMjM0MjhkMGU2XkEyXkFqcGc@._V1_.jpg",
+      "story": "محقق شرطة فاشل وغير كفؤ يتسبب دائمًا في حوادث سيارات، مما يؤدي إلى سحب رخصة قيادته وتخفيض رتبته. أثناء محاولته اللحاق بعصابة برازيلية من النساء المحترفات في سرقة البنوك (تقودهم جيزيل بوندشين)، يستعين واشبورن بسائقة تاكسي ماهرة تُدعى بيل ويليامز (تقوم بدورها كوين لطيفة) والتي تقود سيارة تاكسي معدلة ومحسنة بشكل خارق. يتحد الاثنان في مطاردة كوميدية ومثيرة للقبض على العصابة واستعادة الأموال المسروقة.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-xo2y6emrugse.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Taxi Driver",
+      "year": 1976,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjIwOGE1NjQtZWVlNi00MTA1LWFlMzUtMWFmZGZhMDM1MGUyXkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور أحداث الفيلم في مدينة نيويورك خلال فترة السبعينيات التي اتسمت بالاضطراب الاجتماعي والفساد. البطل هو ترافيس بيكل (يجسده روبرت دي نيرو)، وهو جندي سابق في مشاة البحرية الأمريكية (مارينز) شارك في حرب فيتنام ويعاني من أرق مزمن وعزلة اجتماعية حادة",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-wutjxyi7l2bp.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم In Time",
+      "year": 2011,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA3NzI1ODc1MV5BMl5BanBnXkFtZTcwMzI5NjQwNg@@._V1_FMjpg_UX1000_.jpg",
+      "story": "تم تعديل البشر جينياً ليتوقف نموهم العضلي والجسدي تماماً عند سن الـ 25 عاماً. بعد هذا السن، تظهر ساعة رقمية مضيئة على سواعدهم تبدأ بالعد التنازلي، ويكون لديهم عام واحد فقط للعيش، ما لم يشتروا أو يربحوا وقتاً إضافياً.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-85jkb56h6tje.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Panic Room",
+      "year": 2002,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BODU0ZGM0MjctM2YxYy00OWY1LTk2N2YtNWE4ZWQ2ODQwMTI5XkEyXkFqcGc@._V1_.jpg",
+      "story": "يحتوي هذا المنزل على غرفة حصينة وسرية تُعرف بـ \"غرفة الذعر\" (Panic Room)، وهي مصممة لحماية أصحاب المنزل في حال حدوث اقتحام، ومجهزة بـجدران خرسانية سميكة، أبواب فولاذية، وشاشات مراقبة لكل زاوية في البيت. في ليلتهما الأولى، يقتحم ثلاثة لصوص المنزل بحثاً عن ثروة وملايين مخبأة من قِبل المالك السابق. تهرع الأم وابنتها للاختباء داخل الغرفة الحصينة، لكن المفاجأة الصادمة هي أن الأموال التي يبحث عنها اللصوص موجودة داخل الغرفة نفسها التي تختبئ فيها الأم، لتبدأ معركة ذكاء وحبس أنفاس مميتة بين الداخل والخارج.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://hgcloud.to/e/2bhiukrhbm6r?_=1794163638119"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Monster Trucks",
+      "year": 2016,
+      "genre": "9.0",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTEyMjAzMDk4ODZeQTJeQWpwZ15BbWU4MDUxNzMzMDEy._V1_.jpg",
+      "story": "طالب في المدرسة الثانوية يُدعى تريب (لوك تيل). يقوم تريب ببناء شاحنة عملاقة من بقايا السيارات الخردة. وفي نفس الوقت، تتسبب عمليات تنقيب عن النفط في بلدتهم في إطلاق كائن غريب وضخم يعيش تحت الأرض ويتغذى على النفط. يكتشف تريب أن هذا الكائن اللطيف (الذي أطلق عليه اسم \"كريتش\") يمتلك قدرة خارقة على الاختباء داخل شاحنته والعمل كمحرك بيولوجي ذكي وسريع للغاية. يتحد تريب مع زميلته ميريديث (جين ليفي) لحماية الكائن من شركة النفط الجشعة وإعادته إلى عائلته",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://vipserver.liiivideo.com/embed-36hfv1zsuc5w.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Old Man",
+      "year": 2026,
+      "genre": "2022",
+      "rating": 9,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQkyZfNEO_8aeez-BYrrv5ykPeK5boJ4Ld1qbJebt1E33XitVQX5dN6w&s=10",
+      "story": "يعثر مسافر ضل طريقه على رجل عجوز غريب الأطوار يعيش في الغابة، وسرعان ما تتحول الليلة إلى كابوس لا يمكن تخيله.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-ghlmvhz22wuz.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Insidious",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTYyOTAxMDA0OF5BMl5BanBnXkFtZTcwNzgwNTc1NA@@._V1_FMjpg_UX1000_.jpg",
+      "story": "• القدرة اللعنة: يمتلك الأب (جوش) وابنه (دالتون) قدرة جينية نادرة على \"الإسقاط النجمي\"، حيث تغادر أرواحهم أجسادهم أثناء النوم دون وعي منهم.",
+      "sources": [
+        {
+          "label": "Insidious 1",
+          "url": "https://www.vidspeed.org/embed-jjwmveyu3j3z.html"
+        },
+        {
+          "label": "Insidious 2",
+          "url": "https://www.vidspeed.org/embed-2s3mhqbqmofq.html"
+        },
+        {
+          "label": "Insidious 3",
+          "url": "https://www.vidspeed.org/embed-shd3s9gj2o1k.html"
+        },
+        {
+          "label": "Insidious 4",
+          "url": "https://www.vidspeed.org/embed-m78edieswu4z.html"
+        },
+        {
+          "label": "Insidious 5",
+          "url": "https://www.vidspeed.org/embed-hb4jauro7cr7.html"
+        },
+        {
+          "label": "Insidious 6",
+          "url": "https://1vid.xyz/embed-4rpvv98qx1zz.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Siccin",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzk4NTM2ZjYtNWYzMy00YzFmLTk5OTQtYjQ4YWQ3OWM3ZTg2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "أوزنور امرأة شابة وجميلة. لديها حب أفلاطوني منذ الطفولة إلى قدرت ، ابن عمها. لكن قدريت متزوج من امرأة اسمها نيس وهي سعيدة للغاية. غيور ، تستخدم أوزنور السحر الأسود الرهيب لتغيير هذا حتى تكون هي و Kudret معًا",
+      "sources": [
+        {
+          "label": "Siccin 1",
+          "url": "https://1vid.xyz/embed-yyjkxvvspf9w.html"
+        },
+        {
+          "label": "Siccin 2",
+          "url": "https://1vid.xyz/embed-rniybxsnm49k.html"
+        },
+        {
+          "label": "Siccin 3",
+          "url": "https://1vid.xyz/embed-7923qxym0sax.html"
+        },
+        {
+          "label": "Siccin 4",
+          "url": "https://1vid.xyz/embed-oxfirl6xyeju.html"
+        },
+        {
+          "label": "Siccin 5",
+          "url": "https://1vid.xyz/embed-ejy6jdb7n4t1.html"
+        },
+        {
+          "label": "Siccin 6",
+          "url": "https://1vid.xyz/embed-xrkj068qw8nx.html"
+        },
+        {
+          "label": "Siccin 7",
+          "url": "https://1vid.xyz/embed-wosr7hmimm0s.html"
+        },
+        {
+          "label": "Siccin 8",
+          "url": "https://1vid.xyz/embed-z33802lorze2.html"
+        },
+        {
+          "label": "Siccin 9",
+          "url": "https://1vid.xyz/embed-ae4buuru5hvl.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Godfather",
+      "year": 1990,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg",
+      "story": "وهو سرد تاريخي لعائلة جريمة كورليوني الإيطالية الأمريكية الخيالية. عندما ينجو مؤسس عائلة الجريمة المنظمة ، فيتو كورليوني ، بالكاد من محاولة اغتيال ، يتدخل ابنه الأصغر مايكل لرعاية القتلة المحتملين ، ويطلق حملة انتقامية دموية",
+      "sources": [
+        {
+          "label": "The Godfather 1",
+          "url": "https://1vid.xyz/embed-3ug794dhtg9m.html"
+        },
+        {
+          "label": "The Godfather 2",
+          "url": "https://1vid.xyz/embed-1xlu6kxka2f7.html"
+        },
+        {
+          "label": "The Godfather 3",
+          "url": "https://1vid.xyz/embed-8d4lhohdi51a.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Bad Boys",
+      "year": 2024,
+      "genre": "9",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTVkM2YxODItOGNlMy00NWExLWI2NTgtODEzMmM5NThiM2E2XkEyXkFqcGc@._V1_.jpg",
+      "story": "حول المحققين ماركوس بورنيت (مارتن لورانس) رب الأسرة الهادئ، ومايك لوري (ويل سميث) صاحب الحياة العابثة. واللذين يعملان معا في شرطة مكافحة المخدرات بولاية ميامي الأمريكية. يتم تكليف ماركوس ومايك بمهمة شديدة الصعوبة، هي الوصول لمكان شحنة من المخدرات تقدر بحوالي مئة مليون دولار أمريكي، وذلك قبل أن يتم توزيعها.",
+      "sources": [
+        {
+          "label": "Bad Boys 1",
+          "url": "https://1vid.xyz/embed-rrk1ky78gzvh.html"
+        },
+        {
+          "label": "Bad Boys 2",
+          "url": "https://1vid.xyz/embed-dkzws7xf6sc0.html"
+        },
+        {
+          "label": "Bad Boys 3",
+          "url": "https://www.vidspeed.org/embed-l2rbd7gnhecu.html"
+        },
+        {
+          "label": "Bad Boys 4",
+          "url": "https://www.vidspeed.org/embed-ttijb4ujl9oy.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم John Wick",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg",
+      "story": "يخرج قاتل سابق من التقاعد لتعقب أفراد العصابات الذين قتلوا كلبه وأخذوا كل شيء منه.",
+      "sources": [
+        {
+          "label": "John Wick 1",
+          "url": "https://1vid.xyz/embed-xvgfchryivhp.html"
+        },
+        {
+          "label": "John Wick 2",
+          "url": "https://1vid.xyz/embed-82cpgtiocqv1.html"
+        },
+        {
+          "label": "John Wick 3",
+          "url": "https://1vid.xyz/embed-vsok188vhk51.html"
+        },
+        {
+          "label": "John Wick 4",
+          "url": "https://1vid.xyz/embed-53vxv0o6mxp0.html"
+        },
+        {
+          "label": "John Wick 5",
+          "url": "https://1vid.xyz/embed-1srw53gyp6tc.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Matrix",
+      "year": 2021,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://miro.medium.com/0*VRPf2NQs6oEhtwH5.jpg",
+      "story": "يدرك أحد قراصنة الكمبيوتر أن ما يعتبره معظم الناس واقعًا هو في الحقيقة محاكاة يتم إنشاؤها بواسطة آلات، فينضم إلى المتمردين ليتحرر",
+      "sources": [
+        {
+          "label": "The Matrix 1",
+          "url": "https://1vid.xyz/embed-d0lmsazci500.html"
+        },
+        {
+          "label": "The Matrix 2",
+          "url": "https://1vid.xyz/embed-nlda6gauc1ny.html"
+        },
+        {
+          "label": "The Matrix 3",
+          "url": "https://1vid.xyz/embed-noh0xdr4so4r.html"
+        },
+        {
+          "label": "The Matrix 4",
+          "url": "https://www.vidspeed.org/embed-vpeyrtxsb6cd.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Leprechaun",
+      "year": 2018,
+      "genre": "9.0",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BODg3NmFmOTgtY2I1ZC00NDBkLWEzZGQtYmY2OWIzZjlkZTcxXkEyXkFqcGc@._V1_.jpg",
+      "story": "بعد سنوات من حبسه داخل صندوق، يتوسل المخلوق المخيف ليبريكون لعائلة انتقلت حديثًا لمنزلة على أمل إطلاق سراحه، وسرعان ما تنفذ العائلة رغبته وتقع العديد من أعمال القتل والتخريب",
+      "sources": [
+        {
+          "label": "Leprechaun 1",
+          "url": "https://1vid.xyz/embed-nthcwxs2f9fs.html"
+        },
+        {
+          "label": "Leprechaun 2",
+          "url": "https://vidspeed.org/embed-gnxy5iov6hfd.html"
+        },
+        {
+          "label": "Leprechaun 3",
+          "url": "https://vidspeed.org/embed-o5jku4zyn6l4.html"
+        },
+        {
+          "label": "Leprechaun 4",
+          "url": "https://www.vidspeed.org/embed-lbjhvv6wiivn.html"
+        },
+        {
+          "label": "Leprechaun 5",
+          "url": "https://vidspeed.org/embed-e6pssolakq34.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Fall",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYmZjYjAxMDEtOTE2My00MmM5LTkyYjctOWRjMjgyM2JhMDI0XkEyXkFqcGc@._V1_.jpg",
+      "story": "تجد صديقتان مقربتان نفسيهما عالقتين فوق قمة برج بث تلفزيوني شاهق يبلغ ارتفاعه 2000 قدم، بعد أن تسوء الأمور أثناء تسلقه، وتبدآن صراعًا يائسًا من أجل البقاء والعثور على سبيل للنجاة",
+      "sources": [
+        {
+          "label": "Fall 1",
+          "url": "https://www.vidspeed.org/embed-c4g11sa4c759.html"
+        },
+        {
+          "label": "Fall 2",
+          "url": "https://mixdrop.top/e/k0noj4kxslg49r"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Fear Pharm",
+      "year": 2022,
+      "genre": "9.0",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYjU2NmViYjAtMjE1MS00YTE0LThhNDAtZDlkZDc1ZjhmZGQwXkEyXkFqcGc@._V1_.jpg",
+      "story": "أربعة شباب يدخلون مزرعة ذرة احتفالًا بالهاولين، لكن العائلة المجنونة صاحبة المزرعة يصطادونهم واحدًا تلو الآخر من أجل مكيدة يدبرون لها.",
+      "sources": [
+        {
+          "label": "Fear Pharm 1",
+          "url": "https://www.vidspeed.org/embed-7rlbquu19xwh.html"
+        },
+        {
+          "label": "Fear Pharm 2",
+          "url": "https://www.vidspeed.org/embed-05fd96u1n2mi.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Halloween",
+      "year": 2022,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDNhNjc0ZWMtOTQ3ZC00MjlkLWE4NDUtZmM1N2Y3MTU5YTZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "• بعد مرور 40 عاماً على ليلة الرعب التي نجت فيها لوري سترود (تؤدي دورها جيمي لي كرتيس) من القاتل المقنع مايكل مايرز.",
+      "sources": [
+        {
+          "label": "Halloween 1",
+          "url": "https://1vid.xyz/embed-ndn8kxk3dely.html"
+        },
+        {
+          "label": "Halloween 2",
+          "url": "https://1vid.xyz/embed-d2dp1de1xo1h.html"
+        },
+        {
+          "label": "Halloween 3",
+          "url": "https://1vid.xyz/embed-nbvva9b3izv3.html"
+        },
+        {
+          "label": "Halloween 4",
+          "url": "https://1vid.xyz/embed-2ra0u4x4skjq.html"
+        },
+        {
+          "label": "Halloween 5",
+          "url": "https://1vid.xyz/embed-1vkolendhtxr.html"
+        },
+        {
+          "label": "Halloween 6",
+          "url": "https://1vid.xyz/embed-vlq0joajny17.html"
+        },
+        {
+          "label": "Halloween 7",
+          "url": "https://1vid.xyz/embed-2dt70ih1b7oe.html"
+        },
+        {
+          "label": "Halloween 8",
+          "url": "https://1vid.xyz/embed-7uoilff4yoic.html"
+        },
+        {
+          "label": "Halloween 9",
+          "url": "https://www.vidspeed.org/embed-0iy2r1fsz7pp.html"
+        },
+        {
+          "label": "Halloween 10",
+          "url": "https://www.vidspeed.org/embed-2uumi0ts2pqk.html"
+        },
+        {
+          "label": "Halloween 11",
+          "url": "https://vidroba.com:2053/embed-vq29s2vgrv4o.html"
+        },
+        {
+          "label": "Halloween 12",
+          "url": "https://www.vidspeed.org/embed-2s8s6t1qplyx.html"
+        },
+        {
+          "label": "Halloween 13",
+          "url": "https://www.vidspeed.org/embed-27t18lycgze1.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Shaun of the Dead",
+      "year": 2004,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzNjZGE4YTUtOWU3OC00Mzg2LThjNWItMzUwYzEwMDgxYmVjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "يعيش (شون) حياة تعيسة ، ويعيش برفقة صديقه (إد) ، تتخلى حبيبته (ليز) عنه ، وهو ما يدفع شون إلى السعي لاستعادة حبها من جديد ، ولكن فى الوقت ذاته، تتعقد الأمور بغتة في مدينة لندن، ويتحول الكثير من سكانها إلى موتى أحياء",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-hp326ohoswi3.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم World War Z",
+      "year": 2013,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BODg3ZTM2YWQtZDE5Ny00NGNiLTkzYjgtYWVlYjNkOTg5NDI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تذكر فيلي! تبدو حياة محقق الأمم المتحدة السابق جيري لين وعائلته راضية. فجأة ، ابتلي العالم بعدوى غامضة تحول مجموعات بشرية بأكملها إلى زومبي هائج طائش. بعد الهروب بالكاد من الفوضى ، يتم إقناع لين بالذهاب في مهمة للتحقيق في هذا المرض. ما يلي هو رحلة محفوفة بالمخاطر حول العالم حيث يجب على لين مواجهة المخاطر المروعة والاحتمالات الطويلة للعثور على إجابات قبل سقوط الحضارة الإنسانية",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-4fjcu0otvrwv.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Odyssey ",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNTcyNmJlZmQtNDUwYy00NDBjLTg1NGQtYTY2Y2UxMWM3NmI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "بعد حرب طروادة، يواجه أوديسيوس رحلة خطيرة للعودة إلى إيثاكا، حيث يلتقي بمخلوقات مثل العملاق بوليفيموس، وسيرينز، وكاليبسو على طول الطريق",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-aw3o7qed1amz.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Obsession",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "في إطار من الرعب، يتمنى شاب حالم أمنية بهدف الفوز بقلب الفتاة التي يحبها، ومع تحقق أمنيته بشكل لا يصدق، سرعان ما يكتشف أن بعض الأمنيات تأتي بثمنٍ مظلم وشرير",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-oosmuae8xnf7.html"
+        }
+      ]
+    },
+    {
+      "title": "مسرحيات ",
+      "year": 2026,
+      "genre": "جميع المسرحيات",
+      "rating": 10,
+      "poster": "https://www.telemaroc.tv/storage/thumbnails/beldpHs0Po2CGMHfn7r9hrrGJ6mriEzRV97oghs8.jpeg",
+      "story": "مسرحيات مصريه وسعودية وكويتيه ",
+      "sources": [
+        {
+          "label": "كومبارس",
+          "url": "https://www.vidspeed.org/embed-9kryhxrwz6jz.html"
+        },
+        {
+          "label": "عزوبي السالمية",
+          "url": "https://www.vidspeed.org/embed-tun9q3rrud9u.html"
+        },
+        {
+          "label": "بخصوص بعض الناس",
+          "url": "https://www.vidspeed.org/embed-fmkoigamlm9l.html"
+        },
+        {
+          "label": "آه يا درب الزلق",
+          "url": "https://www.vidspeed.org/embed-w8ztra5k7o17.html"
+        },
+        {
+          "label": "بسنا فلوس",
+          "url": "https://www.vidspeed.org/embed-r3jotw9comw4.html"
+        },
+        {
+          "label": "قناص خيطان",
+          "url": "https://www.vidspeed.org/embed-hqk1lusepyeh.html"
+        },
+        {
+          "label": "عنتر المفلتر",
+          "url": "https://www.vidspeed.org/embed-1x9dk5vcwtv0.html"
+        },
+        {
+          "label": "عش المجانين",
+          "url": "https://www.vidspeed.org/embed-8hvtuzwbmr82.html"
+        },
+        {
+          "label": "باي باي عرب",
+          "url": "https://www.vidspeed.org/embed-j9ajv3h7o2gg.html"
+        },
+        {
+          "label": "الدور السابع",
+          "url": "https://1vid.xyz/embed-t42kxk83s3w1.html"
+        },
+        {
+          "label": "هلوسة",
+          "url": "https://www.vidspeed.org/embed-f832kf5u8ve2.html"
+        },
+        {
+          "label": "باي باي لندن",
+          "url": "https://www.vidspeed.org/embed-h2y39e99rllh.html"
+        },
+        {
+          "label": "مولانا",
+          "url": "https://1vid.xyz/embed-ozfyrcmfa1rc.html"
+        },
+        {
+          "label": "تسجيل دخول",
+          "url": "https://www.vidspeed.org/embed-99kprm1h4ejq.html"
+        },
+        {
+          "label": "كان يوم أسود",
+          "url": "https://1vid.xyz/embed-1m0fr6287d6g.html"
+        },
+        {
+          "label": "شاهد ما شفش حاجه",
+          "url": "https://www.vidspeed.org/embed-sox4ed25hmw4.html?_=1794239042117"
+        },
+        {
+          "label": "قابل للنشر",
+          "url": "https://www.vidspeed.org/embed-o4m2tscefx66.html"
+        },
+        {
+          "label": "الأول من نوعه",
+          "url": "https://1vid.xyz/embed-sxoc5embzhhd.html"
+        },
+        {
+          "label": "مراهق فى الخمسين",
+          "url": "https://www.vidspeed.org/embed-zamkvpvy05h2.html"
+        },
+        {
+          "label": "المحترمين",
+          "url": "https://1vid.xyz/embed-8zd1p50ndngm.html"
+        },
+        {
+          "label": "بيت بوسند",
+          "url": "https://www.vidspeed.org/embed-qatferpv7ayz.html"
+        },
+        {
+          "label": "فرحان نسيب زعلان",
+          "url": "https://www.vidspeed.org/embed-bjrwoowugp8w.html"
+        },
+        {
+          "label": "هلا بالخميس",
+          "url": "https://www.vidspeed.org/embed-0sslhxe2vhgi.html"
+        },
+        {
+          "label": "عيال إبليس",
+          "url": "https://1vid.xyz/embed-5ybo3lccmknn.html"
+        },
+        {
+          "label": "مدرسة المشاغبين",
+          "url": "https://www.vidspeed.org/embed-va2lsi73fsx0.html"
+        },
+        {
+          "label": "قحفية وغترة وعقال",
+          "url": "https://www.vidspeed.org/embed-zshf08yx7eai.html"
+        },
+        {
+          "label": "حلالهم دلالهم",
+          "url": "https://1vid.xyz/embed-47k1xbf08vkf.html"
+        },
+        {
+          "label": "محظوظ ومبروك",
+          "url": "https://www.vidspeed.org/embed-s4xhoa7jnctn.html"
+        },
+        {
+          "label": "استنزال موضي وقماشة",
+          "url": "https://www.vidspeed.org/embed-7io0pjxvfz16.html"
+        },
+        {
+          "label": "طالبين القرب",
+          "url": "https://1vid.xyz/embed-1hjlv5hjq81p.html"
+        },
+        {
+          "label": "ليلة زفته",
+          "url": "https://www.vidspeed.org/embed-mmf2ivg5zv80.html"
+        },
+        {
+          "label": "العيال كبرت",
+          "url": "https://www.vidspeed.org/embed-lfvskyjib806.html"
+        },
+        {
+          "label": "الواد سيد الشغال",
+          "url": "https://1vid.xyz/embed-btkm1wbniqrp.html"
+        },
+        {
+          "label": "الزعيم",
+          "url": "https://1vid.xyz/embed-dbo2ro6bc2iu.html"
+        },
+        {
+          "label": "الحكم لكم",
+          "url": "https://www.vidspeed.org/embed-4k8okacyj2lk.html"
+        },
+        {
+          "label": "سيف العرب",
+          "url": "https://www.vidspeed.org/embed-mmf2ivg5zv80.html"
+        },
+        {
+          "label": "الذيب في القليب",
+          "url": "https://www.vidspeed.org/embed-60w13hfb4ukc.html"
+        },
+        {
+          "label": "سوبر صطار",
+          "url": "https://www.vidspeed.org/embed-whpuxhcen5bw.html"
+        },
+        {
+          "label": "بودي جارد",
+          "url": "https://www.vidspeed.org/embed-q8xred6zp5gv.html"
+        },
+        {
+          "label": "البيت المسكون",
+          "url": "https://www.vidspeed.org/embed-df7o1sx1g9qt.html"
+        },
+        {
+          "label": "المطلوب",
+          "url": "https://www.vidspeed.org/embed-nrc4he9byta0.html"
+        },
+        {
+          "label": "على هامان يا فرعون",
+          "url": "https://www.vidspeed.org/embed-lf4a8bohlibo.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم A Nightmare on Elm Street ",
+      "year": 2010,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSisO4CcrGzm9_braeeDkFNUCSNj-q-Zn-OcQ&s=10",
+      "story": "في شارع (إلم نانسي طومسون) ومجموعة من أصدقائها: (تينا رمادي، ورود لين، وجلين لانتس) يتم تعذيبهم من قبل القاتل ذي المخالب الذي يدعى (فريدي كروجر). يجب على نانسي أن تفكر بسرعة؛ حيث يحاول فريدي أن يقوم بسلخ ضحاياه واحدا تلو الآخر. عندما يكون موجودا في نومك وأحلامك، من هذا الذي يستطيع أن ينقذك من ذلك القاتل",
+      "sources": [
+        {
+          "label": "A Nightmare on Elm 1",
+          "url": "https://1vid.xyz/embed-k1lqzyrbg20o.html"
+        },
+        {
+          "label": "A Nightmare on Elm 2",
+          "url": "https://1vid.xyz/embed-gy73jw567uto.html"
+        },
+        {
+          "label": "A Nightmare on Elm 3",
+          "url": "https://1vid.xyz/embed-8f04i41vysct.html"
+        },
+        {
+          "label": "A Nightmare on Elm 4",
+          "url": "https://1vid.xyz/embed-8ufscewgatal.html"
+        },
+        {
+          "label": "A Nightmare on Elm 5",
+          "url": "https://1vid.xyz/embed-nvj44b279eva.html"
+        },
+        {
+          "label": "A Nightmare on Elm 6",
+          "url": "https://wwa.liiivideo.com/embed-opy5orx3tmp6.html"
+        },
+        {
+          "label": "A Nightmare on Elm 7",
+          "url": "https://1vid.xyz/embed-kpko5bt0lt0a.html"
+        },
+        {
+          "label": "A Nightmare on Elm 8",
+          "url": "https://1vid.xyz/embed-7j9o40oo7v49.html"
+        },
+        {
+          "label": "A Nightmare on Elm 9",
+          "url": "https://www.vidspeed.org/embed-bdi8eum2c904.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Friday the 13th",
+      "year": 2009,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BODg3MThhYjUtYzFmOC00NmI4LTkzODgtMjgxN2M2NmE0ZjViXkEyXkFqcGc@._V1_.jpg",
+      "story": "تنتقم والدته (باميلا فورهيز) بقتل كل من يقترب من المعسكر حزنًا على ابنها، قبل أن تُقتل دفاعًا عن النفس. المفاجأة أن جيسون لم يمت غرقًا، بل عاش متخفيًا في الغابات وشهد مقتل والدته، ليخرج من مخبئه ويبدأ سلسلة انتقامية دموية مرعبة لكل من يدخل المعسكر مع مرور الوقت، يتحول جيسون (الذي يرتدي قناع الهوكي الشهير) من مجرد إنسان مهووس بالانتقام إلى كيان خارق للطبيعة لا يمكن قتله أو موته نهائيًا، ليصبح أسطورة رعب خالدة تلاحق الضحايا في كل مكان",
+      "sources": [
+        {
+          "label": "Friday the 13th 1",
+          "url": "https://vidspeed.org/embed-5g6cigs3os8k.html"
+        },
+        {
+          "label": "Friday the 13th 2",
+          "url": "https://vidspeed.org/embed-dwouk3x35j66.html"
+        },
+        {
+          "label": "Friday the 13th 3",
+          "url": "https://vidspeed.org/embed-9tzcyzkki8zw.html"
+        },
+        {
+          "label": "Friday the 13th 4",
+          "url": "https://uqload.is/embed-74gc8zjeppcs.html"
+        },
+        {
+          "label": "Friday the 13th 5",
+          "url": "https://vidspeed.org/embed-5yzxarevn2c0.html"
+        },
+        {
+          "label": "Friday the 13th 6",
+          "url": "https://vidspeed.org/embed-okxcd47w3scv.html"
+        },
+        {
+          "label": "Friday the 13th 7",
+          "url": "https://vidspeed.org/embed-tgeo4z6dyxoq.html"
+        },
+        {
+          "label": "Friday the 13th 8",
+          "url": "https://vidspeed.org/embed-h8zysfkjh08t.html"
+        },
+        {
+          "label": "Friday the 13th 9",
+          "url": "https://1vid.xyz/embed-64tbm9ce7n77.html"
+        },
+        {
+          "label": "Friday the 13th 10",
+          "url": "https://1vid.xyz/embed-uxik37f3den6.html"
+        },
+        {
+          "label": "Friday the 13th 11",
+          "url": "https://1vid.xyz/embed-7j9o40oo7v49.html"
+        },
+        {
+          "label": "Friday the 13th 12",
+          "url": "https://www.vidspeed.org/embed-yzw5v1hh89a4.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Friday",
+      "year": 2002,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZWU1NWNiZTctNDFiNi00MWRlLTlkMWEtMWQ3YzY4M2ZiOTViXkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور أحداث الفيلم الدرامي الكوميدي حول شابين مدمنين على تدخين المخدارت في أحداث لا تخلوآ من الإثارة والضحك ",
+      "sources": [
+        {
+          "label": "Friday 1",
+          "url": "https://1vid.xyz/embed-8xwvffp9zn03.html"
+        },
+        {
+          "label": "Friday 2",
+          "url": "https://1vid.xyz/embed-cxzthqkn5iub.html"
+        },
+        {
+          "label": "Friday 3",
+          "url": "https://1vid.xyz/embed-y79ybjcvumqs.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Purge",
+      "year": 2021,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjI3MDI0MTA1N15BMl5BanBnXkFtZTgwOTk4NjU5ODE@._V1_.jpg",
+      "story": "تدور الأحداث في أميركا التي أصبحت خالية من البطالة والجريمة، وهذا بفضل يوم واحد سنويًا تسمح فيه الحكومة بجميع الأنشطة الإجرامية في ليلة لمدة 12 ساعة، بما في ذلك القتل، فلا يمكن في تلك الفترة أن تطلب الشرطة، والمستشفيات تعلق المساعدة، إنها ليلة واحدة عندما يجد المواطنون أنفسهم يقومون بما يريدون من دون التفكير في العقاب، في هذه الليلة التي تعاني من وباء العنف والجريمة، عائلة واحدة تصارع مع قرار ما الذي سوف يصبحون عليه عندما يأتي شخص غريب يطرق الباب",
+      "sources": [
+        {
+          "label": "The Purge 1",
+          "url": "https://1vid.xyz/embed-550b63c9udja.html"
+        },
+        {
+          "label": "The Purge 2",
+          "url": "https://1vid.xyz/embed-k0r6qumk3ul9.html"
+        },
+        {
+          "label": "The Purge 3",
+          "url": "https://1vid.xyz/embed-3h2cg0jbr4je.html"
+        },
+        {
+          "label": "The Purge 4",
+          "url": "https://1vid.xyz/embed-am9iwxvx8zg0.html"
+        },
+        {
+          "label": "The Purge 5",
+          "url": "https://1vid.xyz/embed-uxjbaaiesxri.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Twilight",
+      "year": 2012,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTQ2NzUxMTAxN15BMl5BanBnXkFtZTcwMzEyMTIwMg@@._V1_FMjpg_UX1000_.jpg",
+      "story": "فتاة في سن المراهقة تعرض كل شيء للمخاطر عندما تقع في حب مصاص دماء",
+      "sources": [
+        {
+          "label": "The Twilight Saga 1",
+          "url": "https://1vid.xyz/embed-325i255zeovf.html"
+        },
+        {
+          "label": "The Twilight Saga 2",
+          "url": "https://1vid.xyz/embed-ifib6enai3gq.html"
+        },
+        {
+          "label": "The Twilight Saga 3",
+          "url": "https://1vid.xyz/embed-58kyodcj90oc.html"
+        },
+        {
+          "label": "The Twilight Saga 4",
+          "url": "https://1vid.xyz/embed-oaaynsgvqd9u.html"
+        },
+        {
+          "label": "The Twilight Saga 5",
+          "url": "https://1vid.xyz/embed-0wf58gizwfs1.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Lottery Ticket",
+      "year": 2010,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTM0ODA2NjcxM15BMl5BanBnXkFtZTcwNTA3NTI0Mw@@._V1_FMjpg_UX1000_.jpg",
+      "story": "كيفن كارسون هو شاب يعيش في المشاريع وعليه البقاء على قيد الحياة لمدة ثلاثة أيام في عطلة نهاية الأسبوع بعد أن اكتشف جيرانه الانتهازيين أنه يحمل تذكرة يانصيب فائزة بقيمة 370 مليون دولار",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-13i6wajwnz5x.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Mortal Kombat",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjQyYjJjMzEtZTYzYy00ZjFmLTlkNTktNDI5ZjIwNTAxOWE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "حول ثلاثة من ابرز معلمي الفنون القتالية الذين يُستدعون إلى جزيرة مجهولة من أجل المشاركة في منافسة ستحدد مصير هذا العالم",
+      "sources": [
+        {
+          "label": "Mortal Kombat 1",
+          "url": "https://1vid.xyz/embed-ey8uf8yci9sf.html"
+        },
+        {
+          "label": "Mortal Kombat 2",
+          "url": "https://1vid.xyz/embed-kokmee9tl5qq.html"
+        },
+        {
+          "label": "Mortal Kombat 3",
+          "url": "https://www.vidspeed.org/embed-qg3ne0164kdp.html"
+        },
+        {
+          "label": "Mortal Kombat 4",
+          "url": "https://1vid.xyz/embed-1h0fw8lvrbvz.html"
+        },
+        {
+          "label": "Mortal Kombat 5",
+          "url": "https://1vid.xyz/embed-7ard8l0swref.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Ace Ventura",
+      "year": 1995,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjk3ZDUwYTMtYmQyYy00NTg1LWExOTItNTcxODM3NDZiNjMyXkEyXkFqcGc@._V1_.jpg",
+      "story": "يسعى المحقق الأحمق المتخصص في الحيوانات (إيس فينتورا) في البحث عن الدولفين الذي يشكل التميمة المفقودة لفريق كرة القدم",
+      "sources": [
+        {
+          "label": "Ace Ventura 1",
+          "url": "https://1vid.xyz/embed-p2zil2928r0f.html"
+        },
+        {
+          "label": "Ace Ventura 2",
+          "url": "https://1vid.xyz/embed-y3sdcprlxpeo.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Zorro",
+      "year": 2005,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzA2MDgyYzMtNjc4OC00YjU0LWEzMWEtOTRhMTViODY0Mjk0XkEyXkFqcGc@._V1_.jpg",
+      "story": "كفاح دون دييجو دي لافيجا(زورو الاصلى) على مدار 20 عاما ضد الإسبان ووقوفه إلى جانب عمال وفلاحي المكسيك، حيث لعب دورا بارزا في استقلال المكسيك عن إسبانيا عن طريق أعماله البطولية،إلا إنه قد دفع الثمن غاليا عندما قتلت زوجته الحبيبة وخطفت ابنته الرضيعة (إلينا) على يد الحاكم الفاسد رافيل مونيرو . يفاجأ دييجو بعودة الحاكم الفاسد رافيل مونتيرو من إسبانيا إلى كاليفورنيا مع إلينا، فتلح عليه فكرة الرغبة في الانتقام منه، لكن سنه الكبير يجعل مهمته صعبة، فيلجأ إلى تدريب شاب يدعى إليخاندرو(زورو الجديد) على فنون القتال ليكون خليفته لمحاربة ",
+      "sources": [
+        {
+          "label": "The Zorro 1",
+          "url": "https://1vid.xyz/embed-s9fq1lehdor6.html"
+        },
+        {
+          "label": "The Zorro 2",
+          "url": "https://1vid.xyz/embed-c927xbvco8xh.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Once Upon a Time in Mexico",
+      "year": 2003,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTU5MDg5OTcwOV5BMl5BanBnXkFtZTcwMjI1MTIzMw@@._V1_FMjpg_UX1000_.jpg",
+      "story": "يتورط القاتل إيل مارياكي في التجسس الدولي الذي يشارك فيه وكيل وكالة المخابرات المركزية المضطرب عقليًا مع مكسيكي فاسد",
+      "sources": [
+        {
+          "label": "Time in Mexico 1",
+          "url": "https://vidspeed.org/embed-q32fhawf178v.html"
+        },
+        {
+          "label": "Time in Mexico 2",
+          "url": "https://1vid.xyz/embed-6s1g0q9ol6mc.html"
+        },
+        {
+          "label": "Time in Mexico 3",
+          "url": "https://1vid.xyz/embed-z3kzcj9qzikc.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم The Mask",
+      "year": 1994,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGNmNjI0ZmMtMzI5MC00ZjUyLWFlZDEtYjUyMGZlN2E3N2E2XkEyXkFqcGc@._V1_.jpg",
+      "story": "رجل فاشل في حياته وفقير وغير واثق من نفسه لذلك لم يقم علاقة ثم يصادف قناعا يغير له حياته فيجعله شخص غريب أخضر له قدرات جسدية وعقلية خارقة",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-dz26d0r0kw5b.html"
+        }
+      ]
+    },
+    {
+      "title": "فيلم Mad Max",
+      "year": 2024,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZDRkODJhOTgtOTc1OC00NTgzLTk4NjItNDgxZDY4YjlmNDY2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "بعد نهاية العالم على نحو مأساوي، وفي إحدى الصحاري المقفرة، يعيش اثنان من الثوار الفارين اللذين يحملان إمكانية استعادة النظام لطبيعته من جديد، أولهما هو ماكس (توم هاردي)، الرجل الذي يسعى وراء التصالح مع الذات بعد خسارته لزوجته وابنه في أعقاب الفوضى التي اجتاحت الكوكب، وفيوريسا (تشارليز ثيرون) التي تعتقد أن طريقتها في اﻹصلاح قد تكون مجدية عبر الصحراء.",
+      "sources": [
+        {
+          "label": "Mad Max 1",
+          "url": "https://1vid.xyz/embed-v4spafq9nhdx.html"
+        },
+        {
+          "label": "Mad Max 2",
+          "url": "https://1vid.xyz/embed-1gm7q1fsjia4.html"
+        },
+        {
+          "label": "Mad Max 3",
+          "url": "https://1vid.xyz/embed-2vu5iw8bre7o.html"
+        },
+        {
+          "label": "Mad Max 4",
+          "url": "https://1vid.xyz/embed-wwcfr6zfykm7.html"
+        },
+        {
+          "label": "Mad Max 5",
+          "url": "https://1vid.xyz/embed-wpflrzj5l8se.html"
+        }
+      ]
+    }
   ],
   "channels": [
-    {"name":"Bein Sport 1","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 1 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"Bein Sport 2","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 2 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"Bein Sport 3","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 3 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"Bein Sport 4","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 4 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"Bein Sport 5","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 5 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"Bein Sport 6","poster":"https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة Bein Sport 6 — بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"ثمانية 1 4K","poster":"https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة ثمانية 1 4K - بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"ثمانية 1 HD","poster":"https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة ثمانية 1 HD - بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"ثمانية 2 4K","poster":"https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة ثمانية 2 4K - بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"ثمانية 2 HD","poster":"https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة ثمانية 2 HD - بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"ثمانية 3 4K","poster":"https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة ثمانية 3 4K - بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]},
-    {"name":"ثمانية 3 HD","poster":"https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj","stream":"https://mixdrop.ps/e/owwdln3whlpmro","desc":"قناة ثمانية 3 HD - بث مباشر","sources":[{"label":"سيرفر مباشر","url":"https://mixdrop.ps/e/owwdln3whlpmro"}]}
+    {
+      "name": "Bein Sport 1",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 1 — بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "Bein Sport 2",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 2 — بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "Bein Sport 3",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 3 — بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "Bein Sport 4",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 4 — بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "Bein Sport 5",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 5 — بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "Bein Sport 6",
+      "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة Bein Sport 6 — بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "ثمانية 1 4K",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 1 4K - بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "ثمانية 1 HD",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 1 HD - بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "ثمانية 2 4K",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 2 4K - بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "ثمانية 2 HD",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 2 HD - بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "ثمانية 3 4K",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 3 4K - بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    },
+    {
+      "name": "ثمانية 3 HD",
+      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
+      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "desc": "قناة ثمانية 3 HD - بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+        }
+      ]
+    }
   ]
 };
