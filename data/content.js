@@ -1922,6 +1922,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-csei7krbl5pk.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Candy Corn",
+      "year": 2019,
+      "genre": "9.0",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjU1ODA0ZWUtOTNjOC00ZGYwLTgzZWUtM2IxZDBlYjkxMWIwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "عطلة نهاية الأسبوع في عيد الهالوين ومجموعة من المتنمرين يخططون لمضايقتهم السنوية على منبوذ محلي ، جاكوب أتكينز. عندما يبتعدون عن الأمور ، يقوم من الموت للانتقام ممن ظلموه .",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-jt6a98f0e8u7.html"
+        }
+      ]
     }
   ],
   "channels": [
