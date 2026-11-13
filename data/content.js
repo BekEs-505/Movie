@@ -1884,6 +1884,44 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-g0p9lgf8nl6c.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Wrong Turn",
+      "year": 2021,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGI5YWE4OTUtNTY2My00ZThmLWI5MTctM2U1YjhlODIxNTM2XkEyXkFqcGc@._V1_.jpg",
+      "story": "ستة أصدقاء يقومون بجولة داخل غابة بولايو فيرجينيا الغربية، لكنهم يجدوا أنفسهم محاصرون من قبل رجال مشوهين آكلي لحوم ا لبشر، ليبدأ الأصدقاء نضالهم من أجل البقاءأ منهم من يستطيع ومنهم من يكون وجبة طازجة لهولاء المسوخ .",
+      "sources": [
+        {
+          "label": "Wrong turn 1",
+          "url": "https://1vid.xyz/embed-lqan964rdrup.html"
+        },
+        {
+          "label": "Wrong turn 2",
+          "url": "https://1vid.xyz/embed-hvpkmtcp2k3s.html"
+        },
+        {
+          "label": "Wrong turn 3",
+          "url": "https://www.vidspeed.org/embed-29in7bi9nh1b.html"
+        },
+        {
+          "label": "Wrong turn 4",
+          "url": "https://www.vidspeed.org/embed-8nmzicw74unq.html"
+        },
+        {
+          "label": "Wrong turn 5",
+          "url": "https://www.vidspeed.org/embed-8m4njt9wesmn.html"
+        },
+        {
+          "label": "Wrong turn 6",
+          "url": "https://www.vidspeed.org/embed-f44xlupx7k7c.html"
+        },
+        {
+          "label": "Wrong Turn 7",
+          "url": "https://www.vidspeed.org/embed-csei7krbl5pk.html"
+        }
+      ]
     }
   ],
   "channels": [
