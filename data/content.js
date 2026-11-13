@@ -2090,6 +2090,28 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-em3eg9p2ksy6.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Human Centipede",
+      "year": 2015,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTY4Nzk3NzYxOF5BMl5BanBnXkFtZTcwODQwNjQzMw@@._V1_FMjpg_UX1000_.jpg",
+      "story": "يقوم عالم مجنون باختطاف وتشويه ثلاثة من السائحين من أجل إعادة تجميعهم في شكل حريش بشري، يتم إنشاؤه عن طريق خياطة أفواههم في مستقيم بعضهم البعض.",
+      "sources": [
+        {
+          "label": "The Human 1",
+          "url": "https://egybestvid.com/e/i0n5pgugye4r?s1.egybestvid.com/i/01/00001/i0n5pgugye4r"
+        },
+        {
+          "label": "The Human 2",
+          "url": "https://vidhls.com/player/index.php?data=174e501a6b5ab618e567a08601e9067c"
+        },
+        {
+          "label": "The Human 3",
+          "url": "https://mp4plus.org/embed-oyq18oqlomsl.html?jwsource=cl&autoplay=1"
+        }
+      ]
     }
   ],
   "channels": [
