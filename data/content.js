@@ -2062,6 +2062,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-41h2speehkli.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Killer Sofa",
+      "year": 2018,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOGU1MTI5NTItMWE5Zi00NDRkLWE2YWEtN2I5Y2MwNmYyZmU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تسحر فتاة كرسي مستلق قاتل ويبدأ في ارتكاب جرائم عاطفية.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-7iqgdno0jzaz.html"
+        }
+      ]
     }
   ],
   "channels": [
