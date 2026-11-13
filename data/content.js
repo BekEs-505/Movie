@@ -1964,6 +1964,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-wavqbj8ngtiy.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Devil's Hacksaw",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjI1ZDk3MDYtMzhkMC00ZTQ2LWE3NmMtMWE4MzMwNWY0ZmM1XkEyXkFqcGc@._V1_.jpg",
+      "story": "في بلدة صغيرة هادئة في ولاية بنسلفانيا، يضرب الرعب عندما يهرب أحد السجناء سيئي السمعة في ملجأ جرايستون. بسبب رغبته في الانتقام، يشرع في ارتكاب سلسلة قتل وحشية، مما يترك أهل البلدة في حالة من الذعر.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-dg7rbj23jwuo.html"
+        }
+      ]
     }
   ],
   "channels": [
