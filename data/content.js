@@ -2020,6 +2020,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-847rcqp660to.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Today You Die",
+      "year": 2005,
+      "genre": "9.0",
+      "rating": 9,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNWZmODk1MmMtZmYyNS00ZWU3LTkzZjAtNmZhOTBkZTIyZWZhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تدور أحداث الفيلم حول هارلان بانكس اللص السابق الذي يسعى للانتقام مباشرة من أولئك الذين قبضوا عليه، خاصة بعد فشل إحدى عمليات السرقة التي كان يخطط لها.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-5oeznku6ca23.html"
+        }
+      ]
     }
   ],
   "channels": [
