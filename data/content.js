@@ -2508,6 +2508,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-qrp9730p50h1.html"
         }
       ]
+    },
+    {
+      "title": "فيلم In Their Skin",
+      "year": 2012,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmPuTMyjcacRIOONS-Y9krt9Nj0K-GKp5e8Cjlw5zbJ-rYblW--FTVmU&s=10",
+      "story": "تدور قصته حول عائلة تذهب لقضاء عطلة في منزل ريفي منعزل، فتقتحم عليهم المكان عائلة أخرى مختلة عقلياً تقوم بتعذيبهم وقتلهم بهدف سرقة هوياتهم وعيش حياتهم المثالية.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-kitoans9j5ft.html"
+        }
+      ]
     }
   ],
   "channels": [
