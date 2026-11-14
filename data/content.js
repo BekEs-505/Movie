@@ -2194,6 +2194,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-yvuzxb1crhpn.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Italian Job",
+      "year": 2003,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjJjNzc5YjAtZjU2Ni00ZjVkLTkzYmItM2E2NDM0NWE1YmJhXkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور قصة الفيلم حول لص الخزائن \"جون\" وابنته \"ستيلا\" اللذان يخططان لسرقة سبائك ذهبية مع فريق مختص في السرقة وهم تشارلي، ستيف، هانسوم روب، لكن ستيف يخونهم ويحصل على الذهب بمفرده ويقتل \"جون\" ويظن في وفاة باقي الفريق. وبعد عام يعقد تشارلي على الانتقام منه ويجتمع الفريق مرة أخرى ويحاولوا استعادة الذهب ثانيا.",
+      "sources": [
+        {
+          "label": "The Italian Job 1",
+          "url": "https://liiivideo.com/embed-eda5661ecw3f.html"
+        },
+        {
+          "label": "The Italian Job 2",
+          "url": "https://www.vidspeed.org/embed-xxm7em3iedyf.html"
+        }
+      ]
     }
   ],
   "channels": [
