@@ -2168,6 +2168,32 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-uf77bcm1n99w.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Fear Street",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTllMDAwNWUtZGU5Ny00OTViLWE3ODAtYjkyMWZlNWFiMGNiXkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور أحداث الفيلم بعد سلسلة طويلة من جرائم القتل البشعة، حيث تقرر فتاة مراهقة أن تتكاتف مع أصدقائها من أجل التصدي لقوى شريرة قديمة سيطرت على بلدتها لسنوات طويلة.",
+      "sources": [
+        {
+          "label": "Fear Street 1",
+          "url": "https://www.vidspeed.org/embed-lks8s5jeruhh.html"
+        },
+        {
+          "label": "Fear Street 2",
+          "url": "https://www.vidspeed.org/embed-rqy0szdnv292.html"
+        },
+        {
+          "label": "Fear Street 3",
+          "url": "https://www.vidspeed.org/embed-t9uzpdln7yre.html"
+        },
+        {
+          "label": "Fear Street 4",
+          "url": "https://1vid.xyz/embed-yvuzxb1crhpn.html"
+        }
+      ]
     }
   ],
   "channels": [
