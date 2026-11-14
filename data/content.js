@@ -2550,6 +2550,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://vk.com/video_ext.php?oid=757563422&id=456241357&hash=7cd7fbab7c704e8a&hd=1"
         }
       ]
+    },
+    {
+      "title": "فيلم Vacancy",
+      "year": 2007,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTQ3MDk2MDI5N15BMl5BanBnXkFtZTcwMDgyNzUzMw@@._V1_.jpg",
+      "story": "يجد زوجين شابين نفسهما محاصرين في فندق معزول، حيث يعثران على كاميرا فيديو مخفية في غرفتهم ، يدركون بعدها بان عليهم الهرب والا سيكونان الضحية القادمة للتعذيب.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-pvas3sztlm0e.html"
+        }
+      ]
     }
   ],
   "channels": [
