@@ -2394,6 +2394,32 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-ci291x8ccf0c.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Undisputed",
+      "year": 2016,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://image.tmdb.org/t/p/original/ls0HwNaDWoTZkJ8gGsTlcnVpeNV.jpg",
+      "story": "تنقلب حياة شامبرز رأسًا على عقب عندما يتم اتهامه بالاغتصاب ويذهب إلى السجن. عندما يصل إلى السجن، يسمع عن مونرو هاتشن بطل السجن في الملاكمة لمدة عشر سنوات.يرغب شامبرز في توضيح الأمور منذ البداية وأنه لن يكون أبدًا في المركز الثاني، ويؤدي ذلك للعديد من المشاكل. يقرر زميلهم المُدان إيمانويل أن يستغل ذلك التوتر في جني بعض المال، فينظم مباراةَ ملاكمةٍ بين الاثنين لتحديد البطل الحقيقي.",
+      "sources": [
+        {
+          "label": "Undisputed 1",
+          "url": "https://1vid.xyz/embed-ddjq4ew24fjw.html"
+        },
+        {
+          "label": "Undisputed 2",
+          "url": "https://1vid.xyz/embed-ibx85wwc089e.html"
+        },
+        {
+          "label": "Undisputed 3",
+          "url": "https://1vid.xyz/embed-scq7hvlxn33p.html"
+        },
+        {
+          "label": "Undisputed 4",
+          "url": "https://1vid.xyz/embed-8nvxgdz34sx3.html"
+        }
+      ]
     }
   ],
   "channels": [
