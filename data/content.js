@@ -2536,6 +2536,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-b2ko53mkbhg8.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Lowlifes",
+      "year": 2024,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjExY2U3YWUtYTQ1ZS00YWY3LTg0NzQtOTk5YTNhN2Q2Y2U2XkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور القصة حول عائلة تبدو للوهلة الأولى مسالمة وطبيعية تماماً، وتسافر في رحلة برية على متن كرفان (RV)، لكن يتضح لاحقاً أنهم قتلة متسلسلون وآكلو لحوم بشر.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://vk.com/video_ext.php?oid=757563422&id=456241357&hash=7cd7fbab7c704e8a&hd=1"
+        }
+      ]
     }
   ],
   "channels": [
