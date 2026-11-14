@@ -2366,6 +2366,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-go8xwlsvuuk4.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Belko Experiment",
+      "year": 2016,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BODQyMDkyOTE2MF5BMl5BanBnXkFtZTgwNDQ1NTQwMTI@._V1_FMjpg_UX1000_.jpg",
+      "story": "مجموعة من ثمانين أمريكي يُحاصَرون في مكتب شركتهم الشاهقة الارتفاع في (بوجاتا) بــ(كولومبيا)، ثم تُملى عليهم أوامر من صوت مجهول يصدر عن نظام الاتصال الداخلي للشركة بأن يشتركوا في لعبة مميتة قانونها: اقتل أو تُقتَل",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-63dcrkwb8vlq.html"
+        }
+      ]
     }
   ],
   "channels": [
