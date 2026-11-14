@@ -2226,6 +2226,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-00vqgmvyp2jf.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Run",
+      "year": 2020,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjc2MjkxNjQtMzI1OS00NDNkLWFlM2ItZDk1NmRiNWUwOTljXkEyXkFqcGc@._V1_.jpg",
+      "story": "تبدأ كلوي بالشك في تصرفات والدتها وأدويتها التي تجبرها على تناولها باستمرار، لتكتشف لاحقاً أن أمها مصابة باضطراب نفسي يسمى (متلازمة مونشاوزن بالوكالة)، حيث كانت تقوم بتسميمها وإعطائها أدوية تسببت لها بالشلل والمرض طوال حياتها لتعزلها وتظل معتمدة عليها وحدها.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-60rb8eql10mn.html"
+        }
+      ]
     }
   ],
   "channels": [
