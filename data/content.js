@@ -2212,6 +2212,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-xxm7em3iedyf.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Gone in Sixty Seconds",
+      "year": 2000,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTIwMzExNDEwN15BMl5BanBnXkFtZTYwODMxMzg2._V1_.jpg",
+      "story": "يجب على لص السيارات المتقاعد راندال ممفيس راينز العودة إلى العمل من جديد رغمًا عنه وتحقيق المستحيل بسرقة 50 سيارة مع فريقه في ليلة واحدة لإنقاذ حياة أخيه.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-00vqgmvyp2jf.html"
+        }
+      ]
     }
   ],
   "channels": [
