@@ -2126,6 +2126,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-zhr7yof7cm0p.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Hunted",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYmU3YmMwMGYtNTdhYi00MjYwLWIyNTQtMDJmODRmNjllOWUyXkEyXkFqcGc@._V1_.jpg",
+      "story": "تتعرض عداءة مصابة بارتجاج في المخ وكلبها للمطاردة في البرية، ويستهدف قاتل متسلسل رجلاً عنيفاً، بينما ينقلب لصوص بنك على بعضهم البعض بسبب غنيمة لا تقدر بثمن.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-jvicfpz6lo37.html"
+        }
+      ]
     }
   ],
   "channels": [
