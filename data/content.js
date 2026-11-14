@@ -2578,6 +2578,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://uqload.net/embed-x9jupuoyfmpc.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Identity",
+      "year": 2003,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZTg1YWUyODktMWY5MC00ZjliLTg3YmUtZDliMGZhZDZmMzU5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "بعد أن تقطعت بهم السبل في فندق مهجور في نيفادا خلال عاصفة مطرية سيئة ، يتعرف عشرة غرباء على بعضهم البعض عندما يدركون أنه يتم قتلهم واحدا تلو الآخر.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-m2c3w56w4p71.html"
+        }
+      ]
     }
   ],
   "channels": [
