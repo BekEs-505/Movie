@@ -2480,6 +2480,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-tbn167ezhs0a.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Speak No Evil",
+      "year": 2024,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWI2OWFjNjgtOTQ2Zi00MjlmLTg2MGYtNmE4MjMyZjIzMDA0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تنتقل عائلة لقضاء عطلة نهاية الأسبوع في منزل ريفي ساحر، فتتحول رحلتهم الهادئة إلى حدث مأساوي حين تظهر أمور غامضة ومخيفة، ويواجه أفراد العائلة ظواهر تُثير الشكوك والرعب.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-j0zzo1ik3zzn.html"
+        }
+      ]
     }
   ],
   "channels": [
