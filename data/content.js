@@ -2140,6 +2140,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-jvicfpz6lo37.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Dead End",
+      "year": 2003,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUQwn2zj7bS3TDm7FdooKQzYOrc6L-im0xyKt5nv2dafTHGc_KXs1_OktR&s=10",
+      "story": "اليوم الذي يسبق ليلة الميلاد. في طريقه إلى أصهاره مع عائلته ، قرر فرانك هارينجتون تجربة طريق مختصر ، لأول مرة منذ 20 عامًا. اتضح أنه أكبر خطأ في حياته.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-bvfk44wutpnc.html"
+        }
+      ]
     }
   ],
   "channels": [
