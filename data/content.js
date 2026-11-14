@@ -2380,6 +2380,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-63dcrkwb8vlq.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Dawn of the Dead",
+      "year": 2004,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BM2ZiYjNlMWYtNTc2My00ZTM4LWJhMjQtM2FlOWM0ZmE0Yjg1XkEyXkFqcGc@._V1_.jpg",
+      "story": "يتحدث الفيلم عن ظاهرة الزومبيين المخيفين ، والتي تهدد حياة السكان الأمريكيين ، إلا أن وباء الفيروس إنتشر بشكل مذهل في العالم الافتراضي.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-ci291x8ccf0c.html"
+        }
+      ]
     }
   ],
   "channels": [
