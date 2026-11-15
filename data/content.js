@@ -2762,6 +2762,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-nn8ie1iizclk.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Longest Yard",
+      "year": 2005,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTc1NTQyNDk2NV5BMl5BanBnXkFtZTcwOTE2OTQzMw@@._V1_FMjpg_UX1000_.jpg",
+      "story": "يدور حول نجم كرة قدم أمريكية سابق يُسجن، ويجبره مدير السجن على تشكيل فريق من المساجين لخوض مباراة ضد الحراس.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-mkjlmbq5cxmk.html"
+        }
+      ]
     }
   ],
   "channels": [
