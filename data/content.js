@@ -2856,6 +2856,40 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-cndyd5h5vkks.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Marine",
+      "year": 2018,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEyVzug_v5NUUlZNsfM9Hz42_JZeATsI6CdCFyXsP-1A&s=10",
+      "story": "يخطف مجموعة من لصوص الألماس زوجة أحد جنود مشاة البحرية، الذي يقوم بمطاردتهم في جنوب كارولاينا لاسترجاعها.",
+      "sources": [
+        {
+          "label": "The Marine 1",
+          "url": "https://1vid.xyz/embed-28v0w1bu9ac5.html"
+        },
+        {
+          "label": "The Marine 2",
+          "url": "https://www.vidspeed.org/embed-93uo4i16bjzv.html"
+        },
+        {
+          "label": "The Marine 3",
+          "url": "https://www.vidspeed.org/embed-ju7tf81yq33n.html"
+        },
+        {
+          "label": "The Marine 4",
+          "url": "https://www.vidspeed.org/embed-4u7yq25nhpvo.html"
+        },
+        {
+          "label": "The Marine 5",
+          "url": "https://vidspeeds.org/embed-cu1jfkfn1e89.html"
+        },
+        {
+          "label": "The Marine 6",
+          "url": "https://vidspeeds.org/embed-iinmue0fgpaz.html"
+        }
+      ]
     }
   ],
   "channels": [
