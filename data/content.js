@@ -2986,6 +2986,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-7fgju0et0pd7.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Machinist",
+      "year": 2004,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2I1MmUxYmMtZjk3OC00N2MwLWI2YjAtNGQxODA1Y2I3YTI4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "يعاني العامل تريفور من أرق يلازمه منذ ما يقارب من عام، فتجعله قلة النوم يرى رجل ذو وجه مشوه في المصنع لا يراه غيره، ويجد ملاحظات مكتوبة على الثلاجة، مما يجعله يشك في سلامة قواه العقلية.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-b94zsfhom5wf.html"
+        }
+      ]
     }
   ],
   "channels": [
