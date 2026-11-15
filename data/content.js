@@ -2936,6 +2936,28 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-9qqe5mc3un6p.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Austin Powers",
+      "year": 2002,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYTUwYjI0YzctMGI5Yy00NGU5LTgwMGUtMzE1OWZhYmRlMjMyXkEyXkFqcGc@._V1_.jpg",
+      "story": "بينما قام (أوستن) باستعادة (جاذبيته)، نجد أن (دكتور ايفل) وتابعه (مينى مى) ينجحان في الهروب من السجن، ويقومان بعملية سفر عبر الزمن والاتحاد مع المجرم غريب الأطوار، العضو الذهبي لخطف والد أوستن السيد (نايجل باورز) ليمكنهم من منع اوستن من إفساد خططهم للسيطرة على العالم .يسافر اوستن عبر الزمن إلى السبعينيات ويتحد مع الجميلة فوكسي كيلوباترا للتصدي لدكتور أيفل وإفساد خططه.",
+      "sources": [
+        {
+          "label": "Austin Powers 1",
+          "url": "https://vidspeeds.org/embed-cfar87xrrrvf.html"
+        },
+        {
+          "label": "Austin Powers 2",
+          "url": "https://vidspeeds.org/embed-70s45o78acxh.html"
+        },
+        {
+          "label": "Austin Powers 3",
+          "url": "https://1vid.xyz/embed-9uxed6tpugyq.html"
+        }
+      ]
     }
   ],
   "channels": [
