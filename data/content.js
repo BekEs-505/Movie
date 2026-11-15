@@ -2614,6 +2614,40 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-8ajwriznfxx9.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Step Up",
+      "year": 2019,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYjFmOTU4MjgtNzFkNy00NDZlLThkMDUtNTExNTk1ZjhhZjNhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "بتهمة التخريب والتدمير. يلقى القبض على تايلر ويتم الحكم عليه بالعمل لمدة 200 ساعة في خدمة المجتمع في المدرسة ويعينه المدير جوردون لمساعدة البواب في تنظيف المكان. ترى راقصة الباليه نورا كلارك في أحد الأيام تايلر يرقص في موقف السيارات، يعرض تايلر عليها المساعدة في تصميم الرقص وتقبل عرضه.",
+      "sources": [
+        {
+          "label": "Step Up 1",
+          "url": "https://1vid.xyz/embed-xowyvkb78x3x.html"
+        },
+        {
+          "label": "Step Up 2",
+          "url": "https://www.vidspeed.org/embed-0fiqen48amfa.html"
+        },
+        {
+          "label": "Step Up 3",
+          "url": "https://www.vidspeed.org/embed-5e819myxv0tn.html"
+        },
+        {
+          "label": "Step Up 4",
+          "url": "https://www.vidspeed.org/embed-4npvsl5m060k.html"
+        },
+        {
+          "label": "Step Up 5",
+          "url": "https://www.vidspeed.org/embed-zk8nuiminn2f.html"
+        },
+        {
+          "label": "Step Up 6",
+          "url": "https://uqload.is/embed-r7e7khry2igg.html"
+        }
+      ]
     }
   ],
   "channels": [
