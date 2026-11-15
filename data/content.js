@@ -2890,6 +2890,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://vidspeeds.org/embed-iinmue0fgpaz.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Ghost Rider",
+      "year": 2011,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzIyNDE5ODI1OV5BMl5BanBnXkFtZTcwNTIyNDE0MQ@@._V1_.jpg",
+      "story": "جوني بلاز ووالده بارتون بلاز يكونان ثنائيّا في سياقة الدّراجات النّاريّة في عرض في المعرض. وكان لجوني بلاز أغنية عاطغية مع روكسان سيمبسون. علم جوني أن أباه كان قد أصابه سرطان قاتل. وتفاوض مع رجل غريب يلبس بالأسود على بيعه دراجته مقابل صحة والده ووافق وبالرغم من نجاة الأب من السرطان إلا أنه قد توفي في حادث وكان الرجل الأسود مفستوفيليس أي تجسيدا لالشيطان ممتلكا لروح بلاز ويعشق موهبته في قيادة الدراجات ويحوله لهيكل عضمي مشتعل كي يجابه ابنه بلاك هارت ويعني الاسم القلب الأسود.",
+      "sources": [
+        {
+          "label": "Ghost Rider 1",
+          "url": "https://www.vidspeed.org/embed-19cfws1y8k2u.html"
+        },
+        {
+          "label": "Ghost Rider 2",
+          "url": "https://www.vidspeed.org/embed-tjgdkwiwsmg2.html"
+        }
+      ]
     }
   ],
   "channels": [
