@@ -2730,6 +2730,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-k5l8qfb8sn43.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Stomp the Yard",
+      "year": 2010,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjMyMjcyMzE5N15BMl5BanBnXkFtZTgwNzA4OTcwMzE@._V1_FMjpg_UX1000_.jpg",
+      "story": "بعد وفاة شقيقه،يذهب راقص الشوارع الخبير إلى جورجيا للدخول في الجامعة. لكن جهوده للحصول على التعليم وجذب الفتاة التي يريدها توضع على المحك عندما يشارك في للفوز ببطولة الرقص.",
+      "sources": [
+        {
+          "label": "Stomp the Yard 1",
+          "url": "https://www.vidspeed.org/embed-hymq0z11kujc.html"
+        },
+        {
+          "label": "Stomp the Yard 2",
+          "url": "https://www.vidspeed.org/embed-o2uqigcmfgnq.html"
+        }
+      ]
     }
   ],
   "channels": [
