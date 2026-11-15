@@ -1859,7 +1859,7 @@ window.__CINEMA_DATA__ = {
       "sources": [
         {
           "label": "مشاهدة",
-          "url": "https://egybestvid.com/e/6voac508w019?s1.egybestvid.com/i/02/00000/6voac508w019"
+          "url": "https://egybestvid.com/6voac508w019.html"
         }
       ]
     },
