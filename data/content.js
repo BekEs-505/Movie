@@ -2690,6 +2690,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-3uq5rdmqdg9w.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Honey",
+      "year": 2011,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjlmZjU2NDEtYWJjZi00ODM0LThmZjUtZWY2YmRjYTIyZmZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تدور أحداثه؛ حيث مدينة جوثام التي تعانى من الفساد والجريمة، ويسيطر عليها مجموعه من المجرمين والضباط الفاسدين، على الرغم من محاولة الشرفاء؛ كالمدعى العام (هارفى دانت) ورئيس الشرطة (جيم جوردون). يظهر البطل (باتمان) ليحارب الجريمة والشر بالمدينة، ويتصدى للعصابات، لكنه سيواجه (جاك نيبر) الجوكر، المجرم، المجنون، والعبقري الذي تشوه وجهه نتيجة سقوطه في حوض للكيماويات، الذي يخطط لتدمير المدينة.",
+      "sources": [
+        {
+          "label": "Honey 1",
+          "url": "https://www.vidspeed.org/embed-cpoe2yrfjj9e.html"
+        },
+        {
+          "label": "Honey 2",
+          "url": "https://www.vidspeed.org/embed-q7jqtnnrg1c5.html"
+        }
+      ]
     }
   ],
   "channels": [
