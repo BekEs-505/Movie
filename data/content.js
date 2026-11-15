@@ -2776,6 +2776,28 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-mkjlmbq5cxmk.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Fantastic Four",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjY2YmZmMzUtZWY5Mi00MzI3LTljOTgtYTMwMWY1ODI5ZWY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "في إطار الخيال العلمي والفانتازيا يتعرض مجموعة من العلماء أثناء وجودهم في سفينةٍ فضائيةٍ لكميةٍ كبيرةٍ من آشعة جاما، تكسبهم قوةً خارقةً، يكونون فريقًا يطلقون عليه (الأربعة المذهلين) مستخدمين قوتهم في مواجهة الشر. وتتوالى الأحداث في إطارٍ مثيرٍ ومشوق.",
+      "sources": [
+        {
+          "label": "Fantastic 1",
+          "url": "https://www.vidspeed.org/embed-1vh54mzf337n.html"
+        },
+        {
+          "label": "Fantastic 2",
+          "url": "https://www.vidspeed.org/embed-pg9xt3yub116.html"
+        },
+        {
+          "label": "Fantastic 3",
+          "url": "https://1vid.xyz/embed-etgihaidjcw7.html"
+        }
+      ]
     }
   ],
   "channels": [
