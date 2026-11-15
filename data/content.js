@@ -2706,6 +2706,14 @@ window.__CINEMA_DATA__ = {
         {
           "label": "Honey 2",
           "url": "https://www.vidspeed.org/embed-q7jqtnnrg1c5.html"
+        },
+        {
+          "label": "Honey 3",
+          "url": "https://vidspeeds.org/embed-hecv7uonzyo6.html"
+        },
+        {
+          "label": "Honey 4",
+          "url": "https://vidspeeds.org/embed-pjwdkc745pyn.html"
         }
       ]
     }
