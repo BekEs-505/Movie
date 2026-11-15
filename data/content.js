@@ -2716,6 +2716,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://vidspeeds.org/embed-pjwdkc745pyn.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Battle of the Year",
+      "year": 2013,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTY2OTcyNzM3NF5BMl5BanBnXkFtZTgwNzgxMjkxMDE@._V1_FMjpg_UX1000_.jpg",
+      "story": "تجذب Battle of the Year جميع أفضل الفرق من جميع أنحاء العالم ، لكن الأمريكيين لم يفزوا بها منذ خمسة عشر عامًا. يستعين دانتي بليك لتجميع فريق من أفضل الراقصين وإعادة الكأس إلى أمريكا حيث بدأت.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://www.vidspeed.org/embed-k5l8qfb8sn43.html"
+        }
+      ]
     }
   ],
   "channels": [
