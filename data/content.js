@@ -3000,6 +3000,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-b94zsfhom5wf.html"
         }
       ]
+    },
+    {
+      "title": "فيلم Sinister",
+      "year": 2015,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjI5MTg1Njg0Ml5BMl5BanBnXkFtZTcwNzg2Mjc4Nw@@._V1_.jpg",
+      "story": "تدور أحداث الفيلم حول روائي ينتقل إلى منزل جديد مع عائلته، ويكتشف حقائق لجرائم حدثت من قبل في ذلك المنزل، ويتطور الأمر إلى قتل أفراد عائلته فيحاول اكتشاف المتسبب في تلك الجرائم.",
+      "sources": [
+        {
+          "label": "Sinister 1",
+          "url": "https://www.vidspeed.org/embed-u8pwpfzbnyl3.html"
+        },
+        {
+          "label": "Sinister 2",
+          "url": "https://www.vidspeed.org/embed-k2fjn1206pti.html"
+        }
+      ]
     }
   ],
   "channels": [
