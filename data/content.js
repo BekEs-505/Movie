@@ -2816,6 +2816,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-c7eqpn9i8790.html"
         }
       ]
+    },
+    {
+      "title": "فيلم See No Evil",
+      "year": 2014,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTg3MTgxNDI1MV5BMl5BanBnXkFtZTcwMTkzMjYzMQ@@._V1_.jpg",
+      "story": "تُرسل مجموعة من الجانحين لتنظيف فندق بلاكويل، وسرعان ما يجد الجميع أنفسهم في مطاردة مميتة، حينما يظهر لهم المختل العقلي جاكوب، والذي عاش لسنوات وحيدًا في الفندق.",
+      "sources": [
+        {
+          "label": "See No Evil 1",
+          "url": "https://1vid.xyz/embed-2x2j5fl6tm0s.html"
+        },
+        {
+          "label": "See No Evil 2",
+          "url": "https://www.vidspeed.org/embed-avqcynir2yhx.html"
+        }
+      ]
     }
   ],
   "channels": [
