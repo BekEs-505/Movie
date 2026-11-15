@@ -2928,7 +2928,7 @@ window.__CINEMA_DATA__ = {
       "year": 2026,
       "genre": "10.0",
       "rating": 10,
-      "poster": "https://m.media-amazon.com/images/M/MV5BYjE5OWEwMDgtMDg1My00OWIxLThkMzYtM2Y5YjQ2NDM0Y2NjXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYjE5OWEwMDgtMDg1My00OWIxLThkMzYtM2Y5YjQ2NDM0Y2NjXkEyXkFqcGc@._V1_.jpg",
       "story": "في مرتفعات اسكتلندا النائية، تبحث أم يائسة عن ابنها المفقود، لتجد نفسها محاصرة في صراع مرير من أجل البقاء.",
       "sources": [
         {
