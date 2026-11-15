@@ -2798,6 +2798,24 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-etgihaidjcw7.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Condemned",
+      "year": 2015,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzkyOTczMjU0M15BMl5BanBnXkFtZTcwMDExMzM0MQ@@._V1_.jpg",
+      "story": "تدور حول مجموعة من المحكوم عليهم بالإعدام يتم اختطافهم وزجهم في جزيرة مهجورة من قبل منتج برنامج تلفزيوني غني، حيث يُجبرون على القتال حتى الموت في لعبة بقاء تُبث مباشرة على شبكة الإنترنت، والناجي الوحيد سينال حريته.",
+      "sources": [
+        {
+          "label": "The Condemned 1",
+          "url": "https://www.vidspeed.org/embed-5ho4ff6nlofh.html"
+        },
+        {
+          "label": "The Condemned 2",
+          "url": "https://www.vidspeed.org/embed-c7eqpn9i8790.html"
+        }
+      ]
     }
   ],
   "channels": [
