@@ -148,12 +148,6 @@ img{display:block;max-width:100%}
 .vol-range{width:0;opacity:0;transition:.3s;accent-color:var(--cyan);cursor:pointer}
 .vol-range.show{width:90px;opacity:1}
 
-/* ═══════════════════════════════════════════════════════════════
-   🆕 شريط الإغلاق الثابت أسفل المشغل
-   - خارج modal-body (لا يختفي عند التمرير)
-   - بين المشغل والمحتوى (بدون تداخل)
-   - بعرض كامل مع زر أحمر بارز
-   ═══════════════════════════════════════════════════════════════ */
 .close-bar-below{
   display:flex;
   justify-content:center;
@@ -373,7 +367,6 @@ img{display:block;max-width:100%}
       </div>
     </div>
 
-    <!-- 🆕 شريط الإغلاق الثابت أسفل المشغل -->
     <div class="close-bar-below">
       <button class="btn-close-main" id="modalClose">
         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -404,28 +397,52 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v7.2
+   Movie BekEs v7.3
    ✅ زر إغلاق ثابت أسفل المشغل
-   ✅ دعم wwa.liiivideo.com في المشغل
+   ✅ دعم wwa.liiivideo.com و vipserver.liiivideo.com
+   ✅ دعم vidspeeds.org (بكل نطاقاته)
+   ✅ دعم hgcloud.to
+   ✅ دعم vidroba.com
+   ✅ إلغاء Sandbox احترافياً للنطاقات VIP
+   ✅ Referrer Policy مرن للنطاقات VIP (يحسّن التوافق)
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 
+/*
+ * قائمة VIP: نطاقات موثوقة يتم فتحها بدون Sandbox مطلقاً
+ * كما يتم إرسال Referer افتراضي (بدون no-referrer) لتحسين التوافق
+ * مع مواقع قد ترفض الطلبات بدون Referer (تقلل الحاجة لـVPN)
+ */
 const VIP_NO_SANDBOX_DOMAINS = [
+  /* vipserver + liiivideo */
   'vipserver.co','vipserver.tv','vipserver.com','vipserver.me',
   'vipserver.net','vipserver.xyz','vipserver.org',
+  'vipserver.liiivideo.com',            // 🆕 دعم صريح
+  'liiivideo.com','www.liiivideo.com','wwa.liiivideo.com',  // يشمل أي subdomain عبر wildcard
+
+  /* vidroba */
   'vidroba.com','vidroba.xyz','vidroba.to','vidroba.cc',
   'vidroba.net','vidroba.co','vidroba.me',
+
+  /* vidspeeds (بما فيها .org) */
   'vidspeeds.com','vidspeeds.xyz','vidspeeds.to','vidspeeds.net','vidspeeds.co',
+  'vidspeeds.org',                      // 🆕 دعم .org
+
+  /* 1vid */
   '1vid.xyz','1vid.com','1vid.to','1vid.net','1vid.cc','1vid.co','1vid.me',
+
+  /* d0o0d + doodstream */
   'd0o0d.com','d0o0d.to','d0o0d.xyz','d0o0d.net',
   'dood.to','dood.ws','dood.re','dood.sh','dood.so','dood.la','dood.pm','dood.wf','doodstream.com',
+
+  /* hgcloud */
   'hgcloud.to','hgcloud.com','hgcloud.xyz','hgcloud.net','hgcloud.co','hgcloud.me',
+
+  /* أخرى */
   'mixdrop.ps',
   'vidspeed.org','www.vidspeed.org',
   'rubyvidhub.com',
-  'morencius.com',
-  /* 🆕 دعم liiivideo */
-  'liiivideo.com','www.liiivideo.com','wwa.liiivideo.com'
+  'morencius.com'
 ];
 
 const STREAMS = {
@@ -839,27 +856,36 @@ let protectAds=true;
 let lastAttemptUsedSandbox=false;
 
 const EMBED_PATTERNS = [
-  /vipserver/i,/vidroba/i,/vidspeeds/i,/1vid/i,/d0o0d/i,/hgcloud/i,
-  /vidspeed/i,/vidfast/i,/vidlink/i,/vidsmart/i,/vidplay/i,
-  /rubyvidhub/i,/morencius/i,
-  /* 🆕 دعم liiivideo (wwa.liiivideo.com وغيرها) */
-  /liiivideo/i,
+  /vipserver/i, /vidroba/i, /vidspeeds/i, /1vid/i, /d0o0d/i, /hgcloud/i,
+  /vidspeed/i, /vidfast/i, /vidlink/i, /vidsmart/i, /vidplay/i,
+  /rubyvidhub/i, /morencius/i,
+  /liiivideo/i,                           // 🆕 يغطي vipserver.liiivideo.com
   /vidsrc\.(?:me|to|xyz|cc|in|net|pro|io)/i,
   /mixdrop\.(?:ps|co|to|ag|sx|bz|ch|vc|nl|pm)/i,
   /streamtape\.(?:com|net|to|xyz)/i,
-  /dood\.(?:to|ws|re|sh|so|la|pm|wf)/i,/doodstream\.com/i,
-  /streamlare\.com/i,/voe\.sx/i,/upstream\.to/i,/streamsb\.com/i,
-  /streamhide\.(?:com|to)/i,/vidcloud\.(?:co|9|pro|com)/i,/vidnode\./i,
-  /filemoon\.(?:sx|to)/i,/ok\.ru\/video/i,/vk\.com\/video/i,/vk\.com\/clip/i,
-  /drive\.google\.com/i,/youtube\.com\/(?:watch|embed|shorts|live)/i,
-  /youtu\.be\//i,/vimeo\.com\//i,/dailymotion\.com\//i,/dai\.ly\//i,
-  /facebook\.com\/watch/i,/fb\.watch\//i,/twitter\.com\/i\//i,/x\.com\/i\//i,
-  /rumble\.com\/embed/i,/odysee\.com/i,
-  /2embed\.(?:cc|to|ru|in|org)/i,/multiembed\./i,/embed\./i,
-  /\/embed\//i,/\/embed\?/i,
+  /dood\.(?:to|ws|re|sh|so|la|pm|wf)/i, /doodstream\.com/i,
+  /streamlare\.com/i, /voe\.sx/i, /upstream\.to/i, /streamsb\.com/i,
+  /streamhide\.(?:com|to)/i, /vidcloud\.(?:co|9|pro|com)/i, /vidnode\./i,
+  /filemoon\.(?:sx|to)/i, /ok\.ru\/video/i, /vk\.com\/video/i, /vk\.com\/clip/i,
+  /drive\.google\.com/i, /youtube\.com\/(?:watch|embed|shorts|live)/i,
+  /youtu\.be\//i, /vimeo\.com\//i, /dailymotion\.com\//i, /dai\.ly\//i,
+  /facebook\.com\/watch/i, /fb\.watch\//i, /twitter\.com\/i\//i, /x\.com\/i\//i,
+  /rumble\.com\/embed/i, /odysee\.com/i,
+  /2embed\.(?:cc|to|ru|in|org)/i, /multiembed\./i, /embed\./i,
+  /\/embed\//i, /\/embed\?/i,
   /\/(?:e|v|player)\/[a-zA-Z0-9]{6,}/i
 ];
 function isEmbedUrl(url){ const u = url.toLowerCase(); return EMBED_PATTERNS.some(re=>re.test(u)); }
+
+/* 🆕 كاشف نطاقات VIP */
+function isVIPDomain(url){
+  let host = '';
+  try { host = new URL(url).hostname.toLowerCase(); } catch(e) { return false; }
+  for (const vip of VIP_NO_SANDBOX_DOMAINS) {
+    if (host === vip || host.endsWith('.' + vip)) return true;
+  }
+  return false;
+}
 
 function looksLikeHtmlPage(url){
   if (!/^https?:\/\//i.test(url)) return false;
@@ -1030,6 +1056,11 @@ function sandboxForUrl(url){
   return 'allow-scripts allow-same-origin';
 }
 
+/*
+ * 🆕 tryEmbed - نسخة محدّثة
+ * - نطاقات VIP: بدون sandbox + بدون no-referrer + allow شامل = أعلى توافق
+ * - نطاقات أخرى: sandbox + no-referrer كما كان سابقاً
+ */
 function tryEmbed(url){
   return new Promise(resolve => {
     const normalized = normalizeEmbedUrl(url);
@@ -1043,14 +1074,34 @@ function tryEmbed(url){
     }
     
     const iframe = document.createElement('iframe');
-    const sandboxValue = protectAds ? sandboxForUrl(normalized) : null;
+    const vip = isVIPDomain(normalized);
+    const sandboxValue = vip ? null : (protectAds ? sandboxForUrl(normalized) : null);
     lastAttemptUsedSandbox = (sandboxValue !== null);
+    
     if (sandboxValue !== null) iframe.sandbox = sandboxValue;
-    iframe.src = normalized;
-    iframe.setAttribute('referrerpolicy', 'no-referrer');
-    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write');
-    iframe.setAttribute('allowfullscreen', 'true');
+    
+    if (vip) {
+      /* ═════ نطاقات VIP ═════
+       * - بدون sandbox
+       * - بدون referrerpolicy (يترك افتراضي المتصفح → يرسل origin، أفضل للمواقع
+       *   التي ترفض الطلبات بدون Referer وبالتالي تقلل حاجة الـVPN)
+       * - allow شامل يفتح كل الميزات الممكنة
+       */
+      iframe.setAttribute('allow',
+        'autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write; ' +
+        'camera; microphone; geolocation; accelerometer; gyroscope; magnetometer; ' +
+        'payment; usb; web-share; screen-wake-lock; xr-spatial-tracking');
+      iframe.setAttribute('allowfullscreen', 'true');
+      console.log('[Embed] 🎯 VIP domain (no sandbox, default referer):', normalized);
+    } else {
+      iframe.setAttribute('referrerpolicy', 'no-referrer');
+      iframe.setAttribute('allow',
+        'autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write');
+      iframe.setAttribute('allowfullscreen', 'true');
+    }
+    
     iframe.setAttribute('loading', 'eager');
+    iframe.src = normalized;
     
     wrap.insertBefore(iframe, wrap.firstChild);
     currentEmbedFrame = iframe;
@@ -1109,8 +1160,13 @@ async function playSource(url, forcedType = null){
   if (ok){ bigPlay.classList.add('hide'); hidePlayerError(); console.log('[Player] ✅ Success'); }
   else {
     console.warn('[Player] ❌ Failed:', url);
-    showPlayerError('جرب سيرفراً آخر من القائمة',
-      'الأسباب الشائعة: الرابط معطّل • نوع الملف غير مدعوم • CORS • HTTP على HTTPS');
+    const vip = isVIPDomain(url);
+    showPlayerError(
+      'جرب سيرفراً آخر من القائمة',
+      vip
+        ? '⚠ هذا السيرفر قد يتطلب VPN أو محظور في منطقتك • جرّب سيرفراً آخر من القائمة'
+        : 'الأسباب الشائعة: الرابط معطّل • نوع الملف غير مدعوم • CORS • HTTP على HTTPS'
+    );
   }
 }
 
