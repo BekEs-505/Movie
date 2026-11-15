@@ -2908,6 +2908,20 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-tjgdkwiwsmg2.html"
         }
       ]
+    },
+    {
+      "title": "فيلم The Substance",
+      "year": 2024,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZDQ1NGE5MGMtYzdlZC00ODExLWJlMDMtNWU4NjA5OWYwMDEwXkEyXkFqcGc@._V1_.jpg",
+      "story": "منتج غامض يُساعد البشر على تغيير ملامحهم وعمرهم، ولكن يتسبب الأمر في العديد من العواقب والفوضى في حياة مستخدميه.",
+      "sources": [
+        {
+          "label": "مشاهدة",
+          "url": "https://1vid.xyz/embed-lzq8c7voe2cd.html"
+        }
+      ]
     }
   ],
   "channels": [
