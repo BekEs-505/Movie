@@ -3568,6 +3568,48 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-ftk8vkrq6u4r.html"
         }
       ]
+    },
+    {
+      "title": "مسلسل 1899",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2UyM2YwZTEtOTk5Zi00ODhkLTg2ZjctMzIxMTViZjFmN2Y4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "تدور أحداث المسلسل عام 1899، ويتبع مجموعة متنوعة من الركاب الذين يخفون أسرارًا أثناء سفرهم على متن السفينة البخارية «كيربيروس» من ساوثهامبتون في المملكة المتحدة إلى مدينة نيويورك لبدء حياة جديدة. تتغير رحلتهم عندما يعثرون على السفينة «بروميثيوس»، التي اختفت في البحر قبل أربعة أشهر، ليكتشفوا أنها مهجورة على نحو غامض.",
+      "sources": [
+        {
+          "label": "S01.E01",
+          "url": "https://www.vidspeed.org/embed-w6bwlzezvmsd.html"
+        },
+        {
+          "label": "S01.E02",
+          "url": "https://www.vidspeed.org/embed-ftua80ktiww6.html"
+        },
+        {
+          "label": "S01.E03",
+          "url": "https://www.vidspeed.org/embed-cvh7o3pnwww7.html"
+        },
+        {
+          "label": "S01.E04",
+          "url": "https://www.vidspeed.org/embed-ic2xmnco2ac4.html"
+        },
+        {
+          "label": "S01.E05",
+          "url": "https://www.vidspeed.org/embed-jqjwqdx1adxr.html"
+        },
+        {
+          "label": "S01.E06",
+          "url": "https://www.vidspeed.org/embed-1ofgqz0k1h11.html"
+        },
+        {
+          "label": "S01.E07",
+          "url": "https://www.vidspeed.org/embed-ye22yy92br2i.html"
+        },
+        {
+          "label": "S01.E08.Last",
+          "url": "https://www.vidspeed.org/embed-ozo0t6em7g10.html"
+        }
+      ]
     }
   ],
   "channels": [
