@@ -3906,6 +3906,160 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-1hxguexzmkco.html"
         }
       ]
+    },
+    {
+      "title": "مسلسل Peaky Blinders",
+      "year": 2025,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BM2ZiNThlNzItNmY3Ny00NjA2LWJlMjItNTk1NDI3MDMyMTk4XkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور أحداث ملحمة عائلة العصابات في إنجلترا في القرن العشرين ، وتتمحور حول عصابة تقوم بخياطة شفرات حلاقة في قمم قبعاتهم ، ورئيسهم الشرس تومي شيلبي.",
+      "sources": [
+        {
+          "label": "S01.E01",
+          "url": "https://1vid.xyz/embed-3zfkvcx1xuzl.html"
+        },
+        {
+          "label": "S01.E02",
+          "url": "https://1vid.xyz/embed-kxvsogdcgl3i.html"
+        },
+        {
+          "label": "S01.E03",
+          "url": "https://1vid.xyz/embed-lo5u1lz2d5qg.html"
+        },
+        {
+          "label": "S01.E04",
+          "url": "https://1vid.xyz/embed-8q67pdfzq3y3.html"
+        },
+        {
+          "label": "S01.E05",
+          "url": "https://1vid.xyz/embed-z6eus230ldib.html"
+        },
+        {
+          "label": "S01.E06.Last",
+          "url": "https://1vid.xyz/embed-zxptqoh445tq.html"
+        },
+        {
+          "label": "S02.E01",
+          "url": "https://1vid.xyz/embed-nf9jz2g28jal.html"
+        },
+        {
+          "label": "S02.E02",
+          "url": "https://1vid.xyz/embed-avuqoa3wqj8n.html"
+        },
+        {
+          "label": "S02.E03",
+          "url": "https://1vid.xyz/embed-ec602jy1b8xt.html"
+        },
+        {
+          "label": "S02.E04",
+          "url": "https://1vid.xyz/embed-1mk4ukizi1wj.html"
+        },
+        {
+          "label": "S02.E05",
+          "url": "https://1vid.xyz/embed-8q70h63cdvd8.html"
+        },
+        {
+          "label": "S02.E06.Last",
+          "url": "https://1vid.xyz/embed-f5hkaf8xg2b9.html"
+        },
+        {
+          "label": "S03.E01",
+          "url": "https://1vid.xyz/embed-wppb7vmj9fqq.html"
+        },
+        {
+          "label": "S03.E02",
+          "url": "https://www.vidspeed.org/embed-yr6vut41l6f5.html"
+        },
+        {
+          "label": "S03.E03",
+          "url": "https://www.vidspeed.org/embed-wlycl2wgfk1s.html"
+        },
+        {
+          "label": "S03.E04",
+          "url": "https://1vid.xyz/embed-zql04tcg05vu.html"
+        },
+        {
+          "label": "S03.E05",
+          "url": "https://1vid.xyz/embed-kgnl9b8d2ems.html"
+        },
+        {
+          "label": "S03.E06.Last",
+          "url": "https://1vid.xyz/embed-gz5j24d4jryg.html"
+        },
+        {
+          "label": "S04.E01",
+          "url": "https://1vid.xyz/embed-hgsoeyz2v2p9.html"
+        },
+        {
+          "label": "S04.E02",
+          "url": "https://1vid.xyz/embed-0xbkdfscvnln.html"
+        },
+        {
+          "label": "S04.E03",
+          "url": "https://1vid.xyz/embed-x65ukezkfxb2.html"
+        },
+        {
+          "label": "S04.E04",
+          "url": "https://1vid.xyz/embed-vof1mz7be3k1.html"
+        },
+        {
+          "label": "S04.E05",
+          "url": "https://1vid.xyz/embed-5i2e4x13txx5.html"
+        },
+        {
+          "label": "S04.E06.Last",
+          "url": "https://1vid.xyz/embed-shkgngdxqivx.html"
+        },
+        {
+          "label": "S05.E01",
+          "url": "https://1vid.xyz/embed-c6l3qaon5j84.html"
+        },
+        {
+          "label": "S05.E02",
+          "url": "https://1vid.xyz/embed-n3hvnyirm3lw.html"
+        },
+        {
+          "label": "S05.E03",
+          "url": "https://1vid.xyz/embed-knnscaak7eqy.html"
+        },
+        {
+          "label": "S05.E04",
+          "url": "https://1vid.xyz/embed-huv61jfpkzj5.html"
+        },
+        {
+          "label": "S05.E05",
+          "url": "https://1vid.xyz/embed-stgd6gpxs55m.html"
+        },
+        {
+          "label": "S05.E06.Last",
+          "url": "https://1vid.xyz/embed-78rk0012dbza.html"
+        },
+        {
+          "label": "S06.E01",
+          "url": "https://1vid.xyz/embed-d44pbe4hyry7.html"
+        },
+        {
+          "label": "S06.E02",
+          "url": "https://1vid.xyz/embed-fpn1fv9ifche.html"
+        },
+        {
+          "label": "S06.E03",
+          "url": "https://www.vidspeed.org/embed-9a7ebgic83rs.html"
+        },
+        {
+          "label": "S06.E04",
+          "url": "https://1vid.xyz/embed-0zo6mw3i26qr.html"
+        },
+        {
+          "label": "S06.E05",
+          "url": "https://1vid.xyz/embed-8zgsj94icwii.html"
+        },
+        {
+          "label": "S06.E06.Last",
+          "url": "https://1vid.xyz/embed-lg2093k1roat.html"
+        }
+      ]
     }
   ],
   "channels": [
