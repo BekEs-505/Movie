@@ -3808,6 +3808,104 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-9mais7rm5ax4.html"
         }
       ]
+    },
+    {
+      "title": "مسلسل Squid Game",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDcxYjg1OTctYmUxZi00ZjhjLWIwNTMtNmI2M2Y4OTU1YWU2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "story": "يقبل مئات اللاعبين الذين يعانون من ضائقة مالية دعوة غريبة للتنافس في ألعاب للأطفال، حيث تنتظرهم جائزة مُغرية تصحبها مخاطر كبيرة ومميتة.",
+      "sources": [
+        {
+          "label": "S01.E01",
+          "url": "https://1vid.xyz/embed-tqnx9y2cl4od.html"
+        },
+        {
+          "label": "S01.E02",
+          "url": "https://www.vidspeed.org/embed-50sy2hpvbx9x.html"
+        },
+        {
+          "label": "S01.E03",
+          "url": "https://1vid.xyz/embed-d53sjrv6mwzm.html"
+        },
+        {
+          "label": "S01.E04",
+          "url": "https://1vid.xyz/embed-kklw7c5oprvj.html"
+        },
+        {
+          "label": "S01.E05",
+          "url": "https://1vid.xyz/embed-7bt7ygyy7p39.html"
+        },
+        {
+          "label": "S01.E06",
+          "url": "https://1vid.xyz/embed-caw7wiru3qcm.html"
+        },
+        {
+          "label": "S01.E07",
+          "url": "https://1vid.xyz/embed-47h4piavwxpu.html"
+        },
+        {
+          "label": "S01.E08",
+          "url": "https://1vid.xyz/embed-aa42vynlzfi5.html"
+        },
+        {
+          "label": "S01.E09.Last",
+          "url": "https://1vid.xyz/embed-bkfdg0a3njfo.html"
+        },
+        {
+          "label": "S02.E01",
+          "url": "https://1vid.xyz/embed-pnfijheui5cs.html"
+        },
+        {
+          "label": "S02.E02",
+          "url": "https://1vid.xyz/embed-6rcjr3x4i35p.html"
+        },
+        {
+          "label": "S02.E03",
+          "url": "https://1vid.xyz/embed-kkpdpx0cmm84.html"
+        },
+        {
+          "label": "S02.E04",
+          "url": "https://1vid.xyz/embed-48nnlpp0nfir.html"
+        },
+        {
+          "label": "S02.E05",
+          "url": "https://1vid.xyz/embed-333nyt9ifmc6.html"
+        },
+        {
+          "label": "S02.E06",
+          "url": "https://1vid.xyz/embed-5mpisnfvsgjb.html"
+        },
+        {
+          "label": "S02.E07.Last",
+          "url": "https://1vid.xyz/embed-gg64h7jwzrzt.html"
+        },
+        {
+          "label": "S03.E01",
+          "url": "https://1vid.xyz/embed-mv4fyb19z6v5.html"
+        },
+        {
+          "label": "S03.E02",
+          "url": "https://1vid.xyz/embed-pjhvuvj0lti0.html"
+        },
+        {
+          "label": "S03.E03",
+          "url": "https://1vid.xyz/embed-apj2sdp2y92q.html"
+        },
+        {
+          "label": "S03.E04",
+          "url": "https://1vid.xyz/embed-gf07bv495106.html"
+        },
+        {
+          "label": "S03.E05",
+          "url": "https://1vid.xyz/embed-w1aikzdf7ohl.html"
+        },
+        {
+          "label": "S03.E06.Last",
+          "url": "https://1vid.xyz/embed-1hxguexzmkco.html"
+        }
+      ]
     }
   ],
   "channels": [
