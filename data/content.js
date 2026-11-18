@@ -3766,6 +3766,48 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-eus9q0eeaem0.html"
         }
       ]
+    },
+    {
+      "title": "مسلسل The 8 Show",
+      "year": 2026,
+      "genre": "10.0",
+      "rating": 10,
+      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27171971_b_v8_ab.jpg",
+      "story": "يشارك ثمانية أشخاص في برنامج يقدّم عرضًا مغريًا ومثيرًا ولكنه محفوف بالمخاطر… حيث يكسبون المزيد من المال نظير البقاء لوقت أطول في بناية غامضة من ثمانية طوابق.",
+      "sources": [
+        {
+          "label": "S01.E01",
+          "url": "https://www.vidspeed.org/embed-skxp03th2jb5.html"
+        },
+        {
+          "label": "S01.E02",
+          "url": "https://www.vidspeed.org/embed-vpihol78sudo.html"
+        },
+        {
+          "label": "S01.E03",
+          "url": "https://www.vidspeed.org/embed-jk85c8rq5xxv.html"
+        },
+        {
+          "label": "S01.E04",
+          "url": "https://www.vidspeed.org/embed-wgswh5bydfot.html"
+        },
+        {
+          "label": "S01.E05",
+          "url": "https://www.vidspeed.org/embed-s6ehgjrsnvgb.html"
+        },
+        {
+          "label": "S01.E06",
+          "url": "https://www.vidspeed.org/embed-r9lpusw9241e.html"
+        },
+        {
+          "label": "S01.E07",
+          "url": "https://www.vidspeed.org/embed-thk3wn7wf7u3.html"
+        },
+        {
+          "label": "S01.E08.Last",
+          "url": "https://www.vidspeed.org/embed-9mais7rm5ax4.html"
+        }
+      ]
     }
   ],
   "channels": [
