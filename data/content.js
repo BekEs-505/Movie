@@ -4060,6 +4060,48 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-lg2093k1roat.html"
         }
       ]
+    },
+    {
+      "title": "مسلسل It: Welcome to Derry",
+      "year": 2026,
+      "genre": "رعب",
+      "rating": 10,
+      "poster": "https://www.filmofilia.com/wp-content/uploads/2025/05/IT-Welcome-to-Derry-Poster.jpg",
+      "story": "يرجع المسلسل بالزمن إلى عام 1962 في بلدة \"ديري\" بولاية مين، ليستكشف أصول الشر وكيان المهرج المرعب \"بيني وايز\"، بالإضافة إلى تفاصيل مرعبة ومواضيع اجتماعية مثل العنصرية وأحداث تاريخية في البلدة.",
+      "sources": [
+        {
+          "label": "S01.E01",
+          "url": "https://1vid.xyz/embed-qhp1v4cdv4av.html"
+        },
+        {
+          "label": "S01.E02",
+          "url": "https://1vid.xyz/embed-ga6n5i06ycb4.html"
+        },
+        {
+          "label": "S01.E03",
+          "url": "https://1vid.xyz/embed-f789nehwg972.html"
+        },
+        {
+          "label": "S01.E04",
+          "url": "https://1vid.xyz/embed-n8yk18m80d2s.html"
+        },
+        {
+          "label": "S01.E05",
+          "url": "https://1vid.xyz/embed-prk9ne4x8qvc.html"
+        },
+        {
+          "label": "S01.E06",
+          "url": "https://1vid.xyz/embed-he6qkunfn4j4.html"
+        },
+        {
+          "label": "S01.E07",
+          "url": "https://1vid.xyz/embed-79j2be40m4cz.html"
+        },
+        {
+          "label": "S01.E08.Last",
+          "url": "https://1vid.xyz/embed-e65i46bacbba.html"
+        }
+      ]
     }
   ],
   "channels": [
