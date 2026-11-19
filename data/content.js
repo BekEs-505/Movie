@@ -4102,6 +4102,43 @@ window.__CINEMA_DATA__ = {
           "url": "https://1vid.xyz/embed-e65i46bacbba.html"
         }
       ]
+    },
+    {
+      "title": "افلام مصرية",
+      "year": 2026,
+      "genre": "جميع الافلام المصرية",
+      "rating": 10,
+      "poster": "https://ss.ahwaktv.net/uploads/articles/72123a36.jpg",
+      "story": "جميع الافلام المصرية",
+      "sources": [],
+      "seasons": [
+        {
+          "name": "1",
+          "episodes": [
+            {
+              "name": "فيلم خلي بالك",
+              "url": "https://1vid.xyz/embed-gnoy9ktcu60s.html"
+            },
+            {
+              "name": "فيلم خلي بالك من جيرناك",
+              "url": "https://www.vidspeed.org/embed-05j7xc021k09.html"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "episodes": [
+            {
+              "name": "1",
+              "url": "https://www.vidspeed.org/embed-puph7wspcfbp.html"
+            },
+            {
+              "name": "2",
+              "url": "https://www.vidspeed.org/embed-6fli40h1vbyb.html"
+            }
+          ]
+        }
+      ]
     }
   ],
   "channels": [
