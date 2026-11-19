@@ -78,6 +78,7 @@ img{display:block;max-width:100%}
 .movie-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:.85rem;color:var(--muted)}
 .movie-meta .rating{color:var(--gold);font-weight:800}
 .movie-meta .pill{padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700;background:rgba(139,92,246,.18);color:#c4b5fd;border:1px solid rgba(139,92,246,.35)}
+.movie-meta .seasons-pill{padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700;background:rgba(251,191,36,.18);color:#fcd34d;border:1px solid rgba(251,191,36,.35)}
 .movie-story{color:#a4a4bd;font-size:.92rem;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .movie-actions{display:flex;gap:10px;margin-top:6px}
 .movie-play-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:800;font-size:.88rem;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#0b0b14;transition:.25s}
@@ -214,6 +215,25 @@ img{display:block;max-width:100%}
 .pe-fallback{margin-top:16px;padding:10px 20px;border-radius:10px;background:rgba(139,92,246,.25);border:1px solid rgba(139,92,246,.6);color:#fff;font-weight:700;font-size:.85rem;transition:.25s}
 .pe-fallback:hover{background:rgba(139,92,246,.45);transform:translateY(-1px)}
 .player-error .pe-hint{font-size:.78rem;color:#fbbf24;margin-top:10px;max-width:340px;line-height:1.5;opacity:.85}
+
+/* ★ المواسم والحلقات */
+.seasons-wrap{margin-bottom:24px}
+.season-block{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.season-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;font-size:.92rem;font-weight:800;color:#c4b5fd;transition:.2s;width:100%;text-align:right;background:transparent;border:none;font-family:inherit}
+.season-header:hover{background:rgba(139,92,246,.08)}
+.season-header .season-name{flex:1;text-align:right}
+.season-header .season-count{font-size:.75rem;color:var(--muted);font-weight:600;margin-inline-end:12px}
+.season-header .season-arrow{transition:transform .3s;font-size:.7rem;color:var(--muted)}
+.season-block.open .season-arrow{transform:rotate(180deg)}
+.season-episodes{display:none;padding:8px;gap:6px;flex-direction:column}
+.season-block.open .season-episodes{display:flex}
+.episode-btn{display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:#d8d8ec;font-size:.85rem;font-weight:600;cursor:pointer;text-align:right;transition:.2s;width:100%;font-family:inherit}
+.episode-btn:hover{background:rgba(139,92,246,.15);border-color:rgba(139,92,246,.4);color:#fff}
+.episode-btn.active{background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(34,211,238,.3));border-color:rgba(34,211,238,.5);color:#fff}
+.ep-num{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:6px;background:rgba(139,92,246,.2);color:#c4b5fd;font-size:.75rem;font-weight:800;flex-shrink:0}
+.episode-btn.active .ep-num{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#0b0b14}
+.ep-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
 @media(max-width:820px){
   :root{--header-h:78px}
   .topbar{padding:0 14px;gap:10px}
@@ -380,6 +400,13 @@ img{display:block;max-width:100%}
       <p class="story" id="mStory">—</p>
       <div class="sources-title">استمتع :</div>
       <div class="sources" id="sources"></div>
+
+      <!-- ★ المواسم والحلقات -->
+      <div id="seasonsWrap" class="seasons-wrap" style="display:none">
+        <div class="sources-title">المواسم والحلقات :</div>
+        <div id="seasonsBox"></div>
+      </div>
+
       <div class="modal-social">
         <div class="rights">© 2025 Movie BekEs · B6_7E | بيكاس</div>
         <div class="row">
@@ -397,48 +424,23 @@ img{display:block;max-width:100%}
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Movie BekEs v7.3
-   ✅ زر إغلاق ثابت أسفل المشغل
-   ✅ دعم wwa.liiivideo.com و vipserver.liiivideo.com
-   ✅ دعم vidspeeds.org (بكل نطاقاته)
-   ✅ دعم hgcloud.to
-   ✅ دعم vidroba.com
-   ✅ إلغاء Sandbox احترافياً للنطاقات VIP
-   ✅ Referrer Policy مرن للنطاقات VIP (يحسّن التوافق)
+   Movie BekEs v7.4 — SEASONS SUPPORT
    © 2025 B6_7E | بيكاس
    ═══════════════════════════════════════════════════════════════ */
 
-/*
- * قائمة VIP: نطاقات موثوقة يتم فتحها بدون Sandbox مطلقاً
- * كما يتم إرسال Referer افتراضي (بدون no-referrer) لتحسين التوافق
- * مع مواقع قد ترفض الطلبات بدون Referer (تقلل الحاجة لـVPN)
- */
 const VIP_NO_SANDBOX_DOMAINS = [
-  /* vipserver + liiivideo */
   'vipserver.co','vipserver.tv','vipserver.com','vipserver.me',
   'vipserver.net','vipserver.xyz','vipserver.org',
-  'vipserver.liiivideo.com',            // 🆕 دعم صريح
-  'liiivideo.com','www.liiivideo.com','wwa.liiivideo.com',  // يشمل أي subdomain عبر wildcard
-
-  /* vidroba */
+  'vipserver.liiivideo.com',
+  'liiivideo.com','www.liiivideo.com','wwa.liiivideo.com',
   'vidroba.com','vidroba.xyz','vidroba.to','vidroba.cc',
   'vidroba.net','vidroba.co','vidroba.me',
-
-  /* vidspeeds (بما فيها .org) */
   'vidspeeds.com','vidspeeds.xyz','vidspeeds.to','vidspeeds.net','vidspeeds.co',
-  'vidspeeds.org',                      // 🆕 دعم .org
-
-  /* 1vid */
+  'vidspeeds.org',
   '1vid.xyz','1vid.com','1vid.to','1vid.net','1vid.cc','1vid.co','1vid.me',
-
-  /* d0o0d + doodstream */
   'd0o0d.com','d0o0d.to','d0o0d.xyz','d0o0d.net',
   'dood.to','dood.ws','dood.re','dood.sh','dood.so','dood.la','dood.pm','dood.wf','doodstream.com',
-
-  /* hgcloud */
   'hgcloud.to','hgcloud.com','hgcloud.xyz','hgcloud.net','hgcloud.co','hgcloud.me',
-
-  /* أخرى */
   'mixdrop.ps',
   'vidspeed.org','www.vidspeed.org',
   'rubyvidhub.com',
@@ -469,6 +471,11 @@ const CHANNELS = [
     stream:STREAMS.appleHLS, desc:"سينما برو — بث سينمائي." }
 ];
 
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 function normalizeSource(s) {
   if (!s) return null;
   if (typeof s === 'string') {
@@ -494,6 +501,27 @@ function normalizeSourceList(raw) {
   return one ? [one] : [];
 }
 
+/* ★ normalizeSeasons — يقبل seasons أو season أو episodes */
+function normalizeSeasons(raw) {
+  if (!raw) return [];
+  if (!Array.isArray(raw)) raw = [raw];
+  return raw.map((s, si) => {
+    if (!s || typeof s !== 'object') return null;
+    const name = (s.name || s.title || s.season || ('الموسم ' + (si + 1))).toString();
+    const episodes = Array.isArray(s.episodes)
+      ? s.episodes.map((e, ei) => {
+          if (!e) return null;
+          if (typeof e === 'string') return { name: ('الحلقة ' + (ei + 1)), url: e };
+          if (typeof e !== 'object') return null;
+          const url = (e.url || e.stream || e.link || e.src || '').toString().trim();
+          if (!url) return null;
+          return { name: (e.name || e.title || e.episode || ('الحلقة ' + (ei + 1))).toString(), url };
+        }).filter(Boolean)
+      : [];
+    return { name, episodes };
+  }).filter(s => s && s.episodes.length > 0);
+}
+
 function looksLikeMojibake(str) {
   if (!str || typeof str !== 'string') return false;
   return /[\u00C2-\u00C3][\u0080-\u00BF]/.test(str) || /(?:Ã|Â|Ø£|Ø¥|Ø§|Ù„)/.test(str);
@@ -503,7 +531,8 @@ function normalizeMovie(m, index) {
   if (!m || typeof m !== 'object') return null;
   let title = (m.title || m.name || m.original_title || m.arabic_title || m.name_ar || '').toString().trim();
   let sources = normalizeSourceList(m.sources || m.servers || m.links || m.streams || m.urls || m.url || m.stream || m.link);
-  if (!title && sources.length === 0) return null;
+  let seasons = normalizeSeasons(m.seasons || m.season || m.episodes_list);
+  if (!title && sources.length === 0 && seasons.length === 0) return null;
   if (!title) title = 'بدون عنوان';
   if (looksLikeMojibake(title)) {
     console.warn('[Data] ⚠️ النص يبدو مشوهاً (Mojibake):', title);
@@ -516,6 +545,7 @@ function normalizeMovie(m, index) {
     poster:  m.poster  || m.image        || m.thumbnail  || m.cover || m.posterUrl || '',
     story:   m.story   || m.overview     || m.description|| m.plot  || m.desc || '',
     sources,
+    seasons,
     _index: index
   };
 }
@@ -639,6 +669,9 @@ function createMovieCard(m){
   item.className = 'movie-item';
   const posterFallback = `https://picsum.photos/seed/${encodeURIComponent(m.title||'movie')}/500/750`;
   const poster = m.poster || posterFallback;
+  const seasonBadge = (m.seasons && m.seasons.length)
+    ? `<span class="seasons-pill">📺 ${m.seasons.length} موسم</span>`
+    : '';
   item.innerHTML = `
     <img class="movie-poster" src="${poster}" alt="${m.title||''}" loading="lazy"
          onerror="this.onerror=null;this.src='${posterFallback}'">
@@ -648,6 +681,7 @@ function createMovieCard(m){
         <span class="pill">${m.genre||'عام'}</span>
         <span>${m.year||''}</span>
         <span class="rating">★ ${m.rating||'—'}</span>
+        ${seasonBadge}
       </div>
       <div class="movie-story">${m.story||''}</div>
       <div class="movie-actions">
@@ -659,14 +693,15 @@ function createMovieCard(m){
     </div>`;
   item.addEventListener('click', () => {
     const srcs = (m.sources && m.sources.length) ? m.sources : [];
-    if (!srcs.length) {
+    const seasons = (m.seasons && m.seasons.length) ? m.seasons : [];
+    if (!srcs.length && !seasons.length) {
       setDataStatus('error', '⚠ لا يوجد سيرفر', `الفيلم "${m.title}" لا يحتوي على أي رابط.`, 5000);
       return;
     }
     openPlayer({
       title: m.title,
       meta: `<span class="pill">${m.genre||'عام'}</span> <span>${m.year||''}</span> <span class="rating">★ ${m.rating||'—'}</span>`,
-      story: m.story||'', sources: srcs, isLive: false
+      story: m.story||'', sources: srcs, isLive: false, seasons
     });
   });
   return item;
@@ -859,7 +894,7 @@ const EMBED_PATTERNS = [
   /vipserver/i, /vidroba/i, /vidspeeds/i, /1vid/i, /d0o0d/i, /hgcloud/i,
   /vidspeed/i, /vidfast/i, /vidlink/i, /vidsmart/i, /vidplay/i,
   /rubyvidhub/i, /morencius/i,
-  /liiivideo/i,                           // 🆕 يغطي vipserver.liiivideo.com
+  /liiivideo/i,
   /vidsrc\.(?:me|to|xyz|cc|in|net|pro|io)/i,
   /mixdrop\.(?:ps|co|to|ag|sx|bz|ch|vc|nl|pm)/i,
   /streamtape\.(?:com|net|to|xyz)/i,
@@ -877,7 +912,6 @@ const EMBED_PATTERNS = [
 ];
 function isEmbedUrl(url){ const u = url.toLowerCase(); return EMBED_PATTERNS.some(re=>re.test(u)); }
 
-/* 🆕 كاشف نطاقات VIP */
 function isVIPDomain(url){
   let host = '';
   try { host = new URL(url).hostname.toLowerCase(); } catch(e) { return false; }
@@ -1056,11 +1090,6 @@ function sandboxForUrl(url){
   return 'allow-scripts allow-same-origin';
 }
 
-/*
- * 🆕 tryEmbed - نسخة محدّثة
- * - نطاقات VIP: بدون sandbox + بدون no-referrer + allow شامل = أعلى توافق
- * - نطاقات أخرى: sandbox + no-referrer كما كان سابقاً
- */
 function tryEmbed(url){
   return new Promise(resolve => {
     const normalized = normalizeEmbedUrl(url);
@@ -1081,18 +1110,12 @@ function tryEmbed(url){
     if (sandboxValue !== null) iframe.sandbox = sandboxValue;
     
     if (vip) {
-      /* ═════ نطاقات VIP ═════
-       * - بدون sandbox
-       * - بدون referrerpolicy (يترك افتراضي المتصفح → يرسل origin، أفضل للمواقع
-       *   التي ترفض الطلبات بدون Referer وبالتالي تقلل حاجة الـVPN)
-       * - allow شامل يفتح كل الميزات الممكنة
-       */
       iframe.setAttribute('allow',
         'autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write; ' +
         'camera; microphone; geolocation; accelerometer; gyroscope; magnetometer; ' +
         'payment; usb; web-share; screen-wake-lock; xr-spatial-tracking');
       iframe.setAttribute('allowfullscreen', 'true');
-      console.log('[Embed] 🎯 VIP domain (no sandbox, default referer):', normalized);
+      console.log('[Embed] 🎯 VIP domain (no sandbox):', normalized);
     } else {
       iframe.setAttribute('referrerpolicy', 'no-referrer');
       iframe.setAttribute('allow',
@@ -1114,6 +1137,7 @@ function tryEmbed(url){
 }
 
 let currentSources = [], currentSourceIndex = 0;
+let currentSeasons = [];
 
 async function playSource(url, forcedType = null){
   if (!url) {
@@ -1164,7 +1188,7 @@ async function playSource(url, forcedType = null){
     showPlayerError(
       'جرب سيرفراً آخر من القائمة',
       vip
-        ? '⚠ هذا السيرفر قد يتطلب VPN أو محظور في منطقتك • جرّب سيرفراً آخر من القائمة'
+        ? '⚠ هذا السيرفر قد يتطلب VPN أو محظور في منطقتك • جرّب سيرفراً آخر'
         : 'الأسباب الشائعة: الرابط معطّل • نوع الملف غير مدعوم • CORS • HTTP على HTTPS'
     );
   }
@@ -1246,6 +1270,46 @@ const mMeta     = document.getElementById('mMeta');
 const mStory    = document.getElementById('mStory');
 const sourcesBox= document.getElementById('sources');
 
+/* ═══ ★ دوال المواسم والحلقات ★ ═══ */
+function renderSeasons(seasons) {
+  currentSeasons = seasons || [];
+  const wrapEl = document.getElementById('seasonsWrap');
+  const box    = document.getElementById('seasonsBox');
+  if (!wrapEl || !box) return;
+  if (!currentSeasons.length) { wrapEl.style.display = 'none'; box.innerHTML = ''; return; }
+  wrapEl.style.display = '';
+  box.innerHTML = currentSeasons.map((s, si) => `
+    <div class="season-block${si === 0 ? ' open' : ''}" data-season="${si}">
+      <button class="season-header" onclick="toggleSeason(${si})">
+        <span class="season-name">${escapeHtml(s.name)}</span>
+        <span class="season-count">${s.episodes.length} حلقة</span>
+        <span class="season-arrow">▼</span>
+      </button>
+      <div class="season-episodes">
+        ${s.episodes.map((e, ei) => `
+          <button class="episode-btn" data-season="${si}" data-episode="${ei}" onclick="playEpisode(${si},${ei})">
+            <span class="ep-num">${ei + 1}</span>
+            <span class="ep-name">${escapeHtml(e.name)}</span>
+          </button>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function toggleSeason(si) {
+  const b = document.querySelector(`.season-block[data-season="${si}"]`);
+  if (b) b.classList.toggle('open');
+}
+
+function playEpisode(si, ei) {
+  const s = currentSeasons[si]; if (!s || !s.episodes[ei]) return;
+  document.querySelectorAll('.episode-btn').forEach(b => {
+    b.classList.toggle('active',
+      parseInt(b.dataset.season) === si && parseInt(b.dataset.episode) === ei);
+  });
+  protectAds = true;
+  playSource(s.episodes[ei].url, null);
+}
+
 function openPlayer(data){
   mTitle.textContent = data.title || '—';
   document.getElementById('mTitleSm').textContent = data.title || '—';
@@ -1260,7 +1324,9 @@ function openPlayer(data){
   hidePlayerError();
   sourcesBox.innerHTML = '';
   if (currentSources.length === 0) {
-    sourcesBox.innerHTML = '<div style="color:#ef4444;padding:10px">⚠ لا توجد سيرفرات لهذا العنصر</div>';
+    sourcesBox.innerHTML = (data.seasons && data.seasons.length)
+      ? '<div style="color:#8f8fa8;padding:10px">اختر حلقة من المواسم أدناه</div>'
+      : '<div style="color:#ef4444;padding:10px">⚠ لا توجد سيرفرات لهذا العنصر</div>';
   }
   currentSources.forEach((src, i) => {
     const b = document.createElement('button');
@@ -1275,11 +1341,23 @@ function openPlayer(data){
     });
     sourcesBox.appendChild(b);
   });
+
+  /* ★ المواسم */
+  renderSeasons(data.seasons || []);
+
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  /* تشغيل تلقائي: سيرفر أول أو حلقة أولى */
   if (currentSources.length){
     const first = currentSources[0];
     playSource(first.url, first.type || null);
+  } else if (data.seasons && data.seasons.length && data.seasons[0].episodes[0]) {
+    playSource(data.seasons[0].episodes[0].url, null);
+    setTimeout(() => {
+      const b = document.querySelector('.episode-btn[data-season="0"][data-episode="0"]');
+      if (b) b.classList.add('active');
+    }, 100);
   }
 }
 function closeModal(){
@@ -1295,6 +1373,12 @@ function closeModal(){
   currentActiveUrl = null;
   currentActiveType = null;
   lastAttemptUsedSandbox = false;
+  /* ★ إعادة تعيين المواسم */
+  currentSeasons = [];
+  const sw = document.getElementById('seasonsWrap');
+  if (sw) sw.style.display = 'none';
+  const sb = document.getElementById('seasonsBox');
+  if (sb) sb.innerHTML = '';
 }
 document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalBack').addEventListener('click', closeModal);

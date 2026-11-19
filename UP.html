@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050510">
-<title>Movie BekEs — Pro v8.5 · Auto-Upload</title>
+<title>Movie BekEs — Pro v8.6 · Seasons+Episodes</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
 <style>
 :root{
@@ -155,6 +155,7 @@ body{
 .badge-year{background:rgba(179,102,255,.18);color:var(--purple)}
 .badge-rating{background:rgba(255,221,0,.15);color:var(--yellow)}
 .badge-servers{background:rgba(0,170,255,.18);color:var(--blue)}
+.badge-seasons{background:rgba(255,136,0,.18);color:var(--orange)}
 .badge-warn{background:rgba(255,34,85,.18);color:var(--red)}
 .badge-ok{background:rgba(0,255,136,.18);color:var(--green)}
 .card-story{color:var(--dim);font-size:.85rem;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -188,6 +189,22 @@ body{
 .source-item{display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.02);padding:7px;border-radius:8px;border:1px solid var(--border)}
 .source-item .form-input{flex:1;padding:7px 9px;font-size:.82rem}
 .source-item .form-input.label-input{flex:0 0 150px}
+
+/* ★ حقول المواسم والحلقات */
+.seasons-editor{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.season-block{background:rgba(179,102,255,.05);border:1px solid rgba(179,102,255,.25);border-radius:10px;padding:10px}
+.season-header-row{display:flex;gap:6px;align-items:center;margin-bottom:8px}
+.season-header-row .season-name-input{flex:1;font-weight:700;color:var(--purple)}
+.episodes-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;padding-right:14px;border-right:2px solid rgba(179,102,255,.3)}
+.episode-row{display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.02);padding:6px;border-radius:7px;border:1px solid rgba(255,255,255,.05)}
+.episode-row .ep-name-input{flex:0 0 130px;font-size:.8rem}
+.episode-row .ep-url-input{flex:1;font-size:.8rem}
+.btn-add-ep{background:rgba(0,240,255,.06);border:1px dashed rgba(0,240,255,.4);color:var(--cyan);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.78rem;font-family:inherit;font-weight:600;transition:all .2s;width:100%}
+.btn-add-ep:hover{background:rgba(0,240,255,.12);border-color:var(--cyan)}
+.btn-add-season{background:rgba(179,102,255,.08);border:1px dashed rgba(179,102,255,.5);color:var(--purple);padding:8px 16px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.82rem;font-weight:600;transition:all .2s}
+.btn-add-season:hover{background:rgba(179,102,255,.18);border-color:var(--purple)}
+.seasons-count-hint{font-size:.72rem;color:var(--dim);margin-top:4px}
+
 .btn-icon{background:rgba(255,34,85,.08);border:1px solid rgba(255,34,85,.25);color:var(--red);width:30px;height:30px;border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex:0 0 auto;font-size:1rem}
 .btn-icon:hover{background:rgba(255,34,85,.2)}
 .toast-container{position:fixed;top:20px;left:20px;z-index:9999;display:flex;flex-direction:column;gap:8px;max-width:380px;max-width:90vw}
@@ -233,6 +250,8 @@ footer a{color:var(--cyan);text-decoration:none}
   .form-row{grid-template-columns:1fr}
   .source-item{flex-wrap:wrap}
   .source-item .form-input.label-input{flex:1 1 100%}
+  .episode-row{flex-wrap:wrap}
+  .episode-row .ep-name-input{flex:1 1 100%}
   .tabs{overflow-x:auto;flex-wrap:nowrap}
   .tab{white-space:nowrap;flex:0 0 auto}
   body{padding:12px}
@@ -258,7 +277,7 @@ footer a{color:var(--cyan);text-decoration:none}
 <div class="container">
   <header class="header">
     <div class="logo-title">MOVIE BEKES</div>
-    <div class="logo-sub">★ PRO EDITION · v8.5 · AUTO-UPLOAD ★</div>
+    <div class="logo-sub">★ PRO EDITION · v8.6 · SEASONS+EPISODES ★</div>
     <div class="logo-line">✦ CINEMA MANAGEMENT · NEON EDITION ✦</div>
   </header>
 
@@ -369,7 +388,7 @@ footer a{color:var(--cyan);text-decoration:none}
     </div>
   </div>
 
-  <footer>© 2025 B6_7E | بيكاس · Movie BekEs v8.5 · <a href="#" onclick="openCmdPalette();return false">⌘ لوحة الأوامر</a></footer>
+  <footer>© 2025 B6_7E | بيكاس · Movie BekEs v8.6 · <a href="#" onclick="openCmdPalette();return false">⌘ لوحة الأوامر</a></footer>
 </div>
 
 <!-- MOVIE MODAL -->
@@ -397,10 +416,19 @@ footer a{color:var(--cyan);text-decoration:none}
       <textarea class="form-textarea" id="mStory" oninput="saveMovieDraft()"></textarea>
     </div>
     <div class="form-group">
-      <label class="form-label">سيرفرات المشاهدة</label>
+      <label class="form-label">سيرفرات المشاهدة <span class="hint">(للأفلام المفردة)</span></label>
       <div class="sources-list" id="mSources"></div>
       <button class="btn btn-ghost btn-sm" onclick="addSourceRow();saveMovieDraft()">+ إضافة سيرفر</button>
     </div>
+
+    <!-- ★ قسم المواسم والحلقات -->
+    <div class="form-group">
+      <label class="form-label">🎬 المواسم والحلقات <span class="hint">(للمسلسلات فقط — اختياري)</span></label>
+      <div class="seasons-editor" id="mSeasons"></div>
+      <button class="btn-add-season" onclick="addSeasonRow()">＋ إضافة موسم</button>
+      <div class="seasons-count-hint" id="mSeasonsHint"></div>
+    </div>
+
     <div class="modal-footer">
       <div class="gh-status-wrap"><span class="gh-status warn" id="movieGithubStatus"><span class="dot"></span><span>GitHub غير مُعد</span></span></div>
       <button class="btn btn-ghost" onclick="closeMovieModal()">إلغاء</button>
@@ -442,27 +470,24 @@ footer a{color:var(--cyan);text-decoration:none}
 
 <script>
 // ═══════════════════════════════════════════════════════════════════════════
-//  MOVIE BEKES v8.5 — AUTO-UPLOAD EDITION
-//  Core: Save locally FIRST (never lose data) → Then upload to GitHub
+//  MOVIE BEKES v8.6 — SEASONS + EPISODES
+//  Core: Save locally FIRST → Then upload to GitHub
 // ═══════════════════════════════════════════════════════════════════════════
 'use strict';
 
 const US = '\x1f';
 const KEYS = {
-  DATA: 'mb_data_v85',
-  GITHUB: 'mb_github_v85',
-  DRAFT_MOVIE: 'mb_draft_movie_v85',
-  DRAFT_CHANNEL: 'mb_draft_channel_v85',
-  SESSION: 'mb_session_v85',
-  FLAGS: 'mb_flags_v85',
-  BACKUP: 'mb_backup_v85',
-  BACKUP_TS: 'mb_backup_ts_v85',
-  LAST_UPLOAD_TS: 'mb_last_upload_v85'
+  DATA: 'mb_data_v86',
+  GITHUB: 'mb_github_v86',
+  DRAFT_MOVIE: 'mb_draft_movie_v86',
+  DRAFT_CHANNEL: 'mb_draft_channel_v86',
+  SESSION: 'mb_session_v86',
+  FLAGS: 'mb_flags_v86',
+  BACKUP: 'mb_backup_v86',
+  BACKUP_TS: 'mb_backup_ts_v86',
+  LAST_UPLOAD_TS: 'mb_last_upload_v86'
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  STORAGE
-// ═══════════════════════════════════════════════════════════════════════════
 const Storage = {
   _tested: null,
   available() {
@@ -503,9 +528,6 @@ const Storage = {
   }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  TOAST
-// ═══════════════════════════════════════════════════════════════════════════
 const Toast = {
   icons: { success: '✓', error: '✕', info: 'ℹ', warn: '⚠' },
   show(msg, type = 'success', duration = 3200) {
@@ -523,9 +545,6 @@ const Toast = {
   }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  HELPERS
-// ═══════════════════════════════════════════════════════════════════════════
 const $ = id => document.getElementById(id);
 function escapeHtml(s) {
   if (s == null) return '';
@@ -551,9 +570,6 @@ function debounce(fn, ms = 300) {
   return function (...args) { clearTimeout(t); t = setTimeout(() => fn.apply(this, args), ms); };
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════════════════════════════
 const State = {
   movies: [], channels: [], source: 'local', lastSaved: null, isDirty: false,
 
@@ -602,6 +618,17 @@ const State = {
       story: m.story || '',
       sources: Array.isArray(m.sources)
         ? m.sources.filter(s => s && s.url).map(s => ({ url: s.url, label: s.label || 'سيرفر' }))
+        : [],
+      seasons: Array.isArray(m.seasons)
+        ? m.seasons.map((s, si) => ({
+            name: (s && s.name) ? String(s.name) : ('الموسم ' + (si + 1)),
+            episodes: (s && Array.isArray(s.episodes))
+              ? s.episodes.filter(e => e && e.url).map((e, ei) => ({
+                  name: e.name || ('الحلقة ' + (ei + 1)),
+                  url: e.url
+                }))
+              : []
+          })).filter(s => s.episodes.length > 0)
         : []
     }));
   },
@@ -616,9 +643,6 @@ const State = {
 };
 State.saveDebounced = debounce(() => State.save(), 250);
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  SYNC STATUS (dirty / clean / not-configured)
-// ═══════════════════════════════════════════════════════════════════════════
 const Sync = {
   getStatus() {
     const s = getGithubSettings();
@@ -640,7 +664,6 @@ const Sync = {
     else if (state === 'error') text.textContent = '✕ فشل الرفع';
     else text.textContent = 'GitHub غير مُعد';
 
-    // Quick push buttons
     const showQuick = state === 'dirty';
     const bm = $('quickPushMoviesBtn'), bc = $('quickPushChannelsBtn');
     if (bm) bm.style.display = showQuick ? 'inline-flex' : 'none';
@@ -652,16 +675,13 @@ const Sync = {
   }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  DRAFT
-// ═══════════════════════════════════════════════════════════════════════════
 const Draft = {
   saveMovie() {
     const draft = {
       title: $('mTitle')?.value || '', year: $('mYear')?.value || '',
       genre: $('mGenre')?.value || '', rating: $('mRating')?.value || '',
       poster: $('mPoster')?.value || '', story: $('mStory')?.value || '',
-      sources: [], _ts: Date.now(), _editing: window._editingMovieIndex ?? -1
+      sources: [], seasons: [], _ts: Date.now(), _editing: window._editingMovieIndex ?? -1
     };
     document.querySelectorAll('#mSources .source-item').forEach(item => {
       draft.sources.push({
@@ -669,7 +689,23 @@ const Draft = {
         url: item.querySelector('.url-input')?.value || ''
       });
     });
-    if (draft.title || draft.story || draft.sources.some(s => s.url)) {
+    document.querySelectorAll('#mSeasons .season-block').forEach(sb => {
+      const season = {
+        name: sb.querySelector('.season-name-input')?.value || '',
+        episodes: []
+      };
+      sb.querySelectorAll('.episodes-list .episode-row').forEach(er => {
+        season.episodes.push({
+          name: er.querySelector('.ep-name-input')?.value || '',
+          url: er.querySelector('.ep-url-input')?.value || ''
+        });
+      });
+      draft.seasons.push(season);
+    });
+    const hasContent = draft.title || draft.story ||
+      draft.sources.some(s => s.url) ||
+      draft.seasons.some(s => s.episodes.some(e => e.url));
+    if (hasContent) {
       Storage.set(KEYS.DRAFT_MOVIE, draft);
       const badge = $('movieDraftBadge'); if (badge) badge.style.display = 'inline-flex';
     }
@@ -689,9 +725,6 @@ const Draft = {
   hasAny() { return !!(this.loadMovie() || this.loadChannel()); }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  SESSION
-// ═══════════════════════════════════════════════════════════════════════════
 const Session = {
   save() {
     Storage.set(KEYS.SESSION, {
@@ -710,9 +743,6 @@ const Session = {
   }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  UI
-// ═══════════════════════════════════════════════════════════════════════════
 const UI = {
   updateSaveIndicator(state, text) {
     const el = $('saveIndicator'); if (!el) return;
@@ -748,9 +778,6 @@ const UI = {
   }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  RENDER
-// ═══════════════════════════════════════════════════════════════════════════
 function renderMovies() {
   const el = $('moviesList'); if (!el) return;
   const q = ($('movieSearch')?.value || '').toLowerCase().trim();
@@ -767,14 +794,17 @@ function renderMovies() {
   const parts = [];
   for (const { m, i } of list) {
     const srcCount = (m.sources || []).length;
+    const seasonCount = (m.seasons || []).length;
+    const epCount = (m.seasons || []).reduce((s, x) => s + (x.episodes?.length || 0), 0);
     parts.push(`<div class="card">
       <div class="card-title">${escapeHtml(m.title)}</div>
       <div class="card-meta">
         <span class="badge badge-year">📅 ${escapeHtml(m.year || '?')}</span>
         <span class="badge badge-rating">⭐ ${escapeHtml(m.rating || 0)}</span>
         <span>${escapeHtml(m.genre || 'عام')}</span>
-        ${srcCount ? `<span class="badge badge-servers">🌐 ${srcCount} سيرفر</span>` : '<span class="badge badge-warn">⚠️ لا رابط</span>'}
-        ${m.poster ? '' : '<span class="badge badge-warn">⚠️ لا غلاف</span>'}
+        ${srcCount ? `<span class="badge badge-servers">🌐 ${srcCount} سيرفر</span>` : ''}
+        ${seasonCount ? `<span class="badge badge-seasons">📺 ${seasonCount} موسم · ${epCount} حلقة</span>` : ''}
+        ${!srcCount && !seasonCount ? '<span class="badge badge-warn">⚠️ لا روابط</span>' : ''}
       </div>
       ${m.story ? `<div class="card-story">${escapeHtml(m.story)}</div>` : ''}
       <div class="card-actions">
@@ -804,7 +834,6 @@ function renderChannels() {
       <div class="card-title">${escapeHtml(c.name)}</div>
       <div class="card-meta">
         ${c.stream ? '<span class="badge badge-ok">📡 بث مباشر</span>' : '<span class="badge badge-warn">⚠️ لا بث</span>'}
-        ${c.poster ? '' : '<span class="badge badge-warn">⚠️ لا غلاف</span>'}
       </div>
       ${c.desc ? `<div class="card-story">${escapeHtml(c.desc)}</div>` : ''}
       <div class="card-actions">
@@ -817,9 +846,6 @@ function renderChannels() {
 }
 function renderAll() { renderMovies(); renderChannels(); UI.updateCounts(); Sync.updateUI(); }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  TABS
-// ═══════════════════════════════════════════════════════════════════════════
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
   document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + name));
@@ -829,9 +855,6 @@ document.querySelectorAll('.tab').forEach(tab => {
   tab.onclick = () => { switchTab(tab.dataset.tab); Session.save(); };
 });
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  MODAL
-// ═══════════════════════════════════════════════════════════════════════════
 function openModal(id) { $(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
 function closeModal(id) { $(id).classList.remove('active'); document.body.style.overflow = ''; }
 function closeMovieModal() { closeModal('movieModal'); }
@@ -840,9 +863,6 @@ document.querySelectorAll('.modal-overlay').forEach(m => {
   m.onclick = e => { if (e.target === m) closeModal(m.id); };
 });
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  GITHUB STATUS IN MODAL
-// ═══════════════════════════════════════════════════════════════════════════
 function updateModalGithubStatus(wrapperId) {
   const wrap = $(wrapperId);
   if (!wrap) return;
@@ -857,9 +877,69 @@ function updateModalGithubStatus(wrapperId) {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  MOVIE CRUD
-// ═══════════════════════════════════════════════════════════════════════════
+function updateSeasonsHint() {
+  const hint = $('mSeasonsHint');
+  if (!hint) return;
+  const seasons = document.querySelectorAll('#mSeasons .season-block').length;
+  const episodes = document.querySelectorAll('#mSeasons .episode-row').length;
+  hint.textContent = seasons || episodes
+    ? `📺 ${seasons} موسم · ${episodes} حلقة`
+    : 'اتركه فارغاً إذا كان فيلماً مفرداً';
+}
+
+function addSeasonRow(season = null) {
+  const container = $('mSeasons');
+  if (!container) return;
+  const div = document.createElement('div');
+  div.className = 'season-block';
+  div.innerHTML = `
+    <div class="season-header-row">
+      <input type="text" class="form-input season-name-input" placeholder="اسم الموسم (مثلاً: الموسم الأول)" value="${escapeHtml(season?.name || '')}" oninput="saveMovieDraft()">
+      <button class="btn-icon" onclick="this.closest('.season-block').remove();updateSeasonsHint();saveMovieDraft()" title="حذف الموسم">×</button>
+    </div>
+    <div class="episodes-list"></div>
+    <button class="btn-add-ep" onclick="addEpisodeRow(this.previousElementSibling)">+ إضافة حلقة</button>`;
+  container.appendChild(div);
+  const epList = div.querySelector('.episodes-list');
+  if (season && Array.isArray(season.episodes)) {
+    season.episodes.forEach(e => addEpisodeRow(epList, e));
+  }
+  updateSeasonsHint();
+}
+
+function addEpisodeRow(container, episode = null) {
+  if (!container || !container.classList.contains('episodes-list')) {
+    const lists = document.querySelectorAll('#mSeasons .episodes-list');
+    if (!lists.length) return;
+    container = lists[lists.length - 1];
+  }
+  const div = document.createElement('div');
+  div.className = 'episode-row';
+  div.innerHTML = `
+    <input type="text" class="form-input ep-name-input" placeholder="اسم الحلقة" value="${escapeHtml(episode?.name || '')}" oninput="saveMovieDraft()">
+    <input type="url" class="form-input ep-url-input" placeholder="رابط الحلقة" value="${escapeHtml(episode?.url || '')}" oninput="saveMovieDraft()">
+    <button class="btn-icon" onclick="this.closest('.episode-row').remove();updateSeasonsHint();saveMovieDraft()" title="حذف الحلقة">×</button>`;
+  container.appendChild(div);
+  updateSeasonsHint();
+}
+
+function collectSeasons() {
+  const seasons = [];
+  document.querySelectorAll('#mSeasons .season-block').forEach(sb => {
+    const sName = sb.querySelector('.season-name-input')?.value.trim() || '';
+    const eps = [];
+    sb.querySelectorAll('.episodes-list .episode-row').forEach(er => {
+      const eName = er.querySelector('.ep-name-input')?.value.trim() || '';
+      const eUrl = er.querySelector('.ep-url-input')?.value.trim() || '';
+      if (eUrl) eps.push({ name: eName || ('الحلقة ' + (eps.length + 1)), url: eUrl });
+    });
+    if (eps.length > 0) {
+      seasons.push({ name: sName || ('الموسم ' + (seasons.length + 1)), episodes: eps });
+    }
+  });
+  return seasons;
+}
+
 function openMovieModal(restoreDraft = true) {
   window._editingMovieIndex = -1;
   $('movieModalTitle').textContent = '+ إضافة فيلم';
@@ -868,11 +948,13 @@ function openMovieModal(restoreDraft = true) {
   $('mGenre').value = 'عام'; $('mRating').value = '0';
   $('mPoster').value = ''; $('mStory').value = '';
   $('mSources').innerHTML = ''; addSourceRow();
+  $('mSeasons').innerHTML = '';
+  updateSeasonsHint();
   updateModalGithubStatus('movieGithubStatus');
 
   if (restoreDraft) {
     const draft = Draft.loadMovie();
-    if (draft && (draft.title || draft.story || (draft.sources && draft.sources.length))) {
+    if (draft && (draft.title || draft.story || (draft.sources && draft.sources.length) || (draft.seasons && draft.seasons.length))) {
       const age = Date.now() - (draft._ts || 0);
       if (age < 7 * 24 * 60 * 60 * 1000) {
         if (confirm('📝 وجدت مسودة غير محفوظة من ' + fmtTime(draft._ts) + '.\n\nهل تريد استعادتها؟')) {
@@ -885,6 +967,9 @@ function openMovieModal(restoreDraft = true) {
           $('mSources').innerHTML = '';
           if (draft.sources && draft.sources.length) draft.sources.forEach(s => addSourceRow(s.label, s.url));
           else addSourceRow();
+          $('mSeasons').innerHTML = '';
+          if (draft.seasons && draft.seasons.length) draft.seasons.forEach(s => addSeasonRow(s));
+          updateSeasonsHint();
           window._editingMovieIndex = draft._editing ?? -1;
           if (window._editingMovieIndex >= 0) $('movieModalTitle').textContent = '* تعديل فيلم';
           $('movieDraftBadge').style.display = 'inline-flex';
@@ -905,6 +990,9 @@ function editMovie(i) {
   $('mSources').innerHTML = '';
   if (m.sources && m.sources.length) m.sources.forEach(s => addSourceRow(s.label, s.url));
   else addSourceRow();
+  $('mSeasons').innerHTML = '';
+  if (m.seasons && m.seasons.length) m.seasons.forEach(s => addSeasonRow(s));
+  updateSeasonsHint();
   updateModalGithubStatus('movieGithubStatus');
   openModal('movieModal');
 }
@@ -918,18 +1006,24 @@ function addSourceRow(label = '', url = '') {
   $('mSources').appendChild(div);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  ★ SAVE MOVIE (with optional upload)
-// ═══════════════════════════════════════════════════════════════════════════
 function saveMovie(andUpload = false) {
   const title = $('mTitle').value.trim();
   if (!title) { Toast.show('العنوان مطلوب', 'error'); $('mTitle').focus(); return; }
+
   const sources = [];
   document.querySelectorAll('#mSources .source-item').forEach(item => {
     const url = item.querySelector('.url-input').value.trim();
     const label = item.querySelector('.label-input').value.trim();
     if (url) sources.push({ url, label: label || 'سيرفر' });
   });
+
+  const seasons = collectSeasons();
+
+  if (!sources.length && !seasons.length) {
+    Toast.show('أضف سيرفراً واحداً على الأقل، أو موسم/حلقة', 'error', 4000);
+    return;
+  }
+
   const movie = {
     title,
     year: parseInt($('mYear').value) || 0,
@@ -939,31 +1033,25 @@ function saveMovie(andUpload = false) {
     story: $('mStory').value.trim(),
     sources
   };
+  if (seasons.length > 0) movie.seasons = seasons;
 
   const wasEditing = window._editingMovieIndex >= 0;
   if (wasEditing) State.movies[window._editingMovieIndex] = movie;
   else State.movies.push(movie);
 
-  // 1️⃣ ALWAYS save locally first (data safety)
   State.save();
   Draft.clearMovie();
   renderMovies();
   UI.updateCounts();
   closeModal('movieModal');
 
-  Toast.show(wasEditing ? `✓ تم تعديل "${title}"` : `✓ تمت إضافة "${title}"`, 'success', 2500);
+  const extra = seasons.length ? ` (${seasons.length} موسم)` : '';
+  Toast.show(wasEditing ? `✓ تم تعديل "${title}"${extra}` : `✓ تمت إضافة "${title}"${extra}`, 'success', 2500);
 
-  // 2️⃣ Optionally upload to GitHub
-  if (andUpload) {
-    triggerAutoUpload();
-  } else {
-    Sync.updateUI();
-  }
+  if (andUpload) triggerAutoUpload();
+  else Sync.updateUI();
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  CHANNEL CRUD
-// ═══════════════════════════════════════════════════════════════════════════
 function openChannelModal() {
   window._editingChannelIndex = -1;
   $('channelModalTitle').textContent = '+ إضافة قناة';
@@ -1007,9 +1095,6 @@ function saveChannel(andUpload = false) {
   else Sync.updateUI();
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  DELETE (auto-upload if configured)
-// ═══════════════════════════════════════════════════════════════════════════
 function deleteMovie(i) {
   const m = State.movies[i]; if (!m) return;
   if (!confirm('حذف "' + m.title + '"\n\n(سيتم الرفع تلقائياً إن كان GitHub مُعداً)')) return;
@@ -1017,12 +1102,8 @@ function deleteMovie(i) {
   State.save();
   renderMovies(); UI.updateCounts();
   Toast.show('✓ تم الحذف محلياً', 'success', 2000);
-
-  if (checkGithubConfigured()) {
-    setTimeout(() => triggerAutoUpload('حذف فيلم'), 400);
-  } else {
-    Sync.updateUI();
-  }
+  if (checkGithubConfigured()) setTimeout(() => triggerAutoUpload('حذف فيلم'), 400);
+  else Sync.updateUI();
 }
 function deleteChannel(i) {
   const c = State.channels[i]; if (!c) return;
@@ -1031,18 +1112,11 @@ function deleteChannel(i) {
   State.save();
   renderChannels(); UI.updateCounts();
   Toast.show('✓ تم الحذف محلياً', 'success', 2000);
-
-  if (checkGithubConfigured()) {
-    setTimeout(() => triggerAutoUpload('حذف قناة'), 400);
-  } else {
-    Sync.updateUI();
-  }
+  if (checkGithubConfigured()) setTimeout(() => triggerAutoUpload('حذف قناة'), 400);
+  else Sync.updateUI();
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  DRAFT SAVERS
-// ═══════════════════════════════════════════════════════════════════════════
-window.saveMovieDraft = debounce(() => Draft.saveMovie(), 400);
+window.saveMovieDraft = debounce(() => { Draft.saveMovie(); updateSeasonsHint(); }, 400);
 window.saveChannelDraft = debounce(() => Draft.saveChannel(), 400);
 
 setTimeout(() => {
@@ -1052,9 +1126,6 @@ setTimeout(() => {
   });
 }, 100);
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  DATA LOADERS (for data/ import)
-// ═══════════════════════════════════════════════════════════════════════════
 async function fetchText(url, timeoutMs = 3000) {
   try {
     const ctrl = new AbortController();
@@ -1127,15 +1198,22 @@ async function refreshFromDataFolder() {
   } finally { UI.setProgress(false); }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  BUILDERS
-// ═══════════════════════════════════════════════════════════════════════════
-function buildMoviesJson() {
-  return JSON.stringify({ movies: State.movies.map(m => ({
+function serializeMovie(m) {
+  const out = {
     title: m.title, year: m.year || 0, genre: m.genre || 'عام',
     rating: m.rating || 0, poster: m.poster || '', story: m.story || '',
     sources: (m.sources || []).map(s => ({ label: s.label || 'سيرفر', url: s.url }))
-  })) }, null, 2) + '\n';
+  };
+  if (m.seasons && m.seasons.length) {
+    out.seasons = m.seasons.map(s => ({
+      name: s.name,
+      episodes: (s.episodes || []).map(e => ({ name: e.name, url: e.url }))
+    }));
+  }
+  return out;
+}
+function buildMoviesJson() {
+  return JSON.stringify({ movies: State.movies.map(serializeMovie) }, null, 2) + '\n';
 }
 function buildChannelsJson() {
   return JSON.stringify({ channels: State.channels.map(c => ({
@@ -1146,11 +1224,7 @@ function buildChannelsJson() {
 function buildContentJs() {
   return '/* Movie BekEs — © 2025 B6_7E | بيكاس */\nwindow.__CINEMA_DATA__ = ' +
     JSON.stringify({
-      movies: State.movies.map(m => ({
-        title: m.title, year: m.year || 0, genre: m.genre || 'عام',
-        rating: m.rating || 0, poster: m.poster || '', story: m.story || '',
-        sources: (m.sources || []).map(s => ({ label: s.label || 'سيرفر', url: s.url }))
-      })),
+      movies: State.movies.map(serializeMovie),
       channels: State.channels.map(c => ({
         name: c.name, poster: c.poster || '', stream: c.stream || '', desc: c.desc || '',
         sources: [{ label: 'سيرفر مباشر', url: c.stream || '' }]
@@ -1179,9 +1253,6 @@ const BUILDERS = {
   'channels.db': () => [buildChannelsDb(), 'text/plain']
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  EXPORT / IMPORT
-// ═══════════════════════════════════════════════════════════════════════════
 function downloadFile(name, content, mime = 'text/plain') {
   const blob = new Blob([content], { type: mime + ';charset=utf-8' });
   const url = URL.createObjectURL(blob);
@@ -1248,9 +1319,6 @@ function clearAllData() {
   Toast.show('تم مسح كل البيانات', 'success');
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  GITHUB SETTINGS
-// ═══════════════════════════════════════════════════════════════════════════
 function getGithubSettings() {
   return Storage.get(KEYS.GITHUB, { token: '', owner: '', repo: '', branch: 'main', path: 'data' });
 }
@@ -1314,9 +1382,6 @@ async function testGithub() {
   finally { UI.setProgress(false); }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  ★ UPLOAD QUEUE (the core of auto-upload)
-// ═══════════════════════════════════════════════════════════════════════════
 const Upload = {
   isUploading: false,
   pendingReupload: false,
@@ -1324,14 +1389,9 @@ const Upload = {
 
   async push(opts = {}) {
     const { showProgressBar = true, onProgress = null } = opts;
-    if (this.isUploading) {
-      this.pendingReupload = true;
-      return { queued: true };
-    }
+    if (this.isUploading) { this.pendingReupload = true; return { queued: true }; }
     const s = getGithubSettings();
-    if (!s.token || !s.owner || !s.repo) {
-      throw new Error('GitHub غير مُعد — أدخل Token + Owner + Repo');
-    }
+    if (!s.token || !s.owner || !s.repo) throw new Error('GitHub غير مُعد — أدخل Token + Owner + Repo');
     this.isUploading = true;
     this.lastError = null;
     if (showProgressBar) UI.setProgress(true);
@@ -1376,7 +1436,7 @@ const Upload = {
       if (r.ok) sha = (await r.json()).sha;
     } catch {}
     const body = {
-      message: 'Update ' + f.name + ' via Movie BekEs v8.5',
+      message: 'Update ' + f.name + ' via Movie BekEs v8.6',
       content: b64EncodeUnicode(f.content),
       branch: s.branch
     };
@@ -1393,9 +1453,6 @@ const Upload = {
   }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  ★ TRIGGER AUTO-UPLOAD (called after save/delete)
-// ═══════════════════════════════════════════════════════════════════════════
 async function triggerAutoUpload(reason = 'تحديث') {
   if (!checkGithubConfigured()) {
     Toast.show('✓ حُفظ محلياً — GitHub غير مُعد', 'warn', 3500);
@@ -1408,24 +1465,16 @@ async function triggerAutoUpload(reason = 'تحديث') {
     Sync.updateUI();
     return;
   }
-
   Toast.show('🚀 جاري الرفع إلى GitHub...', 'info', 2500);
-
   try {
     const res = await Upload.push();
-    if (res.queued) {
-      // Already uploading — will push again after
-      return;
-    }
+    if (res.queued) return;
     Toast.show(`🚀 تم الرفع بنجاح (${reason}) ✓`, 'success', 4000);
   } catch (e) {
     Toast.show('⚠️ الحفظ محلي ✓ — الرفع فشل: ' + e.message, 'error', 7000);
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  QUICK PUSH (from movies/channels panel)
-// ═══════════════════════════════════════════════════════════════════════════
 async function quickPush() {
   if (!checkGithubConfigured()) {
     Toast.show('GitHub غير مُعد — اذهب لتبويب GitHub', 'error');
@@ -1441,9 +1490,6 @@ async function quickPush() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  MANUAL GITHUB PUSH (from GitHub tab)
-// ═══════════════════════════════════════════════════════════════════════════
 async function githubPush() {
   const s = getGithubSettings();
   if (!s.token || !s.owner || !s.repo) {
@@ -1486,9 +1532,6 @@ async function githubPush() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  COMMAND PALETTE
-// ═══════════════════════════════════════════════════════════════════════════
 const CMD_LIST = [
   { label: 'إضافة فيلم', icon: '🎬', action: () => { closeCmdPalette(); openMovieModal(); } },
   { label: 'إضافة قناة', icon: '📺', action: () => { closeCmdPalette(); openChannelModal(); } },
@@ -1537,9 +1580,6 @@ function cmdKeydown(e) {
   else if (e.key === 'Escape') { closeCmdPalette(); }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  KEYBOARD
-// ═══════════════════════════════════════════════════════════════════════════
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
@@ -1549,9 +1589,6 @@ document.addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); State.save(); Toast.show('تم الحفظ ✓'); }
 });
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  PERSISTENCE ON UNLOAD
-// ═══════════════════════════════════════════════════════════════════════════
 function flushAll() {
   try {
     State.save();
@@ -1572,9 +1609,6 @@ document.addEventListener('visibilitychange', () => {
 });
 window.addEventListener('scroll', debounce(() => Session.save(), 800), { passive: true });
 
-// ═══════════════════════════════════════════════════════════════════════════
-//  BOOTSTRAP
-// ═══════════════════════════════════════════════════════════════════════════
 async function bootstrap() {
   const hasLocal = State.load();
   const flags = Storage.get(KEYS.FLAGS, { firstRun: true });
