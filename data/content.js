@@ -1070,12 +1070,12 @@ window.__CINEMA_DATA__ = {
       ]
     },
     {
-      "title": "مسرحيات ",
+      "title": "مسرحيات",
       "year": 2026,
       "genre": "جميع المسرحيات",
       "rating": 10,
       "poster": "https://www.telemaroc.tv/storage/thumbnails/beldpHs0Po2CGMHfn7r9hrrGJ6mriEzRV97oghs8.jpeg",
-      "story": "مسرحيات مصريه وسعودية وكويتيه ",
+      "story": "مسرحيات مصريه وسعودية وكويتيه",
       "sources": [
         {
           "label": "كومبارس",
@@ -1202,7 +1202,7 @@ window.__CINEMA_DATA__ = {
           "url": "https://www.vidspeed.org/embed-mmf2ivg5zv80.html"
         },
         {
-          "label": "العيال كبرت",
+          "label": "العيال كبرتت",
           "url": "https://www.vidspeed.org/embed-lfvskyjib806.html"
         },
         {
@@ -3026,166 +3026,187 @@ window.__CINEMA_DATA__ = {
       "rating": 10,
       "poster": "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg",
       "story": "يكشف FROM عن لغز مدينة مرعبة في وسط أمريكا تحبس كل من يدخلها. بينما يقاتل السكان غير الراغبين للحفاظ على شعورهم بالحياة الطبيعية والبحث عن مخرج ، يجب عليهم أيضًا البقاء على قيد الحياة من تهديدات الغابة المحيطة ؛ بما في ذلك المخلوقات المرعبة التي تخرج عند غروب الشمس.",
-      "sources": [
+      "sources": [],
+      "seasons": [
         {
-          "label": "S01.E01",
-          "url": "https://1vid.xyz/embed-ijui499r0bjq.html"
+          "name": "الموسم الاول",
+          "episodes": [
+            {
+              "name": "الحلقة الاول",
+              "url": "https://1vid.xyz/embed-ijui499r0bjq.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-11jet4ksvx34.html"
+            },
+            {
+              "name": "الحلقة الثالثه",
+              "url": "https://1vid.xyz/embed-98ed5n8ljqjh.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-jx80myhn0wa4.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-z8f57gavnu5v.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-3msxntnrm6ey.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-m5rry57hdc7o.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://1vid.xyz/embed-81sp3zy65g1k.html"
+            },
+            {
+              "name": "الحلقة التاسعة",
+              "url": "https://1vid.xyz/embed-gwjav7d00pg8.html"
+            },
+            {
+              "name": "الحلقة العاشرة و الاخيرة",
+              "url": "https://1vid.xyz/embed-w3u87mujjqah.html"
+            }
+          ]
         },
         {
-          "label": "S01.E02",
-          "url": "https://1vid.xyz/embed-11jet4ksvx34.html"
+          "name": "الموسم الثاني",
+          "episodes": [
+            {
+              "name": "الحلقة الاول",
+              "url": "https://1vid.xyz/embed-bizm6sg10p7v.htm"
+            },
+            {
+              "name": "الحلقة الثاني",
+              "url": "https://1vid.xyz/embed-zu5h2u8vm034.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-sm2x8fgum7s3.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-llwzitqv77l3.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://www.vidspeed.org/embed-99pkw55dhr8a.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-ipwnpjpqpqr3.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-mnfqupj6rr06.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://1vid.xyz/embed-ofgk2zutw159.html"
+            },
+            {
+              "name": "الحلقة التاسعة",
+              "url": "https://1vid.xyz/embed-bfm20ktnxb90.html"
+            },
+            {
+              "name": "الحلقة العاشرة و الاخيرة",
+              "url": "https://1vid.xyz/embed-nvumdmu41jv9.html"
+            }
+          ]
         },
         {
-          "label": "S01.E03",
-          "url": "https://1vid.xyz/embed-98ed5n8ljqjh.html"
+          "name": "الموسم الثالث",
+          "episodes": [
+            {
+              "name": "الحلقة الاول",
+              "url": "https://1vid.xyz/embed-lxnihkqee23a.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-mifzwydzeucb.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-3echst5j5nh6.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-f2ac0qkzuw9s.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-2u36ewklcvwa.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-54getk6czcdf.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-8ippf13hpkxl.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://www.vidspeed.org/embed-bkdkx8e5gpmr.html"
+            },
+            {
+              "name": "الحلقة التاسعة",
+              "url": "https://1vid.xyz/embed-e3avsvxpzx1l.html"
+            },
+            {
+              "name": "الحلقة العاشرة و الاخيرة",
+              "url": "https://1vid.xyz/embed-0bd4h9w6dy1y.html"
+            }
+          ]
         },
         {
-          "label": "S01.E04",
-          "url": "https://1vid.xyz/embed-jx80myhn0wa4.html"
-        },
-        {
-          "label": "S01.E05",
-          "url": "https://1vid.xyz/embed-z8f57gavnu5v.html"
-        },
-        {
-          "label": "S01.E06",
-          "url": "https://1vid.xyz/embed-3msxntnrm6ey.html"
-        },
-        {
-          "label": "S01.E07",
-          "url": "https://1vid.xyz/embed-m5rry57hdc7o.html"
-        },
-        {
-          "label": "S01.E08",
-          "url": "https://1vid.xyz/embed-81sp3zy65g1k.html"
-        },
-        {
-          "label": "S01.E09",
-          "url": "https://1vid.xyz/embed-gwjav7d00pg8.html"
-        },
-        {
-          "label": "S01.E10.Last",
-          "url": "https://1vid.xyz/embed-w3u87mujjqah.html"
-        },
-        {
-          "label": "S02.E01",
-          "url": "https://1vid.xyz/embed-bizm6sg10p7v.html"
-        },
-        {
-          "label": "S02.E02",
-          "url": "https://1vid.xyz/embed-zu5h2u8vm034.html"
-        },
-        {
-          "label": "S02.E03",
-          "url": "https://1vid.xyz/embed-sm2x8fgum7s3.html"
-        },
-        {
-          "label": "S02.E04",
-          "url": "https://1vid.xyz/embed-llwzitqv77l3.html"
-        },
-        {
-          "label": "S02.E05",
-          "url": "https://www.vidspeed.org/embed-99pkw55dhr8a.html"
-        },
-        {
-          "label": "S02.E06",
-          "url": "https://1vid.xyz/embed-ipwnpjpqpqr3.html"
-        },
-        {
-          "label": "S02.E07",
-          "url": "https://1vid.xyz/embed-mnfqupj6rr06.html"
-        },
-        {
-          "label": "S02.E08",
-          "url": "https://1vid.xyz/embed-ofgk2zutw159.html"
-        },
-        {
-          "label": "S02.E09",
-          "url": "https://1vid.xyz/embed-bfm20ktnxb90.html"
-        },
-        {
-          "label": "S02.E10.Last",
-          "url": "https://1vid.xyz/embed-nvumdmu41jv9.html"
-        },
-        {
-          "label": "S03.E01",
-          "url": "https://1vid.xyz/embed-lxnihkqee23a.html"
-        },
-        {
-          "label": "S03.E02",
-          "url": "https://1vid.xyz/embed-mifzwydzeucb.html"
-        },
-        {
-          "label": "S03.E03",
-          "url": "https://1vid.xyz/embed-3echst5j5nh6.html"
-        },
-        {
-          "label": "S03.E04",
-          "url": "https://1vid.xyz/embed-f2ac0qkzuw9s.html"
-        },
-        {
-          "label": "S03.E05",
-          "url": "https://1vid.xyz/embed-2u36ewklcvwa.html"
-        },
-        {
-          "label": "S03.E06",
-          "url": "https://1vid.xyz/embed-54getk6czcdf.html"
-        },
-        {
-          "label": "S03.E07",
-          "url": "https://1vid.xyz/embed-8ippf13hpkxl.html"
-        },
-        {
-          "label": "S03.E08",
-          "url": "https://www.vidspeed.org/embed-bkdkx8e5gpmr.html"
-        },
-        {
-          "label": "S03.E09",
-          "url": "https://1vid.xyz/embed-e3avsvxpzx1l.html"
-        },
-        {
-          "label": "S03.E10.Last",
-          "url": "https://1vid.xyz/embed-0bd4h9w6dy1y.html"
-        },
-        {
-          "label": "S04.E01",
-          "url": "https://1vid.xyz/embed-8caq1wllr75z.html"
-        },
-        {
-          "label": "S04.E02",
-          "url": "https://1vid.xyz/embed-uoec9gocdqmr.html"
-        },
-        {
-          "label": "S04.E03",
-          "url": "https://1vid.xyz/embed-r68bh3h9bwm8.html"
-        },
-        {
-          "label": "S04.E04",
-          "url": "https://1vid.xyz/embed-38d1mimg6p9f.html"
-        },
-        {
-          "label": "S04.E05",
-          "url": "https://1vid.xyz/embed-28nz777pky11.html"
-        },
-        {
-          "label": "S04.E06",
-          "url": "https://1vid.xyz/embed-pcbx3uutezv0.html"
-        },
-        {
-          "label": "S04.E07",
-          "url": "https://1vid.xyz/embed-bo6p5r79gy7d.html"
-        },
-        {
-          "label": "S04.E08",
-          "url": "https://1vid.xyz/embed-zlr8imq5gmcg.html"
-        },
-        {
-          "label": "S04.E09",
-          "url": "https://1vid.xyz/embed-uk2l5gpgim61.html"
-        },
-        {
-          "label": "S04.E10.Last",
-          "url": "https://1vid.xyz/embed-v619gj7o53hg.html"
+          "name": "الموسم الرابع",
+          "episodes": [
+            {
+              "name": "الحلقة الاول",
+              "url": "https://1vid.xyz/embed-8caq1wllr75z.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-uoec9gocdqmr.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-r68bh3h9bwm8.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-38d1mimg6p9f.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-28nz777pky11.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-pcbx3uutezv0.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-bo6p5r79gy7d.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://1vid.xyz/embed-zlr8imq5gmcg.html"
+            },
+            {
+              "name": "الحلقة التاسعة",
+              "url": "https://1vid.xyz/embed-uk2l5gpgim61.html"
+            },
+            {
+              "name": "الحلقة العاشرة و الاخيرة",
+              "url": "https://1vid.xyz/embed-v619gj7o53hg.html"
+            }
+          ]
         }
       ]
     },
