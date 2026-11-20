@@ -3022,7 +3022,7 @@ window.__CINEMA_DATA__ = {
     {
       "title": "مسلسل From",
       "year": 2027,
-      "genre": "10.0",
+      "genre": "غموض",
       "rating": 10,
       "poster": "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg",
       "story": "يكشف FROM عن لغز مدينة مرعبة في وسط أمريكا تحبس كل من يدخلها. بينما يقاتل السكان غير الراغبين للحفاظ على شعورهم بالحياة الطبيعية والبحث عن مخرج ، يجب عليهم أيضًا البقاء على قيد الحياة من تهديدات الغابة المحيطة ؛ بما في ذلك المخلوقات المرعبة التي تخرج عند غروب الشمس.",
