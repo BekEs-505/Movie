@@ -3032,7 +3032,7 @@ window.__CINEMA_DATA__ = {
           "name": "الموسم الاول",
           "episodes": [
             {
-              "name": "الحلقة الاول",
+              "name": "الحلقة الاولى",
               "url": "https://1vid.xyz/embed-ijui499r0bjq.html"
             },
             {
@@ -3077,11 +3077,11 @@ window.__CINEMA_DATA__ = {
           "name": "الموسم الثاني",
           "episodes": [
             {
-              "name": "الحلقة الاول",
+              "name": "الحلقة الاولى",
               "url": "https://1vid.xyz/embed-bizm6sg10p7v.htm"
             },
             {
-              "name": "الحلقة الثاني",
+              "name": "الحلقة الثانية",
               "url": "https://1vid.xyz/embed-zu5h2u8vm034.html"
             },
             {
@@ -3122,7 +3122,7 @@ window.__CINEMA_DATA__ = {
           "name": "الموسم الثالث",
           "episodes": [
             {
-              "name": "الحلقة الاول",
+              "name": "الحلقة الاولى",
               "url": "https://1vid.xyz/embed-lxnihkqee23a.html"
             },
             {
@@ -3167,7 +3167,7 @@ window.__CINEMA_DATA__ = {
           "name": "الموسم الرابع",
           "episodes": [
             {
-              "name": "الحلقة الاول",
+              "name": "الحلقة الاولى",
               "url": "https://1vid.xyz/embed-8caq1wllr75z.html"
             },
             {
