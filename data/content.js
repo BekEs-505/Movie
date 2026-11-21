@@ -4228,12 +4228,7 @@ window.__CINEMA_DATA__ = {
       "rating": 10,
       "poster": "https://m.media-amazon.com/images/M/MV5BZWYwZTZiZGEtNjBlOS00MGEzLWI3MmUtMTRhMWM4NzAwYTQ1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
       "story": "في ليلة الهالوين، تجد فرقة رقص نسائية نفسها غارقة في مشاعر الذنب الديني والرغبات المحرّمة ورؤى الأشباح، حين تنقلب طقوس انضمام عضوة جديدة إلى جحيم حقيقي.",
-      "sources": [
-        {
-          "label": "Trailer",
-          "url": "https://youtu.be/wl7uj7n7DoY?si=yYCneDccem0qspRm"
-        }
-      ],
+      "sources": [],
       "seasons": [
         {
           "name": "مسلسل محدود",
