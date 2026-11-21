@@ -4135,6 +4135,91 @@ window.__CINEMA_DATA__ = {
           ]
         }
       ]
+    },
+    {
+      "title": "مسلسل The Last of Us",
+      "year": 2025,
+      "genre": "رعب",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYWI3ODJlMzktY2U5NC00ZjdlLWE1MGItNWQxZDk3NWNjN2RhXkEyXkFqcGc@._V1_.jpg",
+      "story": "تدور الأحداث حول جويل الذي فقد ابنته في أعقاب انهيار العالم أمام فايروس خطير يحول البشر إلى وحوش قاتلة، ليجد جويل نفسه مجبرًا على مساعدة إيلي البالغة من العمر 14 عامًا على الهروب من أيدي العصابات والموتى.",
+      "sources": [],
+      "seasons": [
+        {
+          "name": "الموسم الاول",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-hq37emdm3gqd.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-bmme6903larh.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-n6hlwizodazf.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-nxuajcq99hca.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-s49it0f9dyct.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-c7t0wy7o3clg.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-e1t38syk9c8g.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://1vid.xyz/embed-zj1sbglpfrlk.html"
+            },
+            {
+              "name": "الحلقة التاسعة و الاخيرة",
+              "url": "https://1vid.xyz/embed-l1tj69vq6zuv.html"
+            }
+          ]
+        },
+        {
+          "name": "الموسم الثاني",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-l22g195pgxz4.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-6m3snnqjwz4y.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-ey7bvipoiqoz.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-lng09ltv5956.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-44r7pj2dtv13.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-nvuxd7dr0mij.html"
+            },
+            {
+              "name": "الحلقة السابعة و الاخيرة",
+              "url": "https://1vid.xyz/embed-0shs675i9z5m.html"
+            }
+          ]
+        }
+      ]
     }
   ],
   "channels": [
