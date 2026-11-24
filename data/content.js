@@ -4414,6 +4414,18 @@ window.__CINEMA_DATA__ = {
           "url": "https://mixdrop.ps/e/owwdln3whlpmro"
         }
       ]
+    },
+    {
+      "name": "WWE",
+      "poster": "https://upload.wikimedia.org/wikipedia/commons/c/c4/WWE_official_logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+      "stream": "https://www.sawlivenow.com/embed/ch83_HD/",
+      "desc": "قناة WWE - بث مباشر",
+      "sources": [
+        {
+          "label": "سيرفر مباشر",
+          "url": "https://www.sawlivenow.com/embed/ch83_HD/"
+        }
+      ]
     }
   ]
 };
