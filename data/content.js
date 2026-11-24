@@ -4268,6 +4268,137 @@ window.__CINEMA_DATA__ = {
           ]
         }
       ]
+    },
+    {
+      "title": "مسلسل Lupin",
+      "year": 2026,
+      "genre": "سرقة",
+      "rating": 10,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXCUAFTKnMJeIKEGG_o6GcRbUUYKacZRFXcVyY9a-XtA&s=10",
+      "story": "حول أساني ديوب، وهو رجل ذكي وبارع في التنكر والسرقة، يستلهم خططه من مغامرات اللص النبيل أرسين لوبين التي قرأها في كتاب أهداه إليه والده في طفولته. قبل خمسة وعشرين عاما، اتهمت عائلة بيليغريني الثرية والنافذة والده باباكار زورا بسرقة عقد ألماس ثمين، فانتهى به الأمر في السجن حيث توفي، تاركا ابنه غارقا في الحزن والشعور بالظلم. بعد سنوات، يقرر أساني الانتقام واستعادة كرامة والده، فيضع خطة جريئة لسرقة العقد من متحف اللوفر، لكن العملية لا تسير كما توقع، فتبدأ سلسلة من الأحداث التي تجذب انتباه الشرطة وتكشف خيوطا خفية في القضية القديمة. يستعين أساني بمهاراته في تغيير هويته وخداع خصومه للوصول إلى أدلة تدينهـم، بينما يبدأ المحقق يوسف غيديرا بربط جرائمه بأساليب أرسين لوبين. ومع تقدم التحقيق، تتشابك خطط الانتقام مع حياته العائلية وعلاقته بكلير وابنه راؤول، ويجد نفسه أمام تحديات تهدد بكشف هويته وتعريض أحبائه للخطر.",
+      "sources": [],
+      "seasons": [
+        {
+          "name": "الموسم الاول",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-sdy6008g6snm.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-zifxyhf6bre1.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-6jfr74p9o2oa.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-fxwe02470k32.html"
+            },
+            {
+              "name": "الحلقة الخامسة و الاخيرة",
+              "url": "https://1vid.xyz/embed-05aalq8u9l6n.html"
+            }
+          ]
+        },
+        {
+          "name": "الموسم الثاني",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-v34xpb4z3pn0.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-mz6b4wxvbufj.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-jbphb6ou6u9m.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-dhbklek0k5f3.html"
+            },
+            {
+              "name": "الحلقة الخامسة و الاخيرة",
+              "url": "https://1vid.xyz/embed-kzigldbge4og.html"
+            }
+          ]
+        },
+        {
+          "name": "الموسم الثالث",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-ih9akdw7ye5d.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-0hlug6s8ovnl.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-2cgkrggacru3.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-i91ajlrj0l7n.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-yek1c8w5nkln.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-qkf948v5bxz3.html"
+            },
+            {
+              "name": "الحلقة السابعة و الاخيرة",
+              "url": "https://1vid.xyz/embed-ou74kn4iv92i.html"
+            }
+          ]
+        },
+        {
+          "name": "الموسم الرابع",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-l2w0ts5x54pf.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-bkp2xh73qx0t.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-32p0x40sy25h.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-u31dvf1mjyni.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-jkb7l31h9ps8.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-os2alkaz15y2.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-r8t5s2sa3lwd.html"
+            },
+            {
+              "name": "الحلقة الثامنة و الاخيرة",
+              "url": "https://1vid.xyz/embed-ow6xwu3sj50z.html"
+            }
+          ]
+        }
+      ]
     }
   ],
   "channels": [
