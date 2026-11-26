@@ -4399,6 +4399,152 @@ window.__CINEMA_DATA__ = {
           ]
         }
       ]
+    },
+    {
+      "title": "مسلسل Narcos",
+      "year": 2023,
+      "genre": "مخدرات",
+      "rating": 10,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzQwOTcwMzIwN15BMl5BanBnXkFtZTgwMjYxMTA0NjE@._V1_FMjpg_UX1000_.jpg",
+      "story": "تضفي القصة الحقيقية لعصابات تجّار المخدرات الأقوياء في كولومبيا جوًا من الإثارة على هذا المسلسل الدرامي الذي يتناول حياة العصابات.",
+      "sources": [],
+      "seasons": [
+        {
+          "name": "الموسم الاول",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-ohplrbdpau7o.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-o1zqqdmn0syg.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-vwcx45onbh6z.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-nblegz6b81za.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-kd889filx17o.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-8zzt2wdu7onq.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-klvuwm8ne1fv.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://1vid.xyz/embed-62oldjz0oldo.html"
+            },
+            {
+              "name": "الحلقة التاسعة",
+              "url": "https://1vid.xyz/embed-ntum8mk37joz.html"
+            },
+            {
+              "name": "الحلقة العاشرة و الاخيرة",
+              "url": "https://1vid.xyz/embed-0hfqeirjb86c.html"
+            }
+          ]
+        },
+        {
+          "name": "الموسم الثاني",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-iqh8whypbx8n.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-9dpywomrgs44.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-sv3o3k3ucxdl.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-4f9hor1u63ft.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-yrw315rosujy.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-5cs1ugpcusyu.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-s7hp91qscxnc.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://1vid.xyz/embed-1226q8wk1rns.html"
+            },
+            {
+              "name": "الحلقة التاسعة",
+              "url": "https://1vid.xyz/embed-iqeq75fpiiwl.html"
+            },
+            {
+              "name": "الحلقة العاشرة و الاخيرة",
+              "url": "https://1vid.xyz/embed-r9gzhyc3krnh.html"
+            }
+          ]
+        },
+        {
+          "name": "الموسم الثالث",
+          "episodes": [
+            {
+              "name": "الحلقة الاولى",
+              "url": "https://1vid.xyz/embed-h2i47x7ifa6s.html"
+            },
+            {
+              "name": "الحلقة الثانية",
+              "url": "https://1vid.xyz/embed-vk853c1rf4f3.html"
+            },
+            {
+              "name": "الحلقة الثالثة",
+              "url": "https://1vid.xyz/embed-llxbxrz5nrmk.html"
+            },
+            {
+              "name": "الحلقة الرابعة",
+              "url": "https://1vid.xyz/embed-a7lu05wpdo3i.html"
+            },
+            {
+              "name": "الحلقة الخامسة",
+              "url": "https://1vid.xyz/embed-wibj6nquq00p.html"
+            },
+            {
+              "name": "الحلقة السادسة",
+              "url": "https://1vid.xyz/embed-eaug2q4con35.html"
+            },
+            {
+              "name": "الحلقة السابعة",
+              "url": "https://1vid.xyz/embed-4bp09clv9lft.html"
+            },
+            {
+              "name": "الحلقة الثامنة",
+              "url": "https://1vid.xyz/embed-zn27y8ah5ihe.html"
+            },
+            {
+              "name": "الحلقة التاسعة",
+              "url": "https://1vid.xyz/embed-g3nmht5ymjn7.html"
+            },
+            {
+              "name": "الحلقة العاشرة و الاخيرة",
+              "url": "https://1vid.xyz/embed-etpho13aegyh.html"
+            }
+          ]
+        }
+      ]
     }
   ],
   "channels": [
