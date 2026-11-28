@@ -4823,18 +4823,6 @@ window.__CINEMA_DATA__ = {
       ]
     },
     {
-      "name": "ثمانية 3 HD",
-      "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
-      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
-      "desc": "قناة ثمانية 3 HD - بث مباشر",
-      "sources": [
-        {
-          "label": "سيرفر مباشر",
-          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
-        }
-      ]
-    },
-    {
       "name": "WWE",
       "poster": "https://upload.wikimedia.org/wikipedia/commons/c/c4/WWE_official_logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
       "stream": "https://www.sawlivenow.com/embed/ch83_HD/",
