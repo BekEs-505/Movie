@@ -4717,12 +4717,12 @@ window.__CINEMA_DATA__ = {
     {
       "name": "Bein Sport 3",
       "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
-      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "stream": "https://spo-def.cfd/8k-bein3/tracks-v1a1/mono.m3u8",
       "desc": "قناة Bein Sport 3 — بث مباشر",
       "sources": [
         {
           "label": "سيرفر مباشر",
-          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+          "url": "https://spo-def.cfd/8k-bein3/tracks-v1a1/mono.m3u8"
         }
       ]
     },
@@ -4763,10 +4763,10 @@ window.__CINEMA_DATA__ = {
       ]
     },
     {
-      "name": "ثمانية 1 4K",
+      "name": "ثمانية 1",
       "poster": "https://yt3.googleusercontent.com/Of52TD4mOCdcLf35VgQr9XuzyyZh9Oc5XE1R2o_rgNYsIpO94AcvZvCOumUSEps3oDK9Iumqeg=s900-c-k-c0x00ffffff-no-rj",
       "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
-      "desc": "قناة ثمانية 1 4K - بث مباشر",
+      "desc": "قناة ثمانية 1 - بث مباشر",
       "sources": [
         {
           "label": "سيرفر مباشر",
