@@ -4693,12 +4693,12 @@ window.__CINEMA_DATA__ = {
     {
       "name": "Bein Sport 1",
       "poster": "https://cdn.miswag.me/images/images/miswag_oUHT2K.jpg",
-      "stream": "https://mixdrop.ps/e/owwdln3whlpmro",
+      "stream": "https://spo-def.cfd/8k-bein1/tracks-v1a1/mono.m3u8",
       "desc": "قناة Bein Sport 1 — بث مباشر",
       "sources": [
         {
           "label": "سيرفر مباشر",
-          "url": "https://mixdrop.ps/e/owwdln3whlpmro"
+          "url": "https://spo-def.cfd/8k-bein1/tracks-v1a1/mono.m3u8"
         }
       ]
     },
